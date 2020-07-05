@@ -1,9 +1,9 @@
 name: Publish
 
 on:
-    release:
-        types:
-            - created
+    branches:
+        branch:
+            - develop
 
 jobs:
     run-test:
