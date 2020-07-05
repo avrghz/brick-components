@@ -1,0 +1,19 @@
+[
+    {
+        "label": "Apple",
+        "value": "1",
+        "disabled": true
+    },
+    {
+        "label": "Orange",
+        "value": "2"
+    },
+    {
+        "label": "Mango",
+        "value": "3"
+    },
+    {
+        "label": "Kiwi",
+        "value": "4"
+    }
+]

@@ -1,0 +1,84 @@
+name: Publish
+
+on:
+    release:
+        types:
+            - created
+
+jobs:
+    run-test:
+        name: 'Running test'
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+            - name: Run test
+              run: |
+                  npm ci
+                  npm test
+
+    deploy-storybook:
+        name: 'Deploying storybook'
+        needs: run-test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+            - name: Install and build
+              run: |
+                  npm install
+                  npm run build
+            - uses: JamesIves/github-pages-deploy-action@releases/v3
+              with:
+                  GITHUB_TOKEN: ${{ secrets.auth_token }}
+                  BRANCH: gh-pages
+                  FOLDER: stories
+
+    publish-brick-components:
+        name: 'Publish web components to github packages'
+        needs: run-test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+                  registry-url: https://npm.pkg.github.com/
+            - name: Publish
+              run: |
+                  npm ci
+                  npm run build
+                  npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.auth_token}}
+
+    publish-react-wrapper:
+        name: 'Publish react wrapper to github packages'
+        needs: publish-brick-components
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+                  registry-url: https://npm.pkg.github.com/
+            - name: Build web components
+              run: |
+                  npm ci
+                  npm run build
+            - name: Publish
+              run: |
+                  npm install
+                  npm run build
+                  npm publish
+              working-directory: ./react
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.auth_token}}

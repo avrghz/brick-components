@@ -1,0 +1,85 @@
+{
+    "name": "@avrghz/brick-components",
+    "author": "Aswin Varghese",
+    "version": "0.0.0",
+    "description": "A library of web components",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "es2015": "dist/esm/index.mjs",
+    "es2017": "dist/esm/index.mjs",
+    "types": "dist/types/index.d.ts",
+    "collection": "dist/collection/collection-manifest.json",
+    "collection:main": "dist/collection/index.js",
+    "unpkg": "dist/brick-components/brick-components.js",
+    "files": [
+        "dist/",
+        "loader/"
+    ],
+    "repository": {
+        "url": "https://github.com/avrghz/brick-components.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "scripts": {
+        "gc": "plop Component -- --prefix bk",
+        "start": "run-p stencil:start storybook:start",
+        "build": "run-s stencil:build storybook:build",
+        "test": "stencil test --spec --e2e",
+        "lint": "tslint 'src/**/*.{ts,tsx,js}'",
+        "test:e2e": "stencil test --e2e",
+        "test:screenshot": "stencil test --e2e --screenshot",
+        "test.watch": "stencil test --spec --e2e --watchAll",
+        "dev": "stencil build --dev --watch --serve",
+        "stencil:start": "stencil build --docs --dev --watch",
+        "stencil:build": "stencil build --docs",
+        "storybook:start": "start-storybook -p 8000",
+        "storybook:build": "build-storybook -c .storybook -o stories"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.10.3",
+        "@stencil/core": "^1.15.0",
+        "@stencil/react-output-target": "^0.0.7",
+        "@stencil/sass": "^1.3.2",
+        "@storybook/addon-actions": "^5.3.19",
+        "@storybook/addon-knobs": "^5.3.19",
+        "@storybook/addon-notes": "^5.3.19",
+        "@storybook/addon-storysource": "^5.3.19",
+        "@storybook/addons": "^5.3.19",
+        "@storybook/theming": "^5.3.19",
+        "@storybook/web-components": "^5.3.19",
+        "@types/jest": "^25.2.3",
+        "@types/puppeteer": "2.0.1",
+        "babel-loader": "^8.1.0",
+        "copy-webpack-plugin": "^5.1.1",
+        "husky": "^4.2.5",
+        "jest": "24.9.0",
+        "jest-cli": "24.9.0",
+        "lit-html": "^1.2.1",
+        "npm-run-all": "^4.1.5",
+        "plop": "^2.7.1",
+        "prettier": "^2.0.5",
+        "puppeteer": "2.1.1",
+        "ts-loader": "^6.2.2",
+        "tslint": "^6.1.2",
+        "tslint-config-prettier": "^1.18.0"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@a11y/focus-trap": "^1.0.5",
+        "@polymer/iron-icons": "^3.0.1",
+        "@popperjs/core": "^2.4.2",
+        "ionicons": "^5.1.2",
+        "popmotion": "^8.7.3"
+    },
+    "jest": {
+        "testMatch": [
+            "**/src/**/*.test.tsx"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
+    }
+}

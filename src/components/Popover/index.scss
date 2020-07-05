@@ -1,0 +1,36 @@
+@import '../../theme/base/common/popper.scss';
+
+:host {
+    display: inline-block;
+}
+
+:host(.bk-popover--disabled) {
+    @include util-disabled;
+}
+
+@include b(popover) {
+    position: absolute;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+
+    @include e(inner) {
+        position: relative;
+        background: $--popover-background-color;
+        border-radius: $--border-radius-base;
+        border: 1px solid $--popover-border-color;
+        padding: $--popover-padding;
+        z-index: $--index-popper;
+        color: $--color-text-regular;
+        line-height: 1.4;
+        text-align: justify;
+        box-shadow: $--box-shadow-light;
+        word-break: break-all;
+        font-size: $--popover-font-size;
+    }
+
+    &:focus:active,
+    &:focus {
+        outline-width: 0;
+    }
+}

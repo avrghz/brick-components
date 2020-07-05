@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<bk-modal/> Prop(dismissible) when set to false should render not render close button 1`] = `
+<bk-modal aria-hidden="" aria-modal="true" class="hydrated" open="" role="dialog" tabindex="0">
+  <mock:shadow-root>
+    <div class="bk-modal">
+      <div class="bk-modal__content open" role="document">
+        <focus-trap>
+          <main class="bk-modal__body">
+            <slot name="body"></slot>
+          </main>
+        </focus-trap>
+      </div>
+      <div class="bk-modal__backdrop open"></div>
+    </div>
+  </mock:shadow-root>
+</bk-modal>
+`;
+
+exports[`<bk-modal/> Prop(open) should not render modal when set to false 1`] = `
+<bk-modal class="hydrated" open="false">
+  <mock:shadow-root></mock:shadow-root>
+</bk-modal>
+`;
+
+exports[`<bk-modal/> Prop(open) should render modal when set to true 1`] = `
+<bk-modal aria-hidden="" aria-modal="true" class="hydrated" open="" role="dialog" tabindex="0">
+  <mock:shadow-root>
+    <div class="bk-modal">
+      <div class="bk-modal__content open" role="document">
+        <focus-trap>
+          <main class="bk-modal__body">
+            <slot name="body"></slot>
+          </main>
+        </focus-trap>
+      </div>
+      <div class="bk-modal__backdrop open"></div>
+    </div>
+  </mock:shadow-root>
+</bk-modal>
+`;
+
+exports[`<bk-modal/> Prop(width) should render with given width 1`] = `
+<bk-modal aria-hidden="" aria-modal="true" class="hydrated" open="" role="dialog" tabindex="0">
+  <mock:shadow-root>
+    <div class="bk-modal">
+      <div class="bk-modal__content open" role="document">
+        <focus-trap>
+          <main class="bk-modal__body">
+            <slot name="body"></slot>
+          </main>
+        </focus-trap>
+      </div>
+      <div class="bk-modal__backdrop open"></div>
+    </div>
+  </mock:shadow-root>
+</bk-modal>
+`;

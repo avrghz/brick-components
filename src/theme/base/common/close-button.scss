@@ -1,0 +1,22 @@
+@mixin close-button {
+    position: absolute;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 5px;
+    opacity: 0.75;
+    outline: none;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+
+    iron-icon {
+        color: $--color-text-regular;
+        width: 18px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        opacity: 1;
+    }
+}

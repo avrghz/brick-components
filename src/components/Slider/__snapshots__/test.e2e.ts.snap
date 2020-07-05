@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<bk-slider/> Prop: value should render with given value 1`] = `
+<bk-slider aria-label="slider between 0 and 100" aria-value="50" aria-valuemax="100" aria-valuemin="0" class="hydrated" role="slider" value="50">
+  <mock:shadow-root>
+    <div class="bk-slider bk-slider--default">
+      <div class="bk-slider__bar" style="width: 50%;"></div>
+      <div class="bk-slider__button" tabindex="0" style="left: 50%;">
+        <bk-popover aria-label="popover" class="hydrated">
+          <div class="bk-slider__button-inner" slot="control"></div>
+          <span class="bk-slider__tooltip-content" slot="content">
+            50
+          </span>
+        </bk-popover>
+      </div>
+    </div>
+  </mock:shadow-root>
+</bk-slider>
+`;

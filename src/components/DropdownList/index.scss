@@ -1,0 +1,78 @@
+@mixin highlight {
+    background-color: $--dropdown-menuItem-focus-fill;
+    color: $--dropdown-menuItem-focus-color;
+}
+
+@include b(dropdown-list) {
+    @include e(content) {
+        min-width: $--dropdown-list-min-width;
+        outline: none;
+    }
+
+    @include e(no-option) {
+        color: $--color-text-secondary;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    @include e(search) {
+        margin-bottom: 5px;
+    }
+
+    @include e(list) {
+        padding: 0;
+        margin: 0 -#{$--dropdown-menu-box-padding};
+        max-height: $--dropdown-list-max-height;
+        overflow-y: auto;
+    }
+
+    @include e(item) {
+        display: block;
+        list-style: none;
+        line-height: 30px;
+        padding: 0 $--dropdown-menu-box-padding;
+        margin: 0;
+        font-size: $--font-size-base;
+        color: $--color-text-regular;
+        cursor: pointer;
+        outline: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &:not(.is-disabled):not(:focus):not(.is-active):hover {
+            background-color: $--dropdown-menuItem-hover-fill;
+            color: $--dropdown-menuItem-hover-color;
+        }
+
+        @include when(active) {
+            @include highlight();
+        }
+
+        @include m(divided) {
+            $divided-offset: 6px;
+
+            position: relative;
+            margin-top: $divided-offset;
+            border-top: 1px solid $--border-color-lighter;
+
+            &:before {
+                content: '';
+                height: $divided-offset;
+                display: block;
+                margin: 0 -#{$--dropdown-menu-box-padding};
+                background-color: $--color-white;
+            }
+        }
+
+        @include when(disabled) {
+            cursor: default;
+            color: $--font-color-disabled-base;
+            pointer-events: none;
+        }
+    }
+
+    @include e(close-btn) {
+        pointer-events: all;
+    }
+}

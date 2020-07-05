@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<bk-switch/> should render 1`] = `
+<bk-switch aria-label="switch" class="hydrated sc-bk-switch-h sc-bk-switch-s" role="switch" tabindex="0">
+  <div class="bk-switch bk-switch--default sc-bk-switch">
+    <input aria-hidden="true" class="bk-switch__input sc-bk-switch" name="chk" tabindex="-1" type="checkbox">
+    <span class="bk-switch__core sc-bk-switch"></span>
+  </div>
+</bk-switch>
+`;

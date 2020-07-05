@@ -1,0 +1,101 @@
+@import '../../theme/base/common/close-button.scss';
+@import '../../theme/base/button.scss';
+@import '../../theme/base/icon.scss';
+
+:host {
+    position: fixed;
+    pointer-events: none;
+    width: $--toast-width;
+    outline: none;
+}
+
+:host(.bk-toast--top-left),
+:host(.bk-toast--top-right) {
+    top: $--toast-position;
+}
+
+:host(.bk-toast--bottom-left),
+:host(.bk-toast--bottom-right) {
+    bottom: $--toast-position;
+}
+
+:host(.bk-toast--bottom-right),
+:host(.bk-toast--top-right) {
+    right: $--toast-position;
+}
+
+:host(.bk-toast--bottom-left),
+:host(.bk-toast--top-left) {
+    left: $--toast-position;
+}
+
+@include b(toast) {
+    $this: &;
+
+    display: flex;
+    padding: $--toast-padding;
+    border-radius: $--toast-radius;
+    box-sizing: border-box;
+    border: 1px solid $--toast-border-color;
+    background-color: $--color-white;
+    box-shadow: $--toast-shadow;
+    transform: translateX(100%);
+    opacity: 0;
+    overflow: hidden;
+    font-size: $--toast-font-size;
+    pointer-events: all;
+
+    + #{$this} {
+        margin-top: 10px;
+    }
+
+    @include e(group) {
+        &:not(#{$this}--default) {
+            padding: $--toast-group-padding;
+        }
+    }
+
+    @include e(title) {
+        font-weight: bold;
+        font-size: $--toast-title-font-size;
+        color: $--toast-title-color;
+        margin-bottom: 6px;
+    }
+
+    @include e(content) {
+        line-height: 21px;
+        color: $--toast-content-color;
+        text-align: justify;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    @include e(icon) {
+        font-size: $--toast-icon-size;
+        min-width: $--toast-icon-size;
+    }
+
+    @include e(close-Btn) {
+        @include close-button();
+        right: 4px;
+        top: 8px;
+    }
+
+    @include m(success) {
+        color: $--toast-success-icon-color;
+    }
+
+    @include m(danger) {
+        color: $--toast-danger-icon-color;
+    }
+
+    @include m(info) {
+        color: $--toast-info-icon-color;
+    }
+
+    @include m(warning) {
+        color: $--toast-warning-icon-color;
+    }
+}

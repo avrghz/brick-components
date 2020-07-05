@@ -1,0 +1,110 @@
+$--variant-map: (
+    info: $--color-info,
+    danger: $--color-danger,
+    warning: $--color-warning,
+    success: $--color-success,
+    default: $--color-primary,
+);
+
+:host {
+    display: block;
+    width: 100%;
+    font-size: $--slider-font-size;
+}
+
+@mixin animate($property) {
+    transition: $property 0.2s linear;
+}
+
+@include b(slider) {
+    $this: &;
+
+    width: 100%;
+    height: $--slider-height;
+    margin: 1em 0;
+    background-color: $--slider-runway-background-color;
+    border-radius: $--slider-height;
+    position: relative;
+    vertical-align: middle;
+    opacity: 0.5;
+    pointer-events: none;
+
+    @include e(bar) {
+        height: $--slider-height;
+        border-top-left-radius: $--slider-height/2;
+        border-bottom-left-radius: $--slider-height/2;
+        position: absolute;
+        @include animate(width);
+    }
+
+    @include e(button) {
+        height: $--slider-button-size;
+        width: $--slider-button-size;
+        position: absolute;
+        z-index: 1001;
+        top: $--slider-height/2;
+        left: 0;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+        text-align: center;
+        user-select: none;
+        line-height: normal;
+        @include animate(left);
+
+        &::after {
+            content: '';
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &-inner {
+            width: $--slider-button-size/2;
+            height: $--slider-button-size/2;
+            background-color: $--color-white;
+            border-radius: 50%;
+            transition: 0.2s;
+            user-select: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    @include e(tooltip-content) {
+        white-space: nowrap;
+    }
+
+    @each $key, $value in $--variant-map {
+        &#{$this}--#{$key} {
+            #{$this}__bar {
+                background-color: $value;
+            }
+
+            #{$this}__button-inner {
+                border: 2px solid $value;
+            }
+        }
+    }
+
+    &:not(#{$this}--disabled) {
+        pointer-events: all;
+        opacity: 1;
+
+        #{$this}__button {
+            cursor: grab;
+
+            &:hover,
+            &:active {
+                #{$this}__button-inner {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    @include m(disabled) {
+        #{$this}__button {
+            outline: none;
+        }
+    }
+}

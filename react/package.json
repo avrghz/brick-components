@@ -1,0 +1,35 @@
+{
+    "name": "@avrghz/brick-components-react",
+    "author": "Aswin Varghese",
+    "version": "0.0.0",
+    "description": "react wrapper for brick-components",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run tsc",
+        "tsc": "tsc -p ."
+    },
+    "license": "ISC",
+    "dependencies": {
+        "@avrghz/brick-components": "0.0.1",
+        "typescript": "^3.8.3",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "peerDependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.34",
+        "@types/react-dom": "^16.9.6"
+    },
+    "repository": {
+        "url": "https://github.com/avrghz/brick-components.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "files": [
+        "dist/"
+    ]
+}

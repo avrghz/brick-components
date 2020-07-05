@@ -1,0 +1,45 @@
+@import '../../theme/base/common/popper.scss';
+
+:host {
+    display: inline-block;
+}
+
+:host(.bk-dropdown--disabled) {
+    @include util-disabled;
+}
+
+@include b(dropdown) {
+    display: inline-block;
+    position: relative;
+    color: $--color-text-regular;
+    font-size: $--font-size-base;
+}
+
+@include b(dropdown-menu) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    padding: 10px;
+    box-sizing: border-box;
+
+    @include e(inner) {
+        position: relative;
+        padding: $--dropdown-menu-box-padding;
+        box-shadow: $--dropdown-menu-box-shadow;
+        background-color: $--color-white;
+        border: 1px solid $--border-color-lighter;
+        border-radius: $--border-radius-base;
+        box-sizing: border-box;
+        min-width: 150px;
+        max-width: 300px;
+        outline: none;
+    }
+
+    &:focus:active,
+    &:focus {
+        outline-width: 0;
+    }
+}

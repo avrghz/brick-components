@@ -1,0 +1,98 @@
+$--variant-map: (
+    info: $--color-info,
+    danger: $--color-danger,
+    warning: $--color-warning,
+    success: $--color-success,
+    default: $--color-primary,
+);
+
+@include b(switch) {
+    $this: &;
+
+    font-size: 1em;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    line-height: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+
+    @include e(core) {
+        margin: 0;
+        display: inline-block;
+        position: relative;
+        width: $--switch-width;
+        height: $--switch-height;
+        border: 1px solid $--switch-off-color;
+        outline: none;
+        border-radius: 0.5em;
+        box-sizing: border-box;
+        background: $--switch-off-color;
+        cursor: pointer;
+        transition: border-color 0.3s, background-color 0.3s;
+        vertical-align: middle;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0.1em;
+            border-radius: $--border-radius-circle;
+            transition: all 0.3s;
+            width: $--switch-button-size;
+            height: $--switch-button-size;
+            background-color: $--color-white;
+        }
+    }
+
+    @include e(input) {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0;
+
+        &:checked + #{$this}__core {
+            &::after {
+                left: calc(100% - 0.1em - 0.75em);
+                background-color: $--color-white;
+            }
+        }
+
+        &:disabled + #{$this}__core {
+            cursor: default;
+            opacity: 0.5;
+        }
+    }
+
+    @include m(default) {
+        #{$this}__input:checked + #{$this}__core {
+            background: $--color-primary;
+        }
+    }
+
+    @include m(success) {
+        #{$this}__input:checked + #{$this}__core {
+            background: $--color-success;
+        }
+    }
+
+    @include m(info) {
+        #{$this}__input:checked + #{$this}__core {
+            background: $--color-info;
+        }
+    }
+
+    @include m(warning) {
+        #{$this}__input:checked + #{$this}__core {
+            background: $--color-warning;
+        }
+    }
+
+    @include m(danger) {
+        #{$this}__input:checked + #{$this}__core {
+            background: $--color-danger;
+        }
+    }
+}

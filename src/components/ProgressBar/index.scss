@@ -1,0 +1,120 @@
+$--variant-map: (
+    info: $--color-info,
+    danger: $--color-danger,
+    warning: $--color-warning,
+    success: $--color-success,
+    default: $--color-primary,
+);
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+@include b(progress) {
+    $this: &;
+
+    position: relative;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+
+    @include e(text) {
+        font-size: $--font-size-base;
+        color: $--color-text-regular;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        line-height: 1;
+
+        &.inner {
+            font-size: $--font-size-base - 2;
+            padding: 0 $--font-size-base - 2;
+            color: $--color-white;
+        }
+    }
+
+    @include m(text-inside) {
+        #{$this}-bar__outer {
+            height: $--font-size-base + 2;
+        }
+    }
+
+    @each $key, $value in $--variant-map {
+        &.#{$key} {
+            #{$this}-bar__inner {
+                background-color: $value;
+            }
+
+            #{$this}-circle__inner {
+                stroke: $value;
+            }
+
+            #{$this}__text.inner.no-progress {
+                color: $value;
+            }
+        }
+    }
+
+    @include m(flip) {
+        transform: rotate(180deg);
+    }
+}
+
+@include b(progress-bar) {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include e(outer) {
+        height: 6px;
+        border-radius: 100px;
+        background-color: $--border-color-lighter;
+        overflow: hidden;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    @include e(inner) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background-color: $--color-primary;
+        text-align: right;
+        border-radius: 100px;
+        line-height: 1;
+        white-space: nowrap;
+        transition: width 0.6s ease;
+        @include utils-vertical-center;
+    }
+}
+
+@include b(progress-circle) {
+    height: 100%;
+    width: 100%;
+
+    &__outer,
+    &__inner {
+        stroke-width: 3px;
+    }
+
+    &__outer {
+        stroke: #e5e9f2;
+    }
+
+    &__inner {
+        transition: stroke-dasharray 0.6s ease 0s, stroke 0.6s ease 0s;
+    }
+
+    .bk-progress__text {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        transform: translateY(-50%);
+    }
+}

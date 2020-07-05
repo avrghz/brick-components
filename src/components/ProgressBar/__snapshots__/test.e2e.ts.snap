@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<bk-progress-bar/> Prop: barType it should render as circle: prop_bar_type 1`] = `
+<div class="bk-progress default">
+  <div class="bk-progress-circle">
+    <style>
+      .bk-progress-circle__inner{
+                    stroke-dasharray: 221.48250000000002 295.31;
+                    stroke-dashoffset: 0;
+                }
+
+                .bk-progress-circle__outer{
+                    stroke-dasharray: 295.31 295.31;
+                    stroke-dashoffset: 0;
+                }
+    </style>
+    <svg viewBox="0 0 100 100">
+      <path class="bk-progress-circle__outer" d="
+        M 50 50
+        m 0 -47
+        a 47 47 0 1 1 0 94
+        a 47 47 0 1 1 0 -94
+        " fill="none"></path>
+      <path class="bk-progress-circle__inner" d="
+        M 50 50
+        m 0 -47
+        a 47 47 0 1 1 0 94
+        a 47 47 0 1 1 0 -94
+        " fill="none"></path>
+    </svg>
+    <div class="bk-progress__text">
+      75%
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<bk-progress-bar/> Prop: barType it should render as dashboard: prop_bar_type 1`] = `
+<div class="bk-progress default">
+  <div class="bk-progress-circle">
+    <style>
+      .bk-progress-circle__inner{
+                    stroke-dasharray: 166.1115 295.31;
+                    stroke-dashoffset: -36.9137;
+                }
+
+                .bk-progress-circle__outer{
+                    stroke-dasharray: 221.482 295.31;
+                    stroke-dashoffset: -36.9137;
+                }
+    </style>
+    <svg class="bk-progress--flip" viewBox="0 0 100 100">
+      <path class="bk-progress-circle__outer" d="
+        M 50 50
+        m 0 -47
+        a 47 47 0 1 1 0 94
+        a 47 47 0 1 1 0 -94
+        " fill="none"></path>
+      <path class="bk-progress-circle__inner" d="
+        M 50 50
+        m 0 -47
+        a 47 47 0 1 1 0 94
+        a 47 47 0 1 1 0 -94
+        " fill="none"></path>
+    </svg>
+    <div class="bk-progress__text">
+      75%
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<bk-progress-bar/> Prop: barType it should render as line: prop_bar_type 1`] = `
+<div class="bk-progress default">
+  <div class="bk-progress-bar">
+    <div class="bk-progress-bar__outer">
+      <div class="bk-progress-bar__inner" style="width: 75%;"></div>
+    </div>
+  </div>
+  <div class="bk-progress__text">
+    75%
+  </div>
+</div>
+`;
+
+exports[`<bk-progress-bar/> Prop: progress it should render with given progress percentage: prop_progress 1`] = `
+<div class="bk-progress default">
+  <div class="bk-progress-bar">
+    <div class="bk-progress-bar__outer">
+      <div class="bk-progress-bar__inner" style="width: 10%;"></div>
+    </div>
+  </div>
+  <div class="bk-progress__text">
+    10%
+  </div>
+</div>
+`;

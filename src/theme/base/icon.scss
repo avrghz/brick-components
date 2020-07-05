@@ -1,0 +1,15 @@
+@include b(icon) {
+    width: 18px;
+
+    @include m(md) {
+        width: 20px;
+    }
+
+    @include m(lg) {
+        width: 22px;
+    }
+
+    @include m(xl) {
+        width: 24px;
+    }
+}

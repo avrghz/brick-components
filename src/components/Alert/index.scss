@@ -1,0 +1,130 @@
+@import '../../theme/base/common/close-button.scss';
+
+@include b(alert) {
+    $this: &;
+
+    display: block;
+    width: 100%;
+    padding: $--alert-padding;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: $--alert-border-radius;
+    position: relative;
+    background-color: $--color-white;
+    overflow: hidden;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+    font-size: $--alert-font-size;
+
+    &#{$this}--dismissible {
+        padding-right: 32px;
+    }
+
+    @include e(close-btn) {
+        @include close-button();
+        top: 8px;
+        right: 0;
+    }
+
+    @include m(default) {
+        &#{$this}--light {
+            background-color: $--alert-default-color;
+            color: $--color-primary;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-primary;
+            }
+        }
+
+        &#{$this}--dark {
+            background-color: $--color-primary;
+            color: $--color-white;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-white;
+            }
+        }
+    }
+
+    @include m(success) {
+        &#{$this}--light {
+            background-color: $--alert-success-color;
+            color: $--color-success;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-success;
+            }
+        }
+
+        &#{$this}--dark {
+            background-color: $--color-success;
+            color: $--color-white;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-white;
+            }
+        }
+    }
+
+    @include m(info) {
+        &#{$this}--light {
+            background-color: $--alert-info-color;
+            color: $--color-info;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-info;
+            }
+        }
+
+        &#{$this}--dark {
+            background-color: $--color-info;
+            color: $--color-white;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-white;
+            }
+        }
+    }
+
+    @include m(warning) {
+        &#{$this}--light {
+            background-color: $--alert-warning-color;
+            color: $--color-warning;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-warning;
+            }
+        }
+
+        &#{$this}--dark {
+            background-color: $--color-warning;
+            color: $--color-white;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-white;
+            }
+        }
+    }
+
+    @include m(danger) {
+        &#{$this}--light {
+            background-color: $--alert-danger-color;
+            color: $--color-danger;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-danger;
+            }
+        }
+
+        &#{$this}--dark {
+            background-color: $--color-danger;
+            color: $--color-white;
+
+            #{$this}__close-btn iron-icon {
+                color: $--color-white;
+            }
+        }
+    }
+}
