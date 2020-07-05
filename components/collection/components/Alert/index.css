@@ -1,0 +1,246 @@
+/* Element Chalk Variables */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* 53a8ff */
+/* 66b1ff */
+/* 79bbff */
+/* 8cc5ff */
+/* a0cfff */
+/* b3d8ff */
+/* c6e2ff */
+/* d9ecff */
+/* ecf5ff */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* Size
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Toast
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Modal
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* BEM support Func
+ -------------------------- */
+.bk-alert {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+  font-size: 14px;
+}
+.bk-alert.bk-alert--dismissible {
+  padding-right: 32px;
+}
+.bk-alert__close-btn {
+  position: absolute;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 5px;
+  opacity: 0.75;
+  outline: none;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+  top: 8px;
+  right: 0;
+}
+.bk-alert__close-btn iron-icon {
+  color: #606266;
+  width: 18px;
+}
+.bk-alert__close-btn:hover, .bk-alert__close-btn:active, .bk-alert__close-btn:focus {
+  opacity: 1;
+}
+
+.bk-alert--default.bk-alert--light {
+  background-color: #ecf5ff;
+  color: #409eff;
+}
+.bk-alert--default.bk-alert--light .bk-alert__close-btn iron-icon {
+  color: #409eff;
+}
+.bk-alert--default.bk-alert--dark {
+  background-color: #409eff;
+  color: #ffffff;
+}
+.bk-alert--default.bk-alert--dark .bk-alert__close-btn iron-icon {
+  color: #ffffff;
+}
+
+.bk-alert--success.bk-alert--light {
+  background-color: #f0f9eb;
+  color: #67c23a;
+}
+.bk-alert--success.bk-alert--light .bk-alert__close-btn iron-icon {
+  color: #67c23a;
+}
+.bk-alert--success.bk-alert--dark {
+  background-color: #67c23a;
+  color: #ffffff;
+}
+.bk-alert--success.bk-alert--dark .bk-alert__close-btn iron-icon {
+  color: #ffffff;
+}
+
+.bk-alert--info.bk-alert--light {
+  background-color: #f4f4f5;
+  color: #909399;
+}
+.bk-alert--info.bk-alert--light .bk-alert__close-btn iron-icon {
+  color: #909399;
+}
+.bk-alert--info.bk-alert--dark {
+  background-color: #909399;
+  color: #ffffff;
+}
+.bk-alert--info.bk-alert--dark .bk-alert__close-btn iron-icon {
+  color: #ffffff;
+}
+
+.bk-alert--warning.bk-alert--light {
+  background-color: #fdf6ec;
+  color: #e6a23c;
+}
+.bk-alert--warning.bk-alert--light .bk-alert__close-btn iron-icon {
+  color: #e6a23c;
+}
+.bk-alert--warning.bk-alert--dark {
+  background-color: #e6a23c;
+  color: #ffffff;
+}
+.bk-alert--warning.bk-alert--dark .bk-alert__close-btn iron-icon {
+  color: #ffffff;
+}
+
+.bk-alert--danger.bk-alert--light {
+  background-color: #fef0f0;
+  color: #f56c6c;
+}
+.bk-alert--danger.bk-alert--light .bk-alert__close-btn iron-icon {
+  color: #f56c6c;
+}
+.bk-alert--danger.bk-alert--dark {
+  background-color: #f56c6c;
+  color: #ffffff;
+}
+.bk-alert--danger.bk-alert--dark .bk-alert__close-btn iron-icon {
+  color: #ffffff;
+}

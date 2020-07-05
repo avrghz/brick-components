@@ -1,0 +1,1 @@
+const o=(o,c)=>console.warn(o,c);export{o as c}
