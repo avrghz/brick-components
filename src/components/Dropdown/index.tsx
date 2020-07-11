@@ -125,6 +125,12 @@ export class Dropdown {
         }
     }
 
+    @Listen('bkCloseDropdownMenu')
+    onCloseMenu() {
+        this.open = false
+        this.setFocus(this.controlRef)
+    }
+
     @Listen('keydown')
     onKeyboardHandler(e: KeyboardEvent) {
         switch (e.key) {
