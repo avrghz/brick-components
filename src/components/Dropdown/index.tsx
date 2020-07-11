@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element, Event, EventEmitter, Listen } from '@stencil/core'
+import { Component, h, Host, Prop, Element, Event, EventEmitter, Listen, Watch } from '@stencil/core'
 import SetPopper, { SetPopperInstance } from '../../decorators/popper'
 
 /**
@@ -13,7 +13,6 @@ import SetPopper, { SetPopperInstance } from '../../decorators/popper'
 })
 export class Dropdown {
     private timer?: ReturnType<typeof setTimeout>
-    // private popperInstance?: Instance
     private controlRef?: HTMLElement
     private menuRef?: HTMLDivElement
 
@@ -44,29 +43,50 @@ export class Dropdown {
     })
     popperInstance?: SetPopperInstance
 
+    @Watch('open')
+    watchOpen() {
+        this.handleMenuState()
+    }
+
+    componentWillLoad() {
+        this.handleDisabledState()
+        this.registerDomClick(!this.disabled && this.clickOutsideToClose && this.open)
+    }
+
+    componentWillUpdate() {
+        this.handleDisabledState()
+        this.registerDomClick(!this.disabled && this.clickOutsideToClose && this.open)
+    }
+
     componentDidLoad() {
         this.controlRef = this.el.querySelector('[slot="control"]') as HTMLElement
+        this.handleMenuState(true)
     }
 
     componentDidUpdate() {
-        this.setFocus(this.open ? this.menuRef : this.controlRef)
+        if (this.open) {
+            this.setFocus(this.menuRef)
+        }
     }
 
     disconnectedCallback() {
-        this.popperInstance?.destroy()
         this.toggleMenuVisibility(false)
     }
 
-    handleMenuState = (open = true) => {
-        this.open = open
-        if (open) {
+    handleDisabledState = () => {
+        if (this.disabled) {
+            this.open = false
+        }
+    }
+
+    handleMenuState = (initialLoad = false) => {
+        if (this.open) {
             this.bkOpened.emit()
-            this.toggleMenuVisibility(true)
-        } else {
-            this.toggleMenuVisibility(false)
+        } else if (!initialLoad) {
             this.popperInstance?.destroy()
             this.bkClosed.emit()
         }
+        this.toggleMenuVisibility(this.open)
     }
 
     setFocus = (ref: HTMLElement | undefined) => {
@@ -89,11 +109,50 @@ export class Dropdown {
         }
     }
 
+    onOutsideClickHandler = (e: Event) => {
+        if (!this.el.contains(e.target as HTMLElement)) {
+            this.open = false
+        }
+    }
+
+    registerDomClick(register = true) {
+        if (register) {
+            document.addEventListener('click', this.onOutsideClickHandler)
+            document.addEventListener('keyup', this.onOutsideClickHandler)
+        } else {
+            document.removeEventListener('click', this.onOutsideClickHandler)
+            document.removeEventListener('keyup', this.onOutsideClickHandler)
+        }
+    }
+
+    @Listen('keydown')
+    onKeyboardHandler(e: KeyboardEvent) {
+        switch (e.key) {
+            case 'ArrowDown':
+            case 'ArrowUp':
+                this.open = true
+                break
+            case 'Enter':
+                if (this.open && e.target === e.currentTarget) {
+                    this.open = false
+                    this.setFocus(this.controlRef)
+                }
+                break
+            case 'Escape':
+                e.stopImmediatePropagation()
+                this.open = false
+                this.setFocus(this.controlRef)
+                break
+        }
+
+        this.bkMenuKeydown.emit(e.key)
+    }
+
     @Listen('click')
     onClickHandler(e: Event) {
         e.stopImmediatePropagation()
         if (!this.disabled) {
-            this.handleMenuState(!this.open)
+            this.open = !this.open
         }
     }
 
@@ -110,7 +169,12 @@ export class Dropdown {
                 <div class="bk-dropdown">
                     <slot name="control"></slot>
                     {this.open && (
-                        <div class="bk-dropdown-menu bk-popper" ref={(el) => (this.menuRef = el)} tabIndex={-1}>
+                        <div
+                            class="bk-dropdown__menu bk-popper"
+                            ref={(el) => (this.menuRef = el)}
+                            tabIndex={-1}
+                            onClick={(e) => e.stopPropagation()}
+                        >
                             <div class="bk-popper__arrow" data-popper-arrow></div>
                             <slot name="content"></slot>
                         </div>
@@ -119,179 +183,4 @@ export class Dropdown {
             </Host>
         )
     }
-
-    // componentDidUpdate() {
-    //     this.initPopper()
-    // }
-
-    // initPopper() {
-    //     if (this.menuRef) {
-    //         this.popperInstance = createPopper(this.el, this.menuRef, {
-    //             placement: 'bottom-end',
-    //             modifiers: [
-    //                 {
-    //                     name: 'arrow',
-    //                     options: {
-    //                         padding: 12,
-    //                     },
-    //                 },
-    //                 {
-    //                     name: 'flip',
-    //                     options: {
-    //                         fallbackPlacements: ['bottom-start', 'top-end', 'top-start'],
-    //                     },
-    //                 },
-    //             ],
-    //         })
-
-    //         this.menuRef.style.opacity = '1'
-
-    //         //this.setFocus(this.menuRef)
-
-    //         this.bkOpened.emit()
-    //     }
-    // }
-
-    // componentDidLoad() {
-    //     this.menuHandler()
-    //     this.controlRef = this.el.querySelector('[slot="control"]') as HTMLElement
-    // }
-
-    // componentWillUpdate() {
-    //     if (this.open && this.disabled) {
-    //         this.open = false
-    //     }
-    // }
-
-    // componentDidUpdate() {
-    //     this.menuHandler()
-    // }
-
-    // componentDidUnload() {
-    //     this.destroyPopper()
-    // }
-
-    // menuHandler() {
-    //     if (this.open && !this.disabled) {
-    //         this.initPopper()
-    //     } else {
-    //         this.destroyPopper()
-    //     }
-
-    //     this.registerDomClick(this.clickOutsideToClose && this.open)
-    // }
-
-    // setFocus = (ref: HTMLElement) => {
-    //     if (ref) {
-    //         ref.focus()
-    //     }
-    // }
-
-    // destroyPopper() {
-    //     if (this.popperInstance) {
-    //         this.popperInstance.destroy()
-    //         this.popperInstance = undefined
-    //         this.bkClosed.emit()
-    //     }
-
-    //     if (this.timer) {
-    //         clearTimeout(this.timer)
-    //     }
-    // }
-
-    // @Listen('click')
-    // onClickHandler(e: Event) {
-    //     e.stopImmediatePropagation()
-    //     if (!this.disabled) {
-    //         this.open = !this.open
-    //     }
-    // }
-
-    // @Listen('bkCloseDropdownMenu')
-    // onCloseMenu() {
-    //     this.open = false
-    //     if (this.controlRef) {
-    //         this.timer = setTimeout(() => this.setFocus(this.controlRef as HTMLElement))
-    //     }
-    // }
-
-    // @Listen('keydown')
-    // onKeyboardHandler(e: KeyboardEvent) {
-    //     switch (e.key) {
-    //         case 'ArrowDown':
-    //         case 'ArrowUp':
-    //             e.stopImmediatePropagation()
-    //             this.open = true
-    //             break
-    //         case 'Enter':
-    //             e.stopImmediatePropagation()
-    //             if (this.open && this.controlRef) {
-    //                 this.setFocus(this.controlRef)
-    //             }
-    //             break
-    //         case 'Escape':
-    //             e.stopImmediatePropagation()
-    //             this.open = false
-    //             if (this.controlRef) {
-    //                 this.setFocus(this.controlRef)
-    //             }
-    //             break
-    //     }
-
-    //     this.bkMenuKeydown.emit(e.key)
-    // }
-
-    // onMenuClick = (e: Event) => {
-    //     e.stopPropagation()
-    // }
-
-    // onOutsideClickHandler = (e: Event) => {
-    //     if (!this.el.contains(e.target as HTMLElement)) {
-    //         this.open = false
-    //     }
-    // }
-
-    // onMenuKeydownHandler = (e: KeyboardEvent) => {
-    //     this.bkMenuKeydown.emit(e.key)
-    // }
-
-    // registerDomClick(register = true) {
-    //     if (register) {
-    //         document.addEventListener('click', this.onOutsideClickHandler)
-    //         document.addEventListener('keyup', this.onOutsideClickHandler)
-    //     } else {
-    //         document.removeEventListener('click', this.onOutsideClickHandler)
-    //         document.removeEventListener('keyup', this.onOutsideClickHandler)
-    //     }
-    // }
-
-    // render() {
-    //     return (
-    //         <Host
-    //             role="button"
-    //             aria-haspopup="true"
-    //             aria-expanded={this.open}
-    //             class={{
-    //                 'bk-dropdown--disabled': this.disabled,
-    //             }}
-    //         >
-    //             <div class="bk-dropdown">
-    //                 <slot name="control"></slot>
-    //                 {this.open && (
-    //                     <div
-    //                         class="bk-dropdown-menu bk-popper"
-    //                         onClick={this.onMenuClick}
-    //                         ref={(el) => (this.popoverRef = el)}
-    //                         tabIndex={-1}
-    //                     >
-    //                         <div class="bk-dropdown-menu__inner" tabIndex={-1} ref={(el) => (this.menuRef = el)}>
-    //                             <div class="bk-popper__arrow" data-popper-arrow></div>
-    //                             <slot name="content"></slot>
-    //                         </div>
-    //                     </div>
-    //                 )}
-    //             </div>
-    //         </Host>
-    //     )
-    // }
 }
