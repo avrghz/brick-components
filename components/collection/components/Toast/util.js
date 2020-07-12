@@ -1,10 +1,9 @@
 import { h } from '@stencil/core';
 import { styler, tween, delay, composite } from 'popmotion';
+import { uniqueId } from 'lodash';
 import '@polymer/iron-icon/iron-icon';
 import '@polymer/iron-icons/iron-icons';
-export const uID = () => {
-    return '_' + (Math.random().toString(36) + Date.now().toString(36)).substr(2, 10);
-};
+export const uID = () => uniqueId('toast_');
 export const animateIn = ({ el, duration, onComplete, flip = false }) => {
     const element = styler(el);
     return composite({

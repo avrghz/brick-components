@@ -9,9 +9,10 @@ import '@polymer/iron-icon/iron-icon';
 import '@polymer/iron-icons/iron-icons';
 import { consoleWarn } from '../../shared/util';
 import { selectNextOption, selectPreviousOption, selectFirstEnabledOption, selectLastEnabledOption, dispatchEventCloseMenu, } from './util';
-import ComplexProp from '../../decorators/complexProp';
+import ParsePropTo from '../../decorators/parsePropTo';
 export class DropdownList {
     constructor() {
+        this._options = [];
         this.searchText = '';
         /** Pass stringified object when used with vanilla Javascript */
         this.options = [];
@@ -19,8 +20,8 @@ export class DropdownList {
         this.disabled = false;
         /** With search */
         this.searchable = false;
-        /** Text to show when no option available */
-        this.noOptionText = 'No option';
+        /** Text to show when no options available */
+        this.noOptionText = 'No options';
         this.validateSelectedOption = () => {
             if (this.selectedOption &&
                 !!this.options.find((o) => o.value === this.selectedOption && o.disabled)) {
@@ -37,19 +38,19 @@ export class DropdownList {
             switch (true) {
                 case e.key === 'Home':
                     e.stopImmediatePropagation();
-                    selectFirstEnabledOption(this.options, this.setFocus);
+                    selectFirstEnabledOption(this._options, this.setFocus);
                     break;
                 case e.key === 'End':
                     e.stopImmediatePropagation();
-                    selectLastEnabledOption(this.options, this.setFocus);
+                    selectLastEnabledOption(this._options, this.setFocus);
                     break;
                 case e.key === 'ArrowDown':
                     e.stopImmediatePropagation();
-                    selectNextOption(this.options, this.selectedOption || null, this.setFocus);
+                    selectNextOption(this._options, this.selectedOption || null, this.setFocus);
                     break;
                 case e.key === 'ArrowUp':
                     e.stopImmediatePropagation();
-                    selectPreviousOption(this.options, this.selectedOption || null, this.setFocus);
+                    selectPreviousOption(this._options, this.selectedOption || null, this.setFocus);
                     break;
             }
         };
@@ -99,7 +100,8 @@ export class DropdownList {
             this.searchText = '';
         };
         this.searchBarUI = () => {
-            return (!!this.searchable && (h("div", { class: {
+            return (!!this.searchable &&
+                this.options.length > 0 && (h("div", { class: {
                     'bk-input bk-input--small bk-input--prefix bk-dropdown-list__search': true,
                     'bk-input--suffix': !!this.searchText,
                 } },
@@ -110,8 +112,8 @@ export class DropdownList {
                     h("iron-icon", { icon: "close", class: "bk-icon bk-icon--sm" }))))));
         };
         this.listUI = () => {
-            return (h("ul", { class: "bk-dropdown-list__list", role: "listbox" }, this.options.map((option, i) => (h("li", { key: i, class: "bk-dropdown-list__item" },
-                h("a", { id: `option_${i}`, tabIndex: -1, href: "", role: "option", title: option.label, onClick: (e) => this.onOptionClickHandler(e, option, i), onKeyDown: (e) => this.onOptionKeydownHandler(e, option), class: {
+            return (h("ul", { class: "bk-dropdown-list__list", role: "listbox" }, this._options.map((option, i) => (h("li", { key: `option_${option.value}`, class: "bk-dropdown-list__item" },
+                h("a", { id: `option_${option.value}`, tabIndex: -1, href: "", role: "option", title: option.label, onClick: (e) => this.onOptionClickHandler(e, option, i), onKeyDown: (e) => this.onOptionKeydownHandler(e, option), class: {
                         'is-disabled': !!option.disabled,
                         'is-active': !option.disabled && !!this.selectedOption && this.selectedOption === option.value,
                     } }, option.label))))));
@@ -121,12 +123,11 @@ export class DropdownList {
         this.validateSelectedOption();
     }
     watchSearch(current, previous) {
-        if (!!current && current !== previous && !!this.searchText) {
-            this._options = [...this.options];
-            this.options = this._options.filter((o) => o.label.toLocaleLowerCase().indexOf(this.searchText.toLocaleLowerCase()) > -1);
+        if (!!current && current !== previous) {
+            this._options = this._options.filter((o) => o.label.toLocaleLowerCase().indexOf(current.toLocaleLowerCase()) > -1);
         }
-        else if (!!previous && !current) {
-            this.options = [...this._options];
+        else {
+            this._options = this.options;
         }
     }
     componentWillLoad() {
@@ -236,14 +237,15 @@ export class DropdownList {
             "optional": false,
             "docs": {
                 "tags": [],
-                "text": "Text to show when no option available"
+                "text": "Text to show when no options available"
             },
             "attribute": "no-option-text",
             "reflect": false,
-            "defaultValue": "'No option'"
+            "defaultValue": "'No options'"
         }
     }; }
     static get states() { return {
+        "_options": {},
         "searchText": {}
     }; }
     static get events() { return [{
@@ -277,5 +279,5 @@ export class DropdownList {
         }]; }
 }
 __decorate([
-    ComplexProp('array')
+    ParsePropTo('array', '_options')
 ], DropdownList.prototype, "options", void 0);

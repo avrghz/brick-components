@@ -1,5 +1,6 @@
 import { h, r as registerInstance, H as Host, g as getElement } from './index-9596b62d.js';
 import './iron-icons-d49dcd62.js';
+import { l as lodash } from './lodash-9002a3c2.js';
 
 var Constant;
 (function (Constant) {
@@ -1693,9 +1694,7 @@ var delay = function (timeToDelay) {
     });
 };
 
-const uID = () => {
-    return '_' + (Math.random().toString(36) + Date.now().toString(36)).substr(2, 10);
-};
+const uID = () => lodash.uniqueId('toast_');
 const animateIn = ({ el, duration, onComplete, flip = false }) => {
     const element = index(el);
     return composite({

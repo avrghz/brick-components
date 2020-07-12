@@ -1,6 +1,7 @@
 import { r as registerInstance, h, c as createEvent, g as getElement } from './index-9596b62d.js';
 import './iron-icons-d49dcd62.js';
 import { c as consoleWarn } from './util-b133d5f7.js';
+import { l as lodash } from './lodash-9002a3c2.js';
 
 const dispatchEventCloseMenu = (dropdown) => {
     dropdown.dispatchEvent(new Event('bkCloseDropdownMenu', {
@@ -55,23 +56,34 @@ const selectPreviousOption = (options, selected, callBack) => {
     }
 };
 
-const ComplexProp = (propType) => (target, property) => {
+const parseObj = (obj, type) => {
+    try {
+        return JSON.parse(obj);
+    }
+    catch (e) {
+        return type === 'array' ? [] : {};
+    }
+};
+const ParsePropTo = (propType, state) => (target, property) => {
+    let previousValue = null;
     const { componentWillLoad, componentWillUpdate } = target;
-    const parseObj = (obj, type) => {
-        try {
-            return JSON.parse(obj);
-        }
-        catch (e) {
-            return type === 'array' ? [] : {};
-        }
-    };
+    const setPreviousValue = (component) => (previousValue = propType === 'array' ? [...component[property]] : Object.assign({}, component[property]));
     const setProp = (component) => {
         if (typeof component[property] === 'string') {
-            component[property] = parseObj(component[property], propType);
+            const parsedObj = parseObj(component[property], propType);
+            component[state] = [...parsedObj];
+            component[property] = parsedObj;
+        }
+        else {
+            if (!lodash.isEqual(previousValue, component[property])) {
+                setPreviousValue(component);
+                component[state] = propType === 'array' ? [...component[property]] : Object.assign({}, component[property]);
+            }
         }
     };
     target.componentWillLoad = function () {
         setProp(this);
+        setPreviousValue(this);
         return componentWillLoad === null || componentWillLoad === void 0 ? void 0 : componentWillLoad.call(this);
     };
     target.componentWillUpdate = function () {
@@ -80,7 +92,7 @@ const ComplexProp = (propType) => (target, property) => {
     };
 };
 
-const indexCss = ".bk-dropdown-list__content.sc-bk-dropdown-list{min-width:200px;outline:none}.bk-dropdown-list__no-option.sc-bk-dropdown-list{color:#909399;text-align:center;margin-top:10px}.bk-dropdown-list__search.sc-bk-dropdown-list{margin-bottom:5px}.bk-dropdown-list__list.sc-bk-dropdown-list{padding:0;margin:0 -20px;max-height:250px;overflow-y:auto}.bk-dropdown-list__item.sc-bk-dropdown-list{list-style:none;margin:0}.bk-dropdown-list__item.sc-bk-dropdown-list>a.sc-bk-dropdown-list{display:block;line-height:30px;padding:0 20px;font-size:14px;color:#606266;outline:none;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:left}.bk-dropdown-list__item.sc-bk-dropdown-list>a.sc-bk-dropdown-list:not(.is-disabled):not(:focus):not(.is-active):hover{background-color:#ecf5ff;color:#66b1ff}.bk-dropdown-list__item.sc-bk-dropdown-list>a.is-active.sc-bk-dropdown-list{background-color:#409eff;color:#ffffff}.bk-dropdown-list__item.sc-bk-dropdown-list>a.is-disabled.sc-bk-dropdown-list{cursor:default;color:#bbb;pointer-events:none}.bk-dropdown-list__item--divided.sc-bk-dropdown-list{position:relative;margin-top:6px;border-top:1px solid #ebeef5}.bk-dropdown-list__item--divided.sc-bk-dropdown-list:before{content:\"\";height:6px;display:block;margin:0 -20px;background-color:#ffffff}.bk-dropdown-list__close-btn.sc-bk-dropdown-list{pointer-events:all}";
+const indexCss = ".bk-dropdown-list__content.sc-bk-dropdown-list{min-width:200px;outline:none}.bk-dropdown-list__no-option.sc-bk-dropdown-list{color:#909399;text-align:center}.bk-dropdown-list__search.sc-bk-dropdown-list{margin-bottom:5px}.bk-dropdown-list__search.sc-bk-dropdown-list+.bk-dropdown-list__no-option.sc-bk-dropdown-list{margin-top:10px}.bk-dropdown-list__list.sc-bk-dropdown-list{padding:0;margin:0 -20px;max-height:250px;overflow-y:auto}.bk-dropdown-list__item.sc-bk-dropdown-list{list-style:none;margin:0}.bk-dropdown-list__item.sc-bk-dropdown-list>a.sc-bk-dropdown-list{display:block;line-height:30px;padding:0 20px;font-size:14px;color:#606266;outline:none;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:left}.bk-dropdown-list__item.sc-bk-dropdown-list>a.sc-bk-dropdown-list:not(.is-disabled):not(:focus):not(.is-active):hover{background-color:#ecf5ff;color:#66b1ff}.bk-dropdown-list__item.sc-bk-dropdown-list>a.is-active.sc-bk-dropdown-list{background-color:#409eff;color:#ffffff}.bk-dropdown-list__item.sc-bk-dropdown-list>a.is-disabled.sc-bk-dropdown-list{cursor:default;color:#bbb;pointer-events:none}.bk-dropdown-list__item--divided.sc-bk-dropdown-list{position:relative;margin-top:6px;border-top:1px solid #ebeef5}.bk-dropdown-list__item--divided.sc-bk-dropdown-list:before{content:\"\";height:6px;display:block;margin:0 -20px;background-color:#ffffff}.bk-dropdown-list__close-btn.sc-bk-dropdown-list{pointer-events:all}";
 
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -95,6 +107,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 const DropdownList = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this._options = [];
         this.searchText = '';
         /** Pass stringified object when used with vanilla Javascript */
         this.options = [];
@@ -102,8 +115,8 @@ const DropdownList = class {
         this.disabled = false;
         /** With search */
         this.searchable = false;
-        /** Text to show when no option available */
-        this.noOptionText = 'No option';
+        /** Text to show when no options available */
+        this.noOptionText = 'No options';
         this.validateSelectedOption = () => {
             if (this.selectedOption &&
                 !!this.options.find((o) => o.value === this.selectedOption && o.disabled)) {
@@ -120,19 +133,19 @@ const DropdownList = class {
             switch (true) {
                 case e.key === 'Home':
                     e.stopImmediatePropagation();
-                    selectFirstEnabledOption(this.options, this.setFocus);
+                    selectFirstEnabledOption(this._options, this.setFocus);
                     break;
                 case e.key === 'End':
                     e.stopImmediatePropagation();
-                    selectLastEnabledOption(this.options, this.setFocus);
+                    selectLastEnabledOption(this._options, this.setFocus);
                     break;
                 case e.key === 'ArrowDown':
                     e.stopImmediatePropagation();
-                    selectNextOption(this.options, this.selectedOption || null, this.setFocus);
+                    selectNextOption(this._options, this.selectedOption || null, this.setFocus);
                     break;
                 case e.key === 'ArrowUp':
                     e.stopImmediatePropagation();
-                    selectPreviousOption(this.options, this.selectedOption || null, this.setFocus);
+                    selectPreviousOption(this._options, this.selectedOption || null, this.setFocus);
                     break;
             }
         };
@@ -182,13 +195,14 @@ const DropdownList = class {
             this.searchText = '';
         };
         this.searchBarUI = () => {
-            return (!!this.searchable && (h("div", { class: {
+            return (!!this.searchable &&
+                this.options.length > 0 && (h("div", { class: {
                     'bk-input bk-input--small bk-input--prefix bk-dropdown-list__search': true,
                     'bk-input--suffix': !!this.searchText,
                 } }, h("input", { type: "text", placeholder: "Search", class: "bk-input__inner", value: this.searchText, ref: (el) => (this.searchBar = el), onInput: this.onSearchInput, onKeyDown: this.onSearchKeyDown }), h("span", { class: "bk-input__prefix" }, h("iron-icon", { icon: "search", class: "bk-icon bk-icon--sm" })), !!this.searchText && (h("button", { class: "bk-button bk-button--mini bk-button--text bk-input__suffix bk-dropdown-list__icon bk-dropdown-list__close-btn", onClick: this.onClearClick }, h("iron-icon", { icon: "close", class: "bk-icon bk-icon--sm" }))))));
         };
         this.listUI = () => {
-            return (h("ul", { class: "bk-dropdown-list__list", role: "listbox" }, this.options.map((option, i) => (h("li", { key: i, class: "bk-dropdown-list__item" }, h("a", { id: `option_${i}`, tabIndex: -1, href: "", role: "option", title: option.label, onClick: (e) => this.onOptionClickHandler(e, option, i), onKeyDown: (e) => this.onOptionKeydownHandler(e, option), class: {
+            return (h("ul", { class: "bk-dropdown-list__list", role: "listbox" }, this._options.map((option, i) => (h("li", { key: `option_${option.value}`, class: "bk-dropdown-list__item" }, h("a", { id: `option_${option.value}`, tabIndex: -1, href: "", role: "option", title: option.label, onClick: (e) => this.onOptionClickHandler(e, option, i), onKeyDown: (e) => this.onOptionKeydownHandler(e, option), class: {
                     'is-disabled': !!option.disabled,
                     'is-active': !option.disabled && !!this.selectedOption && this.selectedOption === option.value,
                 } }, option.label))))));
@@ -199,12 +213,11 @@ const DropdownList = class {
         this.validateSelectedOption();
     }
     watchSearch(current, previous) {
-        if (!!current && current !== previous && !!this.searchText) {
-            this._options = [...this.options];
-            this.options = this._options.filter((o) => o.label.toLocaleLowerCase().indexOf(this.searchText.toLocaleLowerCase()) > -1);
+        if (!!current && current !== previous) {
+            this._options = this._options.filter((o) => o.label.toLocaleLowerCase().indexOf(current.toLocaleLowerCase()) > -1);
         }
-        else if (!!previous && !current) {
-            this.options = [...this._options];
+        else {
+            this._options = this.options;
         }
     }
     componentWillLoad() {
@@ -220,7 +233,7 @@ const DropdownList = class {
     }; }
 };
 __decorate([
-    ComplexProp('array')
+    ParsePropTo('array', '_options')
 ], DropdownList.prototype, "options", void 0);
 DropdownList.style = indexCss;
 

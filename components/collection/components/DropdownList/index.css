@@ -138,11 +138,13 @@
 .bk-dropdown-list__no-option {
   color: #909399;
   text-align: center;
-  margin-top: 10px;
 }
 
 .bk-dropdown-list__search {
   margin-bottom: 5px;
+}
+.bk-dropdown-list__search + .bk-dropdown-list__no-option {
+  margin-top: 10px;
 }
 
 .bk-dropdown-list__list {

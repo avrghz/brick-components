@@ -19,7 +19,11 @@ export const Default = () => {
         modal.setAttribute('open', 'true');
     };
     return html `
-        <button @click=${openModal} class="bk-button">Open Modal</button>
+        <div class="bk-row">
+            <div class="bk-col-24" style="text-align:center">
+                <button @click=${openModal} class="bk-button">Open Modal</button>
+            </div>
+        </div>
         <bk-modal
             open=${open}
             header=${header}

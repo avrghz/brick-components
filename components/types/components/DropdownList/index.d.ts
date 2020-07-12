@@ -5,7 +5,7 @@ import { Option } from './types';
 export declare class DropdownList {
     private dropdown?;
     private searchBar?;
-    private _options;
+    _options: Option[];
     searchText: string;
     el: HTMLElement;
     /** Pass stringified object when used with vanilla Javascript */
@@ -16,7 +16,7 @@ export declare class DropdownList {
     disabled: boolean;
     /** With search */
     searchable: boolean;
-    /** Text to show when no option available */
+    /** Text to show when no options available */
     noOptionText: string;
     /** Fired on selecting option */
     bkSelect: EventEmitter<Option>;

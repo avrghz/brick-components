@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index$1 = require('./index-703095ad.js');
 require('./iron-icons-289711e1.js');
+const lodash = require('./lodash-9ed50696.js');
 
 var Constant;
 (function (Constant) {
@@ -1697,9 +1698,7 @@ var delay = function (timeToDelay) {
     });
 };
 
-const uID = () => {
-    return '_' + (Math.random().toString(36) + Date.now().toString(36)).substr(2, 10);
-};
+const uID = () => lodash.lodash.uniqueId('toast_');
 const animateIn = ({ el, duration, onComplete, flip = false }) => {
     const element = index(el);
     return composite({

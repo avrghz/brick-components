@@ -54,7 +54,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Text to show when no option available
+          * Text to show when no options available
          */
         "noOptionText": string;
         /**
@@ -339,7 +339,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Text to show when no option available
+          * Text to show when no options available
          */
         "noOptionText"?: string;
         /**
