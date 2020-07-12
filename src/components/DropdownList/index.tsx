@@ -65,14 +65,17 @@ export class DropdownList {
     }
 
     validateSelectedOption = () => {
-        if (this.selectedOption && !!this._options.find((o) => o.value === this.selectedOption && o.disabled)) {
+        if (
+            this.selectedOption &&
+            !!(this.options as Option[]).find((o) => o.value === this.selectedOption && o.disabled)
+        ) {
             this.selectedOption = undefined
             consoleWarn('DropdownList', 'Cannot set disabled option as selected')
         }
     }
 
     setFocus = (index: number) => {
-        this.selectedOption = this._options[index].value
+        this.selectedOption = (this.options as Option[])[index].value
         const currentOption = this.el.querySelector(`#option_${index}`) as HTMLElement
         currentOption.focus()
     }
@@ -220,7 +223,7 @@ export class DropdownList {
                 <slot name="control"></slot>
                 <div slot="content" class="bk-dropdown-list__content" tabIndex={-1}>
                     {this.searchBarUI()}
-                    {this._options.length > 0 ? (
+                    {(this.options as Option[]).length > 0 ? (
                         this.listUI()
                     ) : (
                         <div class="bk-dropdown-list__no-option">{this.noOptionText}</div>
