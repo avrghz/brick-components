@@ -56,8 +56,10 @@ export class DropdownList {
 
     @Watch('searchText')
     watchSearch(current: string, previous: string) {
-        if (!!current && current !== previous) {
-            this._options = this._options.filter((o) => o.label.indexOf(this.searchText) > -1)
+        if (!!current && current !== previous && !!this.searchText) {
+            this._options = this._options.filter(
+                (o) => o.label.toLocaleLowerCase().indexOf(this.searchText.toLocaleLowerCase()) > -1
+            )
         } else if (!!previous && !current) {
             this.setOptions()
         }
@@ -93,23 +95,23 @@ export class DropdownList {
         currentOption.focus()
     }
 
-    handleMenuKeydown = (e: CustomEvent) => {
+    handleMenuKeydown = (e: KeyboardEvent) => {
         switch (true) {
-            case e.detail === 'Home':
+            case e.key === 'Home':
+                e.stopImmediatePropagation()
                 selectFirstEnabledOption(this._options, this.setFocus)
                 break
-            case e.detail === 'End':
+            case e.key === 'End':
+                e.stopImmediatePropagation()
                 selectLastEnabledOption(this._options, this.setFocus)
                 break
-            case e.detail === 'ArrowDown':
-                if (this.selectedOption) {
-                    selectNextOption(this._options, this.selectedOption, this.setFocus)
-                }
+            case e.key === 'ArrowDown':
+                e.stopImmediatePropagation()
+                selectNextOption(this._options, this.selectedOption || null, this.setFocus)
                 break
-            case e.detail === 'ArrowUp':
-                if (this.selectedOption) {
-                    selectPreviousOption(this._options, this.selectedOption, this.setFocus)
-                }
+            case e.key === 'ArrowUp':
+                e.stopImmediatePropagation()
+                selectPreviousOption(this._options, this.selectedOption || null, this.setFocus)
                 break
         }
     }
@@ -119,7 +121,7 @@ export class DropdownList {
             this.searchBar.focus()
         }
 
-        this.dropdown?.addEventListener('bkMenuKeydown' as any, this.handleMenuKeydown)
+        this.dropdown?.addEventListener('keydown' as any, this.handleMenuKeydown)
     }
 
     onOptionSelect = (e: Event, option: Option) => {
@@ -132,6 +134,7 @@ export class DropdownList {
     }
 
     onOptionClickHandler = (e: Event, option: Option, index: number) => {
+        e.preventDefault()
         if (!this.selectedOption || option.value !== this.selectedOption) {
             this.setFocus(index)
             this.onOptionSelect(e, option)
@@ -139,13 +142,21 @@ export class DropdownList {
     }
 
     onOptionKeydownHandler = (e: KeyboardEvent, option: Option) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' || e.code === 'Space') {
+            e.preventDefault()
             this.onOptionSelect(e, option)
         }
     }
 
     onSearchKeyDown = (e: KeyboardEvent) => {
-        if (e.key !== 'Home' && e.key !== 'End' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'Escape') {
+        if (
+            e.key !== 'Home' &&
+            e.key !== 'End' &&
+            e.key !== 'ArrowDown' &&
+            e.key !== 'ArrowUp' &&
+            e.key !== 'Escape' &&
+            e.key !== 'Tab'
+        ) {
             e.stopImmediatePropagation()
         }
     }
@@ -163,9 +174,10 @@ export class DropdownList {
         return (
             !!this.searchable && (
                 <div
-                    class={`bk-input bk-input--small bk-input--prefix ${
-                        !!this.searchText ? 'bk-input--suffix' : ''
-                    } bk-dropdown-list__search`}
+                    class={{
+                        'bk-input bk-input--small bk-input--prefix bk-dropdown-list__search': true,
+                        'bk-input--suffix': !!this.searchText,
+                    }}
                 >
                     <input
                         type="text"
@@ -196,23 +208,23 @@ export class DropdownList {
         return (
             <ul class="bk-dropdown-list__list" role="listbox">
                 {this._options.map((option, i) => (
-                    <li
-                        key={i}
-                        id={`option_${i}`}
-                        class={`bk-dropdown-list__item ${
-                            option.disabled
-                                ? 'is-disabled'
-                                : this.selectedOption && this.selectedOption === option.value
-                                ? 'is-active'
-                                : ''
-                        }`}
-                        role="option"
-                        tabIndex={-1}
-                        onClick={(e) => this.onOptionClickHandler(e, option, i)}
-                        onKeyDown={(e) => this.onOptionKeydownHandler(e, option)}
-                        title={option.label}
-                    >
-                        {option.label}
+                    <li key={i} class="bk-dropdown-list__item">
+                        <a
+                            id={`option_${i}`}
+                            tabIndex={-1}
+                            href=""
+                            role="option"
+                            title={option.label}
+                            onClick={(e) => this.onOptionClickHandler(e, option, i)}
+                            onKeyDown={(e) => this.onOptionKeydownHandler(e, option)}
+                            class={{
+                                'is-disabled': !!option.disabled,
+                                'is-active':
+                                    !option.disabled && !!this.selectedOption && this.selectedOption === option.value,
+                            }}
+                        >
+                            {option.label}
+                        </a>
                     </li>
                 ))}
             </ul>

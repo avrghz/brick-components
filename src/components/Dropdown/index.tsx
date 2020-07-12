@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element, Event, EventEmitter, Listen, Watch } from '@stencil/core'
+import { Component, h, Host, Prop, Element, Event, EventEmitter, Listen } from '@stencil/core'
 import SetPopper, { SetPopperInstance } from '../../decorators/popper'
 
 /**
@@ -12,7 +12,6 @@ import SetPopper, { SetPopperInstance } from '../../decorators/popper'
     styleUrl: './index.scss',
 })
 export class Dropdown {
-    private timer?: ReturnType<typeof setTimeout>
     private controlRef?: HTMLElement
     private menuRef?: HTMLDivElement
 
@@ -33,9 +32,6 @@ export class Dropdown {
     /** Fired when destroyed */
     @Event() bkClosed!: EventEmitter
 
-    /** Fired on keydown on menu */
-    @Event() bkMenuKeydown!: EventEmitter
-
     @SetPopper({
         reference: 'el',
         popper: 'menuRef',
@@ -43,17 +39,7 @@ export class Dropdown {
     })
     popperInstance?: SetPopperInstance
 
-    @Watch('open')
-    watchOpen() {
-        this.handleMenuState()
-    }
-
     componentWillLoad() {
-        this.handleDisabledState()
-        this.registerDomClick(!this.disabled && this.clickOutsideToClose && this.open)
-    }
-
-    componentWillUpdate() {
         this.handleDisabledState()
         this.registerDomClick(!this.disabled && this.clickOutsideToClose && this.open)
     }
@@ -61,16 +47,20 @@ export class Dropdown {
     componentDidLoad() {
         this.controlRef = this.el.querySelector('[slot="control"]') as HTMLElement
         this.handleMenuState(true)
+        this.emitEvent(false)
+    }
+
+    componentWillUpdate() {
+        this.handleDisabledState()
+        this.registerDomClick(!this.disabled && this.clickOutsideToClose && this.open)
     }
 
     componentDidUpdate() {
+        this.handleMenuState()
         if (this.open) {
             this.setFocus(this.menuRef)
         }
-    }
-
-    disconnectedCallback() {
-        this.toggleMenuVisibility(false)
+        this.emitEvent()
     }
 
     handleDisabledState = () => {
@@ -81,31 +71,25 @@ export class Dropdown {
 
     handleMenuState = (initialLoad = false) => {
         if (this.open) {
-            this.bkOpened.emit()
+            if (this.menuRef) {
+                this.menuRef.style.opacity = '1'
+            }
         } else if (!initialLoad) {
             this.popperInstance?.destroy()
+        }
+    }
+
+    emitEvent = (initialLoad = false) => {
+        if (this.open) {
+            this.bkOpened.emit()
+        } else if (!initialLoad) {
             this.bkClosed.emit()
         }
-        this.toggleMenuVisibility(this.open)
     }
 
     setFocus = (ref: HTMLElement | undefined) => {
         if (ref) {
             ref.focus()
-        }
-    }
-
-    toggleMenuVisibility = (visible = true) => {
-        if (visible) {
-            this.timer = setTimeout(() => {
-                if (this.menuRef) {
-                    this.menuRef.style.opacity = '1'
-                }
-            }, 150)
-        } else {
-            if (this.timer) {
-                clearTimeout(this.timer)
-            }
         }
     }
 
@@ -150,8 +134,6 @@ export class Dropdown {
                 this.setFocus(this.controlRef)
                 break
         }
-
-        this.bkMenuKeydown.emit(e.key)
     }
 
     @Listen('click')

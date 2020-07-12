@@ -8,7 +8,7 @@ describe('<bk-dropdown-list/>', () => {
     const getDropdown = async () => await component.find('bk-dropdown')
     const getContent = async () => await component.find('.bk-dropdown-list__content')
     const getSearchBar = async () => await component.find('.bk-dropdown-list__search input[type=text]')
-    const getListItems = async () => await component.findAll('.bk-dropdown-list__item')
+    const getListItems = async () => await component.findAll('.bk-dropdown-list__item a')
 
     beforeEach(async () => {
         page = await newE2EPage()
