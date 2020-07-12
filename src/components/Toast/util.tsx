@@ -1,12 +1,11 @@
 import { h } from '@stencil/core'
 import { styler, tween, delay, composite, ColdSubscription } from 'popmotion'
+import { uniqueId } from 'lodash'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 import { ToastMessage, AnimationIn, AnimationOut } from './types'
 
-export const uID = () => {
-    return '_' + (Math.random().toString(36) + Date.now().toString(36)).substr(2, 10)
-}
+export const uID = () => uniqueId('toast_')
 
 export const animateIn = ({ el, duration, onComplete, flip = false }: AnimationIn): ColdSubscription => {
     const element = styler(el)

@@ -10,7 +10,7 @@ import {
     dispatchEventCloseMenu,
 } from './util'
 import { Option } from './types'
-import ComplexProp from '../../decorators/complexProp'
+import ParsePropTo from '../../decorators/parsePropTo'
 
 @Component({
     tag: 'bk-dropdown-list',
@@ -20,14 +20,14 @@ import ComplexProp from '../../decorators/complexProp'
 export class DropdownList {
     private dropdown?: HTMLElement
     private searchBar?: HTMLInputElement
-    private _options!: Option[]
 
+    @State() _options: Option[] = []
     @State() searchText = ''
 
     @Element() el!: HTMLElement
 
     /** Pass stringified object when used with vanilla Javascript */
-    @ComplexProp('array') @Prop({ mutable: true }) options: Option[] | string = []
+    @ParsePropTo('array', '_options') @Prop({ mutable: true }) options: Option[] | string = []
 
     /** Set selected option */
     @Prop() selectedOption?: string
@@ -38,8 +38,8 @@ export class DropdownList {
     /** With search */
     @Prop() searchable = false
 
-    /** Text to show when no option available */
-    @Prop() noOptionText = 'No option'
+    /** Text to show when no options available */
+    @Prop() noOptionText = 'No options'
 
     /** Fired on selecting option */
     @Event() bkSelect!: EventEmitter<Option>
@@ -51,13 +51,12 @@ export class DropdownList {
 
     @Watch('searchText')
     watchSearch(current: string, previous: string) {
-        if (!!current && current !== previous && !!this.searchText) {
-            this._options = [...(this.options as Option[])]
-            this.options = this._options.filter(
-                (o) => o.label.toLocaleLowerCase().indexOf(this.searchText.toLocaleLowerCase()) > -1
+        if (!!current && current !== previous) {
+            this._options = this._options.filter(
+                (o) => o.label.toLocaleLowerCase().indexOf(current.toLocaleLowerCase()) > -1
             )
-        } else if (!!previous && !current) {
-            this.options = [...this._options]
+        } else {
+            this._options = this.options as Option[]
         }
     }
 
@@ -85,19 +84,19 @@ export class DropdownList {
         switch (true) {
             case e.key === 'Home':
                 e.stopImmediatePropagation()
-                selectFirstEnabledOption(this.options as Option[], this.setFocus)
+                selectFirstEnabledOption(this._options, this.setFocus)
                 break
             case e.key === 'End':
                 e.stopImmediatePropagation()
-                selectLastEnabledOption(this.options as Option[], this.setFocus)
+                selectLastEnabledOption(this._options, this.setFocus)
                 break
             case e.key === 'ArrowDown':
                 e.stopImmediatePropagation()
-                selectNextOption(this.options as Option[], this.selectedOption || null, this.setFocus)
+                selectNextOption(this._options, this.selectedOption || null, this.setFocus)
                 break
             case e.key === 'ArrowUp':
                 e.stopImmediatePropagation()
-                selectPreviousOption(this.options as Option[], this.selectedOption || null, this.setFocus)
+                selectPreviousOption(this._options, this.selectedOption || null, this.setFocus)
                 break
         }
     }
@@ -158,7 +157,8 @@ export class DropdownList {
 
     searchBarUI = () => {
         return (
-            !!this.searchable && (
+            !!this.searchable &&
+            (this.options as Option[]).length > 0 && (
                 <div
                     class={{
                         'bk-input bk-input--small bk-input--prefix bk-dropdown-list__search': true,
@@ -193,10 +193,10 @@ export class DropdownList {
     listUI = () => {
         return (
             <ul class="bk-dropdown-list__list" role="listbox">
-                {(this.options as Option[]).map((option, i) => (
-                    <li key={i} class="bk-dropdown-list__item">
+                {this._options.map((option, i) => (
+                    <li key={`option_${option.value}`} class="bk-dropdown-list__item">
                         <a
-                            id={`option_${i}`}
+                            id={`option_${option.value}`}
                             tabIndex={-1}
                             href=""
                             role="option"

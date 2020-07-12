@@ -70,13 +70,13 @@ html`<bk-dropdown-list
 
 ## Properties
 
-| Property         | Attribute         | Description                                               | Type                  | Default       |
-| ---------------- | ----------------- | --------------------------------------------------------- | --------------------- | ------------- |
-| `disabled`       | `disabled`        | Disable DropdownList                                      | `boolean`             | `false`       |
-| `noOptionText`   | `no-option-text`  | Text to show when no option available                     | `string`              | `'No option'` |
-| `options`        | `options`         | Pass stringified object when used with vanilla Javascript | `Option[] \| string`  | `[]`          |
-| `searchable`     | `searchable`      | With search                                               | `boolean`             | `false`       |
-| `selectedOption` | `selected-option` | Set selected option                                       | `string \| undefined` | `undefined`   |
+| Property         | Attribute         | Description                                               | Type                  | Default        |
+| ---------------- | ----------------- | --------------------------------------------------------- | --------------------- | -------------- |
+| `disabled`       | `disabled`        | Disable DropdownList                                      | `boolean`             | `false`        |
+| `noOptionText`   | `no-option-text`  | Text to show when no options available                    | `string`              | `'No options'` |
+| `options`        | `options`         | Pass stringified object when used with vanilla Javascript | `Option[] \| string`  | `[]`           |
+| `searchable`     | `searchable`      | With search                                               | `boolean`             | `false`        |
+| `selectedOption` | `selected-option` | Set selected option                                       | `string \| undefined` | `undefined`    |
 
 
 ## Events
