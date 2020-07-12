@@ -40,6 +40,7 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
+            text-align: left;
 
             &:not(.is-disabled):not(:focus):not(.is-active):hover {
                 background-color: $--dropdown-menuItem-hover-fill;
