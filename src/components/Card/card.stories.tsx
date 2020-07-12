@@ -17,8 +17,8 @@ export const Default = () => {
     const shadow = select('shadow', SHADOW, 'never')
 
     return html`
-        <div style="width: 35%; margin: auto">
-            <bk-card shadow=${shadow}>
+        <div class="bk-row">
+            <bk-card shadow=${shadow} class="bk-col-sm-16 bk-col-md-8 bk-col-sm-push-4 bk-col-md-push-8">
                 <div slot="header">
                     Card Heading
                 </div>

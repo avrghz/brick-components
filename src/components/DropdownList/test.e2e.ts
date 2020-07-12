@@ -50,6 +50,7 @@ describe('<bk-dropdown-list/>', () => {
     describe('Prop: searchable', () => {
         beforeEach(async () => {
             component.setProperty('searchable', true)
+            component.setProperty('options', data)
             await page.waitForChanges()
         })
 

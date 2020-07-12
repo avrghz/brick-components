@@ -12,11 +12,14 @@
     @include e(no-option) {
         color: $--color-text-secondary;
         text-align: center;
-        margin-top: 10px;
     }
 
     @include e(search) {
         margin-bottom: 5px;
+
+        + .bk-dropdown-list__no-option {
+            margin-top: 10px;
+        }
     }
 
     @include e(list) {

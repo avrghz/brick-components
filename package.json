@@ -1,7 +1,7 @@
 {
     "name": "@avrghz/brick-components",
     "author": "Aswin Varghese",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A library of web components",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
@@ -49,6 +49,7 @@
         "@storybook/theming": "^5.3.19",
         "@storybook/web-components": "^5.3.19",
         "@types/jest": "^25.2.3",
+        "@types/lodash": "^4.14.157",
         "@types/puppeteer": "2.0.1",
         "babel-loader": "^8.1.0",
         "copy-webpack-plugin": "^5.1.1",
@@ -70,6 +71,7 @@
         "@polymer/iron-icons": "^3.0.1",
         "@popperjs/core": "^2.4.2",
         "ionicons": "^5.1.2",
+        "lodash": "^4.17.19",
         "popmotion": "^8.7.3"
     },
     "jest": {
