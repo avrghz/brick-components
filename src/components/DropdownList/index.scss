@@ -27,26 +27,35 @@
     }
 
     @include e(item) {
-        display: block;
         list-style: none;
-        line-height: 30px;
-        padding: 0 $--dropdown-menu-box-padding;
         margin: 0;
-        font-size: $--font-size-base;
-        color: $--color-text-regular;
-        cursor: pointer;
-        outline: none;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
 
-        &:not(.is-disabled):not(:focus):not(.is-active):hover {
-            background-color: $--dropdown-menuItem-hover-fill;
-            color: $--dropdown-menuItem-hover-color;
-        }
+        > a {
+            display: block;
+            line-height: 30px;
+            padding: 0 $--dropdown-menu-box-padding;
+            font-size: $--font-size-base;
+            color: $--color-text-regular;
+            outline: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-align: left;
 
-        @include when(active) {
-            @include highlight();
+            &:not(.is-disabled):not(:focus):not(.is-active):hover {
+                background-color: $--dropdown-menuItem-hover-fill;
+                color: $--dropdown-menuItem-hover-color;
+            }
+
+            @include when(active) {
+                @include highlight();
+            }
+
+            @include when(disabled) {
+                cursor: default;
+                color: $--font-color-disabled-base;
+                pointer-events: none;
+            }
         }
 
         @include m(divided) {
@@ -63,12 +72,6 @@
                 margin: 0 -#{$--dropdown-menu-box-padding};
                 background-color: $--color-white;
             }
-        }
-
-        @include when(disabled) {
-            cursor: default;
-            color: $--font-color-disabled-base;
-            pointer-events: none;
         }
     }
 

@@ -37,11 +37,10 @@ html`
 
 ## Events
 
-| Event           | Description              | Type               |
-| --------------- | ------------------------ | ------------------ |
-| `bkClosed`      | Fired when destroyed     | `CustomEvent<any>` |
-| `bkMenuKeydown` | Fired on keydown on menu | `CustomEvent<any>` |
-| `bkOpened`      | Fired when opened        | `CustomEvent<any>` |
+| Event      | Description          | Type               |
+| ---------- | -------------------- | ------------------ |
+| `bkClosed` | Fired when destroyed | `CustomEvent<any>` |
+| `bkOpened` | Fired when opened    | `CustomEvent<any>` |
 
 
 ## Slots

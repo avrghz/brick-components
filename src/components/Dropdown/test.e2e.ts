@@ -5,9 +5,8 @@ describe('<bk-dropdown/>', () => {
     let component: E2EElement
     let bkOpened: EventSpy
     let bkClosed: EventSpy
-    let bkMenuKeydown: EventSpy
 
-    const getMenu = async () => await page.find('bk-dropdown >>> .bk-dropdown-menu')
+    const getMenu = async () => await page.find('bk-dropdown >>> .bk-dropdown__menu')
     const getControlButton = async () => await page.find('bk-dropdown [slot="control"]')
 
     beforeEach(async () => {
@@ -73,12 +72,13 @@ describe('<bk-dropdown/>', () => {
 
     describe('Prop: clickOutsideToClose', () => {
         beforeEach(async () => {
-            component.setProperty('open', true)
             component.setProperty('clickOutsideToClose', false)
+            component.setProperty('open', true)
             await page.waitForChanges()
         })
 
         it('should not close menu when clicked outside, when set to false', async () => {
+            expect(await getMenu()).not.toBeNull()
             await (await page.find('body')).click()
             await page.waitForChanges()
             expect(await getMenu()).not.toBeNull()
@@ -94,16 +94,11 @@ describe('<bk-dropdown/>', () => {
     })
 
     describe('keyboard navigation', () => {
-        beforeEach(async () => {
-            bkMenuKeydown = await component.spyOnEvent('bkMenuKeydown')
-        })
-
         it('should open menu on down arrow press', async () => {
             await (await getControlButton()).focus()
             await page.keyboard.press('ArrowDown')
             await page.waitForChanges()
             expect(await getMenu()).not.toBeNull()
-            expect(bkMenuKeydown).toHaveReceivedEventDetail('ArrowDown')
         })
 
         it('should open menu on up arrow press', async () => {
@@ -111,7 +106,6 @@ describe('<bk-dropdown/>', () => {
             await page.keyboard.press('ArrowUp')
             await page.waitForChanges()
             expect(await getMenu()).not.toBeNull()
-            expect(bkMenuKeydown).toHaveReceivedEventDetail('ArrowUp')
         })
 
         it('should close menu on escape press', async () => {
@@ -122,7 +116,6 @@ describe('<bk-dropdown/>', () => {
             await page.keyboard.press('Escape')
             await page.waitForChanges()
             expect(await getMenu()).toBeNull()
-            expect(bkMenuKeydown).toHaveReceivedEventDetail('Escape')
         })
     })
 
