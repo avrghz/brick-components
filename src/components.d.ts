@@ -325,10 +325,6 @@ declare namespace LocalJSX {
          */
         "onBkClosed"?: (event: CustomEvent<any>) => void;
         /**
-          * Fired on keydown on menu
-         */
-        "onBkMenuKeydown"?: (event: CustomEvent<any>) => void;
-        /**
           * Fired when opened
          */
         "onBkOpened"?: (event: CustomEvent<any>) => void;
