@@ -5,8 +5,8 @@ import { Option } from './types';
 export declare class DropdownList {
     private dropdown?;
     private searchBar?;
+    private _options;
     searchText: string;
-    _options: Option[];
     el: HTMLElement;
     /** Pass stringified object when used with vanilla Javascript */
     options: Option[] | string;
@@ -20,14 +20,12 @@ export declare class DropdownList {
     noOptionText: string;
     /** Fired on selecting option */
     bkSelect: EventEmitter<Option>;
-    watchOptions(): void;
     watchSelectedOption(): void;
     watchSearch(current: string, previous: string): void;
     componentWillLoad(): void;
-    setOptions: () => void;
     validateSelectedOption: () => void;
     setFocus: (index: number) => void;
-    handleMenuKeydown: (e: CustomEvent) => void;
+    handleMenuKeydown: (e: KeyboardEvent) => void;
     handleMenuOpen: () => void;
     onOptionSelect: (e: Event, option: Option) => void;
     onOptionClickHandler: (e: Event, option: Option, index: number) => void;

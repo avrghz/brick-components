@@ -30,21 +30,12 @@ const selectNextOption = (options, selected, callBack) => {
     if (!hasEnabledOption(options)) {
         return;
     }
-    const current = currentSelected(options, selected);
-    const predictedNextIndex = current === -1 ? 0 : current + 1;
+    const predictedNextIndex = currentSelected(options, selected) + 1;
     let actualNextIndex = -1;
     for (let i = predictedNextIndex; i < options.length; i++) {
         if (!options[i].disabled) {
             actualNextIndex = i;
             break;
-        }
-    }
-    if (actualNextIndex === -1) {
-        for (let i = 0; i < predictedNextIndex; i++) {
-            if (!options[i].disabled) {
-                actualNextIndex = i;
-                break;
-            }
         }
     }
     if (actualNextIndex !== -1) {
@@ -55,8 +46,7 @@ const selectPreviousOption = (options, selected, callBack) => {
     if (!hasEnabledOption(options)) {
         return;
     }
-    const current = currentSelected(options, selected);
-    const predictedPreviousIndex = current === -1 ? options.length - 1 : current - 1;
+    const predictedPreviousIndex = currentSelected(options, selected) - 1;
     let actualPreviousIndex = -1;
     for (let i = predictedPreviousIndex; i >= 0; i--) {
         if (!options[i].disabled) {
@@ -64,21 +54,48 @@ const selectPreviousOption = (options, selected, callBack) => {
             break;
         }
     }
-    if (actualPreviousIndex === -1) {
-        for (let i = options.length - 1; i > predictedPreviousIndex; i--) {
-            if (!options[i].disabled) {
-                actualPreviousIndex = i;
-                break;
-            }
-        }
-    }
     if (actualPreviousIndex !== -1) {
         callBack(actualPreviousIndex);
     }
 };
 
-const indexCss = ".bk-dropdown-list__content.sc-bk-dropdown-list{min-width:200px;outline:none}.bk-dropdown-list__no-option.sc-bk-dropdown-list{color:#909399;text-align:center;margin-top:10px}.bk-dropdown-list__search.sc-bk-dropdown-list{margin-bottom:5px}.bk-dropdown-list__list.sc-bk-dropdown-list{padding:0;margin:0 -20px;max-height:250px;overflow-y:auto}.bk-dropdown-list__item.sc-bk-dropdown-list{display:block;list-style:none;line-height:30px;padding:0 20px;margin:0;font-size:14px;color:#606266;cursor:pointer;outline:none;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.bk-dropdown-list__item.sc-bk-dropdown-list:not(.is-disabled):not(:focus):not(.is-active):hover{background-color:#ecf5ff;color:#66b1ff}.bk-dropdown-list__item.is-active.sc-bk-dropdown-list{background-color:#409eff;color:#ffffff}.bk-dropdown-list__item--divided.sc-bk-dropdown-list{position:relative;margin-top:6px;border-top:1px solid #ebeef5}.bk-dropdown-list__item--divided.sc-bk-dropdown-list:before{content:\"\";height:6px;display:block;margin:0 -20px;background-color:#ffffff}.bk-dropdown-list__item.is-disabled.sc-bk-dropdown-list{cursor:default;color:#bbb;pointer-events:none}.bk-dropdown-list__close-btn.sc-bk-dropdown-list{pointer-events:all}";
+const ComplexProp = (propType) => (target, property) => {
+    const { componentWillLoad, componentWillUpdate } = target;
+    const parseObj = (obj, type) => {
+        try {
+            return JSON.parse(obj);
+        }
+        catch (e) {
+            return type === 'array' ? [] : {};
+        }
+    };
+    const setProp = (component) => {
+        if (typeof component[property] === 'string') {
+            component[property] = parseObj(component[property], propType);
+        }
+    };
+    target.componentWillLoad = function () {
+        setProp(this);
+        return componentWillLoad === null || componentWillLoad === void 0 ? void 0 : componentWillLoad.call(this);
+    };
+    target.componentWillUpdate = function () {
+        setProp(this);
+        return componentWillUpdate === null || componentWillUpdate === void 0 ? void 0 : componentWillUpdate.call(this);
+    };
+};
 
+const indexCss = ".bk-dropdown-list__content.sc-bk-dropdown-list{min-width:200px;outline:none}.bk-dropdown-list__no-option.sc-bk-dropdown-list{color:#909399;text-align:center;margin-top:10px}.bk-dropdown-list__search.sc-bk-dropdown-list{margin-bottom:5px}.bk-dropdown-list__list.sc-bk-dropdown-list{padding:0;margin:0 -20px;max-height:250px;overflow-y:auto}.bk-dropdown-list__item.sc-bk-dropdown-list{list-style:none;margin:0}.bk-dropdown-list__item.sc-bk-dropdown-list>a.sc-bk-dropdown-list{display:block;line-height:30px;padding:0 20px;font-size:14px;color:#606266;outline:none;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:left}.bk-dropdown-list__item.sc-bk-dropdown-list>a.sc-bk-dropdown-list:not(.is-disabled):not(:focus):not(.is-active):hover{background-color:#ecf5ff;color:#66b1ff}.bk-dropdown-list__item.sc-bk-dropdown-list>a.is-active.sc-bk-dropdown-list{background-color:#409eff;color:#ffffff}.bk-dropdown-list__item.sc-bk-dropdown-list>a.is-disabled.sc-bk-dropdown-list{cursor:default;color:#bbb;pointer-events:none}.bk-dropdown-list__item--divided.sc-bk-dropdown-list{position:relative;margin-top:6px;border-top:1px solid #ebeef5}.bk-dropdown-list__item--divided.sc-bk-dropdown-list:before{content:\"\";height:6px;display:block;margin:0 -20px;background-color:#ffffff}.bk-dropdown-list__close-btn.sc-bk-dropdown-list{pointer-events:all}";
+
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 const DropdownList = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
@@ -91,47 +108,35 @@ const DropdownList = class {
         this.searchable = false;
         /** Text to show when no option available */
         this.noOptionText = 'No option';
-        this.setOptions = () => {
-            try {
-                if (typeof this.options === 'string') {
-                    this._options = JSON.parse(this.options);
-                }
-                else {
-                    this._options = this.options;
-                }
-            }
-            catch (e) {
-                this.options = [];
-            }
-        };
         this.validateSelectedOption = () => {
-            if (this.selectedOption && !!this._options.find((o) => o.value === this.selectedOption && o.disabled)) {
+            if (this.selectedOption &&
+                !!this.options.find((o) => o.value === this.selectedOption && o.disabled)) {
                 this.selectedOption = undefined;
                 util.consoleWarn('DropdownList', 'Cannot set disabled option as selected');
             }
         };
         this.setFocus = (index) => {
-            this.selectedOption = this._options[index].value;
+            this.selectedOption = this.options[index].value;
             const currentOption = this.el.querySelector(`#option_${index}`);
             currentOption.focus();
         };
         this.handleMenuKeydown = (e) => {
             switch (true) {
-                case e.detail === 'Home':
-                    selectFirstEnabledOption(this._options, this.setFocus);
+                case e.key === 'Home':
+                    e.stopImmediatePropagation();
+                    selectFirstEnabledOption(this.options, this.setFocus);
                     break;
-                case e.detail === 'End':
-                    selectLastEnabledOption(this._options, this.setFocus);
+                case e.key === 'End':
+                    e.stopImmediatePropagation();
+                    selectLastEnabledOption(this.options, this.setFocus);
                     break;
-                case e.detail === 'ArrowDown':
-                    if (this.selectedOption) {
-                        selectNextOption(this._options, this.selectedOption, this.setFocus);
-                    }
+                case e.key === 'ArrowDown':
+                    e.stopImmediatePropagation();
+                    selectNextOption(this.options, this.selectedOption || null, this.setFocus);
                     break;
-                case e.detail === 'ArrowUp':
-                    if (this.selectedOption) {
-                        selectPreviousOption(this._options, this.selectedOption, this.setFocus);
-                    }
+                case e.key === 'ArrowUp':
+                    e.stopImmediatePropagation();
+                    selectPreviousOption(this.options, this.selectedOption || null, this.setFocus);
                     break;
             }
         };
@@ -140,7 +145,7 @@ const DropdownList = class {
             if (this.searchable && this.searchBar) {
                 this.searchBar.focus();
             }
-            (_a = this.dropdown) === null || _a === void 0 ? void 0 : _a.addEventListener('bkMenuKeydown', this.handleMenuKeydown);
+            (_a = this.dropdown) === null || _a === void 0 ? void 0 : _a.addEventListener('keydown', this.handleMenuKeydown);
         };
         this.onOptionSelect = (e, option) => {
             e.stopImmediatePropagation();
@@ -151,18 +156,25 @@ const DropdownList = class {
             }
         };
         this.onOptionClickHandler = (e, option, index) => {
+            e.preventDefault();
             if (!this.selectedOption || option.value !== this.selectedOption) {
                 this.setFocus(index);
                 this.onOptionSelect(e, option);
             }
         };
         this.onOptionKeydownHandler = (e, option) => {
-            if (e.key === 'Enter') {
+            if (e.key === 'Enter' || e.code === 'Space') {
+                e.preventDefault();
                 this.onOptionSelect(e, option);
             }
         };
         this.onSearchKeyDown = (e) => {
-            if (e.key !== 'Home' && e.key !== 'End' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'Escape') {
+            if (e.key !== 'Home' &&
+                e.key !== 'End' &&
+                e.key !== 'ArrowDown' &&
+                e.key !== 'ArrowUp' &&
+                e.key !== 'Escape' &&
+                e.key !== 'Tab') {
                 e.stopImmediatePropagation();
             }
         };
@@ -174,45 +186,46 @@ const DropdownList = class {
             this.searchText = '';
         };
         this.searchBarUI = () => {
-            return (!!this.searchable && (index.h("div", { class: `bk-input bk-input--small bk-input--prefix ${!!this.searchText ? 'bk-input--suffix' : ''} bk-dropdown-list__search` }, index.h("input", { type: "text", placeholder: "Search", class: "bk-input__inner", value: this.searchText, ref: (el) => (this.searchBar = el), onInput: this.onSearchInput, onKeyDown: this.onSearchKeyDown }), index.h("span", { class: "bk-input__prefix" }, index.h("iron-icon", { icon: "search", class: "bk-icon bk-icon--sm" })), !!this.searchText && (index.h("button", { class: "bk-button bk-button--mini bk-button--text bk-input__suffix bk-dropdown-list__icon bk-dropdown-list__close-btn", onClick: this.onClearClick }, index.h("iron-icon", { icon: "close", class: "bk-icon bk-icon--sm" }))))));
+            return (!!this.searchable && (index.h("div", { class: {
+                    'bk-input bk-input--small bk-input--prefix bk-dropdown-list__search': true,
+                    'bk-input--suffix': !!this.searchText,
+                } }, index.h("input", { type: "text", placeholder: "Search", class: "bk-input__inner", value: this.searchText, ref: (el) => (this.searchBar = el), onInput: this.onSearchInput, onKeyDown: this.onSearchKeyDown }), index.h("span", { class: "bk-input__prefix" }, index.h("iron-icon", { icon: "search", class: "bk-icon bk-icon--sm" })), !!this.searchText && (index.h("button", { class: "bk-button bk-button--mini bk-button--text bk-input__suffix bk-dropdown-list__icon bk-dropdown-list__close-btn", onClick: this.onClearClick }, index.h("iron-icon", { icon: "close", class: "bk-icon bk-icon--sm" }))))));
         };
         this.listUI = () => {
-            return (index.h("ul", { class: "bk-dropdown-list__list", role: "listbox" }, this._options.map((option, i) => (index.h("li", { key: i, id: `option_${i}`, class: `bk-dropdown-list__item ${option.disabled
-                    ? 'is-disabled'
-                    : this.selectedOption && this.selectedOption === option.value
-                        ? 'is-active'
-                        : ''}`, role: "option", tabIndex: -1, onClick: (e) => this.onOptionClickHandler(e, option, i), onKeyDown: (e) => this.onOptionKeydownHandler(e, option), title: option.label }, option.label)))));
+            return (index.h("ul", { class: "bk-dropdown-list__list", role: "listbox" }, this.options.map((option, i) => (index.h("li", { key: i, class: "bk-dropdown-list__item" }, index.h("a", { id: `option_${i}`, tabIndex: -1, href: "", role: "option", title: option.label, onClick: (e) => this.onOptionClickHandler(e, option, i), onKeyDown: (e) => this.onOptionKeydownHandler(e, option), class: {
+                    'is-disabled': !!option.disabled,
+                    'is-active': !option.disabled && !!this.selectedOption && this.selectedOption === option.value,
+                } }, option.label))))));
         };
         this.bkSelect = index.createEvent(this, "bkSelect", 7);
-    }
-    watchOptions() {
-        this.setOptions();
     }
     watchSelectedOption() {
         this.validateSelectedOption();
     }
     watchSearch(current, previous) {
-        if (!!current && current !== previous) {
-            this._options = this._options.filter((o) => o.label.indexOf(this.searchText) > -1);
+        if (!!current && current !== previous && !!this.searchText) {
+            this._options = [...this.options];
+            this.options = this._options.filter((o) => o.label.toLocaleLowerCase().indexOf(this.searchText.toLocaleLowerCase()) > -1);
         }
         else if (!!previous && !current) {
-            this.setOptions();
+            this.options = [...this._options];
         }
     }
     componentWillLoad() {
-        this.setOptions();
         this.validateSelectedOption();
     }
     render() {
-        return (index.h("bk-dropdown", { disabled: this.disabled, onBkOpened: this.handleMenuOpen, ref: (el) => (this.dropdown = el) }, index.h("slot", { name: "control" }), index.h("div", { slot: "content", class: "bk-dropdown-list__content", tabIndex: -1 }, this.searchBarUI(), this._options.length > 0 ? (this.listUI()) : (index.h("div", { class: "bk-dropdown-list__no-option" }, this.noOptionText)))));
+        return (index.h("bk-dropdown", { disabled: this.disabled, onBkOpened: this.handleMenuOpen, ref: (el) => (this.dropdown = el) }, index.h("slot", { name: "control" }), index.h("div", { slot: "content", class: "bk-dropdown-list__content", tabIndex: -1 }, this.searchBarUI(), this.options.length > 0 ? (this.listUI()) : (index.h("div", { class: "bk-dropdown-list__no-option" }, this.noOptionText)))));
     }
     get el() { return index.getElement(this); }
     static get watchers() { return {
-        "options": ["watchOptions"],
         "selectedOption": ["watchSelectedOption"],
         "searchText": ["watchSearch"]
     }; }
 };
+__decorate([
+    ComplexProp('array')
+], DropdownList.prototype, "options", void 0);
 DropdownList.style = indexCss;
 
 exports.bk_dropdown_list = DropdownList;

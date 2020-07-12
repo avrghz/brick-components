@@ -1,5 +1,11 @@
-import { Component, h, Host, Prop, Listen, Element, Event } from '@stencil/core';
-import { createPopper } from '@popperjs/core';
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { Component, h, Host, Prop, Element, Event, Listen } from '@stencil/core';
+import SetPopper from '../../decorators/popper';
 /**
  * @slot control - Controlling element.
  * @slot content - The content of the menu.
@@ -12,117 +18,60 @@ export class Dropdown {
         this.clickOutsideToClose = true;
         /** Enable or disable the dropdown */
         this.disabled = false;
+        this.handleDisabledState = () => {
+            if (this.disabled) {
+                this.open = false;
+            }
+        };
+        this.handleMenuState = (initialLoad = false) => {
+            var _a;
+            if (this.open) {
+                if (this.menuRef) {
+                    this.menuRef.style.opacity = '1';
+                }
+            }
+            else if (!initialLoad) {
+                (_a = this.popperInstance) === null || _a === void 0 ? void 0 : _a.destroy();
+            }
+        };
+        this.emitEvent = (initialLoad = false) => {
+            if (this.open) {
+                this.bkOpened.emit();
+            }
+            else if (!initialLoad) {
+                this.bkClosed.emit();
+            }
+        };
         this.setFocus = (ref) => {
             if (ref) {
                 ref.focus();
             }
-        };
-        this.onMenuClick = (e) => {
-            e.stopPropagation();
         };
         this.onOutsideClickHandler = (e) => {
             if (!this.el.contains(e.target)) {
                 this.open = false;
             }
         };
-        this.onMenuKeydownHandler = (e) => {
-            this.bkMenuKeydown.emit(e.key);
-        };
+    }
+    componentWillLoad() {
+        this.handleDisabledState();
+        this.registerDomClick(!this.disabled && this.clickOutsideToClose && this.open);
     }
     componentDidLoad() {
-        this.menuHandler();
         this.controlRef = this.el.querySelector('[slot="control"]');
+        this.handleMenuState(true);
+        this.emitEvent(false);
     }
     componentWillUpdate() {
-        if (this.open && this.disabled) {
-            this.open = false;
-        }
+        this.handleDisabledState();
+        this.registerDomClick(!this.disabled && this.clickOutsideToClose && this.open);
     }
     componentDidUpdate() {
-        this.menuHandler();
-    }
-    componentDidUnload() {
-        this.destroyPopper();
-    }
-    menuHandler() {
-        if (this.open && !this.disabled) {
-            this.initPopper();
+        this.handleMenuState();
+        if (this.open) {
+            this.setFocus(this.menuRef);
         }
-        else {
-            this.destroyPopper();
-        }
-        this.registerDomClick(this.clickOutsideToClose && this.open);
-    }
-    initPopper() {
-        if (this.popoverRef) {
-            this.popperInstance = createPopper(this.el, this.popoverRef, {
-                placement: 'bottom-end',
-                modifiers: [
-                    {
-                        name: 'arrow',
-                        options: {
-                            padding: 12,
-                        },
-                    },
-                    {
-                        name: 'flip',
-                        options: {
-                            fallbackPlacements: ['bottom-start', 'top-end', 'top-start'],
-                        },
-                    },
-                ],
-            });
-            this.popoverRef.style.opacity = '1';
-            if (this.menuRef) {
-                this.setFocus(this.menuRef);
-            }
-            this.bkOpened.emit();
-        }
-    }
-    destroyPopper() {
-        if (this.popperInstance) {
-            this.popperInstance.destroy();
-            this.popperInstance = undefined;
-            this.bkClosed.emit();
-        }
-        if (this.timer) {
-            clearTimeout(this.timer);
-        }
-    }
-    onClickHandler(e) {
-        e.stopImmediatePropagation();
-        if (!this.disabled) {
-            this.open = !this.open;
-        }
-    }
-    onCloseMenu() {
-        this.open = false;
-        if (this.controlRef) {
-            this.timer = setTimeout(() => this.setFocus(this.controlRef));
-        }
-    }
-    onKeyboardHandler(e) {
-        switch (e.key) {
-            case 'ArrowDown':
-            case 'ArrowUp':
-                e.stopImmediatePropagation();
-                this.open = true;
-                break;
-            case 'Enter':
-                e.stopImmediatePropagation();
-                if (this.open && this.controlRef) {
-                    this.setFocus(this.controlRef);
-                }
-                break;
-            case 'Escape':
-                e.stopImmediatePropagation();
-                this.open = false;
-                if (this.controlRef) {
-                    this.setFocus(this.controlRef);
-                }
-                break;
-        }
-        this.bkMenuKeydown.emit(e.key);
+        this.emitEvent();
     }
     registerDomClick(register = true) {
         if (register) {
@@ -134,14 +83,44 @@ export class Dropdown {
             document.removeEventListener('keyup', this.onOutsideClickHandler);
         }
     }
+    onCloseMenu() {
+        this.open = false;
+        this.setFocus(this.controlRef);
+    }
+    onKeyboardHandler(e) {
+        switch (e.key) {
+            case 'ArrowDown':
+            case 'ArrowUp':
+                this.open = true;
+                break;
+            case 'Enter':
+                if (this.open && e.target === e.currentTarget) {
+                    this.open = false;
+                    this.setFocus(this.controlRef);
+                }
+                break;
+            case 'Escape':
+                e.stopImmediatePropagation();
+                this.open = false;
+                this.setFocus(this.controlRef);
+                break;
+        }
+    }
+    onClickHandler(e) {
+        e.stopImmediatePropagation();
+        if (!this.disabled) {
+            this.open = !this.open;
+        }
+    }
     render() {
-        return (h(Host, { role: "button", "aria-haspopup": "true", "aria-expanded": this.open, class: this.disabled ? 'bk-dropdown--disabled' : '' },
+        return (h(Host, { role: "button", "aria-haspopup": "true", "aria-expanded": this.open, class: {
+                'bk-dropdown--disabled': this.disabled,
+            } },
             h("div", { class: "bk-dropdown" },
                 h("slot", { name: "control" }),
-                this.open && (h("div", { class: "bk-dropdown-menu bk-popper", onClick: this.onMenuClick, ref: (el) => (this.popoverRef = el), tabIndex: -1 },
-                    h("div", { class: "bk-dropdown-menu__inner", tabIndex: -1, ref: (el) => (this.menuRef = el) },
-                        h("div", { class: "bk-popper__arrow", "data-popper-arrow": true }),
-                        h("slot", { name: "content" })))))));
+                this.open && (h("div", { class: "bk-dropdown__menu bk-popper", ref: (el) => (this.menuRef = el), tabIndex: -1, onClick: (e) => e.stopPropagation() },
+                    h("div", { class: "bk-popper__arrow", "data-popper-arrow": true }),
+                    h("slot", { name: "content" }))))));
     }
     static get is() { return "bk-dropdown"; }
     static get encapsulation() { return "shadow"; }
@@ -237,30 +216,9 @@ export class Dropdown {
                 "resolved": "any",
                 "references": {}
             }
-        }, {
-            "method": "bkMenuKeydown",
-            "name": "bkMenuKeydown",
-            "bubbles": true,
-            "cancelable": true,
-            "composed": true,
-            "docs": {
-                "tags": [],
-                "text": "Fired on keydown on menu"
-            },
-            "complexType": {
-                "original": "any",
-                "resolved": "any",
-                "references": {}
-            }
         }]; }
     static get elementRef() { return "el"; }
     static get listeners() { return [{
-            "name": "click",
-            "method": "onClickHandler",
-            "target": undefined,
-            "capture": false,
-            "passive": false
-        }, {
             "name": "bkCloseDropdownMenu",
             "method": "onCloseMenu",
             "target": undefined,
@@ -272,5 +230,18 @@ export class Dropdown {
             "target": undefined,
             "capture": false,
             "passive": false
+        }, {
+            "name": "click",
+            "method": "onClickHandler",
+            "target": undefined,
+            "capture": false,
+            "passive": false
         }]; }
 }
+__decorate([
+    SetPopper({
+        reference: 'el',
+        popper: 'menuRef',
+        controllingProp: 'open',
+    })
+], Dropdown.prototype, "popperInstance", void 0);

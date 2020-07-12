@@ -1,14 +1,12 @@
 import { Event, EventEmitter } from '../../stencil-public-runtime';
+import { SetPopperInstance } from '../../decorators/popper';
 /**
  * @slot control - Controlling element.
  * @slot content - The content of the menu.
  */
 export declare class Dropdown {
-    private timer?;
-    private popperInstance?;
-    private popoverRef?;
-    private menuRef?;
     private controlRef?;
+    private menuRef?;
     el: HTMLElement;
     /** Open or close the menu */
     open: boolean;
@@ -20,22 +18,19 @@ export declare class Dropdown {
     bkOpened: EventEmitter;
     /** Fired when destroyed */
     bkClosed: EventEmitter;
-    /** Fired on keydown on menu */
-    bkMenuKeydown: EventEmitter;
+    popperInstance?: SetPopperInstance;
+    componentWillLoad(): void;
     componentDidLoad(): void;
     componentWillUpdate(): void;
     componentDidUpdate(): void;
-    componentDidUnload(): void;
-    menuHandler(): void;
-    initPopper(): void;
-    setFocus: (ref: HTMLElement) => void;
-    destroyPopper(): void;
-    onClickHandler(e: Event): void;
+    handleDisabledState: () => void;
+    handleMenuState: (initialLoad?: boolean) => void;
+    emitEvent: (initialLoad?: boolean) => void;
+    setFocus: (ref: HTMLElement | undefined) => void;
+    onOutsideClickHandler: (e: Event) => void;
+    registerDomClick(register?: boolean): void;
     onCloseMenu(): void;
     onKeyboardHandler(e: KeyboardEvent): void;
-    onMenuClick: (e: Event) => void;
-    onOutsideClickHandler: (e: Event) => void;
-    onMenuKeydownHandler: (e: KeyboardEvent) => void;
-    registerDomClick(register?: boolean): void;
+    onClickHandler(e: Event): void;
     render(): any;
 }

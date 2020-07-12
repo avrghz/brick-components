@@ -216,30 +216,20 @@
   color: #606266;
   font-size: 14px;
 }
-
-.bk-dropdown-menu {
+.bk-dropdown__menu {
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 10;
   opacity: 0;
   transition: opacity 0.2s ease-in;
-  padding: 10px;
   box-sizing: border-box;
-}
-.bk-dropdown-menu__inner {
-  position: relative;
   padding: 20px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   border: 1px solid #ebeef5;
   border-radius: 4px;
-  box-sizing: border-box;
   min-width: 150px;
   max-width: 300px;
-  outline: none;
 }
-
-.bk-dropdown-menu:focus:active, .bk-dropdown-menu:focus {
+.bk-dropdown__menu:focus:active, .bk-dropdown__menu:focus {
   outline-width: 0;
 }

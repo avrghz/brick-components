@@ -22,21 +22,12 @@ export const selectNextOption = (options, selected, callBack) => {
     if (!hasEnabledOption(options)) {
         return;
     }
-    const current = currentSelected(options, selected);
-    const predictedNextIndex = current === -1 ? 0 : current + 1;
+    const predictedNextIndex = currentSelected(options, selected) + 1;
     let actualNextIndex = -1;
     for (let i = predictedNextIndex; i < options.length; i++) {
         if (!options[i].disabled) {
             actualNextIndex = i;
             break;
-        }
-    }
-    if (actualNextIndex === -1) {
-        for (let i = 0; i < predictedNextIndex; i++) {
-            if (!options[i].disabled) {
-                actualNextIndex = i;
-                break;
-            }
         }
     }
     if (actualNextIndex !== -1) {
@@ -47,21 +38,12 @@ export const selectPreviousOption = (options, selected, callBack) => {
     if (!hasEnabledOption(options)) {
         return;
     }
-    const current = currentSelected(options, selected);
-    const predictedPreviousIndex = current === -1 ? options.length - 1 : current - 1;
+    const predictedPreviousIndex = currentSelected(options, selected) - 1;
     let actualPreviousIndex = -1;
     for (let i = predictedPreviousIndex; i >= 0; i--) {
         if (!options[i].disabled) {
             actualPreviousIndex = i;
             break;
-        }
-    }
-    if (actualPreviousIndex === -1) {
-        for (let i = options.length - 1; i > predictedPreviousIndex; i--) {
-            if (!options[i].disabled) {
-                actualPreviousIndex = i;
-                break;
-            }
         }
     }
     if (actualPreviousIndex !== -1) {

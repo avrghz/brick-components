@@ -153,26 +153,34 @@
 }
 
 .bk-dropdown-list__item {
-  display: block;
   list-style: none;
+  margin: 0;
+}
+.bk-dropdown-list__item > a {
+  display: block;
   line-height: 30px;
   padding: 0 20px;
-  margin: 0;
   font-size: 14px;
   color: #606266;
-  cursor: pointer;
   outline: none;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  text-align: left;
 }
-.bk-dropdown-list__item:not(.is-disabled):not(:focus):not(.is-active):hover {
+.bk-dropdown-list__item > a:not(.is-disabled):not(:focus):not(.is-active):hover {
   background-color: #ecf5ff;
   color: #66b1ff;
 }
-.bk-dropdown-list__item.is-active {
+.bk-dropdown-list__item > a.is-active {
   background-color: #409eff;
   color: #ffffff;
+}
+
+.bk-dropdown-list__item > a.is-disabled {
+  cursor: default;
+  color: #bbb;
+  pointer-events: none;
 }
 
 .bk-dropdown-list__item--divided {
@@ -186,12 +194,6 @@
   display: block;
   margin: 0 -20px;
   background-color: #ffffff;
-}
-
-.bk-dropdown-list__item.is-disabled {
-  cursor: default;
-  color: #bbb;
-  pointer-events: none;
 }
 
 .bk-dropdown-list__close-btn {
