@@ -1,4 +1,15 @@
 @include b(popper) {
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    box-sizing: border-box;
+
+    &:focus:active,
+    &:focus {
+        outline-width: 0;
+    }
+
     @include e(arrow) {
         &,
         &::after {

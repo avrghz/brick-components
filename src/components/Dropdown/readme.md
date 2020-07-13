@@ -43,14 +43,6 @@ html`
 | `bkOpened` | Fired when opened    | `CustomEvent<any>` |
 
 
-## Slots
-
-| Slot        | Description              |
-| ----------- | ------------------------ |
-| `"content"` | The content of the menu. |
-| `"control"` | Controlling element.     |
-
-
 ## Dependencies
 
 ### Used by
