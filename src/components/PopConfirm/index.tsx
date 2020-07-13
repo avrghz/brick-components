@@ -1,4 +1,5 @@
 import { Component, h, Prop, Event, EventEmitter, State, Listen, Element } from '@stencil/core'
+import '@a11y/focus-trap'
 import { ButtonVariants } from '../../shared/types'
 
 /**

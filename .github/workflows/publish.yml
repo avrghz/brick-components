@@ -40,8 +40,8 @@ jobs:
                   BRANCH: gh-pages
                   FOLDER: stories
 
-    publish-brick-components:
-        name: 'Publish web components to github packages'
+    publish:
+        name: 'Publish to github packages'
         needs: run-test
         runs-on: ubuntu-latest
         steps:
@@ -52,34 +52,23 @@ jobs:
               with:
                   node-version: 12
                   registry-url: https://npm.pkg.github.com/
-            - name: Publish
-              run: |
-                  npm ci
-                  npm run build
-                  npm publish
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.auth_token}}
 
-    publish-react-wrapper:
-        name: 'Publish react wrapper to github packages'
-        needs: publish-brick-components
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 12
-                  registry-url: https://npm.pkg.github.com/
-            - name: Build web components
+            - name: Build
               run: |
                   npm ci
-                  npm run build
-            - name: Publish
+                  npm run stencil:build
+
+            - name: Publish components
+              run: |
+                  npm publish
+
+            - name: Publish react wrapper
               run: |
                   npm install
-                  npm install @avrghz/brick-components
+                  npm install @avrghz/brick-components@latest
                   npm run build
                   npm publish
               working-directory: ./react
+
               env:
                   NODE_AUTH_TOKEN: ${{secrets.auth_token}}

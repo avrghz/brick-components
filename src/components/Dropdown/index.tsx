@@ -1,10 +1,19 @@
 import { Component, h, Host, Prop, Element, Event, EventEmitter, Listen } from '@stencil/core'
-import SetPopper, { SetPopperInstance } from '../../decorators/popper'
+import SetPopper, { SetPopperInstance, Setting } from '../../shared/decorators/popper'
 
 /**
  * @slot control - Controlling element.
  * @slot content - The content of the menu.
  */
+
+const modifiers: Setting['modifiers'] = [
+    {
+        name: 'flip',
+        options: {
+            fallbackPlacements: ['bottom-start', 'top-end', 'top-start'],
+        },
+    },
+]
 
 @Component({
     tag: 'bk-dropdown',
@@ -36,6 +45,10 @@ export class Dropdown {
         reference: 'el',
         popper: 'menuRef',
         controllingProp: 'open',
+        modifiers,
+        initialPlacement: 'bottom-end',
+        eventAfterOpened: 'bkOpened',
+        eventAfterClosed: 'bkClosed',
     })
     popperInstance?: SetPopperInstance
 
@@ -46,8 +59,6 @@ export class Dropdown {
 
     componentDidLoad() {
         this.controlRef = this.el.querySelector('[slot="control"]') as HTMLElement
-        this.handleMenuState(true)
-        this.emitEvent(false)
     }
 
     componentWillUpdate() {
@@ -56,34 +67,14 @@ export class Dropdown {
     }
 
     componentDidUpdate() {
-        this.handleMenuState()
         if (this.open) {
             this.setFocus(this.menuRef)
         }
-        this.emitEvent()
     }
 
     handleDisabledState = () => {
         if (this.disabled) {
             this.open = false
-        }
-    }
-
-    handleMenuState = (initialLoad = false) => {
-        if (this.open) {
-            if (this.menuRef) {
-                this.menuRef.style.opacity = '1'
-            }
-        } else if (!initialLoad) {
-            this.popperInstance?.destroy()
-        }
-    }
-
-    emitEvent = (initialLoad = false) => {
-        if (this.open) {
-            this.bkOpened.emit()
-        } else if (!initialLoad) {
-            this.bkClosed.emit()
         }
     }
 

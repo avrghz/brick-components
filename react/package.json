@@ -1,8 +1,8 @@
 {
     "name": "@avrghz/brick-components-react",
     "author": "Aswin Varghese",
-    "version": "0.0.3",
-    "description": "react wrapper for brick-components",
+    "version": "0.0.4",
+    "description": "React wrapper for brick-components",
     "main": "index.js",
     "scripts": {
         "build": "npm run tsc",
