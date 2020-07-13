@@ -44,6 +44,7 @@ export class Modal {
     @Event() bkClosed!: EventEmitter
 
     componentWillLoad() {
+        this.toggleFooter()
         this.emitEvent(this.open, this.bkOpen)
     }
 
