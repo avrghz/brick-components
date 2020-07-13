@@ -1,5 +1,6 @@
-import { Component, h, Host, Prop, Event, EventEmitter, Element, Watch } from '@stencil/core'
-import { createPopper, Instance, Placement } from '@popperjs/core'
+import { Component, h, Host, Prop, Event, EventEmitter, Element, Watch, Listen } from '@stencil/core'
+import { Placement } from '@popperjs/core'
+import SetPopper, { SetPopperInstance } from '../../decorators/popper'
 import { TriggerOn } from './types'
 
 /**
@@ -13,7 +14,7 @@ import { TriggerOn } from './types'
     styleUrl: './index.scss',
 })
 export class Popover {
-    private popperInstance?: Instance
+    // @ts-ignore
     private popoverRef?: HTMLDivElement
 
     @Element() el!: HTMLElement
@@ -36,13 +37,29 @@ export class Popover {
     /** Fired when destroyed */
     @Event() bkClosed!: EventEmitter
 
+    @SetPopper({
+        reference: 'el',
+        popper: 'popoverRef',
+        controllingProp: 'show',
+        eventAfterOpened: 'bkOpened',
+        eventAfterClosed: 'bkClosed',
+    })
+    popperInstance?: SetPopperInstance
+
     @Watch('triggerOn')
-    onTriggerOnUpdated(current: TriggerOn, previous: TriggerOn) {
+    watchTriggerOn(current: TriggerOn, previous: TriggerOn) {
         if (current !== previous) {
             this.show = false
-            this.destroyPopper()
+            this.popperInstance?.destroy()
             this.registerEvents(false, previous)
             this.registerEvents(true, current)
+        }
+    }
+
+    @Watch('placement')
+    watchPlacement(current: Placement, previous: Placement) {
+        if (current !== previous) {
+            this.setPlacement().then()
         }
     }
 
@@ -50,18 +67,14 @@ export class Popover {
         this.registerEvents(true, this.triggerOn)
     }
 
-    componentDidUpdate() {
-        if (this.show && !this.disabled) {
-            this.initPopper()
-        } else {
-            this.destroyPopper()
-        }
-    }
-
-    componentDidUnload() {
-        this.destroyPopper()
+    disconnectedCallback() {
         this.registerEvents(false, this.triggerOn)
     }
+
+    setPlacement = async () =>
+        await this.popperInstance?.setOptions({
+            placement: this.placement,
+        })
 
     onOpenHandler() {
         this.show = true
@@ -92,30 +105,9 @@ export class Popover {
         }
     }
 
-    initPopper() {
-        if (this.popoverRef) {
-            this.popperInstance = createPopper(this.el, this.popoverRef, {
-                placement: this.placement,
-                modifiers: [
-                    {
-                        name: 'arrow',
-                        options: {
-                            padding: 12,
-                        },
-                    },
-                ],
-            })
-            this.popoverRef.style.opacity = '1'
-            this.bkOpened.emit()
-        }
-    }
-
-    destroyPopper() {
-        if (this.popperInstance) {
-            this.popperInstance.destroy()
-            this.popperInstance = undefined
-            this.bkClosed.emit()
-        }
+    @Listen('bkOpened')
+    onPopoverOpened() {
+        this.setPlacement().then()
     }
 
     render() {

@@ -22,7 +22,7 @@ export default ({
     eventAfterOpened,
     eventAfterClosed,
 }: Setting) => (target: ComponentInterface, property: string) => {
-    let popperInstance: Instance
+    let popperInstance: Instance | undefined
 
     const { componentDidLoad, componentDidUpdate, disconnectedCallback } = target
 
@@ -35,6 +35,7 @@ export default ({
     const destroyPopper = (component: ComponentInterface) => {
         if (popperInstance) {
             popperInstance.destroy()
+            popperInstance = undefined
             emitEvent(component, eventAfterClosed)
         }
     }
@@ -66,11 +67,13 @@ export default ({
 
     const initPopper = (component: ComponentInterface) => {
         if (component[popper] && component[reference] && component[controllingProp]) {
-            createPopperInstance(component).then((instance) => {
-                popperInstance = instance
-                component[property] = popperInstance
-                emitEvent(component, eventAfterOpened)
-            })
+            if (!popperInstance) {
+                createPopperInstance(component).then((instance) => {
+                    popperInstance = instance
+                    component[property] = popperInstance
+                    emitEvent(component, eventAfterOpened)
+                })
+            }
         } else {
             destroyPopper(component)
         }

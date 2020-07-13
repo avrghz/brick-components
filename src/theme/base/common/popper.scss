@@ -1,6 +1,6 @@
 @include b(popper) {
     position: absolute;
-    z-index: 10;
+    z-index: $--index-popper;
     opacity: 0;
     transition: opacity 0.2s ease-in;
     box-sizing: border-box;
