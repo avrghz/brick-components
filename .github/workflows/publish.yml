@@ -25,8 +25,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-              with:
-                  fetch-depth: 0
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
@@ -46,8 +44,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-              with:
-                  fetch-depth: 0
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
@@ -61,6 +57,8 @@ jobs:
             - name: Publish components
               run: |
                   npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.auth_token}}
 
             - name: Publish react wrapper
               run: |
@@ -69,6 +67,5 @@ jobs:
                   npm run build
                   npm publish
               working-directory: ./react
-
               env:
                   NODE_AUTH_TOKEN: ${{secrets.auth_token}}
