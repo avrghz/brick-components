@@ -1,5 +1,5 @@
 import { Component, h, Host, Prop, Element, Event, EventEmitter, Listen } from '@stencil/core'
-import SetPopper, { SetPopperInstance, Setting } from '../../decorators/popper'
+import SetPopper, { SetPopperInstance, Setting } from '../../shared/decorators/popper'
 
 /**
  * @slot control - Controlling element.

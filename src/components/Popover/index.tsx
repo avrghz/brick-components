@@ -1,6 +1,6 @@
 import { Component, h, Host, Prop, Event, EventEmitter, Element, Watch, Listen } from '@stencil/core'
 import { Placement } from '@popperjs/core'
-import SetPopper, { SetPopperInstance } from '../../decorators/popper'
+import SetPopper, { SetPopperInstance } from '../../shared/decorators/popper'
 import { TriggerOn } from './types'
 
 /**

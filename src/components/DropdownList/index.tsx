@@ -10,7 +10,7 @@ import {
     dispatchEventCloseMenu,
 } from './util'
 import { Option } from './types'
-import ParsePropTo from '../../decorators/parsePropTo'
+import ParsePropTo from '../../shared/decorators/parsePropTo'
 
 @Component({
     tag: 'bk-dropdown-list',
