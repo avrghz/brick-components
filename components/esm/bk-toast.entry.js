@@ -1,4 +1,4 @@
-import { h, r as registerInstance, H as Host, g as getElement } from './index-9596b62d.js';
+import { h, r as registerInstance, H as Host, g as getElement } from './index-c7d865b7.js';
 import './iron-icons-d49dcd62.js';
 import { l as lodash } from './lodash-9002a3c2.js';
 

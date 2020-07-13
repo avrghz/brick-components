@@ -22,7 +22,6 @@ export const Default = () => {
                 disabled=${disabled}
                 @bkOpened=${action('opened')}
                 @bkClosed=${action('closed')}
-                @bkKeydown=${action('keydown')}
             >
                 <button class="bk-button" slot="control">Click me</button>
                 <div slot="content">Dropdown content goes here</div>

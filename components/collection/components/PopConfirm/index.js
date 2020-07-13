@@ -1,4 +1,5 @@
 import { Component, h, Prop, Event, State, Listen, Element } from '@stencil/core';
+import '@a11y/focus-trap';
 /**
  * @slot - Triggering control goes here
  */

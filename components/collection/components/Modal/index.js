@@ -1,6 +1,7 @@
 import { Component, h, Host, Prop, Event, Element, State } from '@stencil/core';
 import '@polymer/iron-icon/iron-icon';
 import '@polymer/iron-icons/iron-icons';
+import '@a11y/focus-trap';
 /**
  * @slot body - Body content of the modal popup.
  * @slot footer - footer content of the modal popup.

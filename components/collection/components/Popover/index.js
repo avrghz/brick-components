@@ -1,5 +1,11 @@
-import { Component, h, Host, Prop, Event, Element, Watch } from '@stencil/core';
-import { createPopper } from '@popperjs/core';
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { Component, h, Host, Prop, Event, Element, Watch, Listen } from '@stencil/core';
+import SetPopper from '../../shared/decorators/popper';
 /**
  * @slot control - The element on which the popover should apply.
  * @slot content - The content of the popover.
@@ -14,29 +20,32 @@ export class Popover {
         this.placement = 'auto';
         /** Enable or disable popover */
         this.disabled = false;
+        this.setPlacement = async () => {
+            var _a;
+            return await ((_a = this.popperInstance) === null || _a === void 0 ? void 0 : _a.setOptions({
+                placement: this.placement,
+            }));
+        };
         this.onClickHandler = () => (this.show ? this.onCloseHandler() : this.onOpenHandler());
     }
-    onTriggerOnUpdated(current, previous) {
+    watchTriggerOn(current, previous) {
+        var _a;
         if (current !== previous) {
             this.show = false;
-            this.destroyPopper();
+            (_a = this.popperInstance) === null || _a === void 0 ? void 0 : _a.destroy();
             this.registerEvents(false, previous);
             this.registerEvents(true, current);
+        }
+    }
+    watchPlacement(current, previous) {
+        if (current !== previous) {
+            this.setPlacement().then();
         }
     }
     componentWillLoad() {
         this.registerEvents(true, this.triggerOn);
     }
-    componentDidUpdate() {
-        if (this.show && !this.disabled) {
-            this.initPopper();
-        }
-        else {
-            this.destroyPopper();
-        }
-    }
-    componentDidUnload() {
-        this.destroyPopper();
+    disconnectedCallback() {
         this.registerEvents(false, this.triggerOn);
     }
     onOpenHandler() {
@@ -63,29 +72,8 @@ export class Popover {
                 break;
         }
     }
-    initPopper() {
-        if (this.popoverRef) {
-            this.popperInstance = createPopper(this.el, this.popoverRef, {
-                placement: this.placement,
-                modifiers: [
-                    {
-                        name: 'arrow',
-                        options: {
-                            padding: 12,
-                        },
-                    },
-                ],
-            });
-            this.popoverRef.style.opacity = '1';
-            this.bkOpened.emit();
-        }
-    }
-    destroyPopper() {
-        if (this.popperInstance) {
-            this.popperInstance.destroy();
-            this.popperInstance = undefined;
-            this.bkClosed.emit();
-        }
+    onPopoverOpened() {
+        this.setPlacement().then();
     }
     render() {
         return (h(Host, { "aria-label": "popover", class: this.disabled ? 'bk-popover--disabled' : '' },
@@ -221,6 +209,25 @@ export class Popover {
     static get elementRef() { return "el"; }
     static get watchers() { return [{
             "propName": "triggerOn",
-            "methodName": "onTriggerOnUpdated"
+            "methodName": "watchTriggerOn"
+        }, {
+            "propName": "placement",
+            "methodName": "watchPlacement"
+        }]; }
+    static get listeners() { return [{
+            "name": "bkOpened",
+            "method": "onPopoverOpened",
+            "target": undefined,
+            "capture": false,
+            "passive": false
         }]; }
 }
+__decorate([
+    SetPopper({
+        reference: 'el',
+        popper: 'popoverRef',
+        controllingProp: 'show',
+        eventAfterOpened: 'bkOpened',
+        eventAfterClosed: 'bkClosed',
+    })
+], Popover.prototype, "popperInstance", void 0);

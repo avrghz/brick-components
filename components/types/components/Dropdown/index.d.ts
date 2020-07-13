@@ -1,9 +1,5 @@
 import { Event, EventEmitter } from '../../stencil-public-runtime';
-import { SetPopperInstance } from '../../decorators/popper';
-/**
- * @slot control - Controlling element.
- * @slot content - The content of the menu.
- */
+import { SetPopperInstance } from '../../shared/decorators/popper';
 export declare class Dropdown {
     private controlRef?;
     private menuRef?;
@@ -24,8 +20,6 @@ export declare class Dropdown {
     componentWillUpdate(): void;
     componentDidUpdate(): void;
     handleDisabledState: () => void;
-    handleMenuState: (initialLoad?: boolean) => void;
-    emitEvent: (initialLoad?: boolean) => void;
     setFocus: (ref: HTMLElement | undefined) => void;
     onOutsideClickHandler: (e: Event) => void;
     registerDomClick(register?: boolean): void;

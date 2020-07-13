@@ -2,7 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-703095ad.js');
+const index = require('./index-02137fd9.js');
+require('./focus-trap-54f8125c.js');
 
 const indexCss = ".bk-pop-confirm__footer.sc-bk-pop-confirm{display:flex;justify-content:flex-end;align-items:center;margin-top:16px}";
 

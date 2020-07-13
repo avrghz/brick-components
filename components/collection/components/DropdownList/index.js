@@ -9,7 +9,7 @@ import '@polymer/iron-icon/iron-icon';
 import '@polymer/iron-icons/iron-icons';
 import { consoleWarn } from '../../shared/util';
 import { selectNextOption, selectPreviousOption, selectFirstEnabledOption, selectLastEnabledOption, dispatchEventCloseMenu, } from './util';
-import ParsePropTo from '../../decorators/parsePropTo';
+import ParsePropTo from '../../shared/decorators/parsePropTo';
 export class DropdownList {
     constructor() {
         this._options = [];

@@ -1,4 +1,5 @@
-import { r as registerInstance, c as createEvent, h, g as getElement } from './index-9596b62d.js';
+import { r as registerInstance, c as createEvent, h, g as getElement } from './index-c7d865b7.js';
+import './focus-trap-3a6d86f2.js';
 
 const indexCss = ".bk-pop-confirm__footer.sc-bk-pop-confirm{display:flex;justify-content:flex-end;align-items:center;margin-top:16px}";
 

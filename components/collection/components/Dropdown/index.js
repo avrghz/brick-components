@@ -5,11 +5,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Component, h, Host, Prop, Element, Event, Listen } from '@stencil/core';
-import SetPopper from '../../decorators/popper';
+import SetPopper from '../../shared/decorators/popper';
 /**
  * @slot control - Controlling element.
  * @slot content - The content of the menu.
  */
+const modifiers = [
+    {
+        name: 'flip',
+        options: {
+            fallbackPlacements: ['bottom-start', 'top-end', 'top-start'],
+        },
+    },
+];
 export class Dropdown {
     constructor() {
         /** Open or close the menu */
@@ -21,25 +29,6 @@ export class Dropdown {
         this.handleDisabledState = () => {
             if (this.disabled) {
                 this.open = false;
-            }
-        };
-        this.handleMenuState = (initialLoad = false) => {
-            var _a;
-            if (this.open) {
-                if (this.menuRef) {
-                    this.menuRef.style.opacity = '1';
-                }
-            }
-            else if (!initialLoad) {
-                (_a = this.popperInstance) === null || _a === void 0 ? void 0 : _a.destroy();
-            }
-        };
-        this.emitEvent = (initialLoad = false) => {
-            if (this.open) {
-                this.bkOpened.emit();
-            }
-            else if (!initialLoad) {
-                this.bkClosed.emit();
             }
         };
         this.setFocus = (ref) => {
@@ -59,19 +48,15 @@ export class Dropdown {
     }
     componentDidLoad() {
         this.controlRef = this.el.querySelector('[slot="control"]');
-        this.handleMenuState(true);
-        this.emitEvent(false);
     }
     componentWillUpdate() {
         this.handleDisabledState();
         this.registerDomClick(!this.disabled && this.clickOutsideToClose && this.open);
     }
     componentDidUpdate() {
-        this.handleMenuState();
         if (this.open) {
             this.setFocus(this.menuRef);
         }
-        this.emitEvent();
     }
     registerDomClick(register = true) {
         if (register) {
@@ -243,5 +228,9 @@ __decorate([
         reference: 'el',
         popper: 'menuRef',
         controllingProp: 'open',
+        modifiers,
+        initialPlacement: 'bottom-end',
+        eventAfterOpened: 'bkOpened',
+        eventAfterClosed: 'bkClosed',
     })
 ], Dropdown.prototype, "popperInstance", void 0);

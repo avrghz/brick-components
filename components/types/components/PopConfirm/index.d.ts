@@ -1,4 +1,5 @@
 import { Event, EventEmitter } from '../../stencil-public-runtime';
+import '@a11y/focus-trap';
 import { ButtonVariants } from '../../shared/types';
 /**
  * @slot - Triggering control goes here

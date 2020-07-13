@@ -1,12 +1,12 @@
 import { EventEmitter } from '../../stencil-public-runtime';
 import { Placement } from '@popperjs/core';
+import { SetPopperInstance } from '../../shared/decorators/popper';
 import { TriggerOn } from './types';
 /**
  * @slot control - The element on which the popover should apply.
  * @slot content - The content of the popover.
  */
 export declare class Popover {
-    private popperInstance?;
     private popoverRef?;
     el: HTMLElement;
     /** This will set the trigger even */
@@ -21,15 +21,16 @@ export declare class Popover {
     bkOpened: EventEmitter;
     /** Fired when destroyed */
     bkClosed: EventEmitter;
-    onTriggerOnUpdated(current: TriggerOn, previous: TriggerOn): void;
+    popperInstance?: SetPopperInstance;
+    watchTriggerOn(current: TriggerOn, previous: TriggerOn): void;
+    watchPlacement(current: Placement, previous: Placement): void;
     componentWillLoad(): void;
-    componentDidUpdate(): void;
-    componentDidUnload(): void;
+    disconnectedCallback(): void;
+    setPlacement: () => Promise<Partial<import("@popperjs/core").State> | undefined>;
     onOpenHandler(): void;
     onCloseHandler(): void;
     onClickHandler: () => void;
     registerEvents(register: boolean, eventType: TriggerOn): void;
-    initPopper(): void;
-    destroyPopper(): void;
+    onPopoverOpened(): void;
     render(): any;
 }
