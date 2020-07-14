@@ -32,7 +32,7 @@ const Step: FunctionalComponent<StepProps> = ({
                 </div>
                 <div class={`bk-step__icon ${!!icon ? 'is-icon' : 'is-text'}`}>
                     <div class="bk-step__icon-inner" {...(status !== 'wait' ? { onClick } : {})}>
-                        {!!icon ? <iron-icon icon={icon} class="bk-icon bk-icon--xl"></iron-icon> : step}
+                        {!!icon ? <iron-icon icon={icon} class="bk-icon bk-icon--xxl"></iron-icon> : step}
                     </div>
                 </div>
             </div>

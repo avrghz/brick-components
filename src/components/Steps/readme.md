@@ -1,11 +1,42 @@
 # bk-steps
 
-Description goes here
+Guide the user to complete tasks in accordance with the process.
+
+Note: The icon is implemented using [Polymer iron-icon](https://www.webcomponents.org/element/@polymer/iron-icon). Icon name can be found [here](https://www.webcomponents.org/element/@polymer/iron-icons/demo/demo/index.html)
 
 ```javascript
 import { html } from 'lit-html'
 
-html` <bk-steps/> `
+export const STEP_STATE = ['process', 'wait', 'success', 'error', 'finish'] as const
+
+interface StepComponent {
+    title: string
+    icon?: string
+    description?: string
+    status?: typeof STEP_STATE[number]
+}
+
+const steps: StepComponent[] = [
+    {
+        title: 'Title 1',
+        description: 'Description 1',
+        status: 'success',
+    },
+    {
+        title: 'Title 2',
+        status: 'process',
+        description: 'Description 2',
+    },
+]
+
+html`<bk-steps
+    is-centered="false"
+    direction="horizontal"
+    steps=${JSON.stringify(steps)}
+    @bkClick=${(e) => {
+        console.log(e.detail)
+    }}
+/>`
 ```
 
 &nbsp;
