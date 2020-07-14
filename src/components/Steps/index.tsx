@@ -1,6 +1,7 @@
-import { Component, h, Prop } from '@stencil/core'
+import { Component, h, Prop, State, EventEmitter, Event } from '@stencil/core'
+import ParsePropTo from '../../shared/decorators/parsePropTo'
 import Step from './step'
-import { StepComponent, StepProps } from './types'
+import { StepComponent, StepProps, Direction } from './types'
 
 @Component({
     tag: 'bk-steps',
@@ -8,26 +9,19 @@ import { StepComponent, StepProps } from './types'
     styleUrl: './index.scss',
 })
 export class Steps {
+    @State() _steps: StepComponent[] = []
+
+    /** Center title and description */
     @Prop() isCentered = false
 
-    @Prop() steps: StepComponent[] = [
-        {
-            step: 1,
-            title: 'Title 1',
-            description: 'Description 1',
-            state: 'error',
-        },
-        {
-            step: 2,
-            title: 'Title 2',
-            description: 'Description 2',
-        },
-        {
-            step: 3,
-            title: 'Title 3',
-            description: 'Description 3',
-        },
-    ]
+    /** Display direction */
+    @Prop() direction: Direction = 'horizontal'
+
+    /** Steps to be displayed */
+    @ParsePropTo('array', '_steps') @Prop() steps: StepComponent[] | string = []
+
+    /** This event is fired when clicked on a step */
+    @Event() bkClick!: EventEmitter<number>
 
     computeStepStyle = (): StepProps['style'] => ({
         flexBasis: `${100 / (this.steps.length - (!!this.isCentered ? 0 : 1))}%`,
@@ -36,13 +30,16 @@ export class Steps {
 
     render() {
         return (
-            <div class="bk-steps bk-steps--horizontal">
-                {this.steps.map((step, i) => (
+            <div class={`bk-steps bk-steps--${this.direction}`}>
+                {this._steps.map(({ icon, ...rest }, i) => (
                     <Step
-                        {...step}
+                        onClick={() => this.bkClick.emit(i)}
+                        {...(!!icon ? { icon } : { step: i + 1 })}
+                        direction={this.direction}
                         style={this.computeStepStyle()}
-                        isCentered={this.isCentered}
+                        isCentered={this.isCentered && this.direction === 'horizontal'}
                         isLast={this.steps.length - 1 === i}
+                        {...rest}
                     />
                 ))}
             </div>

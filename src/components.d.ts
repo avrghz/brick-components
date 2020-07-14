@@ -11,7 +11,7 @@ import { Option } from "./components/DropdownList/types";
 import { TriggerOn } from "./components/Popover/types";
 import { Placement } from "@popperjs/core";
 import { BarType } from "./components/ProgressBar/types";
-import { StepComponent } from "./components/Steps/types";
+import { Direction, StepComponent } from "./components/Steps/types";
 import { AVChange } from "./components/Switch/types";
 import { Position } from "./components/Toast/types";
 export namespace Components {
@@ -174,8 +174,18 @@ export namespace Components {
         "variant": Variants;
     }
     interface BkSteps {
+        /**
+          * Display direction
+         */
+        "direction": Direction;
+        /**
+          * Center title and description
+         */
         "isCentered": boolean;
-        "steps": StepComponent[];
+        /**
+          * Steps to be displayed
+         */
+        "steps": StepComponent[] | string;
     }
     interface BkSwitch {
         /**
@@ -510,8 +520,22 @@ declare namespace LocalJSX {
         "variant"?: Variants;
     }
     interface BkSteps {
+        /**
+          * Display direction
+         */
+        "direction"?: Direction;
+        /**
+          * Center title and description
+         */
         "isCentered"?: boolean;
-        "steps"?: StepComponent[];
+        /**
+          * This event is fired when clicked on a step
+         */
+        "onBkClick"?: (event: CustomEvent<number>) => void;
+        /**
+          * Steps to be displayed
+         */
+        "steps"?: StepComponent[] | string;
     }
     interface BkSwitch {
         /**

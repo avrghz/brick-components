@@ -1,14 +1,28 @@
 import { h, FunctionalComponent } from '@stencil/core'
+import '@polymer/iron-icon/iron-icon'
+import '@polymer/iron-icons/iron-icons'
 import { StepProps } from './types'
 
-const Step: FunctionalComponent<StepProps> = ({ step, title, description, state, style, isCentered, isLast }) => {
+const Step: FunctionalComponent<StepProps> = ({
+    step,
+    icon,
+    title,
+    description,
+    status,
+    style,
+    isCentered,
+    isLast,
+    direction,
+    onClick,
+}) => {
     return (
         <div
             class={{
-                'bk-step is-horizontal': true,
+                'bk-step': true,
                 'is-center': !!isCentered,
                 'is-flex': !isCentered && !!isLast,
-                ...(!!state ? { [`is-${state}`]: true } : {}),
+                ...(!!status ? { [`is-${status}`]: true } : {}),
+                ...{ [`is-${direction}`]: true },
             }}
             style={style}
         >
@@ -16,13 +30,15 @@ const Step: FunctionalComponent<StepProps> = ({ step, title, description, state,
                 <div class="bk-step__line">
                     <i class="bk-step__line-inner"></i>
                 </div>
-                <div class="bk-step__icon is-text">
-                    <div class="bk-step__icon-inner">{step}</div>
+                <div class={`bk-step__icon ${!!icon ? 'is-icon' : 'is-text'}`}>
+                    <div class="bk-step__icon-inner" {...(status !== 'wait' ? { onClick } : {})}>
+                        {!!icon ? <iron-icon icon={icon} class="bk-icon bk-icon--xl"></iron-icon> : step}
+                    </div>
                 </div>
             </div>
             <div class="bk-step__main">
                 <div class="bk-step__title">{title}</div>
-                <div class="bk-step__description">{description}</div>
+                {description && <div class="bk-step__description">{description}</div>}
             </div>
         </div>
     )

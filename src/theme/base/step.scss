@@ -58,6 +58,40 @@
         font-weight: normal;
     }
 
+    @include e(icon) {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        box-sizing: border-box;
+        background: $--color-white;
+        transition: 0.15s ease-out;
+
+        @include when(text) {
+            border-radius: 50%;
+            border: 2px solid;
+            border-color: inherit;
+        }
+
+        @include when(icon) {
+            width: 40px;
+        }
+    }
+
+    @include e(icon-inner) {
+        display: inline-block;
+        user-select: none;
+        text-align: center;
+        font-weight: bold;
+        line-height: 1;
+        color: inherit;
+        cursor: pointer;
+    }
+
     @include when(process) {
         @include e(head) {
             color: $--color-text-primary;
@@ -86,6 +120,10 @@
 
         @include e(description) {
             color: $--color-text-placeholder;
+        }
+
+        @include e(icon-inner) {
+            pointer-events: none;
         }
     }
 
@@ -131,48 +169,6 @@
 
         @include e(description) {
             color: $--color-primary;
-        }
-    }
-
-    @include e(icon) {
-        position: relative;
-        z-index: 1;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 24px;
-        height: 24px;
-        font-size: 14px;
-        box-sizing: border-box;
-        background: $--color-white;
-        transition: 0.15s ease-out;
-
-        @include when(text) {
-            border-radius: 50%;
-            border: 2px solid;
-            border-color: inherit;
-        }
-
-        @include when(icon) {
-            width: 40px;
-        }
-    }
-
-    @include e(icon-inner) {
-        display: inline-block;
-        user-select: none;
-        text-align: center;
-        font-weight: bold;
-        line-height: 1;
-        color: inherit;
-
-        &[class*='el-icon']:not(.is-status) {
-            font-size: 25px;
-            font-weight: normal;
-        }
-
-        @include when(status) {
-            transform: translateY(1px);
         }
     }
 
@@ -256,15 +252,15 @@
             font-size: 12px;
         }
 
-        @include e(icon-inner) {
-            &[class*='el-icon']:not(.is-status) {
-                font-size: 18px;
-            }
+        // @include e(icon-inner) {
+        //     &[class*='el-icon']:not(.is-status) {
+        //         font-size: 18px;
+        //     }
 
-            &.is-status {
-                transform: scale(0.8) translateY(1px);
-            }
-        }
+        //     &.is-status {
+        //         transform: scale(0.8) translateY(1px);
+        //     }
+        // }
 
         @include e(main) {
             position: relative;
