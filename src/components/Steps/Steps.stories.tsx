@@ -1,17 +1,18 @@
 import { html } from 'lit-html'
-// import { select, boolean } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 // import { action } from '@storybook/addon-actions'
 
 import notes from './readme.md'
 
 export default {
-    title: '{{> folderName}}',
-    component: '{{prefix}}-{{tag}}',
+    title: 'Steps',
+    component: 'bk-steps',
     parameters: {
         notes,
     },
 }
 
 export const Default = () => {
-    return html`<{{prefix}}-{{tag}} />`
+    const isCentered = boolean('is-centered', false)
+    return html`<bk-steps is-centered=${isCentered} />`
 }

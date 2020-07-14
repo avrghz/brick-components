@@ -11,6 +11,7 @@ import { Option } from "./components/DropdownList/types";
 import { TriggerOn } from "./components/Popover/types";
 import { Placement } from "@popperjs/core";
 import { BarType } from "./components/ProgressBar/types";
+import { StepComponent } from "./components/Steps/types";
 import { AVChange } from "./components/Switch/types";
 import { Position } from "./components/Toast/types";
 export namespace Components {
@@ -172,6 +173,10 @@ export namespace Components {
          */
         "variant": Variants;
     }
+    interface BkSteps {
+        "isCentered": boolean;
+        "steps": StepComponent[];
+    }
     interface BkSwitch {
         /**
           * Enable or disable switch
@@ -260,6 +265,12 @@ declare global {
         prototype: HTMLBkSliderElement;
         new (): HTMLBkSliderElement;
     };
+    interface HTMLBkStepsElement extends Components.BkSteps, HTMLStencilElement {
+    }
+    var HTMLBkStepsElement: {
+        prototype: HTMLBkStepsElement;
+        new (): HTMLBkStepsElement;
+    };
     interface HTMLBkSwitchElement extends Components.BkSwitch, HTMLStencilElement {
     }
     var HTMLBkSwitchElement: {
@@ -282,6 +293,7 @@ declare global {
         "bk-popover": HTMLBkPopoverElement;
         "bk-progress-bar": HTMLBkProgressBarElement;
         "bk-slider": HTMLBkSliderElement;
+        "bk-steps": HTMLBkStepsElement;
         "bk-switch": HTMLBkSwitchElement;
         "bk-toast": HTMLBkToastElement;
     }
@@ -497,6 +509,10 @@ declare namespace LocalJSX {
          */
         "variant"?: Variants;
     }
+    interface BkSteps {
+        "isCentered"?: boolean;
+        "steps"?: StepComponent[];
+    }
     interface BkSwitch {
         /**
           * Enable or disable switch
@@ -543,6 +559,7 @@ declare namespace LocalJSX {
         "bk-popover": BkPopover;
         "bk-progress-bar": BkProgressBar;
         "bk-slider": BkSlider;
+        "bk-steps": BkSteps;
         "bk-switch": BkSwitch;
         "bk-toast": BkToast;
     }
@@ -560,6 +577,7 @@ declare module "@stencil/core" {
             "bk-popover": LocalJSX.BkPopover & JSXBase.HTMLAttributes<HTMLBkPopoverElement>;
             "bk-progress-bar": LocalJSX.BkProgressBar & JSXBase.HTMLAttributes<HTMLBkProgressBarElement>;
             "bk-slider": LocalJSX.BkSlider & JSXBase.HTMLAttributes<HTMLBkSliderElement>;
+            "bk-steps": LocalJSX.BkSteps & JSXBase.HTMLAttributes<HTMLBkStepsElement>;
             "bk-switch": LocalJSX.BkSwitch & JSXBase.HTMLAttributes<HTMLBkSwitchElement>;
             "bk-toast": LocalJSX.BkToast & JSXBase.HTMLAttributes<HTMLBkToastElement>;
         }

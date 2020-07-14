@@ -30,9 +30,9 @@ export const config: Config = {
             type: 'docs-readme',
             footer: '',
         },
-        // {
-        //     type: 'www',
-        //     serviceWorker: null, // disable service workers
-        // },
+        {
+            type: 'www',
+            serviceWorker: null, // disable service workers
+        },
     ],
 }
