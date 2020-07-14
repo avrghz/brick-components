@@ -1,7 +1,7 @@
 {
     "name": "@avrghz/brick-components",
     "author": "Aswin Varghese",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "A library of web components",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
