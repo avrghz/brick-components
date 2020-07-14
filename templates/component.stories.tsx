@@ -1,5 +1,6 @@
-import { select, boolean } from '@storybook/addon-knobs'
-import { action } from '@storybook/addon-actions'
+import { html } from 'lit-html'
+// import { select, boolean } from '@storybook/addon-knobs'
+// import { action } from '@storybook/addon-actions'
 
 import notes from './readme.md'
 
@@ -12,5 +13,5 @@ export default {
 }
 
 export const Default = () => {
-    return `<{{prefix}}-{{tag}} />`
+    return html`<{{prefix}}-{{tag}} />`
 }
