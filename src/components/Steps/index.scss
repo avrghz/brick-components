@@ -1,0 +1,15 @@
+@import '../../theme/base/step.scss';
+
+:host {
+    width: 100%;
+    display: flex;
+}
+
+:host(.is-horizontal) {
+    white-space: nowrap;
+}
+
+:host(.is-vertical) {
+    height: 100%;
+    flex-flow: column;
+}

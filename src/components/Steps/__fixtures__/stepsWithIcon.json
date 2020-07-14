@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Create",
+        "status": "success",
+        "icon": "create"
+    },
+    {
+        "title": "Upload",
+        "status": "process",
+        "icon": "cloud-upload"
+    },
+    {
+        "title": "Save",
+        "status": "wait",
+        "icon": "check-circle"
+    }
+]
