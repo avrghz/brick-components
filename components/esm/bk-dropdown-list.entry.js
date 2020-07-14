@@ -1,7 +1,8 @@
 import { r as registerInstance, h, c as createEvent, g as getElement } from './index-c7d865b7.js';
 import './iron-icons-d49dcd62.js';
 import { c as consoleWarn } from './util-b133d5f7.js';
-import { l as lodash } from './lodash-9002a3c2.js';
+import './lodash-9002a3c2.js';
+import { P as ParsePropTo } from './parsePropTo-cddb044b.js';
 
 const dispatchEventCloseMenu = (dropdown) => {
     dropdown.dispatchEvent(new Event('bkCloseDropdownMenu', {
@@ -54,42 +55,6 @@ const selectPreviousOption = (options, selected, callBack) => {
     if (actualPreviousIndex !== -1) {
         callBack(actualPreviousIndex);
     }
-};
-
-const parseObj = (obj, type) => {
-    try {
-        return JSON.parse(obj);
-    }
-    catch (e) {
-        return type === 'array' ? [] : {};
-    }
-};
-const ParsePropTo = (propType, state) => (target, property) => {
-    let previousValue = null;
-    const { componentWillLoad, componentWillUpdate } = target;
-    const setPreviousValue = (component) => (previousValue = propType === 'array' ? [...component[property]] : Object.assign({}, component[property]));
-    const setProp = (component) => {
-        if (typeof component[property] === 'string') {
-            const parsedObj = parseObj(component[property], propType);
-            component[state] = [...parsedObj];
-            component[property] = parsedObj;
-        }
-        else {
-            if (!lodash.isEqual(previousValue, component[property])) {
-                setPreviousValue(component);
-                component[state] = propType === 'array' ? [...component[property]] : Object.assign({}, component[property]);
-            }
-        }
-    };
-    target.componentWillLoad = function () {
-        setProp(this);
-        setPreviousValue(this);
-        return componentWillLoad === null || componentWillLoad === void 0 ? void 0 : componentWillLoad.call(this);
-    };
-    target.componentWillUpdate = function () {
-        setProp(this);
-        return componentWillUpdate === null || componentWillUpdate === void 0 ? void 0 : componentWillUpdate.call(this);
-    };
 };
 
 const indexCss = ".bk-dropdown-list__content.sc-bk-dropdown-list{min-width:200px;outline:none}.bk-dropdown-list__no-option.sc-bk-dropdown-list{color:#909399;text-align:center}.bk-dropdown-list__search.sc-bk-dropdown-list{margin-bottom:5px}.bk-dropdown-list__search.sc-bk-dropdown-list+.bk-dropdown-list__no-option.sc-bk-dropdown-list{margin-top:10px}.bk-dropdown-list__list.sc-bk-dropdown-list{padding:0;margin:0 -20px;max-height:250px;overflow-y:auto}.bk-dropdown-list__item.sc-bk-dropdown-list{list-style:none;margin:0}.bk-dropdown-list__item.sc-bk-dropdown-list>a.sc-bk-dropdown-list{display:block;line-height:30px;padding:0 20px;font-size:14px;color:#606266;outline:none;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:left}.bk-dropdown-list__item.sc-bk-dropdown-list>a.sc-bk-dropdown-list:not(.is-disabled):not(:focus):not(.is-active):hover{background-color:#ecf5ff;color:#66b1ff}.bk-dropdown-list__item.sc-bk-dropdown-list>a.is-active.sc-bk-dropdown-list{background-color:#409eff;color:#ffffff}.bk-dropdown-list__item.sc-bk-dropdown-list>a.is-disabled.sc-bk-dropdown-list{cursor:default;color:#bbb;pointer-events:none}.bk-dropdown-list__item--divided.sc-bk-dropdown-list{position:relative;margin-top:6px;border-top:1px solid #ebeef5}.bk-dropdown-list__item--divided.sc-bk-dropdown-list:before{content:\"\";height:6px;display:block;margin:0 -20px;background-color:#ffffff}.bk-dropdown-list__close-btn.sc-bk-dropdown-list{pointer-events:all}";

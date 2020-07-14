@@ -46,6 +46,7 @@ export class Modal {
         };
     }
     componentWillLoad() {
+        this.toggleFooter();
         this.emitEvent(this.open, this.bkOpen);
     }
     componentDidLoad() {

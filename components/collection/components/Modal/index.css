@@ -898,17 +898,26 @@
 
 .bk-icon {
   width: 18px;
+  height: 18px;
 }
 .bk-icon--md {
   width: 20px;
+  height: 20px;
 }
 
 .bk-icon--lg {
   width: 22px;
+  height: 22px;
 }
 
 .bk-icon--xl {
   width: 24px;
+  height: 24px;
+}
+
+.bk-icon--xxl {
+  width: 30px;
+  height: 30px;
 }
 
 .bk-modal {

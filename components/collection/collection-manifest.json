@@ -9,6 +9,7 @@
     "./components/Popover/index.js",
     "./components/ProgressBar/index.js",
     "./components/Slider/index.js",
+    "./components/Steps/index.js",
     "./components/Switch/index.js",
     "./components/Toast/index.js"
   ],
