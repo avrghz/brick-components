@@ -1,4 +1,4 @@
-import { h, r as registerInstance, c as createEvent, H as Host } from './index-c7d865b7.js';
+import { h, r as registerInstance, c as createEvent, H as Host } from './index-11a805ea.js';
 import './iron-icons-d49dcd62.js';
 import './lodash-9002a3c2.js';
 import { P as ParsePropTo } from './parsePropTo-cddb044b.js';
@@ -42,6 +42,7 @@ var __rest = (undefined && undefined.__rest) || function (s, e) {
 const Steps = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.bkClick = createEvent(this, "bkClick", 7);
         this._steps = [];
         /** Center title and description */
         this.isCentered = false;
@@ -54,7 +55,6 @@ const Steps = class {
             flexBasis: `${100 / (this.steps.length - (this.isStyleCentered() ? 0 : 1))}%`,
             marginRight: '0',
         });
-        this.bkClick = createEvent(this, "bkClick", 7);
     }
     render() {
         return (h(Host, { class: `is-${this.direction}` }, this._steps.map((_a, i) => {

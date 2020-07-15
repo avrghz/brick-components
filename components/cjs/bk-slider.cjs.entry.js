@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-02137fd9.js');
+const index = require('./index-4697a7c9.js');
 const util = require('./util-654546b2.js');
 
 const indexCss = ":host{display:block;width:100%;font-size:14px}.bk-slider{width:100%;height:0.25em;margin:1em 0;background-color:#e4e7ed;border-radius:0.25em;position:relative;vertical-align:middle;opacity:0.5;pointer-events:none}.bk-slider__bar{height:0.25em;border-top-left-radius:0.125em;border-bottom-left-radius:0.125em;position:absolute;transition:width 0.2s linear}.bk-slider__button{height:2em;width:2em;position:absolute;z-index:1001;top:0.125em;left:0;transform:translate(-50%, -50%);background-color:transparent;text-align:center;user-select:none;line-height:normal;transition:left 0.2s linear}.bk-slider__button::after{content:\"\";height:100%;display:inline-block;vertical-align:middle}.bk-slider__button-inner{width:1em;height:1em;background-color:#ffffff;border-radius:50%;transition:0.2s;user-select:none;display:inline-block;vertical-align:middle}.bk-slider__tooltip-content{white-space:nowrap}.bk-slider.bk-slider--info .bk-slider__bar{background-color:#909399}.bk-slider.bk-slider--info .bk-slider__button-inner{border:2px solid #909399}.bk-slider.bk-slider--danger .bk-slider__bar{background-color:#f56c6c}.bk-slider.bk-slider--danger .bk-slider__button-inner{border:2px solid #f56c6c}.bk-slider.bk-slider--warning .bk-slider__bar{background-color:#e6a23c}.bk-slider.bk-slider--warning .bk-slider__button-inner{border:2px solid #e6a23c}.bk-slider.bk-slider--success .bk-slider__bar{background-color:#67c23a}.bk-slider.bk-slider--success .bk-slider__button-inner{border:2px solid #67c23a}.bk-slider.bk-slider--default .bk-slider__bar{background-color:#409eff}.bk-slider.bk-slider--default .bk-slider__button-inner{border:2px solid #409eff}.bk-slider:not(.bk-slider--disabled){pointer-events:all;opacity:1}.bk-slider:not(.bk-slider--disabled) .bk-slider__button{cursor:grab}.bk-slider:not(.bk-slider--disabled) .bk-slider__button:hover .bk-slider__button-inner,.bk-slider:not(.bk-slider--disabled) .bk-slider__button:active .bk-slider__button-inner{transform:scale(1.2)}.bk-slider--disabled .bk-slider__button{outline:none}";
@@ -13,6 +13,7 @@ const eventOptions = {
 const Slider = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
+        this.bkChange = index.createEvent(this, "bkChange", 7);
         this.isMouseEvent = true;
         this.previousValue = 0;
         this.toolTipState = false;
@@ -73,7 +74,6 @@ const Slider = class {
             e.stopImmediatePropagation();
         };
         this.getButtonUI = (slot) => index.h("div", Object.assign({ class: "bk-slider__button-inner" }, (slot ? { slot } : {})));
-        this.bkChange = index.createEvent(this, "bkChange", 7);
     }
     watchStep() {
         this.validateStep();

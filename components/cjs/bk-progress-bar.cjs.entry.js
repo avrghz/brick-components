@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-02137fd9.js');
+const index = require('./index-4697a7c9.js');
 
 const ProgressText = ({ show, isInnerText, progress }) => show ? (index.h("div", { class: `bk-progress__text ${isInnerText ? 'inner' : ''} ${progress === 0 ? 'no-progress' : ''}` }, `${progress}%`)) : null;
 

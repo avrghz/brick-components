@@ -1008,6 +1008,8 @@ export declare namespace JSXBase {
         name?: string;
         required?: boolean;
         size?: number;
+        autoComplete?: string;
+        autocomplete?: string;
     }
     interface SourceHTMLAttributes<T> extends HTMLAttributes<T> {
         media?: string;

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-02137fd9.js');
+const index = require('./index-4697a7c9.js');
 require('./iron-icons-289711e1.js');
 require('./lodash-9ed50696.js');
 const parsePropTo = require('./parsePropTo-848798a8.js');
@@ -46,6 +46,7 @@ var __rest = (undefined && undefined.__rest) || function (s, e) {
 const Steps = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
+        this.bkClick = index.createEvent(this, "bkClick", 7);
         this._steps = [];
         /** Center title and description */
         this.isCentered = false;
@@ -58,7 +59,6 @@ const Steps = class {
             flexBasis: `${100 / (this.steps.length - (this.isStyleCentered() ? 0 : 1))}%`,
             marginRight: '0',
         });
-        this.bkClick = index.createEvent(this, "bkClick", 7);
     }
     render() {
         return (index.h(index.Host, { class: `is-${this.direction}` }, this._steps.map((_a, i) => {

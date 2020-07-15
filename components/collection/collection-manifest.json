@@ -2,6 +2,8 @@
   "entries": [
     "./components/Alert/index.js",
     "./components/Card/index.js",
+    "./components/Collapse/index.js",
+    "./components/CollapseGroup/index.js",
     "./components/Dropdown/index.js",
     "./components/DropdownList/index.js",
     "./components/Modal/index.js",
@@ -15,8 +17,8 @@
   ],
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.15.0",
-    "typescriptVersion": "3.9.5"
+    "version": "1.16.2",
+    "typescriptVersion": "3.9.6"
   },
   "collections": [],
   "bundles": []

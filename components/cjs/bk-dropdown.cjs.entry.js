@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index$1 = require('./index-02137fd9.js');
+const index = require('./index-4697a7c9.js');
 const popper = require('./popper-6d6228bc.js');
 
 const indexCss = ".bk-popper{position:absolute;z-index:2000;opacity:0;transition:opacity 0.2s ease-in;box-sizing:border-box}.bk-popper:focus:active,.bk-popper:focus{outline-width:0}.bk-popper__arrow,.bk-popper__arrow::after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid}.bk-popper__arrow{border-width:6px;filter:drop-shadow(0 2px 12px rgba(0, 0, 0, 0.03))}.bk-popper__arrow::after{content:\" \";border-width:6px}.bk-popper[data-popper-placement^=top] .bk-popper__arrow{bottom:-6px;left:50%;margin-right:3px;border-top-color:#ebeef5;border-bottom-width:0}.bk-popper[data-popper-placement^=top] .bk-popper__arrow::after{bottom:0;margin-left:-6px;border-top-color:#ffffff;border-bottom-width:0}.bk-popper[data-popper-placement^=bottom] .bk-popper__arrow{top:-6px;left:50%;margin-right:3px;border-top-width:0;border-bottom-color:#ebeef5}.bk-popper[data-popper-placement^=bottom] .bk-popper__arrow::after{top:0;margin-left:-6px;border-top-width:0;border-bottom-color:#ffffff}.bk-popper[data-popper-placement^=right] .bk-popper__arrow{top:50%;left:-6px;margin-bottom:3px;border-right-color:#ebeef5;border-left-width:0}.bk-popper[data-popper-placement^=right] .bk-popper__arrow::after{bottom:-6px;left:0;border-right-color:#ffffff;border-left-width:0}.bk-popper[data-popper-placement^=left] .bk-popper__arrow{top:50%;right:-6px;margin-bottom:3px;border-right-width:0;border-left-color:#ebeef5}.bk-popper[data-popper-placement^=left] .bk-popper__arrow::after{right:0;bottom:-6px;margin-left:-6px;border-right-width:0;border-left-color:#ffffff}:host{display:inline-block}:host(.bk-dropdown--disabled){opacity:0.5;pointer-events:none}.bk-dropdown{display:inline-block;position:relative;color:#606266;font-size:14px}.bk-dropdown__menu{padding:20px;box-shadow:0 2px 12px 0 rgba(0, 0, 0, 0.1);background-color:#ffffff;border:1px solid #ebeef5;border-radius:4px;min-width:150px;max-width:300px}";
@@ -31,7 +31,9 @@ const modifiers = [
 ];
 const Dropdown = class {
     constructor(hostRef) {
-        index$1.registerInstance(this, hostRef);
+        index.registerInstance(this, hostRef);
+        this.bkOpened = index.createEvent(this, "bkOpened", 7);
+        this.bkClosed = index.createEvent(this, "bkClosed", 7);
         /** Open or close the menu */
         this.open = false;
         /** Close the menu when clicked outside */
@@ -53,8 +55,6 @@ const Dropdown = class {
                 this.open = false;
             }
         };
-        this.bkOpened = index$1.createEvent(this, "bkOpened", 7);
-        this.bkClosed = index$1.createEvent(this, "bkClosed", 7);
     }
     componentWillLoad() {
         this.handleDisabledState();
@@ -112,11 +112,11 @@ const Dropdown = class {
         }
     }
     render() {
-        return (index$1.h(index$1.Host, { role: "button", "aria-haspopup": "true", "aria-expanded": this.open, class: {
+        return (index.h(index.Host, { role: "button", "aria-haspopup": "true", "aria-expanded": this.open, class: {
                 'bk-dropdown--disabled': this.disabled,
-            } }, index$1.h("div", { class: "bk-dropdown" }, index$1.h("slot", { name: "control" }), this.open && (index$1.h("div", { class: "bk-dropdown__menu bk-popper", ref: (el) => (this.menuRef = el), tabIndex: -1, onClick: (e) => e.stopPropagation() }, index$1.h("div", { class: "bk-popper__arrow", "data-popper-arrow": true }), index$1.h("slot", { name: "content" }))))));
+            } }, index.h("div", { class: "bk-dropdown" }, index.h("slot", { name: "control" }), this.open && (index.h("div", { class: "bk-dropdown__menu bk-popper", ref: (el) => (this.menuRef = el), tabIndex: -1, onClick: (e) => e.stopPropagation() }, index.h("div", { class: "bk-popper__arrow", "data-popper-arrow": true }), index.h("slot", { name: "content" }))))));
     }
-    get el() { return index$1.getElement(this); }
+    get el() { return index.getElement(this); }
 };
 __decorate([
     popper.SetPopper({

@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, g as getElement } from './index-c7d865b7.js';
+import { r as registerInstance, c as createEvent, h, g as getElement } from './index-11a805ea.js';
 import './focus-trap-3a6d86f2.js';
 
 const indexCss = ".bk-pop-confirm__footer.sc-bk-pop-confirm{display:flex;justify-content:flex-end;align-items:center;margin-top:16px}";
@@ -6,6 +6,8 @@ const indexCss = ".bk-pop-confirm__footer.sc-bk-pop-confirm{display:flex;justify
 const PopConfirm = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.bkConfirmed = createEvent(this, "bkConfirmed", 7);
+        this.bkCancelled = createEvent(this, "bkCancelled", 7);
         this.show = false;
         /** Confirm button text */
         this.confirmButtonText = 'Confirm';
@@ -32,8 +34,6 @@ const PopConfirm = class {
             (_a = this.cancelButtonRef) === null || _a === void 0 ? void 0 : _a.focus();
         };
         this.getButtonVariant = (variant) => (variant !== 'default' ? `bk-button--${variant}` : '');
-        this.bkConfirmed = createEvent(this, "bkConfirmed", 7);
-        this.bkCancelled = createEvent(this, "bkCancelled", 7);
     }
     onClickHandler() {
         if (!this.disabled && !this.show) {

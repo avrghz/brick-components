@@ -1,4 +1,4 @@
-import { h, r as registerInstance, H as Host } from './index-c7d865b7.js';
+import { h, r as registerInstance, H as Host } from './index-11a805ea.js';
 
 const ProgressText = ({ show, isInnerText, progress }) => show ? (h("div", { class: `bk-progress__text ${isInnerText ? 'inner' : ''} ${progress === 0 ? 'no-progress' : ''}` }, `${progress}%`)) : null;
 

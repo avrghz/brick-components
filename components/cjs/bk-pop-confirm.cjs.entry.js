@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-02137fd9.js');
+const index = require('./index-4697a7c9.js');
 require('./focus-trap-54f8125c.js');
 
 const indexCss = ".bk-pop-confirm__footer.sc-bk-pop-confirm{display:flex;justify-content:flex-end;align-items:center;margin-top:16px}";
@@ -10,6 +10,8 @@ const indexCss = ".bk-pop-confirm__footer.sc-bk-pop-confirm{display:flex;justify
 const PopConfirm = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
+        this.bkConfirmed = index.createEvent(this, "bkConfirmed", 7);
+        this.bkCancelled = index.createEvent(this, "bkCancelled", 7);
         this.show = false;
         /** Confirm button text */
         this.confirmButtonText = 'Confirm';
@@ -36,8 +38,6 @@ const PopConfirm = class {
             (_a = this.cancelButtonRef) === null || _a === void 0 ? void 0 : _a.focus();
         };
         this.getButtonVariant = (variant) => (variant !== 'default' ? `bk-button--${variant}` : '');
-        this.bkConfirmed = index.createEvent(this, "bkConfirmed", 7);
-        this.bkCancelled = index.createEvent(this, "bkCancelled", 7);
     }
     onClickHandler() {
         if (!this.disabled && !this.show) {

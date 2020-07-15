@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, H as Host, g as getElement } from './index-c7d865b7.js';
+import { r as registerInstance, c as createEvent, h, H as Host, g as getElement } from './index-11a805ea.js';
 import './iron-icons-d49dcd62.js';
 import './focus-trap-3a6d86f2.js';
 
@@ -7,6 +7,10 @@ const indexCss = ".bk-button{display:inline-block;line-height:1;white-space:nowr
 const Modal = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.bkOpen = createEvent(this, "bkOpen", 7);
+        this.bkOpened = createEvent(this, "bkOpened", 7);
+        this.bkClose = createEvent(this, "bkClose", 7);
+        this.bkClosed = createEvent(this, "bkClosed", 7);
         this.hasFooter = false;
         /** Show or hide the modal */
         this.open = false;
@@ -43,10 +47,6 @@ const Modal = class {
                 this.open = false;
             }
         };
-        this.bkOpen = createEvent(this, "bkOpen", 7);
-        this.bkOpened = createEvent(this, "bkOpened", 7);
-        this.bkClose = createEvent(this, "bkClose", 7);
-        this.bkClosed = createEvent(this, "bkClosed", 7);
     }
     componentWillLoad() {
         this.toggleFooter();

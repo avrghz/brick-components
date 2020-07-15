@@ -1,7 +1,7 @@
-import { r as registerInstance, h, c as createEvent, g as getElement } from './index-c7d865b7.js';
+import { r as registerInstance, c as createEvent, h, g as getElement } from './index-11a805ea.js';
 import './iron-icons-d49dcd62.js';
-import { c as consoleWarn } from './util-b133d5f7.js';
 import './lodash-9002a3c2.js';
+import { c as consoleWarn } from './util-b133d5f7.js';
 import { P as ParsePropTo } from './parsePropTo-cddb044b.js';
 
 const dispatchEventCloseMenu = (dropdown) => {
@@ -72,6 +72,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 const DropdownList = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.bkSelect = createEvent(this, "bkSelect", 7);
         this._options = [];
         this.searchText = '';
         /** Pass stringified object when used with vanilla Javascript */
@@ -172,7 +173,6 @@ const DropdownList = class {
                     'is-active': !option.disabled && !!this.selectedOption && this.selectedOption === option.value,
                 } }, option.label))))));
         };
-        this.bkSelect = createEvent(this, "bkSelect", 7);
     }
     watchSelectedOption() {
         this.validateSelectedOption();

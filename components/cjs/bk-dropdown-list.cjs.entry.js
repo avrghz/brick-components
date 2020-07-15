@@ -2,10 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-02137fd9.js');
+const index = require('./index-4697a7c9.js');
 require('./iron-icons-289711e1.js');
-const util = require('./util-654546b2.js');
 require('./lodash-9ed50696.js');
+const util = require('./util-654546b2.js');
 const parsePropTo = require('./parsePropTo-848798a8.js');
 
 const dispatchEventCloseMenu = (dropdown) => {
@@ -76,6 +76,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 const DropdownList = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
+        this.bkSelect = index.createEvent(this, "bkSelect", 7);
         this._options = [];
         this.searchText = '';
         /** Pass stringified object when used with vanilla Javascript */
@@ -176,7 +177,6 @@ const DropdownList = class {
                     'is-active': !option.disabled && !!this.selectedOption && this.selectedOption === option.value,
                 } }, option.label))))));
         };
-        this.bkSelect = index.createEvent(this, "bkSelect", 7);
     }
     watchSelectedOption() {
         this.validateSelectedOption();

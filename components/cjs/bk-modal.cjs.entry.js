@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-02137fd9.js');
+const index = require('./index-4697a7c9.js');
 require('./iron-icons-289711e1.js');
 require('./focus-trap-54f8125c.js');
 
@@ -11,6 +11,10 @@ const indexCss = ".bk-button{display:inline-block;line-height:1;white-space:nowr
 const Modal = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
+        this.bkOpen = index.createEvent(this, "bkOpen", 7);
+        this.bkOpened = index.createEvent(this, "bkOpened", 7);
+        this.bkClose = index.createEvent(this, "bkClose", 7);
+        this.bkClosed = index.createEvent(this, "bkClosed", 7);
         this.hasFooter = false;
         /** Show or hide the modal */
         this.open = false;
@@ -47,10 +51,6 @@ const Modal = class {
                 this.open = false;
             }
         };
-        this.bkOpen = index.createEvent(this, "bkOpen", 7);
-        this.bkOpened = index.createEvent(this, "bkOpened", 7);
-        this.bkClose = index.createEvent(this, "bkClose", 7);
-        this.bkClosed = index.createEvent(this, "bkClosed", 7);
     }
     componentWillLoad() {
         this.toggleFooter();
