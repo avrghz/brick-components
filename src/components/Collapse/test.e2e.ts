@@ -70,16 +70,20 @@ describe('<bk-collapse/>', () => {
 
     describe('@Event', () => {
         it('should fire right events', async () => {
+            const bkOpen = await component.spyOnEvent('bkOpen')
             const bkOpened = await component.spyOnEvent('bkOpened')
+            const bkClose = await component.spyOnEvent('bkClose')
             const bkClosed = await component.spyOnEvent('bkClosed')
 
             component.setProperty('open', true)
             await page.waitForChanges()
+            expect(bkOpen).toHaveReceivedEventDetail(null)
             await waitForAnimation()
             expect(bkOpened).toHaveReceivedEventDetail(null)
 
             component.setProperty('open', false)
             await page.waitForChanges()
+            expect(bkClose).toHaveReceivedEventDetail(null)
             await waitForAnimation()
             expect(bkClosed).toHaveReceivedEventDetail(null)
         })

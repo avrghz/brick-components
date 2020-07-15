@@ -45,6 +45,9 @@ export namespace Components {
          */
         "open": boolean;
     }
+    interface BkCollapseGroup {
+        "isAccordion": boolean;
+    }
     interface BkDropdown {
         /**
           * Close the menu when clicked outside
@@ -249,6 +252,12 @@ declare global {
         prototype: HTMLBkCollapseElement;
         new (): HTMLBkCollapseElement;
     };
+    interface HTMLBkCollapseGroupElement extends Components.BkCollapseGroup, HTMLStencilElement {
+    }
+    var HTMLBkCollapseGroupElement: {
+        prototype: HTMLBkCollapseGroupElement;
+        new (): HTMLBkCollapseGroupElement;
+    };
     interface HTMLBkDropdownElement extends Components.BkDropdown, HTMLStencilElement {
     }
     var HTMLBkDropdownElement: {
@@ -313,6 +322,7 @@ declare global {
         "bk-alert": HTMLBkAlertElement;
         "bk-card": HTMLBkCardElement;
         "bk-collapse": HTMLBkCollapseElement;
+        "bk-collapse-group": HTMLBkCollapseGroupElement;
         "bk-dropdown": HTMLBkDropdownElement;
         "bk-dropdown-list": HTMLBkDropdownListElement;
         "bk-modal": HTMLBkModalElement;
@@ -356,9 +366,17 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * This event is fired just before the panel closes
+         */
+        "onBkClose"?: (event: CustomEvent<any>) => void;
+        /**
           * This event is fired after the panel is closed
          */
         "onBkClosed"?: (event: CustomEvent<any>) => void;
+        /**
+          * This event is fired just before the panel opens
+         */
+        "onBkOpen"?: (event: CustomEvent<any>) => void;
         /**
           * This event is fired after the panel is opened
          */
@@ -367,6 +385,9 @@ declare namespace LocalJSX {
           * Open or close the collapse
          */
         "open"?: boolean;
+    }
+    interface BkCollapseGroup {
+        "isAccordion"?: boolean;
     }
     interface BkDropdown {
         /**
@@ -612,6 +633,7 @@ declare namespace LocalJSX {
         "bk-alert": BkAlert;
         "bk-card": BkCard;
         "bk-collapse": BkCollapse;
+        "bk-collapse-group": BkCollapseGroup;
         "bk-dropdown": BkDropdown;
         "bk-dropdown-list": BkDropdownList;
         "bk-modal": BkModal;
@@ -631,6 +653,7 @@ declare module "@stencil/core" {
             "bk-alert": LocalJSX.BkAlert & JSXBase.HTMLAttributes<HTMLBkAlertElement>;
             "bk-card": LocalJSX.BkCard & JSXBase.HTMLAttributes<HTMLBkCardElement>;
             "bk-collapse": LocalJSX.BkCollapse & JSXBase.HTMLAttributes<HTMLBkCollapseElement>;
+            "bk-collapse-group": LocalJSX.BkCollapseGroup & JSXBase.HTMLAttributes<HTMLBkCollapseGroupElement>;
             "bk-dropdown": LocalJSX.BkDropdown & JSXBase.HTMLAttributes<HTMLBkDropdownElement>;
             "bk-dropdown-list": LocalJSX.BkDropdownList & JSXBase.HTMLAttributes<HTMLBkDropdownListElement>;
             "bk-modal": LocalJSX.BkModal & JSXBase.HTMLAttributes<HTMLBkModalElement>;

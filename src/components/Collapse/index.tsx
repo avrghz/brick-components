@@ -1,6 +1,6 @@
 import { Component, h, Prop, Host, EventEmitter, Event } from '@stencil/core'
 import { uniqueId } from 'lodash'
-import { composite, tween, styler, ColdSubscription } from 'popmotion'
+import { tween, styler, ColdSubscription } from 'popmotion'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 
@@ -28,8 +28,14 @@ export class Collapse {
     /** Enable or disable collapse */
     @Prop() disabled = false
 
+    /** This event is fired just before the panel opens */
+    @Event() bkOpen!: EventEmitter
+
     /** This event is fired after the panel is opened */
     @Event() bkOpened!: EventEmitter
+
+    /** This event is fired just before the panel closes */
+    @Event() bkClose!: EventEmitter
 
     /** This event is fired after the panel is closed */
     @Event() bkClosed!: EventEmitter
@@ -68,6 +74,7 @@ export class Collapse {
                 this.uiState = 'open'
                 this.bkOpened.emit()
             })
+            this.bkOpen.emit()
         }
     }
 
@@ -77,24 +84,25 @@ export class Collapse {
                 this.uiState = 'close'
                 this.bkClosed.emit()
             })
+            this.bkClose.emit()
         }
     }
 
     animate = (open: boolean, cb: VoidFunction) => {
+        let started = false
+        let height = 1
         if (this.tabPanelRef) {
             const element = styler(this.tabPanelRef)
-            this.subscription = composite({
-                opacity: tween({
-                    ...(open ? { from: 0, to: 1 } : { from: 1, to: 0 }),
-                    duration: open ? DURATION * 2 : DURATION / 2,
-                }),
-                y: tween({
-                    ...(open ? { from: '-50%', to: '0%' } : { from: '0%', to: '-50%' }),
-                    duration: DURATION,
-                }),
+            this.subscription = tween({
+                ...(open ? { from: 0, to: 1 } : { from: 1, to: 0 }),
+                duration: DURATION,
             }).start({
-                update: ({ y, opacity }: { [key: string]: number | number }) => {
-                    element.set('opacity', opacity).set('y', y)
+                update: (x: number) => {
+                    if (!started) {
+                        height = element.get('height') || 1
+                        started = true
+                    }
+                    element.set('opacity', x).set('height', x * height)
                 },
                 complete: cb,
             })

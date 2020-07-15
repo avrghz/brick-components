@@ -1,7 +1,5 @@
 # bk-collapse
 
-Description goes here
-
 ```javascript
 import { html } from 'lit-html'
 
@@ -21,7 +19,6 @@ html`<bk-collapse open="false" disabled="false" @bkOpened=${() => {}} @bkClosed=
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property   | Attribute  | Description                | Type      | Default |
@@ -29,15 +26,13 @@ html`<bk-collapse open="false" disabled="false" @bkOpened=${() => {}} @bkClosed=
 | `disabled` | `disabled` | Enable or disable collapse | `boolean` | `false` |
 | `open`     | `open`     | Open or close the collapse | `boolean` | `false` |
 
-
 ## Events
 
-| Event      | Description                                   | Type               |
-| ---------- | --------------------------------------------- | ------------------ |
-| `bkClosed` | This event is fired after the panel is closed | `CustomEvent<any>` |
-| `bkOpened` | This event is fired after the panel is opened | `CustomEvent<any>` |
+| Event      | Description                                      | Type               |
+| ---------- | ------------------------------------------------ | ------------------ |
+| `bkClose`  | This event is fired just before the panel closes | `CustomEvent<any>` |
+| `bkClosed` | This event is fired after the panel is closed    | `CustomEvent<any>` |
+| `bkOpen`   | This event is fired just before the panel opens  | `CustomEvent<any>` |
+| `bkOpened` | This event is fired after the panel is opened    | `CustomEvent<any>` |
 
-
-----------------------------------------------
-
-
+---
