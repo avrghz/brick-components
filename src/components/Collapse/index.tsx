@@ -10,7 +10,6 @@ import '@polymer/iron-icons/iron-icons'
  */
 
 const DURATION = 300
-// ! Test cases
 
 @Component({
     tag: 'bk-collapse',
@@ -21,7 +20,7 @@ export class Collapse {
     private id = uniqueId()
     private tabPanelRef?: HTMLElement
     private subscription?: ColdSubscription
-    private uiState?: boolean
+    private uiState: 'open' | 'close' = 'close'
 
     /** Open or close the collapse */
     @Prop({ mutable: true, reflect: true }) open = false
@@ -39,9 +38,18 @@ export class Collapse {
         this.animateIn()
     }
 
-    componentWillUpdate() {
+    componentWillRender() {
+        return new Promise((resolve) => {
+            if (this.uiState === 'open' && !this.open) {
+                setTimeout(resolve, DURATION)
+            } else {
+                resolve()
+            }
+        })
+    }
+
+    async componentWillUpdate() {
         this.animateOut()
-        return new Promise((res) => setTimeout(res, this.open ? 0 : DURATION / 2))
     }
 
     componentDidUpdate() {
@@ -55,19 +63,25 @@ export class Collapse {
     }
 
     animateIn = () => {
-        if (this.open) {
-            this.animate(true, () => this.bkOpened.emit())
+        if (this.open && this.uiState === 'close') {
+            this.animate(true, () => {
+                this.uiState = 'open'
+                this.bkOpened.emit()
+            })
         }
     }
 
     animateOut = () => {
-        if (!this.open) {
-            this.animate(false, () => this.bkClosed.emit())
+        if (!this.open && this.uiState === 'open') {
+            this.animate(false, () => {
+                this.uiState = 'close'
+                this.bkClosed.emit()
+            })
         }
     }
 
     animate = (open: boolean, cb: VoidFunction) => {
-        if (this.tabPanelRef && this.uiState !== open) {
+        if (this.tabPanelRef) {
             const element = styler(this.tabPanelRef)
             this.subscription = composite({
                 opacity: tween({
@@ -82,10 +96,7 @@ export class Collapse {
                 update: ({ y, opacity }: { [key: string]: number | number }) => {
                     element.set('opacity', opacity).set('y', y)
                 },
-                complete: () => {
-                    this.uiState = this.open
-                    cb()
-                },
+                complete: cb,
             })
         }
     }
