@@ -1,6 +1,6 @@
 import { Component, h, Prop, Host, EventEmitter, Event } from '@stencil/core'
 import { uniqueId } from 'lodash'
-import { tween, styler, ColdSubscription } from 'popmotion'
+import { tween, styler, ColdSubscription, easing } from 'popmotion'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 
@@ -9,7 +9,7 @@ import '@polymer/iron-icons/iron-icons'
  * @slot content - Use this to render the collapse body.
  */
 
-const DURATION = 300
+const DURATION = 200
 
 @Component({
     tag: 'bk-collapse',
@@ -96,16 +96,22 @@ export class Collapse {
             this.subscription = tween({
                 ...(open ? { from: 0, to: 1 } : { from: 1, to: 0 }),
                 duration: DURATION,
+                ease: easing.linear,
             }).start({
                 update: (x: number) => {
                     if (!started) {
                         height = this.tabPanelRef?.clientHeight || 1
                         started = true
                     }
-                    element.set('opacity', x).set('height', x * height)
+                    element
+                        .set('opacity', x)
+                        .set('position', 'relative')
+                        .set('height', x * height)
                 },
                 complete: () => {
-                    element.set('height', 'auto')
+                    if (open) {
+                        element.set('height', 'auto')
+                    }
                     cb()
                 },
             })
