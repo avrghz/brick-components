@@ -1,10 +1,16 @@
-import { Component, h, Prop, Host } from '@stencil/core'
+import { Component, h, Prop, Host, EventEmitter, Event } from '@stencil/core'
 import { uniqueId } from 'lodash'
 import { composite, tween, styler, ColdSubscription } from 'popmotion'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 
+/**
+ * @slot header - Use this to render the collapse header.
+ * @slot content - Use this to render the collapse body.
+ */
+
 const DURATION = 300
+// ! Test cases
 
 @Component({
     tag: 'bk-collapse',
@@ -17,8 +23,17 @@ export class Collapse {
     private subscription?: ColdSubscription
     private uiState?: boolean
 
+    /** Open or close the collapse */
     @Prop({ mutable: true, reflect: true }) open = false
+
+    /** Enable or disable collapse */
     @Prop() disabled = false
+
+    /** This event is fired after the panel is opened */
+    @Event() bkOpened!: EventEmitter
+
+    /** This event is fired after the panel is closed */
+    @Event() bkClosed!: EventEmitter
 
     componentDidLoad() {
         this.animateIn()
@@ -41,17 +56,17 @@ export class Collapse {
 
     animateIn = () => {
         if (this.open) {
-            this.animate(true)
+            this.animate(true, () => this.bkOpened.emit())
         }
     }
 
     animateOut = () => {
         if (!this.open) {
-            this.animate(false)
+            this.animate(false, () => this.bkClosed.emit())
         }
     }
 
-    animate = (open: boolean) => {
+    animate = (open: boolean, cb: VoidFunction) => {
         if (this.tabPanelRef && this.uiState !== open) {
             const element = styler(this.tabPanelRef)
             this.subscription = composite({
@@ -69,6 +84,7 @@ export class Collapse {
                 },
                 complete: () => {
                     this.uiState = this.open
+                    cb()
                 },
             })
         }

@@ -1,6 +1,6 @@
 import { html } from 'lit-html'
 import { boolean } from '@storybook/addon-knobs'
-// import { action } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions'
 
 import notes from './readme.md'
 
@@ -16,7 +16,10 @@ export const Default = () => {
     const open = boolean('open', false)
     const disabled = boolean('disabled', false)
 
-    return html`<bk-collapse open=${open} disabled=${disabled}>
+    const bkOpened = action('bkOpened')
+    const bkClosed = action('bkClosed')
+
+    return html`<bk-collapse open=${open} disabled=${disabled} @bkOpened=${bkOpened} @bkClosed=${bkClosed}>
         <span slot="header">Lorem ipsum dolor sit amet</span>
         <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

@@ -36,7 +36,13 @@ export namespace Components {
         "shadow": Shadow;
     }
     interface BkCollapse {
+        /**
+          * Enable or disable collapse
+         */
         "disabled": boolean;
+        /**
+          * Open or close the collapse
+         */
         "open": boolean;
     }
     interface BkDropdown {
@@ -345,7 +351,21 @@ declare namespace LocalJSX {
         "shadow"?: Shadow;
     }
     interface BkCollapse {
+        /**
+          * Enable or disable collapse
+         */
         "disabled"?: boolean;
+        /**
+          * This event is fired after the panel is closed
+         */
+        "onBkClosed"?: (event: CustomEvent<any>) => void;
+        /**
+          * This event is fired after the panel is opened
+         */
+        "onBkOpened"?: (event: CustomEvent<any>) => void;
+        /**
+          * Open or close the collapse
+         */
         "open"?: boolean;
     }
     interface BkDropdown {
