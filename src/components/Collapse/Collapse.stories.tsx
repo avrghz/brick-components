@@ -1,5 +1,5 @@
 import { html } from 'lit-html'
-// import { select, boolean } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 // import { action } from '@storybook/addon-actions'
 
 import notes from './readme.md'
@@ -13,17 +13,17 @@ export default {
 }
 
 export const Default = () => {
-    return html`<bk-collapse>
-        <span slot="header">Consistency</span>
+    const open = boolean('open', false)
+    const disabled = boolean('disabled', false)
+
+    return html`<bk-collapse open=${open} disabled=${disabled}>
+        <span slot="header">Lorem ipsum dolor sit amet</span>
         <div slot="content">
-            <div>
-                Consistent with real life: in line with the process and logic of real life, and comply with languages
-                and habits that the users are used to;
-            </div>
-            <div>
-                Consistent within interface: all elements should be consistent, such as: design style, icons and texts,
-                position of elements, etc.
-            </div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
         </div>
     </bk-collapse>`
 }

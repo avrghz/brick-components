@@ -36,6 +36,7 @@ export namespace Components {
         "shadow": Shadow;
     }
     interface BkCollapse {
+        "disabled": boolean;
         "open": boolean;
     }
     interface BkDropdown {
@@ -344,6 +345,7 @@ declare namespace LocalJSX {
         "shadow"?: Shadow;
     }
     interface BkCollapse {
+        "disabled"?: boolean;
         "open"?: boolean;
     }
     interface BkDropdown {

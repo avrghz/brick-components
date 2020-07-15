@@ -1,8 +1,10 @@
-import { Component, h, Prop } from '@stencil/core'
+import { Component, h, Prop, Host } from '@stencil/core'
 import { uniqueId } from 'lodash'
-import { composite, tween, styler } from 'popmotion'
+import { composite, tween, styler, ColdSubscription } from 'popmotion'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
+
+const DURATION = 300
 
 @Component({
     tag: 'bk-collapse',
@@ -12,39 +14,81 @@ import '@polymer/iron-icons/iron-icons'
 export class Collapse {
     private id = uniqueId()
     private tabPanelRef?: HTMLElement
+    private subscription?: ColdSubscription
+    private uiState?: boolean
 
     @Prop({ mutable: true, reflect: true }) open = false
+    @Prop() disabled = false
 
-    onClickHandler = () => (this.open = !this.open)
+    componentDidLoad() {
+        this.animateIn()
+    }
+
+    componentWillUpdate() {
+        this.animateOut()
+        return new Promise((res) => setTimeout(res, this.open ? 0 : DURATION / 2))
+    }
 
     componentDidUpdate() {
-        if (this.tabPanelRef && this.open) {
+        this.animateIn()
+    }
+
+    disconnectedCallback() {
+        if (this.subscription) {
+            this.subscription.stop()
+        }
+    }
+
+    animateIn = () => {
+        if (this.open) {
+            this.animate(true)
+        }
+    }
+
+    animateOut = () => {
+        if (!this.open) {
+            this.animate(false)
+        }
+    }
+
+    animate = (open: boolean) => {
+        if (this.tabPanelRef && this.uiState !== open) {
             const element = styler(this.tabPanelRef)
-            composite({
+            this.subscription = composite({
                 opacity: tween({
-                    from: 0,
-                    to: 1,
-                    duration: 150,
+                    ...(open ? { from: 0, to: 1 } : { from: 1, to: 0 }),
+                    duration: open ? DURATION * 2 : DURATION / 2,
                 }),
-                height: tween({
-                    from: '0%',
-                    to: '100%',
-                    duration: 300,
+                y: tween({
+                    ...(open ? { from: '-50%', to: '0%' } : { from: '0%', to: '-50%' }),
+                    duration: DURATION,
                 }),
             }).start({
-                update: ({ height, opacity }: { [key: string]: number }) => {
-                    element.set('opacity', opacity).set('height', height)
+                update: ({ y, opacity }: { [key: string]: number | number }) => {
+                    element.set('opacity', opacity).set('y', y)
+                },
+                complete: () => {
+                    this.uiState = this.open
                 },
             })
         }
     }
 
+    onClickHandler = () => (this.open = !this.open)
+
+    onKeydownHandler = (e: KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            this.open = !this.open
+        }
+    }
+
     render() {
         return (
-            <div
+            <Host
                 class={{
                     'bk-collapse-item': true,
                     'is-active': this.open,
+                    'is-disabled': this.disabled,
                 }}
             >
                 <div
@@ -62,9 +106,10 @@ export class Collapse {
                             focusing: this.open,
                         }}
                         onClick={this.onClickHandler}
+                        onKeyDown={this.onKeydownHandler}
                     >
                         <slot name="header"></slot>
-                        <iron-icon icon="chevron-right" class="bk-collapse-item__arrow bk-icon-arrow-right" />
+                        <iron-icon icon="chevron-right" class="bk-collapse-item__arrow" />
                     </div>
                 </div>
                 {this.open && (
@@ -80,7 +125,7 @@ export class Collapse {
                         </div>
                     </div>
                 )}
-            </div>
+            </Host>
         )
     }
 }

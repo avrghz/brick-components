@@ -1,1 +1,19 @@
 @import '../../theme/base/collapse.scss';
+
+:host {
+    display: block;
+}
+
+:host(.is-active) {
+    @include e(header) {
+        border-bottom-color: transparent;
+    }
+
+    @include e(arrow) {
+        transform: rotate(90deg);
+    }
+}
+
+:host(.is-disabled) {
+    @include util-disabled();
+}
