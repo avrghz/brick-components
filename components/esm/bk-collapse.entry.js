@@ -1,15 +1,15 @@
 import { r as registerInstance, c as createEvent, h, H as Host } from './index-11a805ea.js';
 import './iron-icons-d49dcd62.js';
 import { l as lodash } from './lodash-9002a3c2.js';
-import { i as index, t as tween } from './popmotion.es-da3a2344.js';
+import { i as index, t as tween, l as linear } from './popmotion.es-59825fae.js';
 
-const indexCss = ".bk-collapse-item__header{display:flex;align-items:center;height:48px;line-height:48px;background-color:#ffffff;color:#303133;cursor:pointer;border-bottom:1px solid #ebeef5;font-size:13px;font-weight:500;transition:border-bottom-color 0.3s;outline:none}.bk-collapse-item__arrow{margin:0 8px 0 auto;transition:transform 0.3s;width:20px}.bk-collapse-item__header:focus{color:#409eff}.bk-collapse-item__wrap{will-change:height;background-color:#ffffff;overflow:hidden;box-sizing:border-box;border-bottom:1px solid #ebeef5;opacity:0}.bk-collapse-item__content{padding-bottom:25px;font-size:13px;color:#303133;line-height:1.7692307692}.bk-collapse-item:last-child{margin-bottom:-1px}:host{display:block}:host(.is-active) .bk-collapse-item__header{border-bottom-color:transparent}:host(.is-active) .bk-collapse-item__arrow{transform:rotate(90deg)}:host(.is-disabled){opacity:0.5;pointer-events:none}";
+const indexCss = ".bk-collapse-item__header{display:flex;align-items:center;height:48px;line-height:48px;background-color:#ffffff;color:#303133;cursor:pointer;border-bottom:1px solid #ebeef5;font-size:13px;font-weight:500;transition:border-bottom-color 0.3s;outline:none}.bk-collapse-item__arrow{margin:0 8px 0 auto;transition:transform 0.3s;width:20px}.bk-collapse-item__header:focus{color:#409eff}.bk-collapse-item__wrap{will-change:height;background-color:#ffffff;overflow:hidden;box-sizing:border-box;border-bottom:1px solid #ebeef5;opacity:0;position:absolute}.bk-collapse-item__content{padding-bottom:25px;font-size:13px;color:#303133;line-height:1.7692307692}.bk-collapse-item:last-child{margin-bottom:-1px}:host{display:block}:host(.is-active) .bk-collapse-item__header{border-bottom-color:transparent}:host(.is-active) .bk-collapse-item__arrow{transform:rotate(90deg)}:host(.is-disabled){opacity:0.5;pointer-events:none}";
 
 /**
  * @slot header - Use this to render the collapse header.
  * @slot content - Use this to render the collapse body.
  */
-const DURATION = 300;
+const DURATION = 200;
 const Collapse = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
@@ -46,17 +46,22 @@ const Collapse = class {
             let height = 1;
             if (this.tabPanelRef) {
                 const element = index(this.tabPanelRef);
-                this.subscription = tween(Object.assign(Object.assign({}, (open ? { from: 0, to: 1 } : { from: 1, to: 0 })), { duration: DURATION })).start({
+                this.subscription = tween(Object.assign(Object.assign({}, (open ? { from: 0, to: 1 } : { from: 1, to: 0 })), { duration: DURATION, ease: linear })).start({
                     update: (x) => {
                         var _a;
                         if (!started) {
                             height = ((_a = this.tabPanelRef) === null || _a === void 0 ? void 0 : _a.clientHeight) || 1;
                             started = true;
                         }
-                        element.set('opacity', x).set('height', x * height);
+                        element
+                            .set('opacity', x)
+                            .set('position', 'relative')
+                            .set('height', x * height);
                     },
                     complete: () => {
-                        element.set('height', 'auto');
+                        if (open) {
+                            element.set('height', 'auto');
+                        }
                         cb();
                     },
                 });

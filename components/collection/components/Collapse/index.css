@@ -161,6 +161,7 @@
   box-sizing: border-box;
   border-bottom: 1px solid #ebeef5;
   opacity: 0;
+  position: absolute;
 }
 
 .bk-collapse-item__content {

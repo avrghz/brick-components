@@ -1,13 +1,13 @@
 import { Component, h, Prop, Host, Event } from '@stencil/core';
 import { uniqueId } from 'lodash';
-import { tween, styler } from 'popmotion';
+import { tween, styler, easing } from 'popmotion';
 import '@polymer/iron-icon/iron-icon';
 import '@polymer/iron-icons/iron-icons';
 /**
  * @slot header - Use this to render the collapse header.
  * @slot content - Use this to render the collapse body.
  */
-const DURATION = 300;
+const DURATION = 200;
 export class Collapse {
     constructor() {
         this.id = uniqueId();
@@ -39,17 +39,22 @@ export class Collapse {
             let height = 1;
             if (this.tabPanelRef) {
                 const element = styler(this.tabPanelRef);
-                this.subscription = tween(Object.assign(Object.assign({}, (open ? { from: 0, to: 1 } : { from: 1, to: 0 })), { duration: DURATION })).start({
+                this.subscription = tween(Object.assign(Object.assign({}, (open ? { from: 0, to: 1 } : { from: 1, to: 0 })), { duration: DURATION, ease: easing.linear })).start({
                     update: (x) => {
                         var _a;
                         if (!started) {
                             height = ((_a = this.tabPanelRef) === null || _a === void 0 ? void 0 : _a.clientHeight) || 1;
                             started = true;
                         }
-                        element.set('opacity', x).set('height', x * height);
+                        element
+                            .set('opacity', x)
+                            .set('position', 'relative')
+                            .set('height', x * height);
                     },
                     complete: () => {
-                        element.set('height', 'auto');
+                        if (open) {
+                            element.set('height', 'auto');
+                        }
                         cb();
                     },
                 });
