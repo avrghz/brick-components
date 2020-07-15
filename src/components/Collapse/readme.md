@@ -19,12 +19,14 @@ html`<bk-collapse open="false" disabled="false" @bkOpened=${() => {}} @bkClosed=
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                | Type      | Default |
 | ---------- | ---------- | -------------------------- | --------- | ------- |
 | `disabled` | `disabled` | Enable or disable collapse | `boolean` | `false` |
 | `open`     | `open`     | Open or close the collapse | `boolean` | `false` |
+
 
 ## Events
 
@@ -35,4 +37,7 @@ html`<bk-collapse open="false" disabled="false" @bkOpened=${() => {}} @bkClosed=
 | `bkOpen`   | This event is fired just before the panel opens  | `CustomEvent<any>` |
 | `bkOpened` | This event is fired after the panel is opened    | `CustomEvent<any>` |
 
----
+
+----------------------------------------------
+
+

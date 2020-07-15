@@ -46,10 +46,14 @@ html`<bk-collapse-group is-accordion="true">
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property      | Attribute      | Description | Type      | Default |
 | ------------- | -------------- | ----------- | --------- | ------- |
 | `isAccordion` | `is-accordion` |             | `boolean` | `true`  |
 
----
+
+----------------------------------------------
+
+

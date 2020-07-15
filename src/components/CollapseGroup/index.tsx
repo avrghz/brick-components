@@ -1,8 +1,8 @@
-import { Component, h, Host, Element, Prop, Listen } from '@stencil/core'
+import { Component, h, Element, Prop, Listen } from '@stencil/core'
 
 @Component({
     tag: 'bk-collapse-group',
-    shadow: false,
+    scoped: true,
     styleUrl: './index.scss',
 })
 export class CollapseGroup {
@@ -28,10 +28,6 @@ export class CollapseGroup {
     }
 
     render() {
-        return (
-            <Host>
-                <slot></slot>
-            </Host>
-        )
+        return <slot></slot>
     }
 }

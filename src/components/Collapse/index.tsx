@@ -99,12 +99,15 @@ export class Collapse {
             }).start({
                 update: (x: number) => {
                     if (!started) {
-                        height = element.get('height') || 1
+                        height = this.tabPanelRef?.clientHeight || 1
                         started = true
                     }
                     element.set('opacity', x).set('height', x * height)
                 },
-                complete: cb,
+                complete: () => {
+                    element.set('height', 'auto')
+                    cb()
+                },
             })
         }
     }
