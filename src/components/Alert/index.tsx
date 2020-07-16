@@ -23,7 +23,7 @@ export class Alert {
     @Prop() dismissible = true
 
     /** Event fired when close button is clicked */
-    @Event() bkClosed!: EventEmitter<null>
+    @Event({ bubbles: false }) bkClosed!: EventEmitter<null>
 
     onCloseHandler = (e: Event) => {
         e.preventDefault()

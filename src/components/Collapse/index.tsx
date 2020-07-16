@@ -29,16 +29,16 @@ export class Collapse {
     @Prop() disabled = false
 
     /** This event is fired just before the panel opens */
-    @Event() bkOpen!: EventEmitter
+    @Event({ bubbles: false }) bkOpen!: EventEmitter
 
     /** This event is fired after the panel is opened */
-    @Event() bkOpened!: EventEmitter
+    @Event({ bubbles: false }) bkOpened!: EventEmitter
 
     /** This event is fired just before the panel closes */
-    @Event() bkClose!: EventEmitter
+    @Event({ bubbles: false }) bkClose!: EventEmitter
 
     /** This event is fired after the panel is closed */
-    @Event() bkClosed!: EventEmitter
+    @Event({ bubbles: false }) bkClosed!: EventEmitter
 
     componentDidLoad() {
         this.animateIn()

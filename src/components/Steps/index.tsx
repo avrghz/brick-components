@@ -21,7 +21,7 @@ export class Steps {
     @ParsePropTo('array', '_steps') @Prop() steps: StepComponent[] | string = []
 
     /** This event is fired when clicked on a step */
-    @Event() bkClick!: EventEmitter<number>
+    @Event({ bubbles: false }) bkClick!: EventEmitter<number>
 
     isStyleCentered = () => !!this.isCentered && this.direction === 'horizontal'
 

@@ -18,7 +18,7 @@ export class Switch {
     @Prop() variant: Variants = 'default'
 
     /** Fired on every state change */
-    @Event() bkChange!: EventEmitter<AVChange>
+    @Event({ bubbles: false }) bkChange!: EventEmitter<AVChange>
 
     updateState = () => {
         if (!this.disabled) {

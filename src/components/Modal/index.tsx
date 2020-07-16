@@ -32,16 +32,16 @@ export class Modal {
     @Prop() dismissible = true
 
     /** Fired when modal is about to open */
-    @Event() bkOpen!: EventEmitter
+    @Event({ bubbles: false }) bkOpen!: EventEmitter
 
     /** Fired after modal is opened */
-    @Event() bkOpened!: EventEmitter
+    @Event({ bubbles: false }) bkOpened!: EventEmitter
 
     /** Fired when modal is about to close */
-    @Event() bkClose!: EventEmitter
+    @Event({ bubbles: false }) bkClose!: EventEmitter
 
     /** Fired after modal is closed */
-    @Event() bkClosed!: EventEmitter
+    @Event({ bubbles: false }) bkClosed!: EventEmitter
 
     componentWillLoad() {
         this.toggleFooter()

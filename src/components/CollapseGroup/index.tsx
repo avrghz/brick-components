@@ -1,4 +1,4 @@
-import { Component, h, Element, Prop, Listen } from '@stencil/core'
+import { Component, h, Element, Prop, Watch } from '@stencil/core'
 
 @Component({
     tag: 'bk-collapse-group',
@@ -12,19 +12,34 @@ export class CollapseGroup {
 
     @Prop() isAccordion = true
 
-    componentWillLoad() {
-        this.collapsiblePanels = this.el.querySelectorAll('bk-collapse')
+    @Watch('isAccordion')
+    watchIsAccordion() {
+        this.registerEvent(this.isAccordion)
     }
 
-    @Listen('bkOpen')
-    onCollapseOpened(e: CustomEvent) {
+    componentWillLoad() {
+        this.collapsiblePanels = this.el.querySelectorAll('bk-collapse')
         if (this.isAccordion) {
-            this.collapsiblePanels?.forEach((panel) => {
-                if (e.target !== panel) {
-                    panel.setAttribute('open', 'false')
-                }
-            })
+            this.registerEvent(true)
         }
+    }
+
+    disconnectedCallback() {
+        this.registerEvent(false)
+    }
+
+    registerEvent = (register = true) => {
+        this.collapsiblePanels?.forEach((collapse) => {
+            collapse[register ? 'addEventListener' : 'removeEventListener']('bkOpen', this.onCollapseOpened)
+        })
+    }
+
+    onCollapseOpened = (e: Event) => {
+        this.collapsiblePanels?.forEach((panel) => {
+            if (e.target !== panel) {
+                panel.setAttribute('open', 'false')
+            }
+        })
     }
 
     render() {

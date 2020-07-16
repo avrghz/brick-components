@@ -36,7 +36,7 @@ export class Slider {
     @Prop() showTooltip = true
 
     /** Fired when value changed */
-    @Event() bkChange!: EventEmitter
+    @Event({ bubbles: false }) bkChange!: EventEmitter
 
     @Watch('step')
     watchStep() {

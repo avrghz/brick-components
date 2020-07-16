@@ -42,7 +42,7 @@ export class DropdownList {
     @Prop() noOptionText = 'No options'
 
     /** Fired on selecting option */
-    @Event() bkSelect!: EventEmitter<Option>
+    @Event({ bubbles: false }) bkSelect!: EventEmitter<Option>
 
     @Watch('selectedOption')
     watchSelectedOption() {

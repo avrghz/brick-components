@@ -54,7 +54,7 @@ describe('<bk-alert/>', () => {
 
     describe('Event: bkClosed', () => {
         it('should fire bkClosed event on close button click', async () => {
-            const bkClosed = await page.spyOnEvent('bkClosed')
+            const bkClosed = await component.spyOnEvent('bkClosed')
             const closeButton = await getAlertCloseButton()
             await closeButton.click()
             expect(bkClosed).toHaveReceivedEventDetail(null)
