@@ -4,4 +4,4 @@ export interface Option {
     disabled?: boolean
 }
 
-export type Callback = (index: number) => void
+export type Callback = (option: Option) => void

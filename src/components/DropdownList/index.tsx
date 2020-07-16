@@ -1,4 +1,5 @@
 import { Component, h, Element, Prop, Watch, State, EventEmitter, Event } from '@stencil/core'
+import { debounce } from 'lodash'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 import { consoleWarn } from '../../shared/util'
@@ -74,9 +75,9 @@ export class DropdownList {
         }
     }
 
-    setFocus = (index: number) => {
-        this.selectedOption = (this.options as Option[])[index].value
-        const currentOption = this.el.querySelector(`#option_${index}`) as HTMLElement
+    setFocus = (option: Option) => {
+        this.selectedOption = option.value
+        const currentOption = this.el.querySelector(`#option_${option.value}`) as HTMLElement
         currentOption.focus()
     }
 
@@ -118,10 +119,10 @@ export class DropdownList {
         }
     }
 
-    onOptionClickHandler = (e: Event, option: Option, index: number) => {
+    onOptionClickHandler = (e: Event, option: Option) => {
         e.preventDefault()
         if (!this.selectedOption || option.value !== this.selectedOption) {
-            this.setFocus(index)
+            this.setFocus(option)
             this.onOptionSelect(e, option)
         }
     }
@@ -171,7 +172,7 @@ export class DropdownList {
                         class="bk-input__inner"
                         value={this.searchText}
                         ref={(el) => (this.searchBar = el)}
-                        onInput={this.onSearchInput}
+                        onInput={debounce(this.onSearchInput, 150)}
                         onKeyDown={this.onSearchKeyDown}
                     />
                     <span class="bk-input__prefix">
@@ -193,7 +194,7 @@ export class DropdownList {
     listUI = () => {
         return (
             <ul class="bk-dropdown-list__list" role="listbox">
-                {this._options.map((option, i) => (
+                {this._options.map((option) => (
                     <li key={`option_${option.value}`} class="bk-dropdown-list__item">
                         <a
                             id={`option_${option.value}`}
@@ -201,7 +202,7 @@ export class DropdownList {
                             href=""
                             role="option"
                             title={option.label}
-                            onClick={(e) => this.onOptionClickHandler(e, option, i)}
+                            onClick={(e) => this.onOptionClickHandler(e, option)}
                             onKeyDown={(e) => this.onOptionKeydownHandler(e, option)}
                             class={{
                                 'is-disabled': !!option.disabled,
@@ -223,7 +224,7 @@ export class DropdownList {
                 <slot name="control"></slot>
                 <div slot="content" class="bk-dropdown-list__content" tabIndex={-1}>
                     {this.searchBarUI()}
-                    {(this.options as Option[]).length > 0 ? (
+                    {this._options.length > 0 ? (
                         this.listUI()
                     ) : (
                         <div class="bk-dropdown-list__no-option">{this.noOptionText}</div>
