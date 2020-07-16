@@ -1,0 +1,36 @@
+:host {
+    padding: 0 20px;
+    height: 40px;
+    box-sizing: border-box;
+    line-height: 40px;
+    display: inline-block;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $--color-text-primary;
+    position: relative;
+
+    &:focus,
+    &:focus:active {
+        outline: none;
+    }
+
+    &:focus.is-active.is-focus:not(:active) {
+        box-shadow: 0 0 2px 2px $--color-primary inset;
+        border-radius: 3px;
+    }
+
+    &:hover {
+        color: $--color-primary;
+        cursor: pointer;
+    }
+}
+
+:host(.is-active) {
+    color: $--color-primary;
+}
+
+:host(.is-disabled) {
+    color: $--disabled-color-base;
+    cursor: default;
+}
