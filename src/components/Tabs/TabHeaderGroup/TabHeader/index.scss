@@ -12,6 +12,7 @@
     color: $--color-text-primary;
     position: relative;
     cursor: pointer;
+    margin-right: -4px;
 
     &:focus,
     &:focus:active {

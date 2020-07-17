@@ -1,6 +1,6 @@
 import { Component, h, Host } from '@stencil/core'
 
-// ! Add open and close event
+// ! Add change event
 // ! https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html
 // ! Bordered tabs
 // ! fix position bottom

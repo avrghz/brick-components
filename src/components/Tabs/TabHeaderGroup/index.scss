@@ -4,19 +4,8 @@
     position: relative;
 }
 
-:host(:not(.is-left):not(.is-right)) {
-    ::slotted(bk-tab-header:first-of-type) {
-        padding-left: 0;
-    }
-
-    ::slotted(bk-tab-header:last-of-type) {
-        padding-right: 0;
-    }
-}
-
 @include b(tab-header-group) {
     overflow: hidden;
-    margin-bottom: -1px;
     position: relative;
 
     &::after {
@@ -73,7 +62,6 @@
     .bk-tab-header-group {
         overflow: hidden;
         height: 100%;
-        margin-bottom: 0;
 
         &::after {
             height: 100%;
@@ -106,8 +94,7 @@
 :host(.is-left) {
     .bk-tab-header-group {
         float: left;
-        margin-bottom: 0;
-        margin-right: 9px;
+        margin-right: 10px;
 
         &::after {
             left: auto;
@@ -127,9 +114,8 @@
 
 :host(.is-right) {
     .bk-tab-header-group {
+        margin-left: 10px;
         float: right;
-        margin-bottom: 0;
-        margin-left: 9px;
 
         &::after {
             left: 0;
@@ -139,14 +125,55 @@
 }
 
 :host(.is-bottom) {
-    .bk-tab-header-group {
-        margin-bottom: 0;
-        margin-top: 9px;
-    }
+    margin-top: 10px;
 }
 
 :host(.is-top) {
+    margin-bottom: 10px;
+}
+
+:host(.is-bottom:not(.is-card)),
+:host(.is-top:not(.is-card)) {
+    ::slotted(bk-tab-header:first-of-type) {
+        padding-left: 0;
+    }
+
+    ::slotted(bk-tab-header:last-of-type) {
+        padding-right: 0;
+    }
+}
+
+:host(.is-card) {
+    border-bottom: 1px solid $--border-color-light;
+
     .bk-tab-header-group {
-        margin-bottom: 9px;
+        &:after {
+            content: none;
+        }
+    }
+
+    .bk-tab-header-group__nav {
+        border: 1px solid $--border-color-light;
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+        box-sizing: border-box;
+    }
+
+    .bk-tab-header-group__active-bar {
+        display: none;
+    }
+
+    ::slotted(bk-tab-header) {
+        border-bottom: 1px solid transparent;
+        border-left: 1px solid $--border-color-light;
+        transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    ::slotted(bk-tab-header:first-of-type) {
+        border-left: none;
+    }
+
+    ::slotted(.is-active) {
+        border-bottom-color: $--color-white;
     }
 }
