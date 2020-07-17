@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, EventEmitter, Listen, Event } from '@stencil/core'
+import { Component, h, Host, Prop, EventEmitter, Listen, Event, Element } from '@stencil/core'
 
 @Component({
     tag: 'bk-tab-header',
@@ -6,17 +6,50 @@ import { Component, h, Host, Prop, EventEmitter, Listen, Event } from '@stencil/
     styleUrl: './index.scss',
 })
 export class TabHeader {
+    @Element() el!: HTMLBkTabHeaderElement
+
     @Prop() tab!: string
 
     @Prop({ reflect: true, mutable: true }) active = false
 
     @Prop() disabled = false
 
-    @Event() $tabClick!: EventEmitter<string>
+    @Event() $tabHighlightReset!: EventEmitter
+
+    @Event() $tabSetHighlight!: EventEmitter
+
+    componentWillLoad() {
+        this.emitResetHighlighter()
+    }
 
     componentDidLoad() {
+        this.emitHighlighter()
+    }
+
+    componentWillUpdate() {
+        this.emitResetHighlighter()
+    }
+
+    componentDidUpdate() {
+        this.emitHighlighter()
+    }
+
+    emitResetHighlighter = () => {
         if (!this.disabled && this.active) {
-            this.$tabClick.emit(this.tab)
+            this.$tabHighlightReset.emit()
+        }
+    }
+
+    emitHighlighter = () => {
+        if (!this.disabled && this.active) {
+            this.$tabSetHighlight.emit()
+        }
+    }
+
+    @Listen('$tabHighlightReset', { target: 'parent' })
+    onHighlightReset(e: CustomEvent) {
+        if (e.target !== this.el) {
+            this.active = false
         }
     }
 
@@ -24,7 +57,6 @@ export class TabHeader {
     onClickHandler() {
         if (!this.disabled) {
             this.active = true
-            this.$tabClick.emit(this.tab)
         }
     }
 

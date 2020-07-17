@@ -2,7 +2,6 @@
     padding: 0;
     display: block;
     position: relative;
-    margin: 0 0 15px;
 }
 
 :host(:not(.is-left):not(.is-right)) {
@@ -143,5 +142,12 @@
     .bk-tabs-header {
         margin-bottom: 0;
         margin-top: 10px;
+    }
+}
+
+:host(.is-top) {
+    .bk-tabs-header {
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 }
