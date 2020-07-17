@@ -9,6 +9,7 @@
     font-weight: 500;
     color: $--color-text-primary;
     position: relative;
+    cursor: pointer;
 
     &:focus,
     &:focus:active {
@@ -22,7 +23,6 @@
 
     &:hover {
         color: $--color-primary;
-        cursor: pointer;
     }
 }
 

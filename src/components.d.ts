@@ -217,6 +217,9 @@ export namespace Components {
     interface BkTabContent {
     }
     interface BkTabHeader {
+        "active": boolean;
+        "disabled": boolean;
+        "tab": string;
     }
     interface BkTabs {
     }
@@ -659,6 +662,10 @@ declare namespace LocalJSX {
     interface BkTabContent {
     }
     interface BkTabHeader {
+        "active"?: boolean;
+        "disabled"?: boolean;
+        "on$tabClick"?: (event: CustomEvent<string>) => void;
+        "tab": string;
     }
     interface BkTabs {
     }

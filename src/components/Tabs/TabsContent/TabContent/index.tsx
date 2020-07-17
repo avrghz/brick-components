@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core'
 
 @Component({
     tag: 'bk-tab-content',
-    shadow: true,
+    scoped: true,
     styleUrl: './index.scss',
 })
 export class TabContent {

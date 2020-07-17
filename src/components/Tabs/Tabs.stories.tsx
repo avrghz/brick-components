@@ -15,9 +15,9 @@ export default {
 export const Default = () => {
     return html`<bk-tabs>
         <bk-tabs-header slot="header">
-            <bk-tab-header>Config</bk-tab-header>
-            <bk-tab-header>Role</bk-tab-header>
-            <bk-tab-header>User</bk-tab-header>
+            <bk-tab-header tab="tab_1" active="true">Config</bk-tab-header>
+            <bk-tab-header tab="tab-2">Role</bk-tab-header>
+            <bk-tab-header tab="tab-3">User</bk-tab-header>
         </bk-tabs-header>
         <bk-tabs-content slot="content">
             <bk-tab-content>Config content</bk-tab-content>
