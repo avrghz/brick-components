@@ -216,6 +216,7 @@ export namespace Components {
         "variant": Variants;
     }
     interface BkTabContent {
+        "tab": string;
     }
     interface BkTabHeader {
         "active": boolean;
@@ -662,6 +663,7 @@ declare namespace LocalJSX {
         "variant"?: Variants;
     }
     interface BkTabContent {
+        "tab": string;
     }
     interface BkTabHeader {
         "active"?: boolean;

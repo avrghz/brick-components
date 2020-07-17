@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core'
+import { Component, h, Prop, Host } from '@stencil/core'
 
 @Component({
     tag: 'bk-tab-content',
@@ -6,7 +6,13 @@ import { Component, h } from '@stencil/core'
     styleUrl: './index.scss',
 })
 export class TabContent {
+    @Prop() tab!: string
+
     render() {
-        return <slot></slot>
+        return (
+            <Host role="tabpanel" id={`pane_${this.tab}`} aria-labelledby={this.tab} style={{ display: 'none' }}>
+                <slot></slot>
+            </Host>
+        )
     }
 }

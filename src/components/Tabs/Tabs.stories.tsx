@@ -1,6 +1,6 @@
 import { html } from 'lit-html'
-// import { select, boolean } from '@storybook/addon-knobs'
-// import { action } from '@storybook/addon-actions'
+import { select } from '@storybook/addon-knobs'
+import { POSITION } from './types'
 
 import notes from './readme.md'
 
@@ -13,16 +13,20 @@ export default {
 }
 
 export const Default = () => {
+    const position = select('position', POSITION, 'top')
+
     return html`<bk-tabs>
-        <bk-tabs-header slot="header">
-            <bk-tab-header tab="tab_1" active="true">Config</bk-tab-header>
-            <bk-tab-header tab="tab-2">Role</bk-tab-header>
-            <bk-tab-header tab="tab-3">User</bk-tab-header>
+        <bk-tabs-header slot="header" position=${position}>
+            <bk-tab-header tab="tab_1">Config</bk-tab-header>
+            <bk-tab-header tab="tab-2">I am very long tab 1</bk-tab-header>
+            <bk-tab-header tab="tab-3" active="true">I am very long tab 2</bk-tab-header>
+            <bk-tab-header tab="tab-4">User</bk-tab-header>
         </bk-tabs-header>
         <bk-tabs-content slot="content">
-            <bk-tab-content>Config content</bk-tab-content>
-            <bk-tab-content>Role content</bk-tab-content>
-            <bk-tab-content>User content</bk-tab-content>
+            <bk-tab-content tab="tab_1">Config content</bk-tab-content>
+            <bk-tab-content tab="tab-2">I am very long tab 1 content</bk-tab-content>
+            <bk-tab-content tab="tab-3">I am very long tab 2 content</bk-tab-content>
+            <bk-tab-content tab="tab-4">User content</bk-tab-content>
         </bk-tabs-content>
-    </bk-tabs>`
+    </bk-tabs> `
 }

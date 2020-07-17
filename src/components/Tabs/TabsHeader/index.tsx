@@ -43,9 +43,8 @@ export class TabsHeader {
         }
     }
 
-    @Listen('$tabSetActive')
-    onTabClick(e: CustomEvent) {
-        e.stopImmediatePropagation()
+    @Listen('$tabSetActive', { target: 'parent' })
+    onSetActiveTab(e: CustomEvent) {
         this.activeTab = e.detail
         this.setHighlighter(e.target as HTMLBkTabHeaderElement)
     }
