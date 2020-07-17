@@ -1,5 +1,6 @@
-import { Component, h, Host, Element, Listen } from '@stencil/core'
+import { Component, h, Host, Element, Listen, Prop } from '@stencil/core'
 import { tween, styler, easing } from 'popmotion'
+import { Position } from '../types'
 
 @Component({
     tag: 'bk-tabs-header',
@@ -11,15 +12,31 @@ export class TabsHeader {
 
     @Element() el!: HTMLElement
 
+    @Prop() position: Position = 'top'
+
     setHighlighter = (tab: HTMLBkTabHeaderElement) => {
         if (this.highlighterRef) {
             const tabContent = tab.querySelector('.bk-tab-header') as HTMLDivElement
-            const { width, x } = tabContent.getBoundingClientRect()
-            const moveTo = x - this.el.getBoundingClientRect().x
+            const { width, height, x, y } = tabContent.getBoundingClientRect()
+            const moveTo =
+                this.position === 'top' || this.position === 'bottom'
+                    ? x - this.el.getBoundingClientRect().x
+                    : y - this.el.getBoundingClientRect().y
             const element = styler(this.highlighterRef)
+
+            if (this.position === 'top' || this.position === 'bottom') {
+                element.set('width', width)
+            } else {
+                element.set('height', height)
+            }
+
             tween({ from: 0, to: 1, duration: 150, ease: easing.linear }).start({
-                update: (tx: number) => {
-                    element.set('x', tx * moveTo).set('width', width)
+                update: (value: number) => {
+                    if (this.position === 'top' || this.position === 'bottom') {
+                        element.set('x', value * moveTo)
+                    } else {
+                        element.set('y', value * moveTo)
+                    }
                 },
             })
         }
@@ -42,7 +59,7 @@ export class TabsHeader {
 
     render() {
         return (
-            <Host>
+            <Host class={`is-${this.position}`}>
                 <div class="bk-tabs-header">
                     <div class="bk-tabs-header__scroll">
                         <div role="tablist" class="bk-tabs-header__nav">
