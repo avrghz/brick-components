@@ -3,11 +3,11 @@ import { JSXBase, Watch } from '@stencil/core/internal'
 import { Position, DEFAULT_POSITION } from '../types'
 
 @Component({
-    tag: 'bk-tabs-header',
+    tag: 'bk-tab-header-group',
     scoped: true,
     styleUrl: './index.scss',
 })
-export class TabsHeader {
+export class TabHeaderGroup {
     private activeTab?: string
     private shouldUpdateHighlighter = false
 
@@ -52,10 +52,10 @@ export class TabsHeader {
     render() {
         return (
             <Host class={`is-${this.position}`}>
-                <div class="bk-tabs-header">
-                    <div class="bk-tabs-header__scroll">
-                        <div role="tablist" class="bk-tabs-header__nav">
-                            <div class="bk-tabs-header__active-bar" style={this.highlighter}></div>
+                <div class="bk-tab-header-group">
+                    <div class="bk-tab-header-group__scroll">
+                        <div role="tablist" class="bk-tab-header-group__nav">
+                            <div class="bk-tab-header-group__active-bar" style={this.highlighter}></div>
                             <slot></slot>
                         </div>
                     </div>

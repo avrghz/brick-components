@@ -8,7 +8,7 @@ export const config: Config = {
     buildEs5: false,
     bundles: [
         {
-            components: ['bk-tabs', 'bk-tabs-header', 'bk-tab-header', 'bk-tab-content', 'bk-tabs-content'],
+            components: ['bk-tabs', 'bk-tab-header-group', 'bk-tab-header', 'bk-tab-panel'],
         },
     ],
     plugins: [

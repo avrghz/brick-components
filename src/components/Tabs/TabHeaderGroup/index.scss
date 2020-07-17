@@ -14,7 +14,7 @@
     }
 }
 
-@include b(tabs-header) {
+@include b(tab-header-group) {
     overflow: hidden;
     margin-bottom: -1px;
     position: relative;
@@ -70,7 +70,7 @@
 
 :host(.is-left),
 :host(.is-right) {
-    .bk-tabs-header {
+    .bk-tab-header-group {
         overflow: hidden;
         height: 100%;
         margin-bottom: 0;
@@ -82,15 +82,15 @@
             top: 0;
         }
 
-        .bk-tabs-header__scroll {
+        .bk-tab-header-group__scroll {
             height: 100%;
         }
 
-        .bk-tabs-header__nav {
+        .bk-tab-header-group__nav {
             float: none;
         }
 
-        .bk-tabs-header__active-bar {
+        .bk-tab-header-group__active-bar {
             top: 0;
             bottom: auto;
             width: 2px;
@@ -104,7 +104,7 @@
 }
 
 :host(.is-left) {
-    .bk-tabs-header {
+    .bk-tab-header-group {
         float: left;
         margin-bottom: 0;
         margin-right: 9px;
@@ -115,7 +115,7 @@
         }
     }
 
-    .bk-tabs-header__active-bar {
+    .bk-tab-header-group__active-bar {
         right: 0;
         left: auto;
     }
@@ -126,7 +126,7 @@
 }
 
 :host(.is-right) {
-    .bk-tabs-header {
+    .bk-tab-header-group {
         float: right;
         margin-bottom: 0;
         margin-left: 9px;
@@ -139,14 +139,14 @@
 }
 
 :host(.is-bottom) {
-    .bk-tabs-header {
+    .bk-tab-header-group {
         margin-bottom: 0;
         margin-top: 9px;
     }
 }
 
 :host(.is-top) {
-    .bk-tabs-header {
+    .bk-tab-header-group {
         margin-bottom: 9px;
     }
 }

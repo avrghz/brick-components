@@ -1,4 +1,4 @@
-# bk-tabs-header
+# bk-tab-header-group
 
 
 

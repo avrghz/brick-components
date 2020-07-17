@@ -1,6 +1,4 @@
-# bk-tab-content
-
-
+# bk-tab-panel
 
 <!-- Auto Generated Below -->
 

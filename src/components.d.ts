@@ -215,20 +215,18 @@ export namespace Components {
          */
         "variant": Variants;
     }
-    interface BkTabContent {
-        "tab": string;
-    }
     interface BkTabHeader {
         "active": boolean;
         "disabled": boolean;
         "tab": string;
     }
-    interface BkTabs {
-    }
-    interface BkTabsContent {
-    }
-    interface BkTabsHeader {
+    interface BkTabHeaderGroup {
         "position": Position;
+    }
+    interface BkTabPanel {
+        "tab": string;
+    }
+    interface BkTabs {
     }
     interface BkToast {
         /**
@@ -328,35 +326,29 @@ declare global {
         prototype: HTMLBkSwitchElement;
         new (): HTMLBkSwitchElement;
     };
-    interface HTMLBkTabContentElement extends Components.BkTabContent, HTMLStencilElement {
-    }
-    var HTMLBkTabContentElement: {
-        prototype: HTMLBkTabContentElement;
-        new (): HTMLBkTabContentElement;
-    };
     interface HTMLBkTabHeaderElement extends Components.BkTabHeader, HTMLStencilElement {
     }
     var HTMLBkTabHeaderElement: {
         prototype: HTMLBkTabHeaderElement;
         new (): HTMLBkTabHeaderElement;
     };
+    interface HTMLBkTabHeaderGroupElement extends Components.BkTabHeaderGroup, HTMLStencilElement {
+    }
+    var HTMLBkTabHeaderGroupElement: {
+        prototype: HTMLBkTabHeaderGroupElement;
+        new (): HTMLBkTabHeaderGroupElement;
+    };
+    interface HTMLBkTabPanelElement extends Components.BkTabPanel, HTMLStencilElement {
+    }
+    var HTMLBkTabPanelElement: {
+        prototype: HTMLBkTabPanelElement;
+        new (): HTMLBkTabPanelElement;
+    };
     interface HTMLBkTabsElement extends Components.BkTabs, HTMLStencilElement {
     }
     var HTMLBkTabsElement: {
         prototype: HTMLBkTabsElement;
         new (): HTMLBkTabsElement;
-    };
-    interface HTMLBkTabsContentElement extends Components.BkTabsContent, HTMLStencilElement {
-    }
-    var HTMLBkTabsContentElement: {
-        prototype: HTMLBkTabsContentElement;
-        new (): HTMLBkTabsContentElement;
-    };
-    interface HTMLBkTabsHeaderElement extends Components.BkTabsHeader, HTMLStencilElement {
-    }
-    var HTMLBkTabsHeaderElement: {
-        prototype: HTMLBkTabsHeaderElement;
-        new (): HTMLBkTabsHeaderElement;
     };
     interface HTMLBkToastElement extends Components.BkToast, HTMLStencilElement {
     }
@@ -378,11 +370,10 @@ declare global {
         "bk-slider": HTMLBkSliderElement;
         "bk-steps": HTMLBkStepsElement;
         "bk-switch": HTMLBkSwitchElement;
-        "bk-tab-content": HTMLBkTabContentElement;
         "bk-tab-header": HTMLBkTabHeaderElement;
+        "bk-tab-header-group": HTMLBkTabHeaderGroupElement;
+        "bk-tab-panel": HTMLBkTabPanelElement;
         "bk-tabs": HTMLBkTabsElement;
-        "bk-tabs-content": HTMLBkTabsContentElement;
-        "bk-tabs-header": HTMLBkTabsHeaderElement;
         "bk-toast": HTMLBkToastElement;
     }
 }
@@ -662,9 +653,6 @@ declare namespace LocalJSX {
          */
         "variant"?: Variants;
     }
-    interface BkTabContent {
-        "tab": string;
-    }
     interface BkTabHeader {
         "active"?: boolean;
         "disabled"?: boolean;
@@ -672,12 +660,13 @@ declare namespace LocalJSX {
         "on$tabSetActive"?: (event: CustomEvent<string>) => void;
         "tab": string;
     }
-    interface BkTabs {
-    }
-    interface BkTabsContent {
-    }
-    interface BkTabsHeader {
+    interface BkTabHeaderGroup {
         "position"?: Position;
+    }
+    interface BkTabPanel {
+        "tab": string;
+    }
+    interface BkTabs {
     }
     interface BkToast {
         /**
@@ -711,11 +700,10 @@ declare namespace LocalJSX {
         "bk-slider": BkSlider;
         "bk-steps": BkSteps;
         "bk-switch": BkSwitch;
-        "bk-tab-content": BkTabContent;
         "bk-tab-header": BkTabHeader;
+        "bk-tab-header-group": BkTabHeaderGroup;
+        "bk-tab-panel": BkTabPanel;
         "bk-tabs": BkTabs;
-        "bk-tabs-content": BkTabsContent;
-        "bk-tabs-header": BkTabsHeader;
         "bk-toast": BkToast;
     }
 }
@@ -736,11 +724,10 @@ declare module "@stencil/core" {
             "bk-slider": LocalJSX.BkSlider & JSXBase.HTMLAttributes<HTMLBkSliderElement>;
             "bk-steps": LocalJSX.BkSteps & JSXBase.HTMLAttributes<HTMLBkStepsElement>;
             "bk-switch": LocalJSX.BkSwitch & JSXBase.HTMLAttributes<HTMLBkSwitchElement>;
-            "bk-tab-content": LocalJSX.BkTabContent & JSXBase.HTMLAttributes<HTMLBkTabContentElement>;
             "bk-tab-header": LocalJSX.BkTabHeader & JSXBase.HTMLAttributes<HTMLBkTabHeaderElement>;
+            "bk-tab-header-group": LocalJSX.BkTabHeaderGroup & JSXBase.HTMLAttributes<HTMLBkTabHeaderGroupElement>;
+            "bk-tab-panel": LocalJSX.BkTabPanel & JSXBase.HTMLAttributes<HTMLBkTabPanelElement>;
             "bk-tabs": LocalJSX.BkTabs & JSXBase.HTMLAttributes<HTMLBkTabsElement>;
-            "bk-tabs-content": LocalJSX.BkTabsContent & JSXBase.HTMLAttributes<HTMLBkTabsContentElement>;
-            "bk-tabs-header": LocalJSX.BkTabsHeader & JSXBase.HTMLAttributes<HTMLBkTabsHeaderElement>;
             "bk-toast": LocalJSX.BkToast & JSXBase.HTMLAttributes<HTMLBkToastElement>;
         }
     }
