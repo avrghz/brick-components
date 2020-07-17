@@ -107,7 +107,7 @@
     .bk-tabs-header {
         float: left;
         margin-bottom: 0;
-        margin-right: -1px;
+        margin-right: 9px;
 
         &::after {
             left: auto;
@@ -129,7 +129,7 @@
     .bk-tabs-header {
         float: right;
         margin-bottom: 0;
-        margin-left: -1px;
+        margin-left: 9px;
 
         &::after {
             left: 0;
@@ -147,7 +147,6 @@
 
 :host(.is-top) {
     .bk-tabs-header {
-        margin-top: 0;
-        margin-bottom: 10px;
+        margin-bottom: 9px;
     }
 }

@@ -1,9 +1,12 @@
 import { Component, h, Host } from '@stencil/core'
 
+// ! Add open and close event
+// ! https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html
+// ! Bordered tabs
+// ! fix position bottom
+
 @Component({
     tag: 'bk-tabs',
-    scoped: true,
-    styleUrl: './index.scss',
 })
 export class Tabs {
     render() {

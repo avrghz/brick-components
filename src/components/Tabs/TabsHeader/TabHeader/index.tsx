@@ -63,10 +63,21 @@ export class TabHeader {
         }
     }
 
-    @Listen('click')
-    onClickHandler() {
+    handleClick = () => {
         if (!this.disabled) {
             this.active = true
+        }
+    }
+
+    @Listen('click')
+    onClickHandler() {
+        this.handleClick()
+    }
+
+    @Listen('keydown')
+    onKeyDownHandler(e: KeyboardEvent) {
+        if (e.key === 'Enter') {
+            this.handleClick()
         }
     }
 
@@ -80,6 +91,7 @@ export class TabHeader {
                     'is-active': this.active && !this.disabled,
                     'is-disabled': this.disabled,
                 }}
+                tabIndex={this.active ? -1 : 0}
             >
                 <div class="bk-tab-header">
                     <slot></slot>

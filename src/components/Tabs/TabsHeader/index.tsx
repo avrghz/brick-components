@@ -1,6 +1,6 @@
 import { Component, h, Host, Element, Listen, Prop, State } from '@stencil/core'
 import { JSXBase, Watch } from '@stencil/core/internal'
-import { Position } from '../types'
+import { Position, DEFAULT_POSITION } from '../types'
 
 @Component({
     tag: 'bk-tabs-header',
@@ -15,7 +15,7 @@ export class TabsHeader {
 
     @State() highlighter: JSXBase.HTMLAttributes<HTMLDivElement>['style'] = { width: '0', transform: '' }
 
-    @Prop() position: Position = 'top'
+    @Prop() position: Position = DEFAULT_POSITION
 
     @Watch('position')
     watchPosition(current: Position, previous: Position) {
