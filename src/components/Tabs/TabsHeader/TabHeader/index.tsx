@@ -6,6 +6,8 @@ import { Component, h, Host, Prop, EventEmitter, Listen, Event, Element } from '
     styleUrl: './index.scss',
 })
 export class TabHeader {
+    private timer?: number
+
     @Element() el!: HTMLBkTabHeaderElement
 
     @Prop() tab!: string
@@ -16,14 +18,16 @@ export class TabHeader {
 
     @Event() $tabHighlightReset!: EventEmitter
 
-    @Event() $tabSetHighlight!: EventEmitter
+    @Event() $tabSetActive!: EventEmitter<string>
 
     componentWillLoad() {
         this.emitResetHighlighter()
     }
 
     componentDidLoad() {
-        this.emitHighlighter()
+        this.timer = setTimeout(() => {
+            this.emitHighlighter()
+        })
     }
 
     componentWillUpdate() {
@@ -34,6 +38,12 @@ export class TabHeader {
         this.emitHighlighter()
     }
 
+    disconnectedCallback() {
+        if (this.timer) {
+            clearTimeout(this.timer)
+        }
+    }
+
     emitResetHighlighter = () => {
         if (!this.disabled && this.active) {
             this.$tabHighlightReset.emit()
@@ -42,7 +52,7 @@ export class TabHeader {
 
     emitHighlighter = () => {
         if (!this.disabled && this.active) {
-            this.$tabSetHighlight.emit()
+            this.$tabSetActive.emit(this.tab)
         }
     }
 

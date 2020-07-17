@@ -667,7 +667,7 @@ declare namespace LocalJSX {
         "active"?: boolean;
         "disabled"?: boolean;
         "on$tabHighlightReset"?: (event: CustomEvent<any>) => void;
-        "on$tabSetHighlight"?: (event: CustomEvent<any>) => void;
+        "on$tabSetActive"?: (event: CustomEvent<string>) => void;
         "tab": string;
     }
     interface BkTabs {

@@ -16,10 +16,10 @@
 
 ## Events
 
-| Event                | Description | Type               |
-| -------------------- | ----------- | ------------------ |
-| `$tabHighlightReset` |             | `CustomEvent<any>` |
-| `$tabSetHighlight`   |             | `CustomEvent<any>` |
+| Event                | Description | Type                  |
+| -------------------- | ----------- | --------------------- |
+| `$tabHighlightReset` |             | `CustomEvent<any>`    |
+| `$tabSetActive`      |             | `CustomEvent<string>` |
 
 
 ----------------------------------------------

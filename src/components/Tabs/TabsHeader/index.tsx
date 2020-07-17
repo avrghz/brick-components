@@ -1,5 +1,5 @@
 import { Component, h, Host, Element, Listen, Prop, State } from '@stencil/core'
-import { JSXBase } from '@stencil/core/internal'
+import { JSXBase, Watch } from '@stencil/core/internal'
 import { Position } from '../types'
 
 @Component({
@@ -8,19 +8,45 @@ import { Position } from '../types'
     styleUrl: './index.scss',
 })
 export class TabsHeader {
+    private activeTab?: string
+    private shouldUpdateHighlighter = false
+
     @Element() el!: HTMLElement
 
     @State() highlighter: JSXBase.HTMLAttributes<HTMLDivElement>['style'] = { width: '0', transform: '' }
 
     @Prop() position: Position = 'top'
 
-    setHighlighter = (tab: HTMLBkTabHeaderElement) => {
-        this.highlighter = { width: `${tab.clientWidth}px`, transform: `translateX(${tab.offsetLeft}px)` }
+    @Watch('position')
+    watchPosition(current: Position, previous: Position) {
+        this.shouldUpdateHighlighter =
+            (current === 'top' && previous !== 'top' && previous !== 'bottom') ||
+            (current === 'bottom' && previous !== 'top' && previous !== 'bottom') ||
+            (current === 'left' && previous !== 'left' && previous !== 'right') ||
+            (current === 'right' && previous !== 'left' && previous !== 'right')
     }
 
-    @Listen('$tabSetHighlight')
+    componentDidUpdate() {
+        if (this.shouldUpdateHighlighter && this.activeTab) {
+            this.shouldUpdateHighlighter = false
+            this.setHighlighter(this.el.querySelector(`#${this.activeTab}`) as HTMLBkTabHeaderElement)
+        }
+    }
+
+    setHighlighter = (tab: HTMLBkTabHeaderElement) => {
+        const { width, height, x, y } = (tab.querySelector('.bk-tab-header') as HTMLDivElement).getBoundingClientRect()
+        const { x: tabHeaderX, y: tabHeaderY } = this.el.getBoundingClientRect()
+        if (this.position === 'top' || this.position === 'bottom') {
+            this.highlighter = { width: `${width}px`, transform: `translateX(${x - tabHeaderX}px)` }
+        } else {
+            this.highlighter = { height: `${height}px`, transform: `translateY(${y - tabHeaderY}px)` }
+        }
+    }
+
+    @Listen('$tabSetActive')
     onTabClick(e: CustomEvent) {
         e.stopImmediatePropagation()
+        this.activeTab = e.detail
         this.setHighlighter(e.target as HTMLBkTabHeaderElement)
     }
 
