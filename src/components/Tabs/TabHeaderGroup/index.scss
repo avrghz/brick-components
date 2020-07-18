@@ -1,10 +1,6 @@
 :host {
     padding: 0;
     display: block;
-    position: relative;
-}
-
-@include b(tab-header-group) {
     overflow: hidden;
     position: relative;
 
@@ -24,11 +20,11 @@
         box-sizing: border-box;
     }
 
-    @include e(scroll) {
+    .bk_tab-header__scroll {
         overflow: hidden;
     }
 
-    @include e(nav) {
+    .bk_tab-header__nav {
         white-space: nowrap;
         position: relative;
         transition: transform 0.3s;
@@ -45,7 +41,7 @@
         }
     }
 
-    @include e(active-bar) {
+    .bk_tab-header__active-bar {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -59,31 +55,29 @@
 
 :host(.is-left),
 :host(.is-right) {
-    .bk-tab-header-group {
-        overflow: hidden;
+    overflow: hidden;
+    height: 100%;
+
+    &::after {
         height: 100%;
+        width: 2px;
+        bottom: auto;
+        top: 0;
+    }
 
-        &::after {
-            height: 100%;
-            width: 2px;
-            bottom: auto;
-            top: 0;
-        }
+    .bk_tab-header__scroll {
+        height: 100%;
+    }
 
-        .bk-tab-header-group__scroll {
-            height: 100%;
-        }
+    .bk_tab-header__nav {
+        float: none;
+    }
 
-        .bk-tab-header-group__nav {
-            float: none;
-        }
-
-        .bk-tab-header-group__active-bar {
-            top: 0;
-            bottom: auto;
-            width: 2px;
-            height: auto;
-        }
+    .bk_tab-header__active-bar {
+        top: 0;
+        bottom: auto;
+        width: 2px;
+        height: auto;
     }
 
     ::slotted(bk-tab-header) {
@@ -92,17 +86,15 @@
 }
 
 :host(.is-left) {
-    .bk-tab-header-group {
-        float: left;
-        margin-right: 10px;
+    float: left;
+    margin-right: 10px;
 
-        &::after {
-            left: auto;
-            right: 0;
-        }
+    &::after {
+        left: auto;
+        right: 0;
     }
 
-    .bk-tab-header-group__active-bar {
+    .bk_tab-header__active-bar {
         right: 0;
         left: auto;
     }
@@ -113,14 +105,12 @@
 }
 
 :host(.is-right) {
-    .bk-tab-header-group {
-        margin-left: 10px;
-        float: right;
+    margin-left: 10px;
+    float: right;
 
-        &::after {
-            left: 0;
-            right: auto;
-        }
+    &::after {
+        left: 0;
+        right: auto;
     }
 }
 
@@ -144,22 +134,18 @@
 }
 
 :host(.is-card) {
-    border-bottom: 1px solid $--border-color-light;
-
-    .bk-tab-header-group {
-        &:after {
-            content: none;
-        }
+    &:after {
+        height: 1px;
     }
 
-    .bk-tab-header-group__nav {
+    .bk_tab-header__nav {
         border: 1px solid $--border-color-light;
         border-bottom: none;
         border-radius: 4px 4px 0 0;
         box-sizing: border-box;
     }
 
-    .bk-tab-header-group__active-bar {
+    .bk_tab-header__active-bar {
         display: none;
     }
 

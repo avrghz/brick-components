@@ -52,12 +52,10 @@ export class TabHeaderGroup {
     render() {
         return (
             <Host class={`is-${this.position}`}>
-                <div class="bk-tab-header-group">
-                    <div class="bk-tab-header-group__scroll">
-                        <div role="tablist" class="bk-tab-header-group__nav">
-                            <div class="bk-tab-header-group__active-bar" style={this.highlighter}></div>
-                            <slot></slot>
-                        </div>
+                <div class="bk_tab-header__scroll">
+                    <div role="tablist" class="bk_tab-header__nav">
+                        <div class="bk_tab-header__active-bar" style={this.highlighter}></div>
+                        <slot></slot>
                     </div>
                 </div>
             </Host>
