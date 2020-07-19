@@ -38,7 +38,9 @@ export class Tabs {
     }
 
     setHighlighter = (tab: HTMLBkTabHeaderElement) => {
-        const { width, height, x, y } = (tab.querySelector('.bk-tab-header') as HTMLDivElement).getBoundingClientRect()
+        const { width, height, x, y } = (tab.querySelector(
+            '[data-tab-header]'
+        ) as HTMLDivElement).getBoundingClientRect()
         const { x: tabHeaderX, y: tabHeaderY } = this.el.getBoundingClientRect()
         if (this.position === 'top' || this.position === 'bottom') {
             this.highlighter = { width: `${width}px`, transform: `translateX(${x - tabHeaderX}px)` }
@@ -56,7 +58,7 @@ export class Tabs {
     render() {
         return (
             <Host class={`bk-tabs bk-tabs--${this.position}`}>
-                <div class="bk-tabs__header-group">
+                <div class="bk-tabs__header">
                     <div class="bk-tabs__scroll">
                         <div role="tablist" class="bk-tabs__nav">
                             <div class="bk-tabs__active-bar" style={this.highlighter}></div>

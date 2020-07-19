@@ -2,8 +2,6 @@ import { Component, h, Host, Prop, EventEmitter, Listen, Event, Element } from '
 
 @Component({
     tag: 'bk-tab-header',
-    scoped: true,
-    styleUrl: './index.scss',
 })
 export class TabHeader {
     private timer?: number
@@ -88,12 +86,13 @@ export class TabHeader {
                 aria-controls={this.tab}
                 role="tab"
                 class={{
+                    'bk-tab-header': true,
                     'is-active': this.active && !this.disabled,
                     'is-disabled': this.disabled,
                 }}
                 tabIndex={this.active ? -1 : 0}
             >
-                <div class="bk-tab-header">
+                <div data-tab-header>
                     <slot></slot>
                 </div>
             </Host>

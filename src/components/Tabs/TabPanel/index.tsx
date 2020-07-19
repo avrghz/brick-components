@@ -2,8 +2,6 @@ import { Component, h, Prop, Host, Listen, State } from '@stencil/core'
 
 @Component({
     tag: 'bk-tab-panel',
-    scoped: true,
-    styleUrl: './index.scss',
 })
 export class TabPanel {
     @State() active = false
@@ -22,6 +20,7 @@ export class TabPanel {
                 id={`pane_${this.tab}`}
                 aria-labelledby={this.tab}
                 style={{ display: this.active ? '' : 'none' }}
+                class="bk-tab-panel"
             >
                 <slot></slot>
             </Host>

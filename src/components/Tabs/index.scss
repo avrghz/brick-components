@@ -1,9 +1,11 @@
+@import '../../theme/base/mixins/utils.scss';
+
 @include b('tabs') {
     padding: 0;
     display: block;
     position: relative;
 
-    @include e(header-group) {
+    @include e(header) {
         overflow: hidden;
         position: relative;
         margin-bottom: 10px;
@@ -169,4 +171,45 @@
             }
         }
     }
+}
+
+@include b(tab-header) {
+    padding: 0 20px;
+    height: 40px;
+    box-sizing: border-box;
+    line-height: 40px;
+    display: inline-block;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $--color-text-primary;
+    position: relative;
+    cursor: pointer;
+    margin-right: -4px;
+
+    &:focus,
+    &:focus:active {
+        outline: none;
+    }
+
+    &:focus.is-active.is-focus:not(:active) {
+        box-shadow: 0 0 2px 2px $--color-primary inset;
+        border-radius: 3px;
+    }
+
+    &:hover {
+        color: $--color-primary;
+    }
+
+    @include when(active) {
+        color: $--color-primary;
+    }
+
+    @include when(disabled) {
+        @include util-disabled();
+    }
+}
+
+@include b(tab-panel) {
+    display: block;
 }

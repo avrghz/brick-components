@@ -220,9 +220,6 @@ export namespace Components {
         "disabled": boolean;
         "tab": string;
     }
-    interface BkTabHeaderGroup {
-        "position": Position;
-    }
     interface BkTabPanel {
         "tab": string;
     }
@@ -333,12 +330,6 @@ declare global {
         prototype: HTMLBkTabHeaderElement;
         new (): HTMLBkTabHeaderElement;
     };
-    interface HTMLBkTabHeaderGroupElement extends Components.BkTabHeaderGroup, HTMLStencilElement {
-    }
-    var HTMLBkTabHeaderGroupElement: {
-        prototype: HTMLBkTabHeaderGroupElement;
-        new (): HTMLBkTabHeaderGroupElement;
-    };
     interface HTMLBkTabPanelElement extends Components.BkTabPanel, HTMLStencilElement {
     }
     var HTMLBkTabPanelElement: {
@@ -372,7 +363,6 @@ declare global {
         "bk-steps": HTMLBkStepsElement;
         "bk-switch": HTMLBkSwitchElement;
         "bk-tab-header": HTMLBkTabHeaderElement;
-        "bk-tab-header-group": HTMLBkTabHeaderGroupElement;
         "bk-tab-panel": HTMLBkTabPanelElement;
         "bk-tabs": HTMLBkTabsElement;
         "bk-toast": HTMLBkToastElement;
@@ -661,9 +651,6 @@ declare namespace LocalJSX {
         "on$tabSetActive"?: (event: CustomEvent<string>) => void;
         "tab": string;
     }
-    interface BkTabHeaderGroup {
-        "position"?: Position;
-    }
     interface BkTabPanel {
         "tab": string;
     }
@@ -703,7 +690,6 @@ declare namespace LocalJSX {
         "bk-steps": BkSteps;
         "bk-switch": BkSwitch;
         "bk-tab-header": BkTabHeader;
-        "bk-tab-header-group": BkTabHeaderGroup;
         "bk-tab-panel": BkTabPanel;
         "bk-tabs": BkTabs;
         "bk-toast": BkToast;
@@ -727,7 +713,6 @@ declare module "@stencil/core" {
             "bk-steps": LocalJSX.BkSteps & JSXBase.HTMLAttributes<HTMLBkStepsElement>;
             "bk-switch": LocalJSX.BkSwitch & JSXBase.HTMLAttributes<HTMLBkSwitchElement>;
             "bk-tab-header": LocalJSX.BkTabHeader & JSXBase.HTMLAttributes<HTMLBkTabHeaderElement>;
-            "bk-tab-header-group": LocalJSX.BkTabHeaderGroup & JSXBase.HTMLAttributes<HTMLBkTabHeaderGroupElement>;
             "bk-tab-panel": LocalJSX.BkTabPanel & JSXBase.HTMLAttributes<HTMLBkTabPanelElement>;
             "bk-tabs": LocalJSX.BkTabs & JSXBase.HTMLAttributes<HTMLBkTabsElement>;
             "bk-toast": LocalJSX.BkToast & JSXBase.HTMLAttributes<HTMLBkToastElement>;
