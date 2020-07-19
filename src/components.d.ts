@@ -227,6 +227,7 @@ export namespace Components {
         "tab": string;
     }
     interface BkTabs {
+        "position": Position;
     }
     interface BkToast {
         /**
@@ -667,6 +668,7 @@ declare namespace LocalJSX {
         "tab": string;
     }
     interface BkTabs {
+        "position"?: Position;
     }
     interface BkToast {
         /**
