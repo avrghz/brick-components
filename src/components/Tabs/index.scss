@@ -1,5 +1,46 @@
 @import '../../theme/base/mixins/utils.scss';
 
+@include b(tab-header) {
+    padding: 0 20px;
+    height: 40px;
+    box-sizing: border-box;
+    line-height: 40px;
+    display: inline-block;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $--color-text-primary;
+    position: relative;
+    cursor: pointer;
+    margin-right: -4px;
+
+    &:focus,
+    &:focus:active {
+        outline: none;
+    }
+
+    &:focus.is-active.is-focus:not(:active) {
+        box-shadow: 0 0 2px 2px $--color-primary inset;
+        border-radius: 3px;
+    }
+
+    &:hover {
+        color: $--color-primary;
+    }
+
+    @include when(active) {
+        color: $--color-primary;
+    }
+
+    @include when(disabled) {
+        @include util-disabled();
+    }
+}
+
+@include b(tab-panel) {
+    display: block;
+}
+
 @include b('tabs') {
     padding: 0;
     display: block;
@@ -55,7 +96,7 @@
     }
 
     @include m((left, right)) {
-        @include e(header-group) {
+        @include e(header) {
             overflow: hidden;
             height: 100%;
             margin-bottom: 0;
@@ -89,7 +130,7 @@
     }
 
     @include m(left) {
-        @include e(header-group) {
+        @include e(header) {
             float: left;
             margin-right: 10px;
 
@@ -110,7 +151,7 @@
     }
 
     @include m(right) {
-        @include e(header-group) {
+        @include e(header) {
             margin-left: 10px;
             float: right;
 
@@ -122,13 +163,15 @@
     }
 
     @include m((bottom, top)) {
-        bk-tab-header {
-            &:first-of-type {
-                padding-left: 0;
-            }
+        &:not(.bk-tabs--border-card):not(.bk-tabs--card) {
+            bk-tab-header {
+                &:first-of-type {
+                    padding-left: 0;
+                }
 
-            &:last-of-type {
-                padding-right: 0;
+                &:last-of-type {
+                    padding-right: 0;
+                }
             }
         }
     }
@@ -138,8 +181,14 @@
         margin-bottom: 0;
     }
 
+    @include m((card, border-card)) {
+        @include e(active-bar) {
+            display: none;
+        }
+    }
+
     @include m(card) {
-        @include e(header-group) {
+        @include e(header) {
             &:after {
                 height: 1px;
             }
@@ -152,10 +201,6 @@
             box-sizing: border-box;
         }
 
-        @include e(active-bar) {
-            display: none;
-        }
-
         bk-tab-header {
             border-bottom: 1px solid transparent;
             border-left: 1px solid $--border-color-light;
@@ -166,50 +211,162 @@
                 border-left: none;
             }
 
-            &.is-active {
+            @include when(active) {
                 border-bottom-color: $--color-white;
             }
         }
+
+        &.bk-tabs--left {
+            @include e(header) {
+                &:after {
+                    height: 100%;
+                    width: 1px;
+                }
+            }
+
+            @include e(nav) {
+                border-radius: 4px 0 0 4px;
+                border-bottom: 1px solid $--border-color-light;
+                border-right: none;
+            }
+
+            bk-tab-header {
+                border-left: none;
+                border-right: 1px solid $--border-color-light;
+                border-bottom: none;
+                border-top: 1px solid $--border-color-light;
+                text-align: left;
+
+                &:first-child {
+                    border-right: 1px solid $--border-color-light;
+                    border-top: none;
+                }
+
+                @include when(active) {
+                    border: 1px solid $--border-color-light;
+                    border-right-color: #fff;
+                    border-left: none;
+                    border-bottom: none;
+
+                    &:first-child {
+                        border-top: none;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+
+        &.bk-tabs--right {
+            @include e(header) {
+                &:after {
+                    height: 100%;
+                    width: 1px;
+                }
+            }
+
+            @include e(nav) {
+                border-radius: 0 4px 4px 0;
+                border-bottom: 1px solid $--border-color-light;
+                border-left: none;
+            }
+
+            bk-tab-header {
+                border-bottom: none;
+                border-top: 1px solid $--border-color-light;
+
+                &:first-child {
+                    border-left: 1px solid $--border-color-light;
+                    border-top: none;
+                }
+
+                @include when(active) {
+                    border: 1px solid $--border-color-light;
+                    border-left-color: #fff;
+                    border-right: none;
+                    border-bottom: none;
+
+                    &:first-child {
+                        border-top: none;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
     }
-}
 
-@include b(tab-header) {
-    padding: 0 20px;
-    height: 40px;
-    box-sizing: border-box;
-    line-height: 40px;
-    display: inline-block;
-    list-style: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: $--color-text-primary;
-    position: relative;
-    cursor: pointer;
-    margin-right: -4px;
+    @include m(border-card) {
+        background: $--color-white;
+        border: 1px solid $--border-color-base;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
 
-    &:focus,
-    &:focus:active {
-        outline: none;
+        @include e(header) {
+            background-color: $--background-color-base;
+            margin: 0;
+
+            &:after {
+                height: 1px;
+            }
+        }
+
+        @include b(tab-panel) {
+            padding: 15px;
+        }
+
+        bk-tab-header {
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            border: 1px solid transparent;
+            margin-top: -1px;
+            color: $--color-text-secondary;
+
+            &:first-child {
+                margin-left: -1px;
+            }
+
+            & + bk-tab-header {
+                margin-left: -1px;
+            }
+
+            @include when(active) {
+                color: $--color-primary;
+                background-color: $--color-white;
+                border-right-color: $--border-color-base;
+                border-left-color: $--border-color-base;
+            }
+
+            @include when(disabled) {
+                color: $--disabled-color-base;
+            }
+
+            &:not(.is-disabled):hover {
+                color: $--color-primary;
+            }
+        }
+
+        &.bk-tabs--left {
+            float: left;
+            width: 100%;
+
+            @include e(header) {
+                &:after {
+                    height: 100%;
+                    width: 1px;
+                }
+            }
+
+            bk-tab-header {
+                border: 1px solid transparent;
+                margin: -1px 0 -1px -1px;
+
+                @include when(active) {
+                    border-color: transparent;
+                    border-top-color: rgb(209, 219, 229);
+                    border-bottom-color: rgb(209, 219, 229);
+                }
+            }
+        }
     }
-
-    &:focus.is-active.is-focus:not(:active) {
-        box-shadow: 0 0 2px 2px $--color-primary inset;
-        border-radius: 3px;
-    }
-
-    &:hover {
-        color: $--color-primary;
-    }
-
-    @include when(active) {
-        color: $--color-primary;
-    }
-
-    @include when(disabled) {
-        @include util-disabled();
-    }
-}
-
-@include b(tab-panel) {
-    display: block;
 }
