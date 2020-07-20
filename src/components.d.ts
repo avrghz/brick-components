@@ -13,7 +13,7 @@ import { Placement } from "@popperjs/core";
 import { BarType } from "./components/ProgressBar/types";
 import { Direction, StepComponent } from "./components/Steps/types";
 import { AVChange } from "./components/Switch/types";
-import { Position } from "./components/Tabs/types";
+import { Position, Variant } from "./components/Tabs/types";
 import { Position as Position1 } from "./components/Toast/types";
 export namespace Components {
     interface BkAlert {
@@ -225,6 +225,7 @@ export namespace Components {
     }
     interface BkTabs {
         "position": Position;
+        "variant": Variant;
     }
     interface BkToast {
         /**
@@ -656,6 +657,7 @@ declare namespace LocalJSX {
     }
     interface BkTabs {
         "position"?: Position;
+        "variant"?: Variant;
     }
     interface BkToast {
         /**

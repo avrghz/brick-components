@@ -1,6 +1,6 @@
 import { html } from 'lit-html'
 import { select } from '@storybook/addon-knobs'
-import { POSITION, DEFAULT_POSITION } from './types'
+import { POSITION, DEFAULT_POSITION, VARIANT, DEFAULT_VARIANT } from './types'
 
 import notes from './readme.md'
 
@@ -14,8 +14,9 @@ export default {
 
 export const Default = () => {
     const position = select('position', POSITION, DEFAULT_POSITION)
+    const variant = select('variant', VARIANT, DEFAULT_VARIANT)
 
-    return html`<bk-tabs position=${position}>
+    return html`<bk-tabs position=${position} variant=${variant}>
         <div slot="header">
             <bk-tab-header tab="tab_1">Config</bk-tab-header>
             <bk-tab-header tab="tab-2">I am very long tab 1</bk-tab-header>

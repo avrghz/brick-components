@@ -1,6 +1,6 @@
 import { Component, h, Host, Element, Listen, Prop, State } from '@stencil/core'
 import { JSXBase, Watch } from '@stencil/core/internal'
-import { Position, DEFAULT_POSITION } from './types'
+import { Position, DEFAULT_POSITION, Variant, DEFAULT_VARIANT } from './types'
 
 // ! Add change event
 // ! https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html
@@ -21,6 +21,8 @@ export class Tabs {
 
     @Prop() position: Position = DEFAULT_POSITION
 
+    @Prop() variant: Variant = DEFAULT_VARIANT
+
     @Watch('position')
     watchPosition(current: Position, previous: Position) {
         this.shouldUpdateHighlighter =
@@ -31,7 +33,7 @@ export class Tabs {
     }
 
     componentDidUpdate() {
-        if (this.shouldUpdateHighlighter && this.activeTab) {
+        if (this.shouldUpdateHighlighter && this.activeTab && this.variant === 'simple') {
             this.shouldUpdateHighlighter = false
             this.setHighlighter(this.el.querySelector(`#${this.activeTab}`) as HTMLBkTabHeaderElement)
         }
@@ -52,12 +54,15 @@ export class Tabs {
     @Listen('$tabSetActive')
     onSetActiveTab(e: CustomEvent) {
         this.activeTab = e.detail
-        this.setHighlighter(e.target as HTMLBkTabHeaderElement)
+        if (this.variant === 'simple') {
+            this.setHighlighter(e.target as HTMLBkTabHeaderElement)
+        }
     }
 
     render() {
         return (
-            <Host class={`bk-tabs bk-tabs--${this.position}`}>
+            <Host class={`bk-tabs bk-tabs--${this.position} bk-tabs--${this.variant}`}>
+                {this.position === 'bottom' && <slot></slot>}
                 <div class="bk-tabs__header">
                     <div class="bk-tabs__scroll">
                         <div role="tablist" class="bk-tabs__nav">
@@ -66,7 +71,7 @@ export class Tabs {
                         </div>
                     </div>
                 </div>
-                <slot></slot>
+                {this.position !== 'bottom' && <slot></slot>}
             </Host>
         )
     }

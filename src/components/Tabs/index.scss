@@ -39,17 +39,20 @@
 
 @include b(tab-panel) {
     display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 @include b('tabs') {
     padding: 0;
     display: block;
     position: relative;
+    overflow: hidden;
 
     @include e(header) {
         overflow: hidden;
         position: relative;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
 
         &::after {
             content: '';
@@ -132,7 +135,7 @@
     @include m(left) {
         @include e(header) {
             float: left;
-            margin-right: 10px;
+            margin-right: 16px;
 
             &::after {
                 left: auto;
@@ -152,7 +155,7 @@
 
     @include m(right) {
         @include e(header) {
-            margin-left: 10px;
+            margin-left: 16px;
             float: right;
 
             &::after {
@@ -177,13 +180,17 @@
     }
 
     @include m(bottom) {
-        margin-top: 10px;
+        margin-top: 16px;
         margin-bottom: 0;
     }
 
     @include m((card, border-card)) {
         @include e(active-bar) {
             display: none;
+        }
+
+        bk-tab-header {
+            text-align: center;
         }
     }
 
@@ -235,7 +242,7 @@
                 border-right: 1px solid $--border-color-light;
                 border-bottom: none;
                 border-top: 1px solid $--border-color-light;
-                text-align: left;
+                margin: -1px 0 -1px -1px;
 
                 &:first-child {
                     border-right: 1px solid $--border-color-light;
@@ -275,6 +282,7 @@
             bk-tab-header {
                 border-bottom: none;
                 border-top: 1px solid $--border-color-light;
+                margin: -1px -1px -1px 0;
 
                 &:first-child {
                     border-left: 1px solid $--border-color-light;
@@ -313,7 +321,7 @@
         }
 
         @include b(tab-panel) {
-            padding: 15px;
+            padding: 16px;
         }
 
         bk-tab-header {
@@ -347,9 +355,6 @@
         }
 
         &.bk-tabs--left {
-            float: left;
-            width: 100%;
-
             @include e(header) {
                 &:after {
                     height: 100%;
@@ -360,6 +365,26 @@
             bk-tab-header {
                 border: 1px solid transparent;
                 margin: -1px 0 -1px -1px;
+
+                @include when(active) {
+                    border-color: transparent;
+                    border-top-color: rgb(209, 219, 229);
+                    border-bottom-color: rgb(209, 219, 229);
+                }
+            }
+        }
+
+        &.bk-tabs--right {
+            @include e(header) {
+                &:after {
+                    height: 100%;
+                    width: 1px;
+                }
+            }
+
+            bk-tab-header {
+                border: 1px solid transparent;
+                margin: -1px -1px -1px 0;
 
                 @include when(active) {
                     border-color: transparent;
