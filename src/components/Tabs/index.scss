@@ -41,11 +41,13 @@
     display: block;
     position: relative;
     overflow: hidden;
+    flex: 1;
 }
 
 @include b('tabs') {
     padding: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
 
@@ -133,8 +135,8 @@
     }
 
     @include m(left) {
+        flex-direction: row;
         @include e(header) {
-            float: left;
             margin-right: 16px;
 
             &::after {
@@ -154,9 +156,10 @@
     }
 
     @include m(right) {
+        flex-direction: row-reverse;
+
         @include e(header) {
             margin-left: 16px;
-            float: right;
 
             &::after {
                 left: 0;
@@ -180,8 +183,12 @@
     }
 
     @include m(bottom) {
-        margin-top: 16px;
-        margin-bottom: 0;
+        flex-direction: column-reverse;
+
+        @include e(header) {
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
     }
 
     @include m((card, border-card)) {
@@ -307,6 +314,8 @@
     }
 
     @include m(border-card) {
+        $--bc-border-color: rgb(209, 219, 229);
+
         background: $--color-white;
         border: 1px solid $--border-color-base;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
@@ -314,10 +323,6 @@
         @include e(header) {
             background-color: $--background-color-base;
             margin: 0;
-
-            &:after {
-                height: 1px;
-            }
         }
 
         @include b(tab-panel) {
@@ -341,8 +346,6 @@
             @include when(active) {
                 color: $--color-primary;
                 background-color: $--color-white;
-                border-right-color: $--border-color-base;
-                border-left-color: $--border-color-base;
             }
 
             @include when(disabled) {
@@ -354,26 +357,31 @@
             }
         }
 
-        &.bk-tabs--left {
+        &.bk-tabs--bottom,
+        &.bk-tabs--top {
             @include e(header) {
                 &:after {
-                    height: 100%;
-                    width: 1px;
+                    height: 1px;
                 }
             }
 
             bk-tab-header {
-                border: 1px solid transparent;
-                margin: -1px 0 -1px -1px;
-
                 @include when(active) {
-                    border-color: transparent;
-                    border-top-color: rgb(209, 219, 229);
-                    border-bottom-color: rgb(209, 219, 229);
+                    border-right-color: $--border-color-base;
+                    border-left-color: $--border-color-base;
                 }
             }
         }
 
+        &.bk-tabs--bottom {
+            bk-tab-header {
+                @include when(active) {
+                    border-bottom-color: $--bc-border-color;
+                }
+            }
+        }
+
+        &.bk-tabs--left,
         &.bk-tabs--right {
             @include e(header) {
                 &:after {
@@ -384,13 +392,24 @@
 
             bk-tab-header {
                 border: 1px solid transparent;
-                margin: -1px -1px -1px 0;
 
                 @include when(active) {
                     border-color: transparent;
-                    border-top-color: rgb(209, 219, 229);
-                    border-bottom-color: rgb(209, 219, 229);
+                    border-top-color: $--bc-border-color;
+                    border-bottom-color: $--bc-border-color;
                 }
+            }
+        }
+
+        &.bk-tabs--left {
+            bk-tab-header {
+                margin: -1px 0 -1px -1px;
+            }
+        }
+
+        &.bk-tabs--right {
+            bk-tab-header {
+                margin: -1px -1px -1px 0;
             }
         }
     }

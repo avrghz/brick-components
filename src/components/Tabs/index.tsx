@@ -62,7 +62,6 @@ export class Tabs {
     render() {
         return (
             <Host class={`bk-tabs bk-tabs--${this.position} bk-tabs--${this.variant}`}>
-                {this.position === 'bottom' && <slot></slot>}
                 <div class="bk-tabs__header">
                     <div class="bk-tabs__scroll">
                         <div role="tablist" class="bk-tabs__nav">
@@ -71,7 +70,7 @@ export class Tabs {
                         </div>
                     </div>
                 </div>
-                {this.position !== 'bottom' && <slot></slot>}
+                <slot></slot>
             </Host>
         )
     }
