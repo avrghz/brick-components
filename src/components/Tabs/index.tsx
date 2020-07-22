@@ -1,8 +1,5 @@
-import { Component, h, Host, Element, Listen, Prop, Watch } from '@stencil/core'
-import { Position, DEFAULT_POSITION, Variant, DEFAULT_VARIANT } from './types'
-
-// ! Add change event
-// ! https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html
+import { Component, h, Host, Element, Listen, Prop, Watch, Event, EventEmitter } from '@stencil/core'
+import { Position, Variant } from './types'
 
 @Component({
     tag: 'bk-tabs',
@@ -15,9 +12,14 @@ export class Tabs {
 
     @Element() el!: HTMLElement
 
-    @Prop() position: Position = DEFAULT_POSITION
+    /** Position of the tab */
+    @Prop() position: Position = 'top'
 
-    @Prop() variant: Variant = DEFAULT_VARIANT
+    /** Variant of the tab */
+    @Prop() variant: Variant = 'simple'
+
+    /** This event will fire on selection of a tab with tab id as detail */
+    @Event({ bubbles: false }) bkSelect!: EventEmitter<string>
 
     @Watch('position')
     watchPosition(current: Position, previous: Position) {
@@ -58,6 +60,7 @@ export class Tabs {
     @Listen('$tabSetActive')
     onSetActiveTab(e: CustomEvent) {
         this.activeTab = e.detail
+        this.bkSelect.emit(this.activeTab)
         if (this.variant === 'simple') {
             this.setHighlighter(e.target as HTMLBkTabHeaderElement)
         }

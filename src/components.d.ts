@@ -216,15 +216,33 @@ export namespace Components {
         "variant": Variants;
     }
     interface BkTabHeader {
+        /**
+          * set active tab
+         */
         "active": boolean;
+        /**
+          * Enable or disable tab
+         */
         "disabled": boolean;
+        /**
+          * Unique tab id
+         */
         "tab": string;
     }
     interface BkTabPanel {
+        /**
+          * Same value as tab header's tab value
+         */
         "tab": string;
     }
     interface BkTabs {
+        /**
+          * Position of the tab
+         */
         "position": Position;
+        /**
+          * Variant of the tab
+         */
         "variant": Variant;
     }
     interface BkToast {
@@ -646,17 +664,45 @@ declare namespace LocalJSX {
         "variant"?: Variants;
     }
     interface BkTabHeader {
+        /**
+          * set active tab
+         */
         "active"?: boolean;
+        /**
+          * Enable or disable tab
+         */
         "disabled"?: boolean;
+        /**
+          * Internal event
+         */
         "on$tabHighlightReset"?: (event: CustomEvent<any>) => void;
+        /**
+          * Internal event
+         */
         "on$tabSetActive"?: (event: CustomEvent<string>) => void;
+        /**
+          * Unique tab id
+         */
         "tab": string;
     }
     interface BkTabPanel {
+        /**
+          * Same value as tab header's tab value
+         */
         "tab": string;
     }
     interface BkTabs {
+        /**
+          * This event will fire on selection of a tab with tab id as detail
+         */
+        "onBkSelect"?: (event: CustomEvent<string>) => void;
+        /**
+          * Position of the tab
+         */
         "position"?: Position;
+        /**
+          * Variant of the tab
+         */
         "variant"?: Variant;
     }
     interface BkToast {

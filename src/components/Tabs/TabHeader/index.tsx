@@ -8,14 +8,19 @@ export class TabHeader {
 
     @Element() el!: HTMLBkTabHeaderElement
 
+    /** Unique tab id */
     @Prop() tab!: string
 
+    /** set active tab */
     @Prop({ reflect: true, mutable: true }) active = false
 
+    /** Enable or disable tab */
     @Prop() disabled = false
 
+    /** Internal event */
     @Event() $tabHighlightReset!: EventEmitter
 
+    /** Internal event */
     @Event() $tabSetActive!: EventEmitter<string>
 
     componentWillLoad() {

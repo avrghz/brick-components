@@ -1,22 +1,31 @@
 import { html } from 'lit-html'
 import { select } from '@storybook/addon-knobs'
-import { POSITION, DEFAULT_POSITION, VARIANT, DEFAULT_VARIANT } from './types'
+import { action } from '@storybook/addon-actions'
+import { POSITION, VARIANT } from './types'
 
-import notes from './readme.md'
+import tabsNotes from './readme.md'
+import tabHeaderNotes from './TabHeader/readme.md'
+import tabPanelNotes from './TabPanel/readme.md'
 
 export default {
     title: 'Tabs',
     component: 'bk-tabs',
     parameters: {
-        notes,
+        notes: {
+            tabs: tabsNotes,
+            tabHeader: tabHeaderNotes,
+            tabPanel: tabPanelNotes,
+        },
     },
 }
 
 export const Default = () => {
-    const position = select('position', POSITION, DEFAULT_POSITION)
-    const variant = select('variant', VARIANT, DEFAULT_VARIANT)
+    const position = select('position', POSITION, 'top')
+    const variant = select('variant', VARIANT, 'simple')
 
-    return html`<bk-tabs position=${position} variant=${variant}>
+    const bkSelect = action('bkSelect')
+
+    return html`<bk-tabs position=${position} variant=${variant} @bkSelect=${(e: CustomEvent) => bkSelect(e.detail)}>
         <div slot="header">
             <bk-tab-header tab="tab_1" active="true">Config</bk-tab-header>
             <bk-tab-header tab="tab-2">I am very long tab 1</bk-tab-header>

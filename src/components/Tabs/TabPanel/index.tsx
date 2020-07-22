@@ -6,6 +6,7 @@ import { Component, h, Prop, Host, Listen, State } from '@stencil/core'
 export class TabPanel {
     @State() active = false
 
+    /** Same value as tab header's tab value */
     @Prop() tab!: string
 
     @Listen('$tabSetActive', { target: 'parent' })
