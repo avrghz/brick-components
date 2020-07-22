@@ -63,9 +63,51 @@ export class Tabs {
         }
     }
 
+    getOrientation = () => (this.position === 'left' || this.position === 'right' ? 'vertical' : 'horizontal')
+
+    getActiveTab = () => (this.activeTab ? (this.el.querySelector(`#${this.activeTab}`) as HTMLElement) : null)
+
+    setActiveTab = (tab: HTMLElement | null) => {
+        if (tab) {
+            tab.setAttribute('active', 'true')
+            tab.focus()
+        }
+    }
+
+    @Listen('keydown')
+    onKeydownHandler(e: KeyboardEvent) {
+        const orientation = this.getOrientation()
+
+        if ((e.target as HTMLElement).tagName === 'BK-TAB-HEADER') {
+            switch (true) {
+                case e.key === 'ArrowDown' && orientation === 'vertical':
+                case e.key === 'ArrowRight' && orientation === 'horizontal': {
+                    this.setActiveTab(this.getActiveTab()?.nextElementSibling as HTMLElement)
+                    break
+                }
+                case e.key === 'ArrowLeft' && orientation === 'horizontal':
+                case e.key === 'ArrowUp' && orientation === 'vertical': {
+                    this.setActiveTab(this.getActiveTab()?.previousElementSibling as HTMLElement)
+                    break
+                }
+                case e.key === 'Home': {
+                    this.setActiveTab(this.el.querySelector('bk-tab-header:first-child'))
+                    break
+                }
+                case e.key === 'End': {
+                    this.setActiveTab(this.el.querySelector('bk-tab-header:last-child'))
+                    break
+                }
+            }
+        }
+    }
+
     render() {
         return (
-            <Host class={`bk-tabs bk-tabs--${this.position} bk-tabs--${this.variant}`}>
+            <Host
+                class={`bk-tabs bk-tabs--${this.position} bk-tabs--${this.variant}`}
+                aria-orientation={this.getOrientation()}
+            >
                 <div class="bk-tabs__header">
                     <div role="tablist" class="bk-tabs__nav">
                         {this.variant === 'simple' && (

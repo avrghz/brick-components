@@ -13,11 +13,7 @@
     position: relative;
     cursor: pointer;
     margin-right: -4px;
-
-    &:focus,
-    &:focus:active {
-        outline: none;
-    }
+    outline-color: $--color-primary;
 
     &:focus.is-active.is-focus:not(:active) {
         box-shadow: 0 0 2px 2px $--color-primary inset;

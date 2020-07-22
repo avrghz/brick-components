@@ -62,7 +62,7 @@ export class TabHeader {
     }
 
     handleClick = () => {
-        if (!this.disabled) {
+        if (!this.disabled && !this.active) {
             this.active = true
         }
     }
@@ -83,14 +83,15 @@ export class TabHeader {
         return (
             <Host
                 id={this.tab}
-                aria-controls={this.tab}
+                aria-controls={`pane_${this.tab}`}
                 role="tab"
                 class={{
                     'bk-tab-header': true,
                     'is-active': this.active && !this.disabled,
                     'is-disabled': this.disabled,
                 }}
-                tabIndex={this.active ? -1 : 0}
+                tabIndex={this.active ? 0 : -1}
+                aria-selected={`${this.active}`}
             >
                 <div data-tab-header>
                     <slot></slot>
