@@ -1,11 +1,8 @@
-import { Component, h, Host, Element, Listen, Prop, State } from '@stencil/core'
-import { JSXBase, Watch } from '@stencil/core/internal'
+import { Component, h, Host, Element, Listen, Prop, Watch } from '@stencil/core'
 import { Position, DEFAULT_POSITION, Variant, DEFAULT_VARIANT } from './types'
 
 // ! Add change event
 // ! https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html
-// ! Bordered tabs
-// ! fix position bottom
 
 @Component({
     tag: 'bk-tabs',
@@ -14,10 +11,9 @@ import { Position, DEFAULT_POSITION, Variant, DEFAULT_VARIANT } from './types'
 export class Tabs {
     private activeTab?: string
     private shouldUpdateHighlighter = false
+    private highlighterRef?: HTMLDivElement
 
     @Element() el!: HTMLElement
-
-    @State() highlighter: JSXBase.HTMLAttributes<HTMLDivElement>['style'] = { width: '0', transform: '' }
 
     @Prop() position: Position = DEFAULT_POSITION
 
@@ -45,9 +41,17 @@ export class Tabs {
         ) as HTMLDivElement).getBoundingClientRect()
         const { x: tabHeaderX, y: tabHeaderY } = this.el.getBoundingClientRect()
         if (this.position === 'top' || this.position === 'bottom') {
-            this.highlighter = { width: `${width}px`, transform: `translateX(${x - tabHeaderX}px)` }
+            if (this.highlighterRef) {
+                this.highlighterRef.style.removeProperty('height')
+                this.highlighterRef.style.transform = `translateX(${x - tabHeaderX}px)`
+                this.highlighterRef.style.width = `${width}px`
+            }
         } else {
-            this.highlighter = { height: `${height}px`, transform: `translateY(${y - tabHeaderY}px)` }
+            if (this.highlighterRef) {
+                this.highlighterRef.style.removeProperty('width')
+                this.highlighterRef.style.transform = `translateY(${y - tabHeaderY}px)`
+                this.highlighterRef.style.height = `${height}px`
+            }
         }
     }
 
@@ -63,11 +67,11 @@ export class Tabs {
         return (
             <Host class={`bk-tabs bk-tabs--${this.position} bk-tabs--${this.variant}`}>
                 <div class="bk-tabs__header">
-                    <div class="bk-tabs__scroll">
-                        <div role="tablist" class="bk-tabs__nav">
-                            <div class="bk-tabs__active-bar" style={this.highlighter}></div>
-                            <slot name="header"></slot>
-                        </div>
+                    <div role="tablist" class="bk-tabs__nav">
+                        {this.variant === 'simple' && (
+                            <div ref={(el) => (this.highlighterRef = el)} class="bk-tabs__active-bar"></div>
+                        )}
+                        <slot name="header"></slot>
                     </div>
                 </div>
                 <slot></slot>

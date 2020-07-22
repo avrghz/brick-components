@@ -74,7 +74,7 @@ export class TabHeader {
 
     @Listen('keydown')
     onKeyDownHandler(e: KeyboardEvent) {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' || e.key === ' ') {
             this.handleClick()
         }
     }
