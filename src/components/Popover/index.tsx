@@ -32,10 +32,10 @@ export class Popover {
     @Prop() disabled = false
 
     /** Fired when opened */
-    @Event() bkOpened!: EventEmitter
+    @Event({ bubbles: false }) bkOpened!: EventEmitter
 
     /** Fired when destroyed */
-    @Event() bkClosed!: EventEmitter
+    @Event({ bubbles: false }) bkClosed!: EventEmitter
 
     @SetPopper({
         reference: 'el',
@@ -57,9 +57,9 @@ export class Popover {
     }
 
     @Watch('placement')
-    watchPlacement(current: Placement, previous: Placement) {
+    async watchPlacement(current: Placement, previous: Placement) {
         if (current !== previous) {
-            this.setPlacement().then()
+            await this.setPlacement()
         }
     }
 
@@ -106,8 +106,8 @@ export class Popover {
     }
 
     @Listen('bkOpened')
-    onPopoverOpened() {
-        this.setPlacement().then()
+    async onPopoverOpened() {
+        await this.setPlacement()
     }
 
     render() {

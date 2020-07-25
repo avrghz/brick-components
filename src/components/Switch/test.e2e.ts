@@ -27,7 +27,7 @@ describe('<bk-switch/>', () => {
     })
 
     it('should fire bkChange on every state change', async () => {
-        const bkChange = await page.spyOnEvent('bkChange')
+        const bkChange = await component.spyOnEvent('bkChange')
         component.click()
         await page.waitForChanges()
 

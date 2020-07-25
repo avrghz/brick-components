@@ -3,7 +3,7 @@ import { boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import collapseReadme from './readme.md'
-import collapseGroupReadme from '../CollapseGroup/readme.md'
+import collapseGroupReadme from './Group/readme.md'
 
 export default {
     title: 'Collapse',

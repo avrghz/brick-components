@@ -13,7 +13,8 @@ import { Placement } from "@popperjs/core";
 import { BarType } from "./components/ProgressBar/types";
 import { Direction, StepComponent } from "./components/Steps/types";
 import { AVChange } from "./components/Switch/types";
-import { Position } from "./components/Toast/types";
+import { Position, Variant } from "./components/Tabs/types";
+import { Position as Position1 } from "./components/Toast/types";
 export namespace Components {
     interface BkAlert {
         /**
@@ -214,6 +215,36 @@ export namespace Components {
          */
         "variant": Variants;
     }
+    interface BkTabHeader {
+        /**
+          * set active tab
+         */
+        "active": boolean;
+        /**
+          * Enable or disable tab
+         */
+        "disabled": boolean;
+        /**
+          * Unique tab id
+         */
+        "tab": string;
+    }
+    interface BkTabPanel {
+        /**
+          * Same value as tab header's tab value
+         */
+        "tab": string;
+    }
+    interface BkTabs {
+        /**
+          * Position of the tab
+         */
+        "position": Position;
+        /**
+          * Variant of the tab
+         */
+        "variant": Variant;
+    }
     interface BkToast {
         /**
           * When provided, the toast will auto close after the specified time. (milliseconds)
@@ -312,6 +343,24 @@ declare global {
         prototype: HTMLBkSwitchElement;
         new (): HTMLBkSwitchElement;
     };
+    interface HTMLBkTabHeaderElement extends Components.BkTabHeader, HTMLStencilElement {
+    }
+    var HTMLBkTabHeaderElement: {
+        prototype: HTMLBkTabHeaderElement;
+        new (): HTMLBkTabHeaderElement;
+    };
+    interface HTMLBkTabPanelElement extends Components.BkTabPanel, HTMLStencilElement {
+    }
+    var HTMLBkTabPanelElement: {
+        prototype: HTMLBkTabPanelElement;
+        new (): HTMLBkTabPanelElement;
+    };
+    interface HTMLBkTabsElement extends Components.BkTabs, HTMLStencilElement {
+    }
+    var HTMLBkTabsElement: {
+        prototype: HTMLBkTabsElement;
+        new (): HTMLBkTabsElement;
+    };
     interface HTMLBkToastElement extends Components.BkToast, HTMLStencilElement {
     }
     var HTMLBkToastElement: {
@@ -332,6 +381,9 @@ declare global {
         "bk-slider": HTMLBkSliderElement;
         "bk-steps": HTMLBkStepsElement;
         "bk-switch": HTMLBkSwitchElement;
+        "bk-tab-header": HTMLBkTabHeaderElement;
+        "bk-tab-panel": HTMLBkTabPanelElement;
+        "bk-tabs": HTMLBkTabsElement;
         "bk-toast": HTMLBkToastElement;
     }
 }
@@ -611,6 +663,48 @@ declare namespace LocalJSX {
          */
         "variant"?: Variants;
     }
+    interface BkTabHeader {
+        /**
+          * set active tab
+         */
+        "active"?: boolean;
+        /**
+          * Enable or disable tab
+         */
+        "disabled"?: boolean;
+        /**
+          * Internal event
+         */
+        "on$tabHighlightReset"?: (event: CustomEvent<any>) => void;
+        /**
+          * Internal event
+         */
+        "on$tabSetActive"?: (event: CustomEvent<string>) => void;
+        /**
+          * Unique tab id
+         */
+        "tab": string;
+    }
+    interface BkTabPanel {
+        /**
+          * Same value as tab header's tab value
+         */
+        "tab": string;
+    }
+    interface BkTabs {
+        /**
+          * This event will fire on selection of a tab with tab id as detail
+         */
+        "onBkSelect"?: (event: CustomEvent<string>) => void;
+        /**
+          * Position of the tab
+         */
+        "position"?: Position;
+        /**
+          * Variant of the tab
+         */
+        "variant"?: Variant;
+    }
     interface BkToast {
         /**
           * When provided, the toast will auto close after the specified time. (milliseconds)
@@ -643,6 +737,9 @@ declare namespace LocalJSX {
         "bk-slider": BkSlider;
         "bk-steps": BkSteps;
         "bk-switch": BkSwitch;
+        "bk-tab-header": BkTabHeader;
+        "bk-tab-panel": BkTabPanel;
+        "bk-tabs": BkTabs;
         "bk-toast": BkToast;
     }
 }
@@ -663,6 +760,9 @@ declare module "@stencil/core" {
             "bk-slider": LocalJSX.BkSlider & JSXBase.HTMLAttributes<HTMLBkSliderElement>;
             "bk-steps": LocalJSX.BkSteps & JSXBase.HTMLAttributes<HTMLBkStepsElement>;
             "bk-switch": LocalJSX.BkSwitch & JSXBase.HTMLAttributes<HTMLBkSwitchElement>;
+            "bk-tab-header": LocalJSX.BkTabHeader & JSXBase.HTMLAttributes<HTMLBkTabHeaderElement>;
+            "bk-tab-panel": LocalJSX.BkTabPanel & JSXBase.HTMLAttributes<HTMLBkTabPanelElement>;
+            "bk-tabs": LocalJSX.BkTabs & JSXBase.HTMLAttributes<HTMLBkTabsElement>;
             "bk-toast": LocalJSX.BkToast & JSXBase.HTMLAttributes<HTMLBkToastElement>;
         }
     }

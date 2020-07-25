@@ -6,6 +6,16 @@ $--variant-map: (
     default: $--color-primary,
 );
 
+:host {
+    outline: none;
+}
+
+:host(.is-focus) {
+    &:focus:not(:active) {
+        @include util-outline();
+    }
+}
+
 @include b(switch) {
     $this: &;
 

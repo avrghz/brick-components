@@ -37,10 +37,10 @@ export class PopConfirm {
     @Prop() disabled = false
 
     /** on confirm action */
-    @Event() bkConfirmed!: EventEmitter
+    @Event({ bubbles: false }) bkConfirmed!: EventEmitter
 
     /** on cancel action */
-    @Event() bkCancelled!: EventEmitter
+    @Event({ bubbles: false }) bkCancelled!: EventEmitter
 
     onActionHandler = (e: Event, eventToEmit: EventEmitter) => {
         e.stopImmediatePropagation()

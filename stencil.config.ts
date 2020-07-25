@@ -6,6 +6,14 @@ export const config: Config = {
     namespace: 'brick-components',
     taskQueue: 'async',
     buildEs5: false,
+    bundles: [
+        {
+            components: ['bk-tabs', 'bk-tab-header', 'bk-tab-panel'],
+        },
+        {
+            components: ['bk-collapse', 'bk-collapse-group'],
+        },
+    ],
     plugins: [
         sass({
             injectGlobalPaths: [
@@ -30,9 +38,9 @@ export const config: Config = {
             type: 'docs-readme',
             footer: '',
         },
-        // {
-        //     type: 'www',
-        //     serviceWorker: null, // disable service workers
-        // },
+        {
+            type: 'www',
+            serviceWorker: null, // disable service workers
+        },
     ],
 }

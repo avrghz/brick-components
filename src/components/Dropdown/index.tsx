@@ -36,10 +36,10 @@ export class Dropdown {
     @Prop() disabled = false
 
     /** Fired when opened */
-    @Event() bkOpened!: EventEmitter
+    @Event({ bubbles: false }) bkOpened!: EventEmitter
 
     /** Fired when destroyed */
-    @Event() bkClosed!: EventEmitter
+    @Event({ bubbles: false }) bkClosed!: EventEmitter
 
     @SetPopper({
         reference: 'el',

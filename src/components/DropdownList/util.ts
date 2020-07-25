@@ -13,19 +13,19 @@ export const currentSelected = (options: Option[], selected: string | null) =>
 
 export const hasEnabledOption = (options: Option[]) => !!options.find((o) => !o.disabled)
 
-export const getFirstEnabledOption = (options: Option[]) => options.findIndex((o) => !o.disabled)
+export const getFirstEnabledOption = (options: Option[]) => options.find((o) => !o.disabled)
 
 export const selectFirstEnabledOption = (options: Option[], callBack: Callback) => {
     const firstEnabledOption = getFirstEnabledOption(options)
-    if (firstEnabledOption !== -1) {
+    if (firstEnabledOption) {
         callBack(firstEnabledOption)
     }
 }
 
 export const selectLastEnabledOption = (options: Option[], callBack: Callback) => {
     const lastEnabledOption = getFirstEnabledOption([...options].reverse())
-    if (lastEnabledOption !== -1) {
-        callBack(options.length - 1 - lastEnabledOption)
+    if (lastEnabledOption) {
+        callBack(lastEnabledOption)
     }
 }
 
@@ -45,7 +45,7 @@ export const selectNextOption = (options: Option[], selected: string | null, cal
     }
 
     if (actualNextIndex !== -1) {
-        callBack(actualNextIndex)
+        callBack(options[actualNextIndex])
     }
 }
 
@@ -66,6 +66,6 @@ export const selectPreviousOption = (options: Option[], selected: string | null,
     }
 
     if (actualPreviousIndex !== -1) {
-        callBack(actualPreviousIndex)
+        callBack(options[actualPreviousIndex])
     }
 }

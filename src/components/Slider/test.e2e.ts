@@ -79,7 +79,7 @@ describe('<bk-slider/>', () => {
 
     describe('Prop: step', () => {
         it('should move by given `step`', async () => {
-            const bkChange = await page.spyOnEvent('bkChange')
+            const bkChange = await component.spyOnEvent('bkChange')
 
             component.setProperty('step', 10)
             await page.waitForChanges()

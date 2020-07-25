@@ -1,4 +1,5 @@
 import { Component, h, Host, Prop, Element, Event, EventEmitter, Watch, State } from '@stencil/core'
+import KeyboardFocus from '../../shared/decorators/keyboardFocus'
 import { Variants } from '../../shared/types'
 import { consoleWarn } from '../../shared/util'
 
@@ -16,7 +17,7 @@ export class Slider {
     private dragHandle?: HTMLDivElement
     private previousValue = 0
 
-    @Element() el!: HTMLElement
+    @KeyboardFocus() @Element() el!: HTMLElement
 
     @State() toolTipState = false
 
@@ -36,7 +37,7 @@ export class Slider {
     @Prop() showTooltip = true
 
     /** Fired when value changed */
-    @Event() bkChange!: EventEmitter
+    @Event({ bubbles: false }) bkChange!: EventEmitter
 
     @Watch('step')
     watchStep() {
@@ -89,8 +90,6 @@ export class Slider {
         e.stopImmediatePropagation()
         this.isMouseEvent = e instanceof MouseEvent
 
-        this.toolTipState = this.showTooltip && true
-
         document.addEventListener(this.isMouseEvent ? 'mousemove' : 'touchmove', this.onDragAction, eventOptions)
         document.addEventListener(this.isMouseEvent ? 'mouseup' : 'touchend', this.onDragEnd, {
             ...eventOptions,
@@ -99,7 +98,6 @@ export class Slider {
     }
 
     onDragEnd = () => {
-        this.toolTipState = false
         document.removeEventListener(this.isMouseEvent ? 'mousemove' : 'touchmove', this.onDragAction, eventOptions)
         this.emitEvent()
     }
@@ -110,7 +108,7 @@ export class Slider {
     }
 
     onHandleKeyDown = (e: KeyboardEvent) => {
-        e.stopImmediatePropagation()
+        // e.stopImmediatePropagation()
         if (this.value < 100 && (e.which === 38 || e.which === 39)) {
             this.value += this.step
         } else if (this.value > 0 && (e.which === 37 || e.which === 40)) {
@@ -127,6 +125,10 @@ export class Slider {
     onHandleClick = (e: Event) => {
         e.stopImmediatePropagation()
     }
+
+    onHandleFocus = () => (this.toolTipState = true)
+
+    onHandleBlur = () => (this.toolTipState = false)
 
     getButtonUI = (slot?: string) => <div class="bk-slider__button-inner" {...(slot ? { slot } : {})} />
 
@@ -161,11 +163,17 @@ export class Slider {
                                   onKeyDown: this.onHandleKeyDown,
                                   onKeyUp: this.onHandleKeyUp,
                                   onClick: this.onHandleClick,
+                                  ...(this.showTooltip
+                                      ? {
+                                            onFocus: this.onHandleFocus,
+                                            onBlur: this.onHandleBlur,
+                                        }
+                                      : {}),
                               }
                             : {})}
                     >
                         {this.showTooltip ? (
-                            <bk-popover show={this.toolTipState} placement="top">
+                            <bk-popover show={this.toolTipState} placement="top" triggerOn="manual">
                                 {this.getButtonUI('control')}
                                 <span slot="content" class="bk-slider__tooltip-content">
                                     {this.value}

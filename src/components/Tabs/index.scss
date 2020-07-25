@@ -1,0 +1,410 @@
+@import '../../theme/base/mixins/utils.scss';
+
+@include b(tab-header) {
+    padding: 0 20px;
+    height: 40px;
+    box-sizing: border-box;
+    line-height: 40px;
+    display: inline-block;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $--color-text-primary;
+    position: relative;
+    cursor: pointer;
+    margin-right: -4px;
+    outline: none;
+
+    &:hover {
+        color: $--color-primary;
+    }
+
+    @include when(active) {
+        color: $--color-primary;
+    }
+
+    @include when(disabled) {
+        @include util-disabled();
+    }
+}
+
+@include b(tab-panel) {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+}
+
+@include b('tabs') {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+    @include e(header) {
+        overflow: auto;
+        position: relative;
+        margin-bottom: 16px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $--border-color-light;
+            z-index: $--index-normal;
+        }
+    }
+
+    @include e(nav) {
+        white-space: nowrap;
+        position: relative;
+        transition: transform 0.3s;
+        float: left;
+        z-index: #{$--index-normal + 1};
+
+        @include when(stretch) {
+            min-width: 100%;
+            display: flex;
+            & > * {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    }
+
+    @include e(active-bar) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background-color: $--color-primary;
+        z-index: 1;
+        transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        list-style: none;
+    }
+
+    @include m((left, right)) {
+        @include e(header) {
+            overflow: hidden;
+            height: 100%;
+            margin-bottom: 0;
+
+            &::after {
+                height: 100%;
+                width: 1px;
+                bottom: auto;
+                top: 0;
+            }
+        }
+
+        @include e(nav) {
+            float: none;
+        }
+
+        @include e(active-bar) {
+            top: 0;
+            bottom: auto;
+            width: 2px;
+            height: auto;
+        }
+
+        bk-tab-header {
+            display: block;
+        }
+    }
+
+    @include m(left) {
+        flex-direction: row;
+        @include e(header) {
+            margin-right: 16px;
+
+            &::after {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        @include e(active-bar) {
+            right: 0;
+            left: auto;
+        }
+
+        bk-tab-header {
+            text-align: right;
+        }
+    }
+
+    @include m(right) {
+        flex-direction: row-reverse;
+
+        @include e(header) {
+            margin-left: 16px;
+
+            &::after {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+
+    @include m((bottom, top)) {
+        &:not(.bk-tabs--border-card):not(.bk-tabs--card) {
+            bk-tab-header {
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:last-of-type {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    @include m(bottom) {
+        flex-direction: column-reverse;
+
+        @include e(header) {
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
+    }
+
+    @include m((card, border-card)) {
+        bk-tab-header {
+            text-align: center;
+        }
+    }
+
+    @include m(card) {
+        @include e(nav) {
+            border: 1px solid $--border-color-light;
+            border-radius: 4px 4px 0 0;
+            box-sizing: border-box;
+        }
+
+        bk-tab-header {
+            transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+                padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        &.bk-tabs--top,
+        &.bk-tabs--bottom {
+            bk-tab-header {
+                border-left: 1px solid $--border-color-light;
+
+                &:first-of-type {
+                    border-left: none;
+                }
+            }
+        }
+
+        &.bk-tabs--top {
+            @include e(nav) {
+                border-bottom: none;
+            }
+
+            bk-tab-header {
+                border-bottom: 1px solid transparent;
+
+                @include when(active) {
+                    border-bottom-color: $--color-white;
+                }
+            }
+        }
+
+        &.bk-tabs--bottom {
+            @include e(header) {
+                &:after {
+                    bottom: auto;
+                    top: 0;
+                }
+            }
+
+            @include e(nav) {
+                border-top: none;
+            }
+
+            bk-tab-header {
+                border-top: 1px solid transparent;
+
+                @include when(active) {
+                    border-top-color: $--color-white;
+                }
+            }
+        }
+
+        &.bk-tabs--left,
+        &.bk-tabs--right {
+            @include e(nav) {
+                border-bottom: 1px solid $--border-color-light;
+            }
+
+            bk-tab-header {
+                border-top: 1px solid $--border-color-light;
+                border-bottom: none;
+
+                &:first-child {
+                    border-top: none;
+                }
+
+                @include when(active) {
+                    border: 1px solid $--border-color-light;
+                    border-bottom: none;
+
+                    &:first-child {
+                        border-top: none;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+
+        &.bk-tabs--left {
+            @include e(nav) {
+                border-radius: 4px 0 0 4px;
+                border-right: none;
+            }
+
+            bk-tab-header {
+                border-left: none;
+                border-right: 1px solid $--border-color-light;
+                margin: -1px 0 -1px -1px;
+
+                &:first-child {
+                    border-right: 1px solid $--border-color-light;
+                }
+
+                @include when(active) {
+                    border-right-color: #fff;
+                    border-left: none;
+                }
+            }
+        }
+
+        &.bk-tabs--right {
+            @include e(nav) {
+                border-radius: 0 4px 4px 0;
+                border-left: none;
+            }
+
+            bk-tab-header {
+                border-right: none;
+                border-left: 1px solid $--border-color-light;
+                margin: -1px -1px -1px 0;
+
+                &:first-child {
+                    border-left: 1px solid $--border-color-light;
+                }
+
+                @include when(active) {
+                    border-left-color: #fff;
+                    border-right: none;
+                }
+            }
+        }
+    }
+
+    @include m(border-card) {
+        $--bc-border-color: rgb(209, 219, 229);
+
+        background: $--color-white;
+        border: 1px solid $--border-color-base;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+
+        @include e(header) {
+            background-color: $--background-color-base;
+            margin: 0;
+        }
+
+        @include b(tab-panel) {
+            padding: 16px;
+        }
+
+        bk-tab-header {
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            border: 1px solid transparent;
+            margin-top: -1px;
+            color: $--color-text-secondary;
+
+            &:first-child {
+                margin-left: -1px;
+            }
+
+            & + bk-tab-header {
+                margin-left: -1px;
+            }
+
+            @include when(active) {
+                color: $--color-primary;
+                background-color: $--color-white;
+            }
+
+            @include when(disabled) {
+                color: $--disabled-color-base;
+            }
+
+            &:not(.is-disabled):hover {
+                color: $--color-primary;
+            }
+        }
+
+        &.bk-tabs--bottom,
+        &.bk-tabs--top {
+            bk-tab-header {
+                @include when(active) {
+                    border-right-color: $--border-color-base;
+                    border-left-color: $--border-color-base;
+                }
+            }
+        }
+
+        &.bk-tabs--bottom {
+            bk-tab-header {
+                @include when(active) {
+                    border-bottom-color: $--bc-border-color;
+                }
+            }
+        }
+
+        &.bk-tabs--left,
+        &.bk-tabs--right {
+            bk-tab-header {
+                border: 1px solid transparent;
+
+                @include when(active) {
+                    border-color: transparent;
+                    border-top-color: $--bc-border-color;
+                    border-bottom-color: $--bc-border-color;
+                }
+            }
+        }
+
+        &.bk-tabs--left {
+            bk-tab-header {
+                margin: -1px 0 -1px -1px;
+            }
+        }
+
+        &.bk-tabs--right {
+            bk-tab-header {
+                margin: -1px -1px -1px 0;
+            }
+        }
+    }
+
+    @include when(focus) {
+        bk-tab-header {
+            &:focus.is-active:not(:active) {
+                @include util-outline();
+                border-radius: 3px;
+            }
+        }
+    }
+}
