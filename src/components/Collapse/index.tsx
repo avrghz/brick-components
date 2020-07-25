@@ -121,7 +121,7 @@ export class Collapse {
     onClickHandler = () => (this.open = !this.open)
 
     onKeydownHandler = (e: KeyboardEvent) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' || e.key === ' ') {
             this.open = !this.open
         }
     }
