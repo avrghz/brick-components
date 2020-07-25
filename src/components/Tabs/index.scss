@@ -13,12 +13,7 @@
     position: relative;
     cursor: pointer;
     margin-right: -4px;
-    outline-color: $--color-primary;
-
-    &:focus.is-active.is-focus:not(:active) {
-        box-shadow: 0 0 2px 2px $--color-primary inset;
-        border-radius: 3px;
-    }
+    outline: none;
 
     &:hover {
         color: $--color-primary;
@@ -400,6 +395,15 @@
         &.bk-tabs--right {
             bk-tab-header {
                 margin: -1px -1px -1px 0;
+            }
+        }
+    }
+
+    @include when(focus) {
+        bk-tab-header {
+            &:focus.is-active:not(:active) {
+                box-shadow: 0 0 2px 2px $--color-primary inset;
+                border-radius: 3px;
             }
         }
     }

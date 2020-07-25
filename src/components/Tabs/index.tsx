@@ -57,6 +57,36 @@ export class Tabs {
         }
     }
 
+    getOrientation = () => (this.position === 'left' || this.position === 'right' ? 'vertical' : 'horizontal')
+
+    getActiveTab = () => (this.activeTab ? (this.el.querySelector(`#${this.activeTab}`) as HTMLElement) : null)
+
+    getAllTabs = () => this.el.querySelectorAll('bk-tab-header')
+
+    setActiveTab = (tab: HTMLElement | null) => {
+        if (tab) {
+            tab.setAttribute('active', 'true')
+            tab.focus()
+        }
+    }
+
+    removeKeyboardFocus = () => this.el.classList.remove('is-focus')
+
+    addKeyboardFocus = () => {
+        if (!this.el.classList.contains('is-focus')) {
+            this.el.classList.add('is-focus')
+            document.addEventListener(
+                'mousedown',
+                () => {
+                    this.removeKeyboardFocus()
+                },
+                {
+                    once: true,
+                }
+            )
+        }
+    }
+
     @Listen('$tabSetActive')
     onSetActiveTab(e: CustomEvent) {
         this.activeTab = e.detail
@@ -66,20 +96,11 @@ export class Tabs {
         }
     }
 
-    getOrientation = () => (this.position === 'left' || this.position === 'right' ? 'vertical' : 'horizontal')
-
-    getActiveTab = () => (this.activeTab ? (this.el.querySelector(`#${this.activeTab}`) as HTMLElement) : null)
-
-    setActiveTab = (tab: HTMLElement | null) => {
-        if (tab) {
-            tab.setAttribute('active', 'true')
-            tab.focus()
-        }
-    }
-
     @Listen('keydown')
     onKeydownHandler(e: KeyboardEvent) {
         const orientation = this.getOrientation()
+
+        this.addKeyboardFocus()
 
         if ((e.target as HTMLElement).tagName === 'BK-TAB-HEADER') {
             switch (true) {
@@ -101,7 +122,18 @@ export class Tabs {
                     this.setActiveTab(this.el.querySelector('bk-tab-header:last-child'))
                     break
                 }
+                case e.key === 'Tab' && this.el.classList.contains('is-focus'): {
+                    this.removeKeyboardFocus()
+                    break
+                }
             }
+        }
+    }
+
+    @Listen('keyup')
+    onKeyUpHandler(e: KeyboardEvent) {
+        if (e.key === 'Tab') {
+            this.addKeyboardFocus()
         }
     }
 
