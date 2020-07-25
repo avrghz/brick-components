@@ -2,7 +2,6 @@ import { html } from 'lit-html'
 import { select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { POSITION, VARIANT } from './types'
-
 import tabsNotes from './readme.md'
 import tabHeaderNotes from './TabHeader/readme.md'
 import tabPanelNotes from './TabPanel/readme.md'
