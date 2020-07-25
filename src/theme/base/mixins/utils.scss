@@ -50,3 +50,7 @@
     opacity: 0.5;
     pointer-events: none;
 }
+
+@mixin util-outline {
+    box-shadow: 0 0 1px 1px $--color-primary inset;
+}

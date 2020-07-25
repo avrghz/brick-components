@@ -402,7 +402,7 @@
     @include when(focus) {
         bk-tab-header {
             &:focus.is-active:not(:active) {
-                box-shadow: 0 0 1px 1px $--color-primary inset;
+                @include util-outline();
                 border-radius: 3px;
             }
         }

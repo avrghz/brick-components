@@ -1,4 +1,5 @@
-import { Component, h, Prop, Event, EventEmitter, Host, Listen } from '@stencil/core'
+import { Component, h, Prop, Event, EventEmitter, Host, Listen, Element } from '@stencil/core'
+import KeyboardFocus from '../../shared/decorators/keyboardFocus'
 import { Variants } from '../../shared/types'
 import { AVChange } from './types'
 
@@ -8,6 +9,8 @@ import { AVChange } from './types'
     styleUrl: './index.scss',
 })
 export class Switch {
+    @KeyboardFocus() @Element() el!: HTMLElement
+
     /** Set default state of the switch */
     @Prop({ reflect: true, mutable: true }) isOn = false
 
