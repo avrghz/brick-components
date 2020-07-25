@@ -88,18 +88,26 @@ export class Tabs {
             switch (true) {
                 case e.key === 'ArrowDown' && orientation === 'vertical':
                 case e.key === 'ArrowRight' && orientation === 'horizontal': {
-                    this.setActiveTab(this.getActiveTab()?.nextElementSibling as HTMLElement)
-                    break
+                    const next = this.getActiveTab()?.nextElementSibling as HTMLElement
+                    if (!!next) {
+                        this.setActiveTab(next)
+                        break
+                    }
                 }
-                case e.key === 'ArrowLeft' && orientation === 'horizontal':
-                case e.key === 'ArrowUp' && orientation === 'vertical': {
-                    this.setActiveTab(this.getActiveTab()?.previousElementSibling as HTMLElement)
-                    break
-                }
+                // tslint:disable-next-line
                 case e.key === 'Home': {
                     this.setActiveTab(this.el.querySelector('bk-tab-header:first-child'))
                     break
                 }
+                case e.key === 'ArrowLeft' && orientation === 'horizontal':
+                case e.key === 'ArrowUp' && orientation === 'vertical': {
+                    const previous = this.getActiveTab()?.previousElementSibling as HTMLElement
+                    if (!!previous) {
+                        this.setActiveTab(previous)
+                        break
+                    }
+                }
+                // tslint:disable-next-line
                 case e.key === 'End': {
                     this.setActiveTab(this.el.querySelector('bk-tab-header:last-child'))
                     break
