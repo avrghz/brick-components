@@ -10,6 +10,9 @@ export const config: Config = {
         {
             components: ['bk-tabs', 'bk-tab-header', 'bk-tab-panel'],
         },
+        {
+            components: ['bk-collapse', 'bk-collapse-group'],
+        },
     ],
     plugins: [
         sass({
