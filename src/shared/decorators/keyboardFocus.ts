@@ -7,15 +7,9 @@ const removeKeyboardFocus = (el: HTMLElement) => el.classList.remove('is-focus')
 const addKeyboardFocus = (el: HTMLElement) => {
     if (!hasFocusRing(el)) {
         el.classList.add('is-focus')
-        document.addEventListener(
-            'mousedown',
-            () => {
-                removeKeyboardFocus(el)
-            },
-            {
-                once: true,
-            }
-        )
+        document.addEventListener('mousedown', () => removeKeyboardFocus(el), {
+            once: true,
+        })
     }
 }
 

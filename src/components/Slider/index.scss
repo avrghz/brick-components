@@ -12,6 +12,14 @@ $--variant-map: (
     font-size: $--slider-font-size;
 }
 
+:host(.is-focus) {
+    .bk-slider__button {
+        &:focus:not(:active) {
+            @include util-outline();
+        }
+    }
+}
+
 @mixin animate($property) {
     transition: $property 0.2s linear;
 }
@@ -50,6 +58,7 @@ $--variant-map: (
         user-select: none;
         line-height: normal;
         @include animate(left);
+        outline: none;
 
         &::after {
             content: '';
@@ -89,6 +98,7 @@ $--variant-map: (
     &:not(#{$this}--disabled) {
         pointer-events: all;
         opacity: 1;
+        cursor: pointer;
 
         #{$this}__button {
             cursor: grab;
