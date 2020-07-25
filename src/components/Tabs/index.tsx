@@ -1,4 +1,5 @@
 import { Component, h, Host, Element, Listen, Prop, Watch, Event, EventEmitter } from '@stencil/core'
+import KeyboardFocus from '../../shared/decorators/keyboardFocus'
 import { Position, Variant } from './types'
 
 @Component({
@@ -10,7 +11,7 @@ export class Tabs {
     private shouldUpdateHighlighter = false
     private highlighterRef?: HTMLDivElement
 
-    @Element() el!: HTMLElement
+    @KeyboardFocus() @Element() el!: HTMLElement
 
     /** Position of the tab */
     @Prop() position: Position = 'top'
@@ -70,23 +71,6 @@ export class Tabs {
         }
     }
 
-    removeKeyboardFocus = () => this.el.classList.remove('is-focus')
-
-    addKeyboardFocus = () => {
-        if (!this.el.classList.contains('is-focus')) {
-            this.el.classList.add('is-focus')
-            document.addEventListener(
-                'mousedown',
-                () => {
-                    this.removeKeyboardFocus()
-                },
-                {
-                    once: true,
-                }
-            )
-        }
-    }
-
     @Listen('$tabSetActive')
     onSetActiveTab(e: CustomEvent) {
         this.activeTab = e.detail
@@ -99,8 +83,6 @@ export class Tabs {
     @Listen('keydown')
     onKeydownHandler(e: KeyboardEvent) {
         const orientation = this.getOrientation()
-
-        this.addKeyboardFocus()
 
         if ((e.target as HTMLElement).tagName === 'BK-TAB-HEADER') {
             switch (true) {
@@ -122,18 +104,7 @@ export class Tabs {
                     this.setActiveTab(this.el.querySelector('bk-tab-header:last-child'))
                     break
                 }
-                case e.key === 'Tab' && this.el.classList.contains('is-focus'): {
-                    this.removeKeyboardFocus()
-                    break
-                }
             }
-        }
-    }
-
-    @Listen('keyup')
-    onKeyUpHandler(e: KeyboardEvent) {
-        if (e.key === 'Tab') {
-            this.addKeyboardFocus()
         }
     }
 
