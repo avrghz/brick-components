@@ -1,5 +1,7 @@
-import { ComponentInterface } from '@stencil/core'
+import { ComponentInterface, Build as BUILD } from '@stencil/core'
 import { createPopper, Instance, Modifier, Placement } from '@popperjs/core'
+import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow'
+import flip from '@popperjs/core/lib/modifiers/flip'
 
 export type SetPopperInstance = Instance
 
@@ -22,6 +24,11 @@ export default ({
     eventAfterOpened,
     eventAfterClosed,
 }: Setting) => (target: ComponentInterface, property: string) => {
+    /* tslint:disable-next-line */
+    ;(BUILD as any).cmpDidLoad = true
+    /* tslint:disable-next-line */
+    ;(BUILD as any).cmpDidUpdate = true
+
     let popperInstance: Instance | undefined
 
     const { componentDidLoad, componentDidUpdate, disconnectedCallback } = target
@@ -44,6 +51,13 @@ export default ({
         const instance = createPopper(component[reference], component[popper], {
             placement: initialPlacement,
             modifiers: [
+                flip,
+                {
+                    name: 'preventOverflow',
+                    options: {
+                        padding: 16,
+                    },
+                },
                 {
                     name: 'arrow',
                     options: {

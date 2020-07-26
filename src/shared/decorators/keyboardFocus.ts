@@ -45,18 +45,16 @@ const deRegisterEvents = (target: ComponentInterface, property: string) => {
 export default () => (target: ComponentInterface, property: string) => {
     /* tslint:disable-next-line */
     ;(BUILD as any).cmpDidLoad = true
-    /* tslint:disable-next-line */
-    ;(BUILD as any).cmpDidUnload = true
 
-    const { componentDidLoad, componentDidUnload } = target
+    const { componentDidLoad, disconnectedCallback } = target
 
     target.componentDidLoad = function () {
         registerEvents(this, property)
         return componentDidLoad?.call(this)
     }
 
-    target.componentDidUnload = function () {
+    target.disconnectedCallback = function () {
         deRegisterEvents(this, property)
-        return componentDidUnload?.call(this)
+        return disconnectedCallback?.call(this)
     }
 }
