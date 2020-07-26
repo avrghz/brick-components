@@ -36,6 +36,9 @@ export namespace Components {
          */
         "shadow": Shadow;
     }
+    interface BkCheckboxWrapper {
+        "label": string;
+    }
     interface BkCollapse {
         /**
           * Enable or disable collapse
@@ -277,6 +280,12 @@ declare global {
         prototype: HTMLBkCardElement;
         new (): HTMLBkCardElement;
     };
+    interface HTMLBkCheckboxWrapperElement extends Components.BkCheckboxWrapper, HTMLStencilElement {
+    }
+    var HTMLBkCheckboxWrapperElement: {
+        prototype: HTMLBkCheckboxWrapperElement;
+        new (): HTMLBkCheckboxWrapperElement;
+    };
     interface HTMLBkCollapseElement extends Components.BkCollapse, HTMLStencilElement {
     }
     var HTMLBkCollapseElement: {
@@ -370,6 +379,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "bk-alert": HTMLBkAlertElement;
         "bk-card": HTMLBkCardElement;
+        "bk-checkbox-wrapper": HTMLBkCheckboxWrapperElement;
         "bk-collapse": HTMLBkCollapseElement;
         "bk-collapse-group": HTMLBkCollapseGroupElement;
         "bk-dropdown": HTMLBkDropdownElement;
@@ -411,6 +421,9 @@ declare namespace LocalJSX {
           * Set shadow of the component
          */
         "shadow"?: Shadow;
+    }
+    interface BkCheckboxWrapper {
+        "label": string;
     }
     interface BkCollapse {
         /**
@@ -726,6 +739,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "bk-alert": BkAlert;
         "bk-card": BkCard;
+        "bk-checkbox-wrapper": BkCheckboxWrapper;
         "bk-collapse": BkCollapse;
         "bk-collapse-group": BkCollapseGroup;
         "bk-dropdown": BkDropdown;
@@ -749,6 +763,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "bk-alert": LocalJSX.BkAlert & JSXBase.HTMLAttributes<HTMLBkAlertElement>;
             "bk-card": LocalJSX.BkCard & JSXBase.HTMLAttributes<HTMLBkCardElement>;
+            "bk-checkbox-wrapper": LocalJSX.BkCheckboxWrapper & JSXBase.HTMLAttributes<HTMLBkCheckboxWrapperElement>;
             "bk-collapse": LocalJSX.BkCollapse & JSXBase.HTMLAttributes<HTMLBkCollapseElement>;
             "bk-collapse-group": LocalJSX.BkCollapseGroup & JSXBase.HTMLAttributes<HTMLBkCollapseGroupElement>;
             "bk-dropdown": LocalJSX.BkDropdown & JSXBase.HTMLAttributes<HTMLBkDropdownElement>;
