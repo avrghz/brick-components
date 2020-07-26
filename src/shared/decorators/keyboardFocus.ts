@@ -14,9 +14,7 @@ const addKeyboardFocus = (el: HTMLElement) => {
 }
 
 const onKeyDownHandler = (e: KeyboardEvent) => {
-    if (e.key === 'Tab') {
-        addKeyboardFocus(e.currentTarget as HTMLElement)
-    }
+    addKeyboardFocus(e.currentTarget as HTMLElement)
 }
 
 const onKeyUpHandler = (e: KeyboardEvent) => {

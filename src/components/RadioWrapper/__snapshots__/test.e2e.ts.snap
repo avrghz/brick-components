@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<bk-radio-wrapper/> should render: snapshot__basic 1`] = `
+<bk-radio-wrapper class="hydrated sc-bk-radio-wrapper-h sc-bk-radio-wrapper-s" label="Option">
+  <!---->
+  <label class="bk-radio sc-bk-radio-wrapper sc-bk-radio-wrapper-s">
+    <input aria-hidden="false" name="options" type="radio" value="1">
+    <span class="bk-radio__input sc-bk-radio-wrapper">
+      <span class="bk-radio__inner sc-bk-radio-wrapper"></span>
+    </span>
+    <span class="bk-radio__label sc-bk-radio-wrapper">
+      Option
+    </span>
+  </label>
+</bk-radio-wrapper>
+`;

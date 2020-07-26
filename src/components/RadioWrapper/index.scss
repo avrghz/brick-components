@@ -1,0 +1,113 @@
+:host {
+    margin-right: 30px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+@include b(radio) {
+    color: $--radio-font-color;
+    font-weight: $--radio-font-weight;
+    font-size: $--font-size-base;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    outline: none;
+    @include utils-user-select(none);
+
+    @include e((label, input)) {
+        cursor: pointer;
+    }
+
+    @include e(input) {
+        white-space: nowrap;
+        outline: none;
+        display: inline-block;
+        line-height: 1;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    @include e(inner) {
+        display: inline-block;
+        position: relative;
+        border: $--radio-input-border;
+        border-radius: $--radio-input-border-radius;
+        box-sizing: border-box;
+        width: $--radio-input-width;
+        height: $--radio-input-height;
+        background-color: $--radio-input-background-color;
+
+        &:hover {
+            border-color: $--radio-input-border-color-hover;
+        }
+
+        &::after {
+            width: 4px;
+            height: 4px;
+            border-radius: $--radio-input-border-radius;
+            background-color: $--color-white;
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.15s ease-in;
+        }
+    }
+
+    @include e(label) {
+        font-size: $--radio-font-size;
+        padding-left: 10px;
+    }
+}
+
+:host(.is-focus) {
+    ::slotted(input) {
+        &:focus {
+            ~ .bk-radio__input {
+                .bk-radio__inner {
+                    box-shadow: 0 0 2px 2px $--radio-input-border-color-hover;
+                }
+            }
+        }
+    }
+}
+
+::slotted(input) {
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+
+    &:checked {
+        ~ .bk-radio__input {
+            .bk-radio__inner {
+                border-color: $--radio-checked-input-border-color;
+                background: $--radio-checked-icon-color;
+
+                &::after {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+
+        ~ .bk-radio__label {
+            color: $--radio-checked-font-color;
+        }
+    }
+
+    &:disabled {
+        ~ .bk-radio__input,
+        ~ .bk-radio__label {
+            @include util-disabled();
+        }
+    }
+}

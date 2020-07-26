@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Element, Watch } from '@stencil/core'
+import { Component, h, Prop, Element, Watch } from '@stencil/core'
 import KeyboardFocus from '../../shared/decorators/keyboardFocus'
 
 @Component({
@@ -35,20 +35,18 @@ export class CheckboxWrapper {
 
     render() {
         return (
-            <Host>
-                <label
-                    class={{
-                        'is-indeterminate': this.indeterminate,
-                        'bk-checkbox': true,
-                    }}
-                >
-                    <slot></slot>
-                    <span class="bk-checkbox__input">
-                        <span class="bk-checkbox__inner"></span>
-                    </span>
-                    <span class="bk-checkbox__label">{this.label}</span>
-                </label>
-            </Host>
+            <label
+                class={{
+                    'is-indeterminate': this.indeterminate,
+                    'bk-checkbox': true,
+                }}
+            >
+                <slot></slot>
+                <span class="bk-checkbox__input">
+                    <span class="bk-checkbox__inner"></span>
+                </span>
+                <span class="bk-checkbox__label">{this.label}</span>
+            </label>
         )
     }
 }
