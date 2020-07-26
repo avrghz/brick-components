@@ -43,7 +43,9 @@ const deRegisterEvents = (target: ComponentInterface, property: string) => {
 
 // @ts-ignore
 export default () => (target: ComponentInterface, property: string) => {
+    /* tslint:disable-next-line */
     ;(BUILD as any).cmpDidLoad = true
+    /* tslint:disable-next-line */
     ;(BUILD as any).cmpDidUnload = true
 
     const { componentDidLoad, componentDidUnload } = target

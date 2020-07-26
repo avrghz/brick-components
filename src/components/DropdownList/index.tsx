@@ -11,7 +11,7 @@ import {
     dispatchEventCloseMenu,
 } from './util'
 import { Option } from './types'
-import ParsePropTo from '../../shared/decorators/parsePropTo'
+import ComplexProp from '../../shared/decorators/complexProp'
 
 @Component({
     tag: 'bk-dropdown-list',
@@ -28,7 +28,7 @@ export class DropdownList {
     @Element() el!: HTMLElement
 
     /** Pass stringified object when used with vanilla Javascript */
-    @ParsePropTo('array', '_options') @Prop({ mutable: true }) options: Option[] | string = []
+    @ComplexProp('array') @Prop({ mutable: true }) options: Option[] | string = []
 
     /** Set selected option */
     @Prop() selectedOption?: string
@@ -45,6 +45,11 @@ export class DropdownList {
     /** Fired on selecting option */
     @Event({ bubbles: false }) bkSelect!: EventEmitter<Option>
 
+    @Watch('options')
+    watchOptions() {
+        this.copyOptionPropToState()
+    }
+
     @Watch('selectedOption')
     watchSelectedOption() {
         this.validateSelectedOption()
@@ -53,16 +58,20 @@ export class DropdownList {
     @Watch('searchText')
     watchSearch(current: string, previous: string) {
         if (!!current && current !== previous) {
-            this._options = this._options.filter(
+            this._options = (this.options as Option[]).filter(
                 (o) => o.label.toLocaleLowerCase().indexOf(current.toLocaleLowerCase()) > -1
             )
         } else {
-            this._options = this.options as Option[]
+            this.copyOptionPropToState()
         }
     }
 
     componentWillLoad() {
         this.validateSelectedOption()
+    }
+
+    copyOptionPropToState = () => {
+        this._options = [...(this.options as Option[])]
     }
 
     validateSelectedOption = () => {
