@@ -175,6 +175,12 @@ export namespace Components {
          */
         "variant": Variants;
     }
+    interface BkRadioWrapper {
+        /**
+          * radio label
+         */
+        "label": string;
+    }
     interface BkSlider {
         /**
           * Enable or disable slider
@@ -341,6 +347,12 @@ declare global {
         prototype: HTMLBkProgressBarElement;
         new (): HTMLBkProgressBarElement;
     };
+    interface HTMLBkRadioWrapperElement extends Components.BkRadioWrapper, HTMLStencilElement {
+    }
+    var HTMLBkRadioWrapperElement: {
+        prototype: HTMLBkRadioWrapperElement;
+        new (): HTMLBkRadioWrapperElement;
+    };
     interface HTMLBkSliderElement extends Components.BkSlider, HTMLStencilElement {
     }
     var HTMLBkSliderElement: {
@@ -395,6 +407,7 @@ declare global {
         "bk-pop-confirm": HTMLBkPopConfirmElement;
         "bk-popover": HTMLBkPopoverElement;
         "bk-progress-bar": HTMLBkProgressBarElement;
+        "bk-radio-wrapper": HTMLBkRadioWrapperElement;
         "bk-slider": HTMLBkSliderElement;
         "bk-steps": HTMLBkStepsElement;
         "bk-switch": HTMLBkSwitchElement;
@@ -628,6 +641,12 @@ declare namespace LocalJSX {
          */
         "variant"?: Variants;
     }
+    interface BkRadioWrapper {
+        /**
+          * radio label
+         */
+        "label": string;
+    }
     interface BkSlider {
         /**
           * Enable or disable slider
@@ -762,6 +781,7 @@ declare namespace LocalJSX {
         "bk-pop-confirm": BkPopConfirm;
         "bk-popover": BkPopover;
         "bk-progress-bar": BkProgressBar;
+        "bk-radio-wrapper": BkRadioWrapper;
         "bk-slider": BkSlider;
         "bk-steps": BkSteps;
         "bk-switch": BkSwitch;
@@ -786,6 +806,7 @@ declare module "@stencil/core" {
             "bk-pop-confirm": LocalJSX.BkPopConfirm & JSXBase.HTMLAttributes<HTMLBkPopConfirmElement>;
             "bk-popover": LocalJSX.BkPopover & JSXBase.HTMLAttributes<HTMLBkPopoverElement>;
             "bk-progress-bar": LocalJSX.BkProgressBar & JSXBase.HTMLAttributes<HTMLBkProgressBarElement>;
+            "bk-radio-wrapper": LocalJSX.BkRadioWrapper & JSXBase.HTMLAttributes<HTMLBkRadioWrapperElement>;
             "bk-slider": LocalJSX.BkSlider & JSXBase.HTMLAttributes<HTMLBkSliderElement>;
             "bk-steps": LocalJSX.BkSteps & JSXBase.HTMLAttributes<HTMLBkStepsElement>;
             "bk-switch": LocalJSX.BkSwitch & JSXBase.HTMLAttributes<HTMLBkSwitchElement>;

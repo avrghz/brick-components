@@ -1,6 +1,5 @@
 import { ComponentInterface, Build as BUILD } from '@stencil/core'
 import { createPopper, Instance, Modifier, Placement } from '@popperjs/core'
-import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow'
 import flip from '@popperjs/core/lib/modifiers/flip'
 
 export type SetPopperInstance = Instance
