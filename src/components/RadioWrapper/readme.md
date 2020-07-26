@@ -16,10 +16,14 @@ html`
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property             | Attribute | Description | Type     | Default     |
 | -------------------- | --------- | ----------- | -------- | ----------- |
 | `label` _(required)_ | `label`   | radio label | `string` | `undefined` |
 
----
+
+----------------------------------------------
+
+
