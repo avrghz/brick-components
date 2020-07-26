@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<bk-checkbox-wrapper/> should render: snapshot__basic 1`] = `
+<bk-checkbox-wrapper class="hydrated sc-bk-checkbox-wrapper-h sc-bk-checkbox-wrapper-s" label="Option">
+  <!---->
+  <label class="bk-checkbox sc-bk-checkbox-wrapper sc-bk-checkbox-wrapper-s">
+    <input aria-hidden="false" name="options" type="checkbox" value="option">
+    <span class="bk-checkbox__input sc-bk-checkbox-wrapper">
+      <span class="bk-checkbox__inner sc-bk-checkbox-wrapper"></span>
+    </span>
+    <span class="bk-checkbox__label sc-bk-checkbox-wrapper">
+      Option
+    </span>
+  </label>
+</bk-checkbox-wrapper>
+`;

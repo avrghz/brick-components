@@ -14,6 +14,7 @@ html`
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property             | Attribute       | Description              | Type      | Default     |
@@ -21,4 +22,7 @@ html`
 | `indeterminate`      | `indeterminate` | Show indeterminate state | `boolean` | `false`     |
 | `label` _(required)_ | `label`         | Checkbox label           | `string`  | `undefined` |
 
----
+
+----------------------------------------------
+
+
