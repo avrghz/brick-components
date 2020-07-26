@@ -1,15 +1,10 @@
 import { html } from 'lit-html'
-// import { select, boolean } from '@storybook/addon-knobs'
-// import { action } from '@storybook/addon-actions'
-
-import notes from './readme.md'
+import basic from './readme.md'
+import group from './group.md'
 
 export default {
     title: 'RadioWrapper',
     component: 'bk-radio-wrapper',
-    parameters: {
-        notes,
-    },
 }
 
 export const Basic = () => {
@@ -20,6 +15,12 @@ export const Basic = () => {
     `
 }
 
+Basic.story = {
+    parameters: {
+        notes: basic,
+    },
+}
+
 export const Group = () => {
     return html`
         <div>
@@ -27,7 +28,7 @@ export const Group = () => {
                 <input type="radio" aria-hidden="false" value="a" name="options" />
             </bk-radio-wrapper>
             <bk-radio-wrapper label="Option B">
-                <input type="radio" aria-hidden="false" value="b" name="options" selected />
+                <input type="radio" aria-hidden="false" value="b" name="options" checked />
             </bk-radio-wrapper>
             <bk-radio-wrapper label="Option C">
                 <input type="radio" aria-hidden="false" value="c" name="options" />
@@ -37,4 +38,10 @@ export const Group = () => {
             </bk-radio-wrapper>
         </div>
     `
+}
+
+Group.story = {
+    parameters: {
+        notes: group,
+    },
 }

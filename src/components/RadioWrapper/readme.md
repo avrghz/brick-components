@@ -1,17 +1,20 @@
 # bk-radio-wrapper
 
-Description goes here
+This is a style wrapper for radio button
 
 ```javascript
 import { html } from 'lit-html'
 
-html` <bk-radio-wrapper/> `
+html`
+    <bk-radio-wrapper label="Option">
+        <input type="radio" aria-hidden="false" value="1" name="options" />
+    </bk-radio-wrapper>
+`
 ```
 
 &nbsp;
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -19,7 +22,4 @@ html` <bk-radio-wrapper/> `
 | -------------------- | --------- | ----------- | -------- | ----------- |
 | `label` _(required)_ | `label`   | radio label | `string` | `undefined` |
 
-
-----------------------------------------------
-
-
+---

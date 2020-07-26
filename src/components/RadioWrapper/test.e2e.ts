@@ -6,11 +6,13 @@ describe('<bk-radio-wrapper/>', () => {
 
     beforeEach(async () => {
         page = await newE2EPage()
-        await page.setContent(`<bk-radio-wrapper/>`)
+        await page.setContent(`<bk-radio-wrapper label="Option">
+             <input type="radio" aria-hidden="false" value="1" name="options" />
+        </bk-radio-wrapper>`)
         component = await page.find('bk-radio-wrapper')
     })
 
     it('should render', async () => {
-        expect(component).not.toBeNull()
+        expect(component).toMatchSnapshot('snapshot__basic')
     })
 })
