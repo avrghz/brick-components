@@ -1,25 +1,48 @@
 import { html } from 'lit-html'
-// import { select, boolean } from '@storybook/addon-knobs'
-
-import notes from './readme.md'
+import { boolean } from '@storybook/addon-knobs'
+import basic from './readme.md'
+import group from './group.md'
 
 export default {
     title: 'CheckboxWrapper',
     component: 'bk-checkbox-wrapper',
+}
+
+export const Basic = () => {
+    const indeterminate = boolean('indeterminate', false)
+
+    return html`
+        <bk-checkbox-wrapper label="Option" indeterminate=${indeterminate}>
+            <input type="checkbox" aria-hidden="false" value="option" name="options" />
+        </bk-checkbox-wrapper>
+    `
+}
+
+Basic.story = {
     parameters: {
-        notes,
+        notes: basic,
     },
 }
 
-export const Default = () => {
-    return html` <div>
-        <bk-checkbox-wrapper label="Kiwi">
-            <input type="checkbox" aria-hidden="false" value="Kiwi" name="fruits" />
+export const Group = () => {
+    return html`<div>
+        <bk-checkbox-wrapper label="Apple">
+            <input type="checkbox" aria-hidden="false" value="apple" name="fruits" />
         </bk-checkbox-wrapper>
-        <bk-checkbox-wrapper label="Mango">
-            <input type="checkbox" aria-hidden="false" value="Mango" name="fruits" /> </bk-checkbox-wrapper
-        ><bk-checkbox-wrapper label="Apple">
-            <input type="checkbox" aria-hidden="false" value="Apple" name="fruits" />
+        <bk-checkbox-wrapper label="Kiwi">
+            <input type="checkbox" aria-hidden="false" value="kiwi" name="fruits" checked />
+        </bk-checkbox-wrapper>
+        <bk-checkbox-wrapper label="Grape">
+            <input type="checkbox" aria-hidden="false" value="grape" name="fruits" checked disabled />
+        </bk-checkbox-wrapper>
+        <bk-checkbox-wrapper label="Orange">
+            <input type="checkbox" aria-hidden="false" value="orange" name="fruits" disabled />
         </bk-checkbox-wrapper>
     </div>`
+}
+
+Group.story = {
+    parameters: {
+        notes: group,
+    },
 }

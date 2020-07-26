@@ -1,19 +1,17 @@
 @import './base/base.scss';
-
-@import './base//reset.scss';
-
-@import './base/row.scss';
-@import './base/col.scss';
-
+@import './base/reset.scss';
 @import './base/icon.scss';
-
 @import './base/button.scss';
-@import './base/button-group.scss';
 @import './base/input.scss';
 @import './base/input-number.scss';
-// @import './base/radio.scss';
-// @import './base/radio-group.scss';
-// @import './base/radio-button.scss';
-// @import './base/checkbox.scss';
-// @import './base/checkbox-button.scss';
-// @import './base/checkbox-group.scss';
+@import './base/select.scss';
+
+@import './base/container.scss';
+@import './base/row.scss';
+@import './base/col.scss';
+@import './base/header.scss';
+@import './base/main.scss';
+@import './base/aside.scss';
+@import './base/footer.scss';
+@import './base/link.scss';
+@import './base/image.scss';

@@ -37,6 +37,13 @@ export namespace Components {
         "shadow": Shadow;
     }
     interface BkCheckboxWrapper {
+        /**
+          * Show indeterminate state
+         */
+        "indeterminate": boolean;
+        /**
+          * Checkbox label
+         */
         "label": string;
     }
     interface BkCollapse {
@@ -423,6 +430,13 @@ declare namespace LocalJSX {
         "shadow"?: Shadow;
     }
     interface BkCheckboxWrapper {
+        /**
+          * Show indeterminate state
+         */
+        "indeterminate"?: boolean;
+        /**
+          * Checkbox label
+         */
         "label": string;
     }
     interface BkCollapse {
