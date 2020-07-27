@@ -1,0 +1,11 @@
+bk-timeline {
+    margin: 0;
+    font-size: $--font-size-base;
+    display: block;
+
+    bk-timeline-item:last-child {
+        .bk-timeline-item__tail {
+            display: none;
+        }
+    }
+}

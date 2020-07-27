@@ -41,6 +41,19 @@ html`
 | `"header"` | Use this to render the card header. |
 
 
+## Dependencies
+
+### Used by
+
+ - [bk-timeline-item](../Timeline/TimelineItem)
+
+### Graph
+```mermaid
+graph TD;
+  bk-timeline-item --> bk-card
+  style bk-card fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 
