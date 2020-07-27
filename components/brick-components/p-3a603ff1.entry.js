@@ -1,0 +1,1 @@
+import{r as i,h as e,H as t}from"./p-035efb1b.js";const l=class{constructor(e){i(this,e)}render(){return e(t,null)}};l.style="bk-timeline{margin:0;font-size:14px;display:block}bk-timeline bk-timeline-item:last-child .bk-timeline-item__tail{display:none}";export{l as bk_timeline}
