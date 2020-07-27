@@ -1,5 +1,5 @@
 import { Component, h, Element, Prop, Watch, State, EventEmitter, Event } from '@stencil/core'
-import { debounce } from 'lodash'
+import { debounce, isEqual } from 'lodash'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 import { consoleWarn } from '../../shared/util'
@@ -46,8 +46,10 @@ export class DropdownList {
     @Event({ bubbles: false }) bkSelect!: EventEmitter<Option>
 
     @Watch('options')
-    watchOptions() {
-        this.copyOptionPropToState()
+    copyOptionPropToState() {
+        if (!isEqual(this.options, this._options)) {
+            this._options = [...(this.options as Option[])]
+        }
     }
 
     @Watch('selectedOption')
@@ -68,10 +70,7 @@ export class DropdownList {
 
     componentWillLoad() {
         this.validateSelectedOption()
-    }
-
-    copyOptionPropToState = () => {
-        this._options = [...(this.options as Option[])]
+        this.copyOptionPropToState()
     }
 
     validateSelectedOption = () => {

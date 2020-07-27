@@ -261,6 +261,18 @@ export namespace Components {
          */
         "variant": Variant;
     }
+    interface BkTimeline {
+    }
+    interface BkTimelineItem {
+        /**
+          * Time to be displayed
+         */
+        "time": string;
+        /**
+          * The variant of node
+         */
+        "variant": Variants;
+    }
     interface BkToast {
         /**
           * When provided, the toast will auto close after the specified time. (milliseconds)
@@ -389,6 +401,18 @@ declare global {
         prototype: HTMLBkTabsElement;
         new (): HTMLBkTabsElement;
     };
+    interface HTMLBkTimelineElement extends Components.BkTimeline, HTMLStencilElement {
+    }
+    var HTMLBkTimelineElement: {
+        prototype: HTMLBkTimelineElement;
+        new (): HTMLBkTimelineElement;
+    };
+    interface HTMLBkTimelineItemElement extends Components.BkTimelineItem, HTMLStencilElement {
+    }
+    var HTMLBkTimelineItemElement: {
+        prototype: HTMLBkTimelineItemElement;
+        new (): HTMLBkTimelineItemElement;
+    };
     interface HTMLBkToastElement extends Components.BkToast, HTMLStencilElement {
     }
     var HTMLBkToastElement: {
@@ -414,6 +438,8 @@ declare global {
         "bk-tab-header": HTMLBkTabHeaderElement;
         "bk-tab-panel": HTMLBkTabPanelElement;
         "bk-tabs": HTMLBkTabsElement;
+        "bk-timeline": HTMLBkTimelineElement;
+        "bk-timeline-item": HTMLBkTimelineItemElement;
         "bk-toast": HTMLBkToastElement;
     }
 }
@@ -751,6 +777,18 @@ declare namespace LocalJSX {
          */
         "variant"?: Variant;
     }
+    interface BkTimeline {
+    }
+    interface BkTimelineItem {
+        /**
+          * Time to be displayed
+         */
+        "time": string;
+        /**
+          * The variant of node
+         */
+        "variant"?: Variants;
+    }
     interface BkToast {
         /**
           * When provided, the toast will auto close after the specified time. (milliseconds)
@@ -788,6 +826,8 @@ declare namespace LocalJSX {
         "bk-tab-header": BkTabHeader;
         "bk-tab-panel": BkTabPanel;
         "bk-tabs": BkTabs;
+        "bk-timeline": BkTimeline;
+        "bk-timeline-item": BkTimelineItem;
         "bk-toast": BkToast;
     }
 }
@@ -813,6 +853,8 @@ declare module "@stencil/core" {
             "bk-tab-header": LocalJSX.BkTabHeader & JSXBase.HTMLAttributes<HTMLBkTabHeaderElement>;
             "bk-tab-panel": LocalJSX.BkTabPanel & JSXBase.HTMLAttributes<HTMLBkTabPanelElement>;
             "bk-tabs": LocalJSX.BkTabs & JSXBase.HTMLAttributes<HTMLBkTabsElement>;
+            "bk-timeline": LocalJSX.BkTimeline & JSXBase.HTMLAttributes<HTMLBkTimelineElement>;
+            "bk-timeline-item": LocalJSX.BkTimelineItem & JSXBase.HTMLAttributes<HTMLBkTimelineItemElement>;
             "bk-toast": LocalJSX.BkToast & JSXBase.HTMLAttributes<HTMLBkToastElement>;
         }
     }
