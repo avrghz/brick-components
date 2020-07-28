@@ -42,11 +42,14 @@ export class Tabs {
         const { width, height, x, y } = (tab.querySelector(
             '[data-tab-header]'
         ) as HTMLDivElement).getBoundingClientRect()
+
         const { x: tabHeaderX, y: tabHeaderY } = this.el.getBoundingClientRect()
+
         if (this.position === 'top' || this.position === 'bottom') {
             if (this.highlighterRef) {
+                const scrollLeft = this.el.querySelector('.bk-tabs__scroll')?.scrollLeft || 0
                 this.highlighterRef.style.removeProperty('height')
-                this.highlighterRef.style.transform = `translateX(${x - tabHeaderX}px)`
+                this.highlighterRef.style.transform = `translateX(${scrollLeft + x + -tabHeaderX}px)`
                 this.highlighterRef.style.width = `${width}px`
             }
         } else {
@@ -123,11 +126,13 @@ export class Tabs {
                 aria-orientation={this.getOrientation()}
             >
                 <div class="bk-tabs__header">
-                    <div role="tablist" class="bk-tabs__nav">
-                        {this.variant === 'simple' && (
-                            <div ref={(el) => (this.highlighterRef = el)} class="bk-tabs__active-bar"></div>
-                        )}
-                        <slot name="header"></slot>
+                    <div class="bk-tabs__scroll">
+                        <div role="tablist" class="bk-tabs__nav">
+                            {this.variant === 'simple' && (
+                                <div ref={(el) => (this.highlighterRef = el)} class="bk-tabs__active-bar"></div>
+                            )}
+                            <slot name="header"></slot>
+                        </div>
                     </div>
                 </div>
                 <slot></slot>
