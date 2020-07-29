@@ -1,41 +1,40 @@
-import { Component, h, State, Prop, Element } from '@stencil/core'
+import { Component, h, Prop, Element, Host, State } from '@stencil/core'
 
 @Component({
     tag: 'bk-lazy-img',
-    shadow: true,
     styleUrl: './index.scss',
 })
 export class LazyImg {
-    private thumbnailRef?: HTMLImageElement
+    private lazyElement?: HTMLElement
 
     @Element() el!: HTMLElement
 
-    @State() ready = false
+    @State() isLoaded = false
 
     @Prop() src =
         'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg/1280px-Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg'
 
-    @Prop() thumbnail =
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg/320px-Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg'
-
     componentWillLoad() {
+        this.lazyElement = this.el.firstElementChild as HTMLElement
+        //  this.contentType = this.el.firstElementChild?.tagName === 'IMG' ? 'IMAGE' : 'BG-IMAGE'
         this.waitForElementToBeVisible()
     }
 
-    componentDidUpdate() {
-        if (this.ready) {
-            if (this.thumbnailRef) {
-                this.thumbnailRef.style.opacity = '0'
-                this.thumbnailRef.style.transform = 'scale(1)'
-            }
+    noThumbnailHandler = () => {
+        if (!this.lazyElement) {
+            const div = document.createElement('div')
+            div.className = ''
         }
     }
 
     intersectionObserverCallback: IntersectionObserverCallback = (entries, observer) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting && !this.ready) {
+            if (entry.isIntersecting && !this.isLoaded) {
+                this.isLoaded = true
                 observer.unobserve(entry.target)
-                this.ready = true
+                if (this.lazyElement) {
+                    ;(this.lazyElement as HTMLImageElement).src = this.src
+                }
             }
         })
     }
@@ -50,15 +49,14 @@ export class LazyImg {
 
     render() {
         return (
-            <figure class="bk-lazy-img">
-                <img
-                    class={{
-                        'bk-lazy-img__image': true,
-                        'is-thumbnail': !this.ready,
-                    }}
-                    src={this.ready ? this.src : this.thumbnail}
-                />
-            </figure>
+            <Host
+                class={{
+                    'bk-lazy-img': true,
+                    'is-loaded': !!this.isLoaded,
+                }}
+            >
+                <slot></slot>
+            </Host>
         )
     }
 }

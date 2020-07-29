@@ -97,7 +97,6 @@ export namespace Components {
     }
     interface BkLazyImg {
         "src": string;
-        "thumbnail": string;
     }
     interface BkModal {
         /**
@@ -568,7 +567,6 @@ declare namespace LocalJSX {
     }
     interface BkLazyImg {
         "src"?: string;
-        "thumbnail"?: string;
     }
     interface BkModal {
         /**
