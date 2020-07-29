@@ -95,6 +95,10 @@ export namespace Components {
          */
         "selectedOption"?: string;
     }
+    interface BkLazyImg {
+        "src": string;
+        "thumbnail": string;
+    }
     interface BkModal {
         /**
           * Is dismissible or not
@@ -335,6 +339,12 @@ declare global {
         prototype: HTMLBkDropdownListElement;
         new (): HTMLBkDropdownListElement;
     };
+    interface HTMLBkLazyImgElement extends Components.BkLazyImg, HTMLStencilElement {
+    }
+    var HTMLBkLazyImgElement: {
+        prototype: HTMLBkLazyImgElement;
+        new (): HTMLBkLazyImgElement;
+    };
     interface HTMLBkModalElement extends Components.BkModal, HTMLStencilElement {
     }
     var HTMLBkModalElement: {
@@ -427,6 +437,7 @@ declare global {
         "bk-collapse-group": HTMLBkCollapseGroupElement;
         "bk-dropdown": HTMLBkDropdownElement;
         "bk-dropdown-list": HTMLBkDropdownListElement;
+        "bk-lazy-img": HTMLBkLazyImgElement;
         "bk-modal": HTMLBkModalElement;
         "bk-pop-confirm": HTMLBkPopConfirmElement;
         "bk-popover": HTMLBkPopoverElement;
@@ -554,6 +565,10 @@ declare namespace LocalJSX {
           * Set selected option
          */
         "selectedOption"?: string;
+    }
+    interface BkLazyImg {
+        "src"?: string;
+        "thumbnail"?: string;
     }
     interface BkModal {
         /**
@@ -815,6 +830,7 @@ declare namespace LocalJSX {
         "bk-collapse-group": BkCollapseGroup;
         "bk-dropdown": BkDropdown;
         "bk-dropdown-list": BkDropdownList;
+        "bk-lazy-img": BkLazyImg;
         "bk-modal": BkModal;
         "bk-pop-confirm": BkPopConfirm;
         "bk-popover": BkPopover;
@@ -842,6 +858,7 @@ declare module "@stencil/core" {
             "bk-collapse-group": LocalJSX.BkCollapseGroup & JSXBase.HTMLAttributes<HTMLBkCollapseGroupElement>;
             "bk-dropdown": LocalJSX.BkDropdown & JSXBase.HTMLAttributes<HTMLBkDropdownElement>;
             "bk-dropdown-list": LocalJSX.BkDropdownList & JSXBase.HTMLAttributes<HTMLBkDropdownListElement>;
+            "bk-lazy-img": LocalJSX.BkLazyImg & JSXBase.HTMLAttributes<HTMLBkLazyImgElement>;
             "bk-modal": LocalJSX.BkModal & JSXBase.HTMLAttributes<HTMLBkModalElement>;
             "bk-pop-confirm": LocalJSX.BkPopConfirm & JSXBase.HTMLAttributes<HTMLBkPopConfirmElement>;
             "bk-popover": LocalJSX.BkPopover & JSXBase.HTMLAttributes<HTMLBkPopoverElement>;

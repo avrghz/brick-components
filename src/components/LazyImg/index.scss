@@ -1,0 +1,23 @@
+@include b(lazy-img) {
+    overflow: hidden;
+    position: relative;
+
+    @include e(image) {
+        transition: all 0.5s ease-in-out;
+
+        @include when(thumbnail) {
+            transform: scale(1.1);
+            width: 100%;
+            filter: blur(5px);
+            opacity: 1;
+        }
+
+        @include when(original) {
+            max-width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+}
