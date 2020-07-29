@@ -13,8 +13,8 @@ export default {
 }
 
 export const Default = () => {
-    return html`<div class="bk-row bk-row--flex">
-        <div class="bk-col-12 bk-col-offset-6">
+    return html`<div class="bk-row bk-row--flex" style="height: 2000px; background: #ccc; align-items: flex-end">
+        <div class="bk-col-md-12 bk-col-md-offset-6">
             <bk-lazy-img />
         </div>
     </div>`
