@@ -96,7 +96,13 @@ export namespace Components {
         "selectedOption"?: string;
     }
     interface BkLazyMedia {
+        /**
+          * Background color to be shown while waiting for the image to load
+         */
         "bgColor"?: string;
+        /**
+          * The source of the image
+         */
         "src": string;
     }
     interface BkModal {
@@ -567,7 +573,13 @@ declare namespace LocalJSX {
         "selectedOption"?: string;
     }
     interface BkLazyMedia {
+        /**
+          * Background color to be shown while waiting for the image to load
+         */
         "bgColor"?: string;
+        /**
+          * The source of the image
+         */
         "src": string;
     }
     interface BkModal {

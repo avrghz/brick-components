@@ -11,8 +11,10 @@ export class LazyMedia {
 
     @State() isLoaded = false
 
+    /** The source of the image */
     @Prop() src!: string
 
+    /** Background color to be shown while waiting for the image to load */
     @Prop() bgColor?: string
 
     componentWillLoad() {

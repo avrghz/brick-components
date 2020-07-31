@@ -24,10 +24,10 @@ html`<div class="bk-row bk-row--flex" style="height: 2000px; background: #ccc;al
 
 ## Properties
 
-| Property           | Attribute  | Description | Type                  | Default     |
-| ------------------ | ---------- | ----------- | --------------------- | ----------- |
-| `bgColor`          | `bg-color` |             | `string \| undefined` | `undefined` |
-| `src` _(required)_ | `src`      |             | `string`              | `undefined` |
+| Property           | Attribute  | Description                                                      | Type                  | Default     |
+| ------------------ | ---------- | ---------------------------------------------------------------- | --------------------- | ----------- |
+| `bgColor`          | `bg-color` | Background color to be shown while waiting for the image to load | `string \| undefined` | `undefined` |
+| `src` _(required)_ | `src`      | The source of the image                                          | `string`              | `undefined` |
 
 
 ----------------------------------------------
