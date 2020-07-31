@@ -1,10 +1,10 @@
 import { Component, h, Prop, Element, Host, State } from '@stencil/core'
 
 @Component({
-    tag: 'bk-lazy-img',
+    tag: 'bk-lazy-media',
     styleUrl: './index.scss',
 })
-export class LazyImg {
+export class LazyMedia {
     private lazyElement?: HTMLElement
 
     @Element() el!: HTMLElement
@@ -32,10 +32,10 @@ export class LazyImg {
     }
 
     loadImage = (src: string) =>
-        new Promise<HTMLImageElement>((resolve, reject) => {
+        new Promise<string>((resolve, reject) => {
             const buffer = new Image()
             buffer.onload = () => {
-                resolve(buffer)
+                resolve(src)
             }
             buffer.onerror = () => reject()
             buffer.src = src
@@ -47,10 +47,9 @@ export class LazyImg {
                 observer.unobserve(entry.target)
                 if (this.lazyElement) {
                     try {
-                        await this.loadImage(this.src)
+                        ;(this.lazyElement as HTMLImageElement).src = await this.loadImage(this.src)
                         this.isLoaded = true
                         this.removePreLoadState()
-                        ;(this.lazyElement as HTMLImageElement).src = this.src
                     } catch (e) {}
                 }
             }
@@ -59,7 +58,7 @@ export class LazyImg {
 
     waitForElementToBeVisible = () => {
         const observer = new IntersectionObserver(this.intersectionObserverCallback, {
-            threshold: 0.25,
+            threshold: 0,
         })
 
         observer.observe(this.el)
@@ -69,7 +68,6 @@ export class LazyImg {
         return (
             <Host
                 class={{
-                    'bk-lazy-img': true,
                     'is-loaded': !!this.isLoaded,
                 }}
             >

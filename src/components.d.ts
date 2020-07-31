@@ -95,7 +95,7 @@ export namespace Components {
          */
         "selectedOption"?: string;
     }
-    interface BkLazyImg {
+    interface BkLazyMedia {
         "bgColor"?: string;
         "src": string;
     }
@@ -339,11 +339,11 @@ declare global {
         prototype: HTMLBkDropdownListElement;
         new (): HTMLBkDropdownListElement;
     };
-    interface HTMLBkLazyImgElement extends Components.BkLazyImg, HTMLStencilElement {
+    interface HTMLBkLazyMediaElement extends Components.BkLazyMedia, HTMLStencilElement {
     }
-    var HTMLBkLazyImgElement: {
-        prototype: HTMLBkLazyImgElement;
-        new (): HTMLBkLazyImgElement;
+    var HTMLBkLazyMediaElement: {
+        prototype: HTMLBkLazyMediaElement;
+        new (): HTMLBkLazyMediaElement;
     };
     interface HTMLBkModalElement extends Components.BkModal, HTMLStencilElement {
     }
@@ -437,7 +437,7 @@ declare global {
         "bk-collapse-group": HTMLBkCollapseGroupElement;
         "bk-dropdown": HTMLBkDropdownElement;
         "bk-dropdown-list": HTMLBkDropdownListElement;
-        "bk-lazy-img": HTMLBkLazyImgElement;
+        "bk-lazy-media": HTMLBkLazyMediaElement;
         "bk-modal": HTMLBkModalElement;
         "bk-pop-confirm": HTMLBkPopConfirmElement;
         "bk-popover": HTMLBkPopoverElement;
@@ -566,7 +566,7 @@ declare namespace LocalJSX {
          */
         "selectedOption"?: string;
     }
-    interface BkLazyImg {
+    interface BkLazyMedia {
         "bgColor"?: string;
         "src": string;
     }
@@ -830,7 +830,7 @@ declare namespace LocalJSX {
         "bk-collapse-group": BkCollapseGroup;
         "bk-dropdown": BkDropdown;
         "bk-dropdown-list": BkDropdownList;
-        "bk-lazy-img": BkLazyImg;
+        "bk-lazy-media": BkLazyMedia;
         "bk-modal": BkModal;
         "bk-pop-confirm": BkPopConfirm;
         "bk-popover": BkPopover;
@@ -858,7 +858,7 @@ declare module "@stencil/core" {
             "bk-collapse-group": LocalJSX.BkCollapseGroup & JSXBase.HTMLAttributes<HTMLBkCollapseGroupElement>;
             "bk-dropdown": LocalJSX.BkDropdown & JSXBase.HTMLAttributes<HTMLBkDropdownElement>;
             "bk-dropdown-list": LocalJSX.BkDropdownList & JSXBase.HTMLAttributes<HTMLBkDropdownListElement>;
-            "bk-lazy-img": LocalJSX.BkLazyImg & JSXBase.HTMLAttributes<HTMLBkLazyImgElement>;
+            "bk-lazy-media": LocalJSX.BkLazyMedia & JSXBase.HTMLAttributes<HTMLBkLazyMediaElement>;
             "bk-modal": LocalJSX.BkModal & JSXBase.HTMLAttributes<HTMLBkModalElement>;
             "bk-pop-confirm": LocalJSX.BkPopConfirm & JSXBase.HTMLAttributes<HTMLBkPopConfirmElement>;
             "bk-popover": LocalJSX.BkPopover & JSXBase.HTMLAttributes<HTMLBkPopoverElement>;

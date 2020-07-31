@@ -1,13 +1,13 @@
 import { newE2EPage, E2EPage, E2EElement } from '@stencil/core/testing'
 
-describe('<bk-lazy-img/>', () => {
+describe('<bk-lazy-media/>', () => {
     let page: E2EPage
     let component: E2EElement
 
     beforeEach(async () => {
         page = await newE2EPage()
-        await page.setContent(`<bk-lazy-img/>`)
-        component = await page.find('bk-lazy-img')
+        await page.setContent(`<bk-lazy-media/>`)
+        component = await page.find('bk-lazy-media')
     })
 
     it('should render', async () => {
