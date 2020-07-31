@@ -15,9 +15,10 @@ html` <bk-lazy-img/> `
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default                                                                                                                                                                            |
-| -------- | --------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src`    | `src`     |             | `string` | `'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg/1280px-Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg'` |
+| Property           | Attribute  | Description | Type                  | Default     |
+| ------------------ | ---------- | ----------- | --------------------- | ----------- |
+| `bgColor`          | `bg-color` |             | `string \| undefined` | `undefined` |
+| `src` _(required)_ | `src`      |             | `string`              | `undefined` |
 
 
 ----------------------------------------------

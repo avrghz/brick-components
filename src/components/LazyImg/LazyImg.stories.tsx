@@ -1,6 +1,7 @@
 import { html } from 'lit-html'
-// import { select, boolean } from '@storybook/addon-knobs'
-// import { action } from '@storybook/addon-actions'
+
+import sample from './__fixtures__/sample.jpg'
+import sample_thumbnail from './__fixtures__/sample_thumbnail.jpg'
 
 import notes from './readme.md'
 
@@ -12,22 +13,22 @@ export default {
     },
 }
 
-export const Default = () => {
-    return html`<div class="bk-row bk-row--flex" style="height: 2000px; background: #ccc; align-items: flex-end">
-        <div class="bk-col-md-12 bk-col-md-offset-6">
-            <bk-lazy-img>
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg/320px-Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg"
-                />
+export const WithThumbnail = () => {
+    return html`<div class="bk-row bk-row--flex" style="height: 2000px; background: #ccc;align-items: flex-end">
+        <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
+            <bk-lazy-img src=${sample}>
+                <img src=${sample_thumbnail} />
             </bk-lazy-img>
         </div>
     </div>`
 }
 
-export const NoThumbnail = () => {
-    return html`<div class="bk-row bk-row--flex" style="height: 2000px; background: #ccc;">
-        <div class="bk-col-md-12 bk-col-md-offset-6">
-            <bk-lazy-img> </bk-lazy-img>
+export const WithBackgroundColor = () => {
+    return html`<div class="bk-row bk-row--flex" style="height: 2000px; background: #ccc;align-items: flex-end">
+        <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
+            <bk-lazy-img src=${sample} bg-color="red" style="min-height: 300px">
+                <img />
+            </bk-lazy-img>
         </div>
     </div>`
 }

@@ -11,29 +11,47 @@ export class LazyImg {
 
     @State() isLoaded = false
 
-    @Prop() src =
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg/1280px-Beautiful_demoiselle_%28Calopteryx_virgo%29_male_3.jpg'
+    @Prop() src!: string
+
+    @Prop() bgColor?: string
 
     componentWillLoad() {
         this.lazyElement = this.el.firstElementChild as HTMLElement
-        //  this.contentType = this.el.firstElementChild?.tagName === 'IMG' ? 'IMAGE' : 'BG-IMAGE'
+        this.setPreLoadState()
         this.waitForElementToBeVisible()
     }
 
-    noThumbnailHandler = () => {
-        if (!this.lazyElement) {
-            const div = document.createElement('div')
-            div.className = ''
+    setPreLoadState = () => {
+        if (this.bgColor) {
+            this.el.style.backgroundColor = this.bgColor
         }
     }
 
+    removePreLoadState = () => {
+        this.el.style.removeProperty('background-color')
+    }
+
+    loadImage = (src: string) =>
+        new Promise<HTMLImageElement>((resolve, reject) => {
+            const buffer = new Image()
+            buffer.onload = () => {
+                resolve(buffer)
+            }
+            buffer.onerror = () => reject()
+            buffer.src = src
+        })
+
     intersectionObserverCallback: IntersectionObserverCallback = (entries, observer) => {
-        entries.forEach((entry) => {
+        entries.forEach(async (entry) => {
             if (entry.isIntersecting && !this.isLoaded) {
-                this.isLoaded = true
                 observer.unobserve(entry.target)
                 if (this.lazyElement) {
-                    ;(this.lazyElement as HTMLImageElement).src = this.src
+                    try {
+                        await this.loadImage(this.src)
+                        this.isLoaded = true
+                        this.removePreLoadState()
+                        ;(this.lazyElement as HTMLImageElement).src = this.src
+                    } catch (e) {}
                 }
             }
         })

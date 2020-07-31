@@ -96,6 +96,7 @@ export namespace Components {
         "selectedOption"?: string;
     }
     interface BkLazyImg {
+        "bgColor"?: string;
         "src": string;
     }
     interface BkModal {
@@ -566,7 +567,8 @@ declare namespace LocalJSX {
         "selectedOption"?: string;
     }
     interface BkLazyImg {
-        "src"?: string;
+        "bgColor"?: string;
+        "src": string;
     }
     interface BkModal {
         /**
