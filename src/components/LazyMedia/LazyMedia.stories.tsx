@@ -1,8 +1,7 @@
 import { html } from 'lit-html'
 import xl from './__fixtures__/xl.jpg'
 import xl_thumbnail from './__fixtures__/thumbnails/xl.png'
-// import notesOnWithThumbnail from './readme.md'
-// import notesOnWithBgColor from './notes/withBgColor.md'
+import notesOnWithThumbnail from './readme.md'
 
 export default {
     title: 'LazyMedia',
@@ -17,6 +16,12 @@ export const WithImage = () => {
             </bk-lazy-media>
         </div>
     </div>`
+}
+
+WithImage.story = {
+    parameters: {
+        notes: notesOnWithThumbnail,
+    },
 }
 
 // export const WithThumbnail = () => {
