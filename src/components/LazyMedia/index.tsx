@@ -1,4 +1,4 @@
-import { Component, h, Prop, Element, Host, State } from '@stencil/core'
+import { Component, h, Element, Host, State } from '@stencil/core'
 
 @Component({
     tag: 'bk-lazy-media',
@@ -13,7 +13,7 @@ export class LazyMedia {
     @State() isLoaded = false
 
     /** Background color to be shown while waiting for the image to load */
-    @Prop() bgColor?: string
+    // @Prop() bgColor?: string
 
     async componentWillLoad() {
         this.lazyElement = this.el.firstElementChild as HTMLElement
@@ -85,23 +85,23 @@ export class LazyMedia {
         this.observer.observe(this.el)
     }
 
-    setPreloadStyle = () =>
-        !this.isLoaded && !!this.bgColor
-            ? {
-                  style: {
-                      backgroundColor: this.bgColor,
-                  },
-              }
-            : {}
+    // setPreloadStyle = () =>
+    //     !this.isLoaded && !!this.bgColor
+    //         ? {
+    //               style: {
+    //                   backgroundColor: this.bgColor,
+    //               },
+    //           }
+    //         : {}
 
     render() {
         return (
             <Host
                 class={{
                     'is-loaded': !!this.isLoaded,
-                    'is-bgColor': !this.isLoaded && !!this.bgColor,
+                    // 'is-bgColor': !this.isLoaded && !!this.bgColor,
                 }}
-                {...this.setPreloadStyle()}
+                //  {...this.setPreloadStyle()}
             >
                 <slot></slot>
             </Host>
