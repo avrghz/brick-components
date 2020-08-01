@@ -42,16 +42,31 @@ export class LazyMedia {
             buffer.src = src
         })
 
-    loadMedia = async (immediate = false) => {
-        if (this.is('img')) {
-            try {
-                const element = this.lazyElement as HTMLImageElement
-                const src = element.getAttribute('data-src') || ''
-                element.src = immediate ? src : await this.resolveImageSource(src)
-            } catch (e) {}
+    setSrc = async (image: HTMLImageElement | undefined, immediate = false) => {
+        if (image) {
+            const src = image.getAttribute('data-src') || ''
+            image.src = immediate ? src : await this.resolveImageSource(src)
         }
+    }
 
-        this.isLoaded = true
+    setSrcset = async (sources?: NodeListOf<HTMLSourceElement>) => {
+        if (sources) {
+            sources.forEach((s) => (s.srcset = s.getAttribute('data-srcset') || ''))
+        }
+    }
+
+    loadMedia = async (immediate = false) => {
+        try {
+            if (this.is('img')) {
+                await this.setSrc(this.lazyElement as HTMLImageElement, immediate)
+            } else if (this.is('picture')) {
+                await this.setSrc(this.lazyElement?.querySelector('img') as HTMLImageElement, immediate)
+                await this.setSrcset(this.lazyElement?.querySelectorAll('source'))
+            }
+        } catch (e) {
+        } finally {
+            this.isLoaded = true
+        }
     }
 
     waitForElementToBeVisible = () => {
