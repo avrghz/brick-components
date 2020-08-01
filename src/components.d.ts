@@ -100,10 +100,6 @@ export namespace Components {
           * Background color to be shown while waiting for the image to load
          */
         "bgColor"?: string;
-        /**
-          * The source of the image
-         */
-        "src": string;
     }
     interface BkModal {
         /**
@@ -577,10 +573,6 @@ declare namespace LocalJSX {
           * Background color to be shown while waiting for the image to load
          */
         "bgColor"?: string;
-        /**
-          * The source of the image
-         */
-        "src": string;
     }
     interface BkModal {
         /**

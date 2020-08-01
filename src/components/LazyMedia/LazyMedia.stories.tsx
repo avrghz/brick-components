@@ -8,17 +8,24 @@ export default {
     component: 'bk-lazy-media',
 }
 
-export const WithImage = () => {
+export const Image = () => {
     return html`<div class="bk-row bk-row--flex">
-        <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
-            <bk-lazy-media src=${xl}>
-                <img src=${xl_thumbnail} />
+        <div class="bk-col-24 bk-col-md-12">
+            <h2>Lazy loaded image with thumbnail as placeholder</h2>
+            <bk-lazy-media>
+                <img src=${xl_thumbnail} data-src=${xl} alt="sunset" />
+            </bk-lazy-media>
+        </div>
+        <div class="bk-col-24 bk-col-md-12">
+            <h2>Lazy loaded image with background color as placeholder</h2>
+            <bk-lazy-media bg-color="red" style="min-height:200px">
+                <img data-src=${xl} alt="sunset" />
             </bk-lazy-media>
         </div>
     </div>`
 }
 
-WithImage.story = {
+Image.story = {
     parameters: {
         notes: notesOnWithThumbnail,
     },

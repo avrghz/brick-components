@@ -6,34 +6,33 @@ import { Component, h, Prop, Element, Host, State } from '@stencil/core'
 })
 export class LazyMedia {
     private lazyElement?: HTMLElement
+    private observer?: IntersectionObserver
 
     @Element() el!: HTMLElement
 
     @State() isLoaded = false
 
-    /** The source of the image */
-    @Prop() src!: string
-
     /** Background color to be shown while waiting for the image to load */
     @Prop() bgColor?: string
 
-    componentWillLoad() {
+    async componentWillLoad() {
         this.lazyElement = this.el.firstElementChild as HTMLElement
-        this.setPreLoadState()
-        this.waitForElementToBeVisible()
-    }
-
-    setPreLoadState = () => {
-        if (this.bgColor) {
-            this.el.style.backgroundColor = this.bgColor
+        if (typeof window !== 'undefined' && window.IntersectionObserver) {
+            this.waitForElementToBeVisible()
+        } else {
+            await this.loadMedia(true)
         }
     }
 
-    removePreLoadState = () => {
-        this.el.style.removeProperty('background-color')
+    disconnectedCallback() {
+        if (!!this.observer) {
+            this.observer.unobserve(this.el)
+        }
     }
 
-    loadImage = (src: string) =>
+    is = (tag: 'img' | 'picture') => (!!this.lazyElement ? this.lazyElement.tagName.toLocaleLowerCase() === tag : false)
+
+    resolveImageSource = (src: string) =>
         new Promise<string>((resolve, reject) => {
             const buffer = new Image()
             buffer.onload = () => {
@@ -43,35 +42,51 @@ export class LazyMedia {
             buffer.src = src
         })
 
-    intersectionObserverCallback: IntersectionObserverCallback = (entries, observer) => {
-        entries.forEach(async (entry) => {
-            if (entry.isIntersecting && !this.isLoaded) {
-                observer.unobserve(entry.target)
-                if (this.lazyElement) {
-                    try {
-                        ;(this.lazyElement as HTMLImageElement).src = await this.loadImage(this.src)
-                        this.isLoaded = true
-                        this.removePreLoadState()
-                    } catch (e) {}
-                }
-            }
-        })
+    loadMedia = async (immediate = false) => {
+        if (this.is('img')) {
+            try {
+                const element = this.lazyElement as HTMLImageElement
+                const src = element.getAttribute('data-src') || ''
+                element.src = immediate ? src : await this.resolveImageSource(src)
+            } catch (e) {}
+        }
+
+        this.isLoaded = true
     }
 
     waitForElementToBeVisible = () => {
-        const observer = new IntersectionObserver(this.intersectionObserverCallback, {
-            threshold: 0,
-        })
+        this.observer = new IntersectionObserver(
+            async ([entry], observer) => {
+                if (entry.isIntersecting && !this.isLoaded) {
+                    observer.unobserve(entry.target)
+                    await this.loadMedia()
+                }
+            },
+            {
+                threshold: 0,
+            }
+        )
 
-        observer.observe(this.el)
+        this.observer.observe(this.el)
     }
+
+    setPreloadStyle = () =>
+        !this.isLoaded && !!this.bgColor
+            ? {
+                  style: {
+                      backgroundColor: this.bgColor,
+                  },
+              }
+            : {}
 
     render() {
         return (
             <Host
                 class={{
                     'is-loaded': !!this.isLoaded,
+                    'is-bgColor': !this.isLoaded && !!this.bgColor,
                 }}
+                {...this.setPreloadStyle()}
             >
                 <slot></slot>
             </Host>
