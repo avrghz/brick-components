@@ -1,4 +1,4 @@
-import { Component, h, Element, Host, State } from '@stencil/core'
+import { Component, h, Element } from '@stencil/core'
 import { MediaType } from './types'
 
 @Component({
@@ -6,34 +6,46 @@ import { MediaType } from './types'
     styleUrl: './index.scss',
 })
 export class LazyMedia {
-    private lazyElement?: HTMLElement
+    private elements?: NodeListOf<HTMLElement>
     private observer?: IntersectionObserver
 
     @Element() el!: HTMLElement
 
-    @State() isLoaded = false
-
-    async componentWillLoad() {
-        this.lazyElement = this.el.firstElementChild as HTMLElement
+    componentWillLoad() {
+        this.elements = this.el.querySelectorAll('img, video, picture, [data-bg-image]')
         if (typeof window !== 'undefined' && window.IntersectionObserver) {
-            this.waitToBeInViewPort()
-        } else {
-            await this.loadMedia(true)
+            this.observer = this.createObserver()
+        }
+    }
+
+    async componentDidLoad() {
+        if (this.elements) {
+            this.elements.forEach(async (el) => {
+                if (!!this.observer) {
+                    this.observer.observe(el)
+                } else {
+                    await this.loadMedia(el, true)
+                }
+            })
         }
     }
 
     disconnectedCallback() {
-        if (!!this.observer) {
-            this.observer.unobserve(this.el)
+        if (this.elements) {
+            this.elements.forEach(async (el) => {
+                if (!!this.observer) {
+                    this.observer.unobserve(el)
+                }
+            })
         }
     }
 
-    is = (type: MediaType) => {
+    is = (type: MediaType, element: HTMLElement) => {
         if (type === 'bgImage') {
-            return this.lazyElement?.hasAttribute('data-bg-image')
+            return element.hasAttribute('data-bg-image')
         }
 
-        return !!this.lazyElement ? this.lazyElement.tagName.toLocaleLowerCase() === type : false
+        return element.tagName.toLocaleLowerCase() === type
     }
 
     resolveImageSource = (src: string) =>
@@ -74,49 +86,42 @@ export class LazyMedia {
         }
     }
 
-    loadMedia = async (immediate = false) => {
+    loadMedia = async (element: HTMLElement, immediate = false) => {
         try {
-            if (this.is('img')) {
-                await this.setSrc(this.lazyElement as HTMLImageElement, immediate)
-            } else if (this.is('picture')) {
-                await this.setSrc(this.lazyElement?.querySelector('img') as HTMLImageElement, immediate)
-                await this.setSrcset(this.lazyElement?.querySelectorAll('source'))
-            } else if (this.is('bgImage')) {
-                await this.setBackground(this.lazyElement, immediate)
-            } else if (this.is('video')) {
-                await this.setVideoSrc(this.lazyElement?.querySelectorAll('source'))
-                ;(this.lazyElement as HTMLVideoElement).load()
+            if (this.is('img', element)) {
+                await this.setSrc(element as HTMLImageElement, immediate)
+            } else if (this.is('picture', element)) {
+                await this.setSrc(element.querySelector('img') as HTMLImageElement, immediate)
+                await this.setSrcset(element.querySelectorAll('source'))
+            } else if (this.is('bgImage', element)) {
+                await this.setBackground(element, immediate)
+            } else if (this.is('video', element)) {
+                await this.setVideoSrc(element.querySelectorAll('source'))
+                // tslint:disable-next-line
+                ;(element as HTMLVideoElement).load()
             }
         } catch (e) {}
 
-        this.isLoaded = true
+        element.setAttribute('data-loaded', 'true')
     }
 
-    waitToBeInViewPort = () => {
-        this.observer = new IntersectionObserver(
-            async ([entry], observer) => {
-                if (entry.isIntersecting && !this.isLoaded) {
-                    observer.unobserve(entry.target)
-                    await this.loadMedia()
-                }
+    createObserver = () => {
+        return new IntersectionObserver(
+            async (entries, observer) => {
+                entries.forEach(async (entry) => {
+                    if (entry.isIntersecting && !entry.target.hasAttribute('data-loaded')) {
+                        observer.unobserve(entry.target)
+                        await this.loadMedia(entry.target as HTMLElement)
+                    }
+                })
             },
             {
                 threshold: 0,
             }
         )
-
-        this.observer.observe(this.el)
     }
 
     render() {
-        return (
-            <Host
-                class={{
-                    'is-loaded': !!this.isLoaded,
-                }}
-            >
-                <slot></slot>
-            </Host>
-        )
+        return <slot></slot>
     }
 }

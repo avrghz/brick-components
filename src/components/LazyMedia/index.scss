@@ -8,10 +8,8 @@ bk-lazy-media {
         transform: scale(1.1);
         width: 100%;
         filter: blur(5px);
-    }
 
-    &.is-loaded {
-        img {
+        &[data-loaded] {
             max-width: 100%;
             transform: scale(1);
             filter: blur(0);

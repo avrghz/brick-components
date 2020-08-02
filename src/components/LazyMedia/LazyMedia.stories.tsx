@@ -19,21 +19,21 @@ export const Image = () => {
 
     for (let i = 1; i <= 50; i++) {
         images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
-            <bk-lazy-media style="min-height: 100px">
-                <img
-                    src="https://picsum.photos/seed/${i}/5/5?grayscale"
-                    data-src="https://picsum.photos/seed/${i}/300/300?grayscale"
-                    alt="https://picsum.photos/"
-                    style="min-height: 100px"
-                />
-            </bk-lazy-media>
+            <img
+                src="https://picsum.photos/seed/${i}/5/5?grayscale"
+                data-src="https://picsum.photos/seed/${i}/300/300?grayscale"
+                alt="https://picsum.photos/"
+                style="min-height: 100px"
+            />
         </div>`)
     }
 
-    return html`<div class="bk-row">
+    return html` <bk-lazy-media>
+        <div class="bk-row">
             ${images}
         </div>
-        ${courtesy}`
+        ${courtesy}
+    </bk-lazy-media>`
 }
 
 Image.story = {
@@ -47,34 +47,34 @@ export const Picture = () => {
 
     for (let i = 1; i <= 50; i++) {
         images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
-            <bk-lazy-media>
-                <picture>
-                    <source
-                        media="(min-width: 1200px)"
-                        srcset="https://picsum.photos/seed/${i}/9/6?grayscale"
-                        data-srcset="https://picsum.photos/seed/${i}/900/600?grayscale"
-                    />
-                    <source
-                        media="(min-width: 768px)"
-                        srcset="https://picsum.photos/seed/${i}/7/5?grayscale"
-                        data-srcset="https://picsum.photos/seed/${i}/700/500?grayscale"
-                    />
+            <picture>
+                <source
+                    media="(min-width: 1200px)"
+                    srcset="https://picsum.photos/seed/${i}/9/6?grayscale"
+                    data-srcset="https://picsum.photos/seed/${i}/900/600?grayscale"
+                />
+                <source
+                    media="(min-width: 768px)"
+                    srcset="https://picsum.photos/seed/${i}/7/5?grayscale"
+                    data-srcset="https://picsum.photos/seed/${i}/700/500?grayscale"
+                />
 
-                    <img
-                        src="https://picsum.photos/seed/${i}/5/5?grayscale"
-                        data-src="https://picsum.photos/seed/${i}/500/500?grayscale"
-                        alt="https://picsum.photos/"
-                        style="min-height: 100px"
-                    />
-                </picture>
-            </bk-lazy-media>
+                <img
+                    src="https://picsum.photos/seed/${i}/5/5?grayscale"
+                    data-src="https://picsum.photos/seed/${i}/500/500?grayscale"
+                    alt="https://picsum.photos/"
+                    style="min-height: 100px"
+                />
+            </picture>
         </div>`)
     }
 
-    return html`<div class="bk-row">
+    return html` <bk-lazy-media>
+        <div class="bk-row">
             ${images}
         </div>
-        ${courtesy}`
+        ${courtesy}
+    </bk-lazy-media>`
 }
 
 Picture.story = {
@@ -88,21 +88,24 @@ export const BackgroundImage = () => {
 
     for (let i = 1; i <= 50; i++) {
         images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
-            <bk-lazy-media>
-                <div
-                    data-bg-image="https://picsum.photos/seed/${i}/900/500?grayscale"
-                    style="min-height: 300px;
+            <div
+                data-bg-image="https://picsum.photos/seed/${i}/900/500?grayscale"
+                style="min-height: 300px;
                 background-image: url(https://picsum.photos/seed/${i}/9/5?grayscale);
                 background-repeat: no-repeat;
                 background-size: cover;"
-                ></div>
-            </bk-lazy-media>
+            ></div>
         </div>`)
     }
 
-    return html`<div class="bk-row">
-        ${images}
-    </div>`
+    return html`
+        <bk-lazy-media>
+            <div class="bk-row">
+                ${images}
+            </div>
+            ${courtesy}
+        </bk-lazy-media>
+    `
 }
 
 BackgroundImage.story = {

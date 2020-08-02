@@ -54,7 +54,7 @@ describe('<bk-lazy-media/>', () => {
         it('should not load the image when it is not in view port', async () => {
             expect(await component.isIntersectingViewport()).toBe(false)
             expect(getAttribute(await getImage(), 'src')).toBe(images.xl.thumbnail)
-            //  expect(component).not.toHaveClass('is-loaded')
+            // expect(component).not.toHaveAttribute('data-loaded')
         })
 
         it('should load the image when it is in view port', async () => {
@@ -63,7 +63,7 @@ describe('<bk-lazy-media/>', () => {
             await page.waitForChanges()
             await page.waitFor(wait)
             expect(getAttribute(await getImage(), 'src')).toBe(images.xl.original)
-            //  expect(component).toHaveClass('is-loaded')
+            // expect(component).toHaveAttribute('data-loaded')
         })
     })
 
@@ -94,7 +94,7 @@ describe('<bk-lazy-media/>', () => {
             expect(await component.isIntersectingViewport()).toBe(false)
             expect(getAttribute(await getImage(), 'src')).toBe(images.md.thumbnail)
             expect(getAttribute(await getSource(), 'srcset')).toBe(images.xl.thumbnail)
-            // expect(component).not.toHaveClass('is-loaded')
+            //   expect(component).not.toHaveAttribute('data-loaded')
         })
 
         it('should load the picture when it is in view port', async () => {
@@ -104,7 +104,7 @@ describe('<bk-lazy-media/>', () => {
             await page.waitFor(wait)
             expect(getAttribute(await getImage(), 'src')).toBe(images.md.original)
             expect(getAttribute(await getSource(), 'srcset')).toBe(images.xl.original)
-            // expect(component).toHaveClass('is-loaded')
+            //   expect(component).toHaveAttribute('data-loaded')
         })
     })
 
@@ -138,7 +138,7 @@ describe('<bk-lazy-media/>', () => {
             expect(await component.isIntersectingViewport()).toBe(false)
             const backgroundImage = (await (await getBgContainer()).getComputedStyle()).backgroundImage
             expect(backgroundImage).toContain(images.md.thumbnail)
-            // expect(component).not.toHaveClass('is-loaded')
+            //   expect(component).not.toHaveAttribute('data-loaded')
         })
 
         it('should load the background image when it is in view port', async () => {
@@ -148,7 +148,7 @@ describe('<bk-lazy-media/>', () => {
             await page.waitFor(wait)
             const backgroundImage = (await (await getBgContainer()).getComputedStyle()).backgroundImage
             expect(backgroundImage).toContain(images.md.original)
-            // expect(component).toHaveClass('is-loaded')
+            //   expect(component).toHaveAttribute('data-loaded')
         })
     })
 
@@ -181,7 +181,7 @@ describe('<bk-lazy-media/>', () => {
         it('should not load the video when it is not in view port', async () => {
             expect(await component.isIntersectingViewport()).toBe(false)
             expect(getAttribute(await getSource(), 'src')).toBeNull()
-            // expect(component).not.toHaveClass('is-loaded')
+            //   expect(component).not.toHaveAttribute('data-loaded')
         })
 
         it('should load the video when it is in view port', async () => {
@@ -189,7 +189,7 @@ describe('<bk-lazy-media/>', () => {
             expect(await component.isIntersectingViewport()).toBe(true)
             await page.waitForChanges()
             expect(getAttribute(await getSource(), 'src')).toBe(source)
-            //  expect(component).toHaveClass('is-loaded')
+            //    expect(component).toHaveAttribute('data-loaded')
         })
     })
 })
