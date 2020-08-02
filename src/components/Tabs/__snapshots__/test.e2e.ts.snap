@@ -4,21 +4,23 @@ exports[`<bk-tabs/> should change tab on click: snapshot_tab_1_click 1`] = `
 <bk-tabs aria-orientation="horizontal" class="bk-tabs bk-tabs--simple bk-tabs--top hydrated">
   <!---->
   <div class="bk-tabs__header">
-    <div class="bk-tabs__nav" role="tablist">
-      <div class="bk-tabs__active-bar" style="transform: translateX(0px); width: 34.25px;"></div>
-      <div slot="header">
-        <bk-tab-header active="" aria-controls="pane_tab_1" aria-selected="true" class="bk-tab-header hydrated is-active" id="tab_1" role="tab" tab="tab_1" tabindex="0">
-          <!---->
-          <div data-tab-header>
-            Tab 1
-          </div>
-        </bk-tab-header>
-        <bk-tab-header aria-controls="pane_tab_2" aria-selected="false" class="bk-tab-header hydrated" id="tab_2" role="tab" tab="tab_2" tabindex="-1">
-          <!---->
-          <div data-tab-header>
-            Tab 2
-          </div>
-        </bk-tab-header>
+    <div class="bk-tabs__scroll">
+      <div class="bk-tabs__nav" role="tablist">
+        <div class="bk-tabs__active-bar" style="transform: translateX(0px); width: 34.25px;"></div>
+        <div slot="header">
+          <bk-tab-header active="" aria-controls="pane_tab_1" aria-selected="true" class="bk-tab-header hydrated is-active" id="tab_1" role="tab" tab="tab_1" tabindex="0">
+            <!---->
+            <div data-tab-header>
+              Tab 1
+            </div>
+          </bk-tab-header>
+          <bk-tab-header aria-controls="pane_tab_2" aria-selected="false" class="bk-tab-header hydrated" id="tab_2" role="tab" tab="tab_2" tabindex="-1">
+            <!---->
+            <div data-tab-header>
+              Tab 2
+            </div>
+          </bk-tab-header>
+        </div>
       </div>
     </div>
   </div>
@@ -37,21 +39,23 @@ exports[`<bk-tabs/> should change tab on click: snapshot_tab_2_click 1`] = `
 <bk-tabs aria-orientation="horizontal" class="bk-tabs bk-tabs--simple bk-tabs--top hydrated">
   <!---->
   <div class="bk-tabs__header">
-    <div class="bk-tabs__nav" role="tablist">
-      <div class="bk-tabs__active-bar" style="transform: translateX(74.1406px); width: 34.25px;"></div>
-      <div slot="header">
-        <bk-tab-header aria-controls="pane_tab_1" aria-selected="false" class="bk-tab-header hydrated" id="tab_1" role="tab" tab="tab_1" tabindex="-1">
-          <!---->
-          <div data-tab-header>
-            Tab 1
-          </div>
-        </bk-tab-header>
-        <bk-tab-header active="" aria-controls="pane_tab_2" aria-selected="true" class="bk-tab-header hydrated is-active" id="tab_2" role="tab" tab="tab_2" tabindex="0">
-          <!---->
-          <div data-tab-header>
-            Tab 2
-          </div>
-        </bk-tab-header>
+    <div class="bk-tabs__scroll">
+      <div class="bk-tabs__nav" role="tablist">
+        <div class="bk-tabs__active-bar" style="transform: translateX(74.1406px); width: 34.25px;"></div>
+        <div slot="header">
+          <bk-tab-header aria-controls="pane_tab_1" aria-selected="false" class="bk-tab-header hydrated" id="tab_1" role="tab" tab="tab_1" tabindex="-1">
+            <!---->
+            <div data-tab-header>
+              Tab 1
+            </div>
+          </bk-tab-header>
+          <bk-tab-header active="" aria-controls="pane_tab_2" aria-selected="true" class="bk-tab-header hydrated is-active" id="tab_2" role="tab" tab="tab_2" tabindex="0">
+            <!---->
+            <div data-tab-header>
+              Tab 2
+            </div>
+          </bk-tab-header>
+        </div>
       </div>
     </div>
   </div>
@@ -70,21 +74,23 @@ exports[`<bk-tabs/> should render: snapshot_overall 1`] = `
 <bk-tabs aria-orientation="horizontal" class="bk-tabs bk-tabs--simple bk-tabs--top hydrated">
   <!---->
   <div class="bk-tabs__header">
-    <div class="bk-tabs__nav" role="tablist">
-      <div class="bk-tabs__active-bar" style="transform: translateX(0px); width: 34.25px;"></div>
-      <div slot="header">
-        <bk-tab-header active="" aria-controls="pane_tab_1" aria-selected="true" class="bk-tab-header hydrated is-active" id="tab_1" role="tab" tab="tab_1" tabindex="0">
-          <!---->
-          <div data-tab-header>
-            Tab 1
-          </div>
-        </bk-tab-header>
-        <bk-tab-header aria-controls="pane_tab_2" aria-selected="false" class="bk-tab-header hydrated" id="tab_2" role="tab" tab="tab_2" tabindex="-1">
-          <!---->
-          <div data-tab-header>
-            Tab 2
-          </div>
-        </bk-tab-header>
+    <div class="bk-tabs__scroll">
+      <div class="bk-tabs__nav" role="tablist">
+        <div class="bk-tabs__active-bar" style="transform: translateX(0px); width: 34.25px;"></div>
+        <div slot="header">
+          <bk-tab-header active="" aria-controls="pane_tab_1" aria-selected="true" class="bk-tab-header hydrated is-active" id="tab_1" role="tab" tab="tab_1" tabindex="0">
+            <!---->
+            <div data-tab-header>
+              Tab 1
+            </div>
+          </bk-tab-header>
+          <bk-tab-header aria-controls="pane_tab_2" aria-selected="false" class="bk-tab-header hydrated" id="tab_2" role="tab" tab="tab_2" tabindex="-1">
+            <!---->
+            <div data-tab-header>
+              Tab 2
+            </div>
+          </bk-tab-header>
+        </div>
       </div>
     </div>
   </div>

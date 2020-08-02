@@ -59,6 +59,10 @@
         }
     }
 
+    @include e(scroll) {
+        overflow: hidden;
+    }
+
     @include e(nav) {
         white-space: nowrap;
         position: relative;
@@ -152,6 +156,10 @@
     }
 
     @include m((bottom, top)) {
+        @include e(scroll) {
+            overflow-x: auto;
+        }
+
         &:not(.bk-tabs--border-card):not(.bk-tabs--card) {
             bk-tab-header {
                 &:first-of-type {

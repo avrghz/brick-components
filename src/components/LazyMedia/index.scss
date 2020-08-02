@@ -1,0 +1,19 @@
+bk-lazy-media {
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+    img {
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.1);
+        width: 100%;
+        filter: blur(5px);
+
+        &[data-loaded] {
+            max-width: 100%;
+            transform: scale(1);
+            filter: blur(0);
+            min-height: auto;
+        }
+    }
+}

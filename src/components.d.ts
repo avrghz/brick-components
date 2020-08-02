@@ -95,6 +95,8 @@ export namespace Components {
          */
         "selectedOption"?: string;
     }
+    interface BkLazyMedia {
+    }
     interface BkModal {
         /**
           * Is dismissible or not
@@ -335,6 +337,12 @@ declare global {
         prototype: HTMLBkDropdownListElement;
         new (): HTMLBkDropdownListElement;
     };
+    interface HTMLBkLazyMediaElement extends Components.BkLazyMedia, HTMLStencilElement {
+    }
+    var HTMLBkLazyMediaElement: {
+        prototype: HTMLBkLazyMediaElement;
+        new (): HTMLBkLazyMediaElement;
+    };
     interface HTMLBkModalElement extends Components.BkModal, HTMLStencilElement {
     }
     var HTMLBkModalElement: {
@@ -427,6 +435,7 @@ declare global {
         "bk-collapse-group": HTMLBkCollapseGroupElement;
         "bk-dropdown": HTMLBkDropdownElement;
         "bk-dropdown-list": HTMLBkDropdownListElement;
+        "bk-lazy-media": HTMLBkLazyMediaElement;
         "bk-modal": HTMLBkModalElement;
         "bk-pop-confirm": HTMLBkPopConfirmElement;
         "bk-popover": HTMLBkPopoverElement;
@@ -554,6 +563,8 @@ declare namespace LocalJSX {
           * Set selected option
          */
         "selectedOption"?: string;
+    }
+    interface BkLazyMedia {
     }
     interface BkModal {
         /**
@@ -815,6 +826,7 @@ declare namespace LocalJSX {
         "bk-collapse-group": BkCollapseGroup;
         "bk-dropdown": BkDropdown;
         "bk-dropdown-list": BkDropdownList;
+        "bk-lazy-media": BkLazyMedia;
         "bk-modal": BkModal;
         "bk-pop-confirm": BkPopConfirm;
         "bk-popover": BkPopover;
@@ -842,6 +854,7 @@ declare module "@stencil/core" {
             "bk-collapse-group": LocalJSX.BkCollapseGroup & JSXBase.HTMLAttributes<HTMLBkCollapseGroupElement>;
             "bk-dropdown": LocalJSX.BkDropdown & JSXBase.HTMLAttributes<HTMLBkDropdownElement>;
             "bk-dropdown-list": LocalJSX.BkDropdownList & JSXBase.HTMLAttributes<HTMLBkDropdownListElement>;
+            "bk-lazy-media": LocalJSX.BkLazyMedia & JSXBase.HTMLAttributes<HTMLBkLazyMediaElement>;
             "bk-modal": LocalJSX.BkModal & JSXBase.HTMLAttributes<HTMLBkModalElement>;
             "bk-pop-confirm": LocalJSX.BkPopConfirm & JSXBase.HTMLAttributes<HTMLBkPopConfirmElement>;
             "bk-popover": LocalJSX.BkPopover & JSXBase.HTMLAttributes<HTMLBkPopoverElement>;
