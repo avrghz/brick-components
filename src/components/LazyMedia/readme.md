@@ -1,6 +1,10 @@
 # bk-lazy-media
 
-Lazy load an image
+Lazy load an image.
+
+Coming soon:
+_ support for background image
+_ Support for video
 
 ```javascript
 import { html } from 'lit-html'
@@ -16,7 +20,4 @@ html`<bk-lazy-media>
 
 <!-- Auto Generated Below -->
 
-
-----------------------------------------------
-
-
+---
