@@ -1,4 +1,5 @@
 import { Component, h, Element, Host, State } from '@stencil/core'
+import { MediaType } from './types'
 
 @Component({
     tag: 'bk-lazy-media',
@@ -12,13 +13,10 @@ export class LazyMedia {
 
     @State() isLoaded = false
 
-    /** Background color to be shown while waiting for the image to load */
-    // @Prop() bgColor?: string
-
     async componentWillLoad() {
         this.lazyElement = this.el.firstElementChild as HTMLElement
         if (typeof window !== 'undefined' && window.IntersectionObserver) {
-            this.waitForElementToBeVisible()
+            this.waitToBeInViewPort()
         } else {
             await this.loadMedia(true)
         }
@@ -30,19 +28,17 @@ export class LazyMedia {
         }
     }
 
-    is = (tag: 'img' | 'picture') => (!!this.lazyElement ? this.lazyElement.tagName.toLocaleLowerCase() === tag : false)
+    is = (tag: MediaType) => (!!this.lazyElement ? this.lazyElement.tagName.toLocaleLowerCase() === tag : false)
 
     resolveImageSource = (src: string) =>
         new Promise<string>((resolve, reject) => {
             const buffer = new Image()
-            buffer.onload = () => {
-                resolve(src)
-            }
+            buffer.onload = () => resolve(src)
             buffer.onerror = () => reject()
             buffer.src = src
         })
 
-    setSrc = async (image: HTMLImageElement | undefined, immediate = false) => {
+    setSrc = async (image: HTMLImageElement | undefined, immediate: boolean) => {
         if (image) {
             const src = image.getAttribute('data-src') || ''
             image.src = immediate ? src : await this.resolveImageSource(src)
@@ -69,7 +65,7 @@ export class LazyMedia {
         }
     }
 
-    waitForElementToBeVisible = () => {
+    waitToBeInViewPort = () => {
         this.observer = new IntersectionObserver(
             async ([entry], observer) => {
                 if (entry.isIntersecting && !this.isLoaded) {
@@ -85,23 +81,12 @@ export class LazyMedia {
         this.observer.observe(this.el)
     }
 
-    // setPreloadStyle = () =>
-    //     !this.isLoaded && !!this.bgColor
-    //         ? {
-    //               style: {
-    //                   backgroundColor: this.bgColor,
-    //               },
-    //           }
-    //         : {}
-
     render() {
         return (
             <Host
                 class={{
                     'is-loaded': !!this.isLoaded,
-                    // 'is-bgColor': !this.isLoaded && !!this.bgColor,
                 }}
-                //  {...this.setPreloadStyle()}
             >
                 <slot></slot>
             </Host>
