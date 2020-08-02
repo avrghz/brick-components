@@ -1,10 +1,4 @@
 import { html } from 'lit-html'
-import xl from './__fixtures__/xl.jpg'
-import md from './__fixtures__/md.jpg'
-import sm from './__fixtures__/sm.jpg'
-import xl_thumbnail from './__fixtures__/thumbnails/xl.png'
-import md_thumbnail from './__fixtures__/thumbnails/md.png'
-import sm_thumbnail from './__fixtures__/thumbnails/sm.png'
 import video from './__fixtures__/video.mp4'
 import imageUsage from './usage/image.md'
 import pictureUsage from './usage/picture.md'
@@ -16,14 +10,30 @@ export default {
     component: 'bk-lazy-media',
 }
 
+const courtesy = html` <div class="bk-row" style="margin-top:20px; text-align:right">
+    <h4>Photos taken from https://picsum.photos/</h4>
+</div>`
+
 export const Image = () => {
-    return html`<div class="bk-row bk-row--flex">
-        <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
-            <bk-lazy-media>
-                <img src=${xl_thumbnail} data-src=${xl} alt="sunset" />
+    const images = []
+
+    for (let i = 1; i <= 50; i++) {
+        images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
+            <bk-lazy-media style="min-height: 100px">
+                <img
+                    src="https://picsum.photos/seed/${i}/5/5?grayscale"
+                    data-src="https://picsum.photos/seed/${i}/300/300?grayscale"
+                    alt="https://picsum.photos/"
+                    style="min-height: 100px"
+                />
             </bk-lazy-media>
+        </div>`)
+    }
+
+    return html`<div class="bk-row">
+            ${images}
         </div>
-    </div>`
+        ${courtesy}`
 }
 
 Image.story = {
@@ -33,17 +43,38 @@ Image.story = {
 }
 
 export const Picture = () => {
-    return html`<div class="bk-row bk-row--flex">
-        <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
+    const images = []
+
+    for (let i = 1; i <= 50; i++) {
+        images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
             <bk-lazy-media>
                 <picture>
-                    <source media="(min-width: 1200px)" srcset=${xl_thumbnail} data-srcset=${xl} />
-                    <source media="(min-width: 768px)" srcset=${md_thumbnail} data-srcset=${md} />
-                    <img src=${sm_thumbnail} data-src=${sm} alt="sunset" />
+                    <source
+                        media="(min-width: 1200px)"
+                        srcset="https://picsum.photos/seed/${i}/9/6?grayscale"
+                        data-srcset="https://picsum.photos/seed/${i}/900/600?grayscale"
+                    />
+                    <source
+                        media="(min-width: 768px)"
+                        srcset="https://picsum.photos/seed/${i}/7/5?grayscale"
+                        data-srcset="https://picsum.photos/seed/${i}/700/500?grayscale"
+                    />
+
+                    <img
+                        src="https://picsum.photos/seed/${i}/5/5?grayscale"
+                        data-src="https://picsum.photos/seed/${i}/500/500?grayscale"
+                        alt="https://picsum.photos/"
+                        style="min-height: 100px"
+                    />
                 </picture>
             </bk-lazy-media>
+        </div>`)
+    }
+
+    return html`<div class="bk-row">
+            ${images}
         </div>
-    </div>`
+        ${courtesy}`
 }
 
 Picture.story = {
@@ -53,18 +84,24 @@ Picture.story = {
 }
 
 export const BackgroundImage = () => {
-    return html`<div class="bk-row bk-row--flex">
-        <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
+    const images = []
+
+    for (let i = 1; i <= 50; i++) {
+        images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
             <bk-lazy-media>
                 <div
-                    data-bg-image="${xl}"
+                    data-bg-image="https://picsum.photos/seed/${i}/900/500?grayscale"
                     style="min-height: 300px;
-                    background-image: url(${xl_thumbnail});
-                    background-repeat: no-repeat;
-                    background-size: cover;"
+                background-image: url(https://picsum.photos/seed/${i}/9/5?grayscale);
+                background-repeat: no-repeat;
+                background-size: cover;"
                 ></div>
             </bk-lazy-media>
-        </div>
+        </div>`)
+    }
+
+    return html`<div class="bk-row">
+        ${images}
     </div>`
 }
 
@@ -78,13 +115,14 @@ export const Video = () => {
     return html`<div class="bk-row bk-row--flex">
         <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
             <bk-lazy-media>
-                <video controls poster="${xl}" style="width:100%">
+                <video controls poster="https://picsum.photos/seed/99/900/500?grayscale" style="width:100%">
                     <source data-src="${video}" type="video/mp4" />
                 </video>
             </bk-lazy-media>
         </div>
     </div>`
 }
+
 Video.story = {
     parameters: {
         notes: videoUsage,

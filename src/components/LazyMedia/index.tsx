@@ -12,7 +12,6 @@ export class LazyMedia {
     @Element() el!: HTMLElement
 
     @State() isLoaded = false
-    @State() isLoading = false
 
     async componentWillLoad() {
         this.lazyElement = this.el.firstElementChild as HTMLElement
@@ -76,8 +75,6 @@ export class LazyMedia {
     }
 
     loadMedia = async (immediate = false) => {
-        this.isLoading = true
-
         try {
             if (this.is('img')) {
                 await this.setSrc(this.lazyElement as HTMLImageElement, immediate)
@@ -90,11 +87,9 @@ export class LazyMedia {
                 await this.setVideoSrc(this.lazyElement?.querySelectorAll('source'))
                 ;(this.lazyElement as HTMLVideoElement).load()
             }
-        } catch (e) {
-        } finally {
-            this.isLoaded = true
-            this.isLoading = false
-        }
+        } catch (e) {}
+
+        this.isLoaded = true
     }
 
     waitToBeInViewPort = () => {
@@ -117,8 +112,7 @@ export class LazyMedia {
         return (
             <Host
                 class={{
-                    'is-loaded': !!this.isLoaded && !this.isLoading,
-                    'is-loading': !!this.isLoading && !this.isLoaded,
+                    'is-loaded': !!this.isLoaded,
                 }}
             >
                 <slot></slot>
