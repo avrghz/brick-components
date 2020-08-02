@@ -58,6 +58,12 @@ export class LazyMedia {
         }
     }
 
+    setVideoSrc = async (sources?: NodeListOf<HTMLSourceElement>) => {
+        if (sources) {
+            sources.forEach((s) => (s.src = s.getAttribute('data-src') || ''))
+        }
+    }
+
     setBackground = async (element: HTMLElement | undefined, immediate: boolean) => {
         if (element) {
             const src = (element.getAttribute('data-bg-image') || '').split(',')
@@ -80,6 +86,9 @@ export class LazyMedia {
                 await this.setSrcset(this.lazyElement?.querySelectorAll('source'))
             } else if (this.is('bgImage')) {
                 await this.setBackground(this.lazyElement, immediate)
+            } else if (this.is('video')) {
+                await this.setVideoSrc(this.lazyElement?.querySelectorAll('source'))
+                ;(this.lazyElement as HTMLVideoElement).load()
             }
         } catch (e) {
         } finally {

@@ -5,10 +5,11 @@ import sm from './__fixtures__/sm.jpg'
 import xl_thumbnail from './__fixtures__/thumbnails/xl.png'
 import md_thumbnail from './__fixtures__/thumbnails/md.png'
 import sm_thumbnail from './__fixtures__/thumbnails/sm.png'
-
-import imageUsage from './readme.md'
-import pictureUsage from './readme_picture.md'
-import bgImageUsage from './readme_bgImage.md'
+import video from './__fixtures__/video.mp4'
+import imageUsage from './usage/image.md'
+import pictureUsage from './usage/picture.md'
+import bgImageUsage from './usage/bgImage.md'
+import videoUsage from './usage/video.md'
 
 export default {
     title: 'LazyMedia',
@@ -70,5 +71,22 @@ export const BackgroundImage = () => {
 BackgroundImage.story = {
     parameters: {
         notes: bgImageUsage,
+    },
+}
+
+export const Video = () => {
+    return html`<div class="bk-row bk-row--flex">
+        <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
+            <bk-lazy-media>
+                <video controls poster="${xl}" style="width:100%">
+                    <source data-src="${video}" type="video/mp4" />
+                </video>
+            </bk-lazy-media>
+        </div>
+    </div>`
+}
+Video.story = {
+    parameters: {
+        notes: videoUsage,
     },
 }

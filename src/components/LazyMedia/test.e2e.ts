@@ -154,4 +154,46 @@ describe('<bk-lazy-media/>', () => {
             expect(component).toHaveClass('is-loaded')
         })
     })
+
+    describe('Lazy load video', () => {
+        const source = 'xyz'
+        beforeEach(async () => {
+            jest.spyOn(console, 'error').mockImplementation(() => {})
+            page = await newE2EPage()
+            await page.setContent(`
+            <div style="display:flex; height: ${height}px; align-items:flex-end">
+                <bk-lazy-media>
+                    <bk-lazy-media>
+                        <video controls poster="${images.xl.original}" style="width:100%">
+                            <source data-src="${source}" type="video/mp4" />
+                        </video>
+                    </bk-lazy-media>
+                </bk-lazy-media>
+            </div>`)
+            component = await page.find('bk-lazy-media')
+        })
+
+        afterAll(async () => {
+            await page.close()
+        })
+
+        it('should render', async () => {
+            expect(component).not.toBeNull()
+        })
+
+        it('should not load the video when it is not in view port', async () => {
+            expect(await component.isIntersectingViewport()).toBe(false)
+            expect(getAttribute(await getSource(), 'src')).toBeNull()
+            expect(component).not.toHaveClass('is-loaded')
+        })
+
+        it('should load the video when it is in view port', async () => {
+            await scrollToEnd()
+            expect(await component.isIntersectingViewport()).toBe(true)
+            await page.waitForChanges()
+            await page.waitFor(3000)
+            expect(getAttribute(await getSource(), 'src')).toBe(source)
+            expect(component).toHaveClass('is-loaded')
+        })
+    })
 })
