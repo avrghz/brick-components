@@ -8,6 +8,7 @@ import sm_thumbnail from './__fixtures__/thumbnails/sm.png'
 
 import imageUsage from './readme.md'
 import pictureUsage from './readme_picture.md'
+import bgImageUsage from './readme_bgImage.md'
 
 export default {
     title: 'LazyMedia',
@@ -47,5 +48,27 @@ export const Picture = () => {
 Picture.story = {
     parameters: {
         notes: pictureUsage,
+    },
+}
+
+export const BackgroundImage = () => {
+    return html`<div class="bk-row bk-row--flex">
+        <div class="bk-col-24 bk-col-md-12 bk-col-md-offset-6">
+            <bk-lazy-media>
+                <div
+                    data-bg-image="${xl}"
+                    style="min-height: 300px;
+                    background-image: url(${xl_thumbnail});
+                    background-repeat: no-repeat;
+                    background-size: cover;"
+                ></div>
+            </bk-lazy-media>
+        </div>
+    </div>`
+}
+
+BackgroundImage.story = {
+    parameters: {
+        notes: bgImageUsage,
     },
 }

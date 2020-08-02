@@ -1,1 +1,1 @@
-export type MediaType = 'img' | 'picture'
+export type MediaType = 'img' | 'picture' | 'bgImage'

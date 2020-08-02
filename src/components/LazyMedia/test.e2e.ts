@@ -25,6 +25,8 @@ describe('<bk-lazy-media/>', () => {
 
     const getSource = async () => await component.find('source')
 
+    const getBgContainer = async () => await component.find('[data-bg-image]')
+
     const getAttribute = (image: E2EElement, attr: string) => image.getAttribute(attr)
 
     const scrollToEnd = async () =>
@@ -55,6 +57,7 @@ describe('<bk-lazy-media/>', () => {
         it('should not load the image when it is not in view port', async () => {
             expect(await component.isIntersectingViewport()).toBe(false)
             expect(getAttribute(await getImage(), 'src')).toBe(images.xl.thumbnail)
+            expect(component).not.toHaveClass('is-loaded')
         })
 
         it('should load the image when it is in view port', async () => {
@@ -94,15 +97,60 @@ describe('<bk-lazy-media/>', () => {
             expect(await component.isIntersectingViewport()).toBe(false)
             expect(getAttribute(await getImage(), 'src')).toBe(images.md.thumbnail)
             expect(getAttribute(await getSource(), 'srcset')).toBe(images.xl.thumbnail)
+            expect(component).not.toHaveClass('is-loaded')
         })
 
-        it('should load the image when it is in view port', async () => {
+        it('should load the picture when it is in view port', async () => {
             await scrollToEnd()
             expect(await component.isIntersectingViewport()).toBe(true)
             await page.waitForChanges()
             await page.waitFor(3000)
             expect(getAttribute(await getImage(), 'src')).toBe(images.md.original)
             expect(getAttribute(await getSource(), 'srcset')).toBe(images.xl.original)
+            expect(component).toHaveClass('is-loaded')
+        })
+    })
+
+    describe('Lazy load background image', () => {
+        beforeEach(async () => {
+            page = await newE2EPage()
+            await page.setContent(`
+            <div style="display:flex; height: ${height}px; align-items:flex-end">
+                <bk-lazy-media>
+                    <div
+                        data-bg-image="${images.md.original}"
+                        style="min-height: 300px;
+                        background-image: url(${images.md.thumbnail});
+                        background-repeat: no-repeat;
+                        background-size: cover;"
+                    ></div>
+                </bk-lazy-media>
+            </div>`)
+            component = await page.find('bk-lazy-media')
+        })
+
+        afterAll(async () => {
+            await page.close()
+        })
+
+        it('should render', async () => {
+            expect(component).not.toBeNull()
+        })
+
+        it('should not load the background image when it is not in view port', async () => {
+            expect(await component.isIntersectingViewport()).toBe(false)
+            const backgroundImage = (await (await getBgContainer()).getComputedStyle()).backgroundImage
+            expect(backgroundImage).toContain(images.md.thumbnail)
+            expect(component).not.toHaveClass('is-loaded')
+        })
+
+        it('should load the background image when it is in view port', async () => {
+            await scrollToEnd()
+            expect(await component.isIntersectingViewport()).toBe(true)
+            await page.waitForChanges()
+            await page.waitFor(3000)
+            const backgroundImage = (await (await getBgContainer()).getComputedStyle()).backgroundImage
+            expect(backgroundImage).toContain(images.md.original)
             expect(component).toHaveClass('is-loaded')
         })
     })

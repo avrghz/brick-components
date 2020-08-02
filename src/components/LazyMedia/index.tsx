@@ -12,6 +12,7 @@ export class LazyMedia {
     @Element() el!: HTMLElement
 
     @State() isLoaded = false
+    @State() isLoading = false
 
     async componentWillLoad() {
         this.lazyElement = this.el.firstElementChild as HTMLElement
@@ -28,7 +29,13 @@ export class LazyMedia {
         }
     }
 
-    is = (tag: MediaType) => (!!this.lazyElement ? this.lazyElement.tagName.toLocaleLowerCase() === tag : false)
+    is = (type: MediaType) => {
+        if (type === 'bgImage') {
+            return this.lazyElement?.hasAttribute('data-bg-image')
+        }
+
+        return !!this.lazyElement ? this.lazyElement.tagName.toLocaleLowerCase() === type : false
+    }
 
     resolveImageSource = (src: string) =>
         new Promise<string>((resolve, reject) => {
@@ -51,17 +58,33 @@ export class LazyMedia {
         }
     }
 
+    setBackground = async (element: HTMLElement | undefined, immediate: boolean) => {
+        if (element) {
+            const src = (element.getAttribute('data-bg-image') || '').split(',')
+            if (!immediate) {
+                await this.resolveImageSource(src[0])
+            }
+            // tslint:disable-next-line
+            element.style.backgroundImage = `url('${src.join("'),url('")}')`
+        }
+    }
+
     loadMedia = async (immediate = false) => {
+        this.isLoading = true
+
         try {
             if (this.is('img')) {
                 await this.setSrc(this.lazyElement as HTMLImageElement, immediate)
             } else if (this.is('picture')) {
                 await this.setSrc(this.lazyElement?.querySelector('img') as HTMLImageElement, immediate)
                 await this.setSrcset(this.lazyElement?.querySelectorAll('source'))
+            } else if (this.is('bgImage')) {
+                await this.setBackground(this.lazyElement, immediate)
             }
         } catch (e) {
         } finally {
             this.isLoaded = true
+            this.isLoading = false
         }
     }
 
@@ -85,7 +108,8 @@ export class LazyMedia {
         return (
             <Host
                 class={{
-                    'is-loaded': !!this.isLoaded,
+                    'is-loaded': !!this.isLoaded && !this.isLoading,
+                    'is-loading': !!this.isLoading && !this.isLoaded,
                 }}
             >
                 <slot></slot>
