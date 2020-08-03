@@ -1,27 +1,29 @@
-@include b(rate) {
-    height: $--rate-height;
-    line-height: 1;
+:host {
+    display: inline-block;
 
     &:focus,
     &:active {
         outline-width: 0;
     }
+}
 
+@include b(rate) {
     @include e(item) {
         display: inline-block;
         position: relative;
         font-size: 0;
         vertical-align: middle;
+        cursor: pointer;
     }
 
     @include e(icon) {
         position: relative;
         display: inline-block;
-        font-size: $--rate-icon-size;
         margin-right: $--rate-icon-margin;
         color: $--rate-icon-color;
         transition: 0.3s;
-        &.hover {
+
+        @include when(hover) {
             transform: scale(1.15);
         }
 

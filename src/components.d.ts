@@ -183,6 +183,9 @@ export namespace Components {
          */
         "label": string;
     }
+    interface BkRating {
+        "rating": number;
+    }
     interface BkSlider {
         /**
           * Enable or disable slider
@@ -373,6 +376,12 @@ declare global {
         prototype: HTMLBkRadioWrapperElement;
         new (): HTMLBkRadioWrapperElement;
     };
+    interface HTMLBkRatingElement extends Components.BkRating, HTMLStencilElement {
+    }
+    var HTMLBkRatingElement: {
+        prototype: HTMLBkRatingElement;
+        new (): HTMLBkRatingElement;
+    };
     interface HTMLBkSliderElement extends Components.BkSlider, HTMLStencilElement {
     }
     var HTMLBkSliderElement: {
@@ -441,6 +450,7 @@ declare global {
         "bk-popover": HTMLBkPopoverElement;
         "bk-progress-bar": HTMLBkProgressBarElement;
         "bk-radio-wrapper": HTMLBkRadioWrapperElement;
+        "bk-rating": HTMLBkRatingElement;
         "bk-slider": HTMLBkSliderElement;
         "bk-steps": HTMLBkStepsElement;
         "bk-switch": HTMLBkSwitchElement;
@@ -684,6 +694,9 @@ declare namespace LocalJSX {
          */
         "label": string;
     }
+    interface BkRating {
+        "rating"?: number;
+    }
     interface BkSlider {
         /**
           * Enable or disable slider
@@ -832,6 +845,7 @@ declare namespace LocalJSX {
         "bk-popover": BkPopover;
         "bk-progress-bar": BkProgressBar;
         "bk-radio-wrapper": BkRadioWrapper;
+        "bk-rating": BkRating;
         "bk-slider": BkSlider;
         "bk-steps": BkSteps;
         "bk-switch": BkSwitch;
@@ -860,6 +874,7 @@ declare module "@stencil/core" {
             "bk-popover": LocalJSX.BkPopover & JSXBase.HTMLAttributes<HTMLBkPopoverElement>;
             "bk-progress-bar": LocalJSX.BkProgressBar & JSXBase.HTMLAttributes<HTMLBkProgressBarElement>;
             "bk-radio-wrapper": LocalJSX.BkRadioWrapper & JSXBase.HTMLAttributes<HTMLBkRadioWrapperElement>;
+            "bk-rating": LocalJSX.BkRating & JSXBase.HTMLAttributes<HTMLBkRatingElement>;
             "bk-slider": LocalJSX.BkSlider & JSXBase.HTMLAttributes<HTMLBkSliderElement>;
             "bk-steps": LocalJSX.BkSteps & JSXBase.HTMLAttributes<HTMLBkStepsElement>;
             "bk-switch": LocalJSX.BkSwitch & JSXBase.HTMLAttributes<HTMLBkSwitchElement>;
