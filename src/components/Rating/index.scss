@@ -1,0 +1,80 @@
+@import '../../theme/base/icon.scss';
+
+:host {
+    display: inline-block;
+
+    &:focus,
+    &:active {
+        outline-width: 0;
+    }
+}
+
+:host(.is-focus) {
+    &:focus:not(:active) {
+        @include util-outline();
+    }
+}
+
+@include b(rate) {
+    $this: &;
+
+    @include e(icon) {
+        position: relative;
+        display: inline-block;
+        color: $--rate-icon-color;
+        transition: 0.15s;
+
+        @include when(hover) {
+            transform: scale(0.85);
+        }
+
+        @include when(small) {
+            @include icon-md();
+            margin-right: $--rate-icon-margin - 4;
+        }
+
+        @include when(medium) {
+            @include icon-xl();
+            margin-right: $--rate-icon-margin - 3;
+        }
+
+        @include when(large) {
+            @include icon-xxl();
+            margin-right: $--rate-icon-margin;
+        }
+    }
+
+    @include e(item) {
+        display: inline-block;
+        position: relative;
+        font-size: 0;
+        vertical-align: middle;
+        cursor: pointer;
+
+        @include when('fill') {
+            position: absolute;
+            z-index: 1;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            margin: 0;
+
+            #{$this}__icon {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @include e(decimal) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    @include e(text) {
+        font-size: $--rate-font-size;
+        vertical-align: middle;
+    }
+}

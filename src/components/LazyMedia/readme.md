@@ -15,18 +15,29 @@ Lazy load a background image
 
 ```javascript
 import { html } from 'lit-html'
-import xl from 'xl.jpg'
-import xl_thumbnail from 'thumbnails/xl.png'
 
-html`<bk-lazy-media>
-    <div
-        data-bg-image="${xl}"
-        style="min-height: 300px;
-        background-image: url(${xl_thumbnail});
-        background-repeat: no-repeat;
-        background-size: cover;"
-    ></div>
-</bk-lazy-media>`
+const images = []
+
+for (let i = 1; i <= 50; i++) {
+    images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
+        <div
+            data-bg-image="https://picsum.photos/seed/${i}/900/500?grayscale"
+            style="min-height: 300px;
+                background-image: url(https://picsum.photos/seed/${i}/9/5?grayscale);
+                background-repeat: no-repeat;
+                background-size: cover;"
+        ></div>
+    </div>`)
+}
+
+html`
+    <bk-lazy-media>
+        <div class="bk-row">
+            ${images}
+        </div>
+        ${courtesy}
+    </bk-lazy-media>
+`
 ```
 
 &nbsp;
@@ -40,11 +51,24 @@ Lazy load an image.
 
 ```javascript
 import { html } from 'lit-html'
-import xl from 'xl.jpg'
-import xl_thumbnail from 'thumbnails/xl.png'
 
-html`<bk-lazy-media>
-    <img src=${xl_thumbnail} data-src=${xl} alt="sunset" />
+const images = []
+
+for (let i = 1; i <= 50; i++) {
+    images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
+        <img
+            src="https://picsum.photos/seed/${i}/5/5?grayscale"
+            data-src="https://picsum.photos/seed/${i}/300/300?grayscale"
+            alt="https://picsum.photos/"
+            style="min-height: 100px"
+        />
+    </div>`)
+}
+
+html` <bk-lazy-media>
+    <div class="bk-row">
+        ${images}
+    </div>
 </bk-lazy-media>`
 ```
 
@@ -63,15 +87,37 @@ Lazy load a picture
 
 ```javascript
 import { html } from 'lit-html'
-import xl from 'xl.jpg'
-import xl_thumbnail from 'thumbnails/xl.png'
 
-html`<bk-lazy-media>
-     <picture>
-        <source media="(min-width: 1200px)" srcset=${xl_thumbnail} data-srcset=${xl} />
-        <source media="(min-width: 768px)" srcset=${md_thumbnail} data-srcset=${md} />
-        <img src=${sm_thumbnail} data-src=${sm} alt="sunset" />
-    </picture>
+const images = []
+
+for (let i = 1; i <= 50; i++) {
+    images.push(html`<div class="bk-col-12 bk-col-sm-8 bk-col-md-6">
+        <picture>
+            <source
+                media="(min-width: 1200px)"
+                srcset="https://picsum.photos/seed/${i}/9/6?grayscale"
+                data-srcset="https://picsum.photos/seed/${i}/900/600?grayscale"
+            />
+            <source
+                media="(min-width: 768px)"
+                srcset="https://picsum.photos/seed/${i}/7/5?grayscale"
+                data-srcset="https://picsum.photos/seed/${i}/700/500?grayscale"
+            />
+
+            <img
+                src="https://picsum.photos/seed/${i}/5/5?grayscale"
+                data-src="https://picsum.photos/seed/${i}/500/500?grayscale"
+                alt="https://picsum.photos/"
+                style="min-height: 100px"
+            />
+        </picture>
+    </div>`)
+}
+
+html` <bk-lazy-media>
+    <div class="bk-row">
+        ${images}
+    </div>
 </bk-lazy-media>`
 ```
 
@@ -79,8 +125,7 @@ html`<bk-lazy-media>
 
 <!-- Auto Generated Below -->
 
-
-----------------------------------------------
+---
 
 
 ### Video

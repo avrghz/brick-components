@@ -1,7 +1,7 @@
 {
     "name": "@avrghz/brick-components-react",
     "author": "Aswin Varghese",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "React wrapper for brick-components",
     "main": "index.js",
     "scripts": {

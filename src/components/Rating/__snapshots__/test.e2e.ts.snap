@@ -1,0 +1,586 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<bk-rating/> @Prop() Size should render as large 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() Size should render as medium 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() Size should render as small 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 0 rating 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 1 rating 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="1" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="1" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-very-dissatisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 2 rating 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="2" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="2" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-dissatisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-dissatisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 3 rating 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="3" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="3" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 4 rating 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="4" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="4" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 5 rating 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="5" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() colors should render with given colors 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="1" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="1" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: red;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() colors should render with given colors 2`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="2" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="2" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: red;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: red;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() colors should render with given colors 3`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="3" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="3" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() colors should render with given colors 4`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="5" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+      </span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() rating should render with given rating 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="3.5" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="3.5" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 50%;">
+        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+      </span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
+
+exports[`<bk-rating/> @Prop() rating should render with no selected stars, when rating = 0 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item sc-bk-rating">
+    <span class="sc-bk-rating" data-key="icons:star-border">
+      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;
