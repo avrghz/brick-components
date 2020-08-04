@@ -4,8 +4,6 @@ import KeyboardFocus from '../../shared/decorators/keyboardFocus'
 import { Colors, Size, SMILEY_ICONS } from './types'
 import Star from './star'
 
-// Todo: keyboard
-
 @Component({
     tag: 'bk-rating',
     scoped: true,

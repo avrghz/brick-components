@@ -1,7 +1,8 @@
 import { html } from 'lit-html'
-import { number, object, select, boolean } from '@storybook/addon-knobs'
-import { SIZE } from './types'
 import { action } from '@storybook/addon-actions'
+import { number, object, select, boolean } from '@storybook/addon-knobs'
+import COLORS from './__fixtures__/colors'
+import { SIZE } from './types'
 
 import notes from './readme.md'
 
@@ -17,12 +18,7 @@ export const Default = () => {
     const rating = number('rating', 0)
     const size = select('size', SIZE, 'medium')
     const asSmiley = boolean('as-smiley', false)
-    const colors = object('colors', {
-        1: 'red',
-        2: 'red',
-        3: 'yellow',
-        5: 'green',
-    })
+    const colors = object('colors', COLORS)
 
     const bkChange = action('bkChange')
 
