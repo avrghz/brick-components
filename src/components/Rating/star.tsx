@@ -1,12 +1,20 @@
 import { h, FunctionalComponent } from '@stencil/core'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
+import '@polymer/iron-icons/social-icons'
 import { StarProps } from './types'
 
-const Star: FunctionalComponent<StarProps> = ({ hover, activeColor, size, checked, fillPercentage }) => {
+const Star: FunctionalComponent<StarProps> = ({
+    hover,
+    activeColor,
+    size,
+    checked,
+    fillPercentage,
+    icon = 'icons:star-border',
+}) => {
     const getIcon = (props?: any) => (
         <iron-icon
-            icon="star-border"
+            icon={icon}
             class={{
                 [`bk-rate__icon is-${size}`]: true,
                 'is-hover': !!hover,
@@ -16,7 +24,7 @@ const Star: FunctionalComponent<StarProps> = ({ hover, activeColor, size, checke
     )
 
     return (
-        <span>
+        <span data-key={icon}>
             {getIcon()}
             <span
                 class="bk-rate__item is-fill"

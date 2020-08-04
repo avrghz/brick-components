@@ -1,10 +1,9 @@
 import { Component, h, Host, State, Prop, Event, EventEmitter, Watch } from '@stencil/core'
 import ComplexProp from '../../shared/decorators/complexProp'
-import { Colors, Size } from './types'
+import { Colors, Size, SMILEY_ICONS } from './types'
 import Star from './star'
 
 // Todo: keyboard
-// Todo: smiley
 
 @Component({
     tag: 'bk-rating',
@@ -26,6 +25,9 @@ export class Rating {
     /** The color for each rating */
     @ComplexProp('object') @Prop({ mutable: true }) colors?: Colors | string
 
+    /** show smiley instead of start */
+    @Prop() asSmiley = false
+
     /** This event is fired when rating changed */
     @Event() bkChange!: EventEmitter<number>
 
@@ -42,6 +44,11 @@ export class Rating {
 
     getActiveColor = () =>
         this.colors ? this.colors[this.hover || Math.ceil(this.rating)] || this.defaultColor : this.defaultColor
+
+    getSmiley = (key: number) => {
+        const threshold = this.hover || Math.ceil(this.rating)
+        return SMILEY_ICONS[key + 1 <= threshold ? threshold - 1 : 2]
+    }
 
     onClickHandler = (key: number) => {
         this.rating = key + 1
@@ -77,6 +84,11 @@ export class Rating {
                                 (this.isLessThen(key, Math.ceil(this.rating)) && !this.hover)
                             }
                             fillPercentage={this.getFillPercentage(key)}
+                            {...(this.asSmiley
+                                ? {
+                                      icon: this.getSmiley(key),
+                                  }
+                                : {})}
                         />
                     </span>
                 ))}

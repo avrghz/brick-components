@@ -186,6 +186,10 @@ export namespace Components {
     }
     interface BkRating {
         /**
+          * show smiley instead of start
+         */
+        "asSmiley": boolean;
+        /**
           * The color for each rating
          */
         "colors"?: Colors | string;
@@ -707,6 +711,10 @@ declare namespace LocalJSX {
         "label": string;
     }
     interface BkRating {
+        /**
+          * show smiley instead of start
+         */
+        "asSmiley"?: boolean;
         /**
           * The color for each rating
          */

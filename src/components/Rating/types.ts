@@ -11,4 +11,13 @@ export interface StarProps {
     activeColor: string
     size: Size
     fillPercentage: number
+    icon?: string
+}
+
+export enum SMILEY_ICONS {
+    'social:sentiment-very-dissatisfied',
+    'social:sentiment-dissatisfied',
+    'social:sentiment-neutral',
+    'social:sentiment-satisfied',
+    'social:sentiment-very-satisfied',
 }

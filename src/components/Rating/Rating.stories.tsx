@@ -1,5 +1,5 @@
 import { html } from 'lit-html'
-import { number, object, select } from '@storybook/addon-knobs'
+import { number, object, select, boolean } from '@storybook/addon-knobs'
 import { SIZE } from './types'
 import { action } from '@storybook/addon-actions'
 
@@ -16,9 +16,7 @@ export default {
 export const Default = () => {
     const rating = number('rating', 3.5)
     const size = select('size', SIZE, 'medium')
-
-    const bkChange = action('bkChange')
-
+    const asSmiley = boolean('as-smiley', false)
     const colors = object('colors', {
         1: 'red',
         2: 'red',
@@ -26,10 +24,13 @@ export const Default = () => {
         5: 'green',
     })
 
+    const bkChange = action('bkChange')
+
     return html`<bk-rating
         rating=${rating}
         colors=${JSON.stringify(colors)}
         size=${size}
+        as-smiley=${asSmiley}
         @bkChange=${(e: CustomEvent) => bkChange(e.detail)}
     />`
 }
