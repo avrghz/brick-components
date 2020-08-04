@@ -40,4 +40,17 @@
         font-size: $--rate-font-size;
         vertical-align: middle;
     }
+
+    @include e(fill) {
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        margin: 0;
+
+        @include e(icon) {
+            margin: 0;
+        }
+    }
 }

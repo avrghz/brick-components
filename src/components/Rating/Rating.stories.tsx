@@ -13,7 +13,7 @@ export default {
 }
 
 export const Default = () => {
-    const rating = number('rating', 3)
+    const rating = number('rating', 3.5)
 
     const colors = object('colors', {
         1: 'red',

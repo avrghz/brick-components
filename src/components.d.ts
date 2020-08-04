@@ -188,7 +188,7 @@ export namespace Components {
         /**
           * The color for each rating
          */
-        "colors": Colors | string;
+        "colors"?: Colors | string;
         /**
           * The rating out of 5
          */

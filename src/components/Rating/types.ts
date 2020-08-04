@@ -1,10 +1,6 @@
 export interface StarProps {
-    checked?: boolean
     hover?: boolean
-    activeColor: string
-    onClick: VoidFunction
-    onMouseEnter: VoidFunction
-    onMouseLeave: VoidFunction
+    activeColor?: string
 }
 
 export interface Colors {

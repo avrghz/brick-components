@@ -3,7 +3,6 @@ import ComplexProp from '../../shared/decorators/complexProp'
 import { Colors } from './types'
 import Star from './star'
 
-// Todo: float rating
 // Todo: keyboard
 // Todo: event on change
 // Todo: smiley
@@ -23,7 +22,14 @@ export class Rating {
     @Prop({ reflect: true, mutable: true }) rating = 0
 
     /** The color for each rating */
-    @ComplexProp('object') @Prop({ mutable: true }) colors: Colors | string = {}
+    @ComplexProp('object') @Prop({ mutable: true }) colors?: Colors | string
+
+    isLessThen = (key: number, latex: number) => key + 1 <= latex
+
+    fillPercentage = (key: number) => (!this.hover && this.rating - key < 1 ? `${(this.rating - key) * 100}%` : '100%')
+
+    getActiveColor = () =>
+        this.colors ? this.colors[this.hover || Math.ceil(this.rating)] || this.defaultColor : this.defaultColor
 
     onClickHandler = (key: number) => {
         this.rating = key + 1
@@ -44,14 +50,25 @@ export class Rating {
                 aria-valuenow={this.rating}
             >
                 {this.stars.map((key) => (
-                    <Star
-                        activeColor={this.colors[this.hover || Math.floor(this.rating)] || this.defaultColor}
-                        checked={key + 1 <= this.rating && !this.hover}
-                        hover={key + 1 <= this.hover}
+                    <span
+                        class="bk-rate__item"
                         onClick={() => this.onClickHandler(key)}
                         onMouseEnter={() => this.onMouseHandler(key)}
                         onMouseLeave={() => this.onMouseHandler(key, true)}
-                    />
+                    >
+                        <Star hover={this.isLessThen(key, this.hover)} />
+                        {this.isLessThen(key, this.hover) ||
+                        (this.isLessThen(key, Math.ceil(this.rating)) && !this.hover) ? (
+                            <span
+                                class="bk-rate__fill"
+                                style={{
+                                    width: this.fillPercentage(key),
+                                }}
+                            >
+                                <Star activeColor={this.getActiveColor()} hover={key + 1 <= this.hover} />
+                            </span>
+                        ) : null}
+                    </span>
                 ))}
             </Host>
         )
