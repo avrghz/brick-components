@@ -5,14 +5,6 @@ $--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 3
 $--border-transition-base: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 $--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 
-/* Link
--------------------------- */
-$--link-color: $--color-primary-light-2 !default;
-$--link-hover-color: $--color-primary !default;
-
-/* Fill
--------------------------- */
-
 /* Size
 -------------------------- */
 $--size-base: 14px !default;
@@ -473,20 +465,6 @@ $--tree-node-hover-background-color: $--background-color-base !default;
 $--tree-font-color: $--color-text-regular !default;
 /// color||Color|0
 $--tree-expand-icon-color: $--color-text-placeholder !default;
-
-/* Dropdown
--------------------------- */
-$--dropdown-menu-box-shadow: $--box-shadow-light !default;
-$--dropdown-menu-box-padding: 20px !default;
-$--dropdown-menuItem-hover-fill: $--color-primary-light-9 !default;
-$--dropdown-menuItem-hover-color: $--link-color !default;
-$--dropdown-menuItem-focus-fill: $--color-primary !default;
-$--dropdown-menuItem-focus-color: $--color-white !default;
-
-/* Dropdown
--------------------------- */
-$--dropdown-list-max-height: 250px !default;
-$--dropdown-list-min-width: 200px !default;
 
 /* Badge
 -------------------------- */

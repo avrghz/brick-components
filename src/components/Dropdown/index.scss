@@ -20,7 +20,7 @@
         background-color: $--color-white;
         border: 1px solid $--border-color-lighter;
         border-radius: $--border-radius-base;
-        min-width: 150px;
-        max-width: 300px;
+        min-width: $--dropdown-menu-min-width;
+        max-width: $--dropdown-menu-max-width;
     }
 }
