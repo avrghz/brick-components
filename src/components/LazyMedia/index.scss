@@ -7,7 +7,7 @@ bk-lazy-media {
         transition: all 0.5s ease-in-out;
         transform: scale(1.1);
         width: 100%;
-        filter: blur(5px);
+        filter: blur($--lazy-media-blur);
 
         &[data-loaded] {
             max-width: 100%;
