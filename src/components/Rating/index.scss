@@ -1,3 +1,5 @@
+@import '../../theme/base/icon.scss';
+
 :host {
     display: inline-block;
 
@@ -8,23 +10,52 @@
 }
 
 @include b(rate) {
+    $this: &;
+
+    @include e(icon) {
+        position: relative;
+        display: inline-block;
+        color: $--rate-icon-color;
+        transition: 0.15s;
+
+        @include when(hover) {
+            transform: scale(0.85);
+        }
+
+        @include when(small) {
+            @include icon-md();
+            margin-right: $--rate-icon-margin - 4;
+        }
+
+        @include when(medium) {
+            @include icon-xl();
+            margin-right: $--rate-icon-margin - 3;
+        }
+
+        @include when(large) {
+            @include icon-xxl();
+            margin-right: $--rate-icon-margin;
+        }
+    }
+
     @include e(item) {
         display: inline-block;
         position: relative;
         font-size: 0;
         vertical-align: middle;
         cursor: pointer;
-    }
 
-    @include e(icon) {
-        position: relative;
-        display: inline-block;
-        margin-right: $--rate-icon-margin;
-        color: $--rate-icon-color;
-        transition: 0.15s;
+        @include when('fill') {
+            position: absolute;
+            z-index: 1;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            margin: 0;
 
-        @include when(hover) {
-            transform: scale(0.85);
+            #{$this}__icon {
+                margin-right: 0;
+            }
         }
     }
 
@@ -39,18 +70,5 @@
     @include e(text) {
         font-size: $--rate-font-size;
         vertical-align: middle;
-    }
-
-    @include e(fill) {
-        position: absolute;
-        z-index: 1;
-        overflow: hidden;
-        top: 0;
-        left: 0;
-        margin: 0;
-
-        @include e(icon) {
-            margin: 0;
-        }
     }
 }

@@ -1,24 +1,44 @@
-@include b(icon) {
+@mixin icon-sm {
     width: 18px;
     height: 18px;
+}
+
+@mixin icon-md {
+    width: 20px;
+    height: 20px;
+}
+
+@mixin icon-lg {
+    width: 22px;
+    height: 22px;
+}
+
+@mixin icon-xl {
+    width: 24px;
+    height: 24px;
+}
+
+@mixin icon-xxl {
+    width: 30px;
+    height: 30px;
+}
+
+@include b(icon) {
+    @include icon-sm();
 
     @include m(md) {
-        width: 20px;
-        height: 20px;
+        @include icon-md();
     }
 
     @include m(lg) {
-        width: 22px;
-        height: 22px;
+        @include icon-lg();
     }
 
     @include m(xl) {
-        width: 24px;
-        height: 24px;
+        @include icon-xl();
     }
 
     @include m(xxl) {
-        width: 30px;
-        height: 30px;
+        @include icon-xxl();
     }
 }

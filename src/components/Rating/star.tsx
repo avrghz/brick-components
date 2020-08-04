@@ -3,22 +3,35 @@ import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 import { StarProps } from './types'
 
-const Star: FunctionalComponent<StarProps> = ({ hover, activeColor }) => {
-    return (
+const Star: FunctionalComponent<StarProps> = ({ hover, activeColor, size, checked, fillPercentage }) => {
+    const getIcon = (props?: any) => (
         <iron-icon
             icon="star-border"
             class={{
-                'bk-icon bk-icon--lg bk-rate__icon': true,
+                [`bk-rate__icon is-${size}`]: true,
                 'is-hover': !!hover,
             }}
-            {...(!!activeColor
-                ? {
-                      style: {
-                          color: activeColor,
-                      },
-                  }
-                : {})}
+            {...props}
         ></iron-icon>
+    )
+
+    return (
+        <span>
+            {getIcon()}
+            <span
+                class="bk-rate__item is-fill"
+                style={{
+                    width: `${fillPercentage * 100}%`,
+                }}
+            >
+                {checked &&
+                    getIcon({
+                        style: {
+                            color: activeColor,
+                        },
+                    })}
+            </span>
+        </span>
     )
 }
 export default Star

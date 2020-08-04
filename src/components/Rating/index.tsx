@@ -1,6 +1,6 @@
 import { Component, h, Host, State, Prop } from '@stencil/core'
 import ComplexProp from '../../shared/decorators/complexProp'
-import { Colors } from './types'
+import { Colors, Size } from './types'
 import Star from './star'
 
 // Todo: keyboard
@@ -21,12 +21,15 @@ export class Rating {
     /** The rating out of 5 */
     @Prop({ reflect: true, mutable: true }) rating = 0
 
+    /** Size of the rating */
+    @Prop() size: Size = 'medium'
+
     /** The color for each rating */
     @ComplexProp('object') @Prop({ mutable: true }) colors?: Colors | string
 
     isLessThen = (key: number, latex: number) => key + 1 <= latex
 
-    fillPercentage = (key: number) => (!this.hover && this.rating - key < 1 ? `${(this.rating - key) * 100}%` : '100%')
+    getFillPercentage = (key: number) => (!this.hover && this.rating - key < 1 ? this.rating - key : 1)
 
     getActiveColor = () =>
         this.colors ? this.colors[this.hover || Math.ceil(this.rating)] || this.defaultColor : this.defaultColor
@@ -56,18 +59,16 @@ export class Rating {
                         onMouseEnter={() => this.onMouseHandler(key)}
                         onMouseLeave={() => this.onMouseHandler(key, true)}
                     >
-                        <Star hover={this.isLessThen(key, this.hover)} />
-                        {this.isLessThen(key, this.hover) ||
-                        (this.isLessThen(key, Math.ceil(this.rating)) && !this.hover) ? (
-                            <span
-                                class="bk-rate__fill"
-                                style={{
-                                    width: this.fillPercentage(key),
-                                }}
-                            >
-                                <Star activeColor={this.getActiveColor()} hover={key + 1 <= this.hover} />
-                            </span>
-                        ) : null}
+                        <Star
+                            hover={this.isLessThen(key, this.hover)}
+                            size={this.size}
+                            activeColor={this.getActiveColor()}
+                            checked={
+                                this.isLessThen(key, this.hover) ||
+                                (this.isLessThen(key, Math.ceil(this.rating)) && !this.hover)
+                            }
+                            fillPercentage={this.getFillPercentage(key)}
+                        />
                     </span>
                 ))}
             </Host>

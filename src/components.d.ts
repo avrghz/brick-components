@@ -11,7 +11,7 @@ import { Option } from "./components/DropdownList/types";
 import { TriggerOn } from "./components/Popover/types";
 import { Placement } from "@popperjs/core";
 import { BarType } from "./components/ProgressBar/types";
-import { Colors } from "./components/Rating/types";
+import { Colors, Size } from "./components/Rating/types";
 import { Direction, StepComponent } from "./components/Steps/types";
 import { AVChange } from "./components/Switch/types";
 import { Position, Variant } from "./components/Tabs/types";
@@ -193,6 +193,10 @@ export namespace Components {
           * The rating out of 5
          */
         "rating": number;
+        /**
+          * Size of the rating
+         */
+        "size": Size;
     }
     interface BkSlider {
         /**
@@ -711,6 +715,10 @@ declare namespace LocalJSX {
           * The rating out of 5
          */
         "rating"?: number;
+        /**
+          * Size of the rating
+         */
+        "size"?: Size;
     }
     interface BkSlider {
         /**
