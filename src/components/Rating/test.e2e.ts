@@ -1,6 +1,6 @@
 import { newE2EPage, E2EPage, E2EElement } from '@stencil/core/testing'
 import COLORS from './__fixtures__/colors'
-import { SIZE, SMILEY_ICONS } from './types'
+import { SIZE } from './types'
 
 describe('<bk-rating/>', () => {
     let page: E2EPage
