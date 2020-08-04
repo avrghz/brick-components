@@ -712,6 +712,10 @@ declare namespace LocalJSX {
          */
         "colors"?: Colors | string;
         /**
+          * This event is fired when rating changed
+         */
+        "onBkChange"?: (event: CustomEvent<number>) => void;
+        /**
           * The rating out of 5
          */
         "rating"?: number;

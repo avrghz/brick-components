@@ -22,6 +22,13 @@ html` <bk-rating/> `
 | `size`   | `size`    | Size of the rating        | `"large" \| "medium" \| "small"` | `'medium'`  |
 
 
+## Events
+
+| Event      | Description                             | Type                  |
+| ---------- | --------------------------------------- | --------------------- |
+| `bkChange` | This event is fired when rating changed | `CustomEvent<number>` |
+
+
 ----------------------------------------------
 
 

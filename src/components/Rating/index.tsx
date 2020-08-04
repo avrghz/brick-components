@@ -1,10 +1,9 @@
-import { Component, h, Host, State, Prop } from '@stencil/core'
+import { Component, h, Host, State, Prop, Event, EventEmitter, Watch } from '@stencil/core'
 import ComplexProp from '../../shared/decorators/complexProp'
 import { Colors, Size } from './types'
 import Star from './star'
 
 // Todo: keyboard
-// Todo: event on change
 // Todo: smiley
 
 @Component({
@@ -26,6 +25,16 @@ export class Rating {
 
     /** The color for each rating */
     @ComplexProp('object') @Prop({ mutable: true }) colors?: Colors | string
+
+    /** This event is fired when rating changed */
+    @Event() bkChange!: EventEmitter<number>
+
+    @Watch('rating')
+    onRatingChange(current: number, previous: number) {
+        if (current !== previous) {
+            this.bkChange.emit(current)
+        }
+    }
 
     isLessThen = (key: number, latex: number) => key + 1 <= latex
 
