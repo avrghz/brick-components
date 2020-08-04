@@ -1,5 +1,6 @@
-import { Component, h, Host, State, Prop, Event, EventEmitter, Watch } from '@stencil/core'
+import { Component, h, Host, State, Prop, Event, EventEmitter, Watch, Element, Listen } from '@stencil/core'
 import ComplexProp from '../../shared/decorators/complexProp'
+import KeyboardFocus from '../../shared/decorators/keyboardFocus'
 import { Colors, Size, SMILEY_ICONS } from './types'
 import Star from './star'
 
@@ -13,6 +14,8 @@ import Star from './star'
 export class Rating {
     private defaultColor = 'rgb(247, 186, 42)'
     private stars = [...Array(5).keys()]
+
+    @KeyboardFocus() @Element() el!: HTMLElement
 
     @State() hover = 0
 
@@ -35,6 +38,24 @@ export class Rating {
     onRatingChange(current: number, previous: number) {
         if (current !== previous) {
             this.bkChange.emit(current)
+        }
+    }
+
+    @Listen('keydown')
+    onKeydownHandler(e: KeyboardEvent) {
+        switch (e.key) {
+            case 'ArrowRight':
+            case 'ArrowUp': {
+                const nextRating = this.rating + 1
+                this.rating = nextRating > 5 ? 5 : nextRating
+                break
+            }
+            case 'ArrowLeft':
+            case 'ArrowDown': {
+                const nextRating = this.rating - 1
+                this.rating = nextRating < 0 ? 0 : nextRating
+                break
+            }
         }
     }
 

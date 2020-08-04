@@ -14,7 +14,7 @@ export default {
 }
 
 export const Default = () => {
-    const rating = number('rating', 3.5)
+    const rating = number('rating', 0)
     const size = select('size', SIZE, 'medium')
     const asSmiley = boolean('as-smiley', false)
     const colors = object('colors', {

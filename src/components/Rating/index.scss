@@ -9,6 +9,12 @@
     }
 }
 
+:host(.is-focus) {
+    &:focus:not(:active) {
+        @include util-outline();
+    }
+}
+
 @include b(rate) {
     $this: &;
 
