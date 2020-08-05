@@ -1,3 +1,45 @@
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-black: hsl(0, 0%, 0%);
+
+    --color-primary: hsl(210, 100%, 63%);
+    --color-primary-h: 210;
+    --color-primary-s: 100%;
+    --color-primary-l: 63%;
+
+    --color-success: hsl(100, 54%, 49%);
+    --color-success-h: 100;
+    --color-success-s: 54%;
+    --color-success-l: 49%;
+
+    --color-warning: hsl(36, 77%, 57%);
+    --color-warning-h: 36;
+    --color-warning-s: 77%;
+    --color-warning-l: 57%;
+
+    --color-danger: hsl(0, 87%, 69%);
+    --color-danger-h: 0;
+    --color-danger-s: 87%;
+    --color-danger-l: 69%;
+
+    --color-info: hsl(220, 4%, 58%);
+    --color-info-h: 220;
+    --color-info-s: 4%;
+    --color-info-l: 58%;
+
+    --color-text-primary: hsl(220, 3%, 19%);
+    --color-text-regular: hsl(220, 3%, 39%);
+    --color-text-secondary: hsl(220, 4%, 58%);
+    --color-text-placeholder: hsl(220, 11%, 78%);
+
+    --border-color-base: hsl(222, 17%, 88%);
+    --border-color-light: hsl(220, 20%, 91%);
+    --border-color-lighter: hsl(222, 33%, 94%);
+    --border-color-extra-light: sl(216, 63%, 97%);
+
+    --background-color-base: #f5f7fa;
+}
+
 @import './base/base.scss';
 @import './base/reset.scss';
 
@@ -11,9 +53,9 @@
 @import './base/link.scss';
 
 @import './base/icon.scss';
-@import './base/button.scss';
-@import './base/input.scss';
-@import './base/input-number.scss';
+// @import './base/button.scss';
+// @import './base/input.scss';
+// @import './base/input-number.scss';
 // @import './base/select.scss';
 
 // @import './base/display.scss';

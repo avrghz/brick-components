@@ -17,11 +17,11 @@ export const config: Config = {
     plugins: [
         sass({
             injectGlobalPaths: [
+                './src/theme/base/mixins/function.scss',
+                './src/theme/base/mixins/utils.scss',
+                './src/theme/base/mixins/mixins.scss',
                 './src/theme/variables/index.scss',
                 './src/theme/base/common/var.scss',
-                './src/theme/base/mixins/mixins.scss',
-                './src/theme/base/mixins/utils.scss',
-                './src/theme/base/mixins/function.scss',
             ],
         }),
     ],
