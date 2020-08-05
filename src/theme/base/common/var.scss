@@ -190,19 +190,6 @@ $--group-title-color: $--color-black !default;
 $--group-title-font-size: $--font-size-base !default;
 $--group-title-width: 66px !default;
 
-/* Tab
--------------------------- */
-$--tab-font-size: $--font-size-base !default;
-$--tab-border-line: 1px solid #e4e4e4 !default;
-$--tab-header-color-active: $--color-text-secondary !default;
-$--tab-header-color-hover: $--color-text-regular !default;
-$--tab-header-color: $--color-text-regular !default;
-$--tab-header-fill-active: rgba($--color-black, 0.06) !default;
-$--tab-header-fill-hover: rgba($--color-black, 0.06) !default;
-$--tab-vertical-header-width: 90px !default;
-$--tab-vertical-header-count-color: $--color-white !default;
-$--tab-vertical-header-count-fill: $--color-text-secondary !default;
-
 /* Button
 -------------------------- */
 /// fontSize||Font|1
@@ -291,14 +278,6 @@ $--button-active-shade-percent: 10% !default;
 /* cascader
 -------------------------- */
 $--cascader-height: 200px !default;
-
-/* Switch
--------------------------- */
-$--switch-font-size: $--font-size-base !default;
-$--switch-off-color: $--border-color-base !default;
-$--switch-width: 2em !default;
-$--switch-height: 1em !default;
-$--switch-button-size: 0.75em !default;
 
 /* Table
 -------------------------- */
@@ -396,12 +375,6 @@ $--badge-font-size: 12px !default;
 $--badge-padding: 6px !default;
 /// height||Other|4
 $--badge-size: 18px !default;
-
-/* Steps
---------------------------*/
-$--steps-border-color: $--disabled-border-base !default;
-$--steps-border-radius: 4px !default;
-$--steps-padding: 20px !default;
 
 /* Menu
 --------------------------*/

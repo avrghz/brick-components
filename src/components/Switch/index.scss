@@ -19,7 +19,7 @@ $--variant-map: (
 @include b(switch) {
     $this: &;
 
-    font-size: 1em;
+    font-size: $--switch-font-size;
     display: inline-flex;
     align-items: center;
     position: relative;
