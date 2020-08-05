@@ -397,15 +397,6 @@ $--badge-padding: 6px !default;
 /// height||Other|4
 $--badge-size: 18px !default;
 
-/* Slider
---------------------------*/
-
-/// color||Color|0
-$--slider-font-size: $--font-size-base;
-$--slider-height: 0.25em !default;
-$--slider-runway-background-color: $--border-color-light !default;
-$--slider-button-size: 2em !default;
-
 /* Steps
 --------------------------*/
 $--steps-border-color: $--disabled-border-base !default;
@@ -421,12 +412,6 @@ $--menu-item-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--menu-background-color: $--color-white !default;
 $--menu-item-hover-fill: $--color-primary-light-9 !default;
-
-/* Rate
---------------------------*/
-$--rate-font-size: $--font-size-base !default;
-$--rate-icon-margin: 6px !default;
-$--rate-icon-color: $--color-text-placeholder !default;
 
 /* DatePicker
 --------------------------*/
