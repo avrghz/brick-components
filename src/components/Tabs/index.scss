@@ -1,3 +1,5 @@
+@import '../../theme/variables/components/tab';
+
 @include b(tab-header) {
     padding: 0 20px;
     height: 40px;
