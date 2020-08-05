@@ -2,30 +2,11 @@
     --color-white: hsl(0, 0%, 100%);
     --color-black: hsl(0, 0%, 0%);
 
-    --color-primary: hsl(210, 100%, 63%);
-    --color-primary-h: 210;
-    --color-primary-s: 100%;
-    --color-primary-l: 63%;
-
-    --color-success: hsl(100, 54%, 49%);
-    --color-success-h: 100;
-    --color-success-s: 54%;
-    --color-success-l: 49%;
-
-    --color-warning: hsl(36, 77%, 57%);
-    --color-warning-h: 36;
-    --color-warning-s: 77%;
-    --color-warning-l: 57%;
-
-    --color-danger: hsl(0, 87%, 69%);
-    --color-danger-h: 0;
-    --color-danger-s: 87%;
-    --color-danger-l: 69%;
-
-    --color-info: hsl(220, 4%, 58%);
-    --color-info-h: 220;
-    --color-info-s: 4%;
-    --color-info-l: 58%;
+    @include defineColorHSL(--color-primary, 210, 100%, 63%);
+    @include defineColorHSL(--color-success, 100, 54%, 49%);
+    @include defineColorHSL(--color-warning, 36, 77%, 57%);
+    @include defineColorHSL(--color-danger, 0, 87%, 69%);
+    @include defineColorHSL(--color-info, 220, 4%, 58%);
 
     --color-text-primary: hsl(220, 3%, 19%);
     --color-text-regular: hsl(220, 3%, 39%);
