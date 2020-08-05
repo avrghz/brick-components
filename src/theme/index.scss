@@ -1,10 +1,5 @@
 @import './base/base.scss';
 @import './base/reset.scss';
-@import './base/icon.scss';
-@import './base/button.scss';
-@import './base/input.scss';
-@import './base/input-number.scss';
-@import './base/select.scss';
 
 @import './base/container.scss';
 @import './base/row.scss';
@@ -14,5 +9,11 @@
 @import './base/aside.scss';
 @import './base/footer.scss';
 @import './base/link.scss';
-@import './base/image.scss';
+
+@import './base/icon.scss';
+@import './base/button.scss';
+@import './base/input.scss';
+@import './base/input-number.scss';
+// @import './base/select.scss';
+
 // @import './base/display.scss';
