@@ -37,7 +37,7 @@
     --border-color-lighter: hsl(222, 33%, 94%);
     --border-color-extra-light: sl(216, 63%, 97%);
 
-    --background-color-base: #f5f7fa;
+    --background-color-base: hsl(216, 33%, 97%);
 }
 
 @import './base/base.scss';
@@ -53,9 +53,9 @@
 @import './base/link.scss';
 
 @import './base/icon.scss';
-// @import './base/button.scss';
-// @import './base/input.scss';
-// @import './base/input-number.scss';
+@import './base/button.scss';
+@import './base/input.scss';
+@import './base/input-number.scss';
 // @import './base/select.scss';
 
 // @import './base/display.scss';

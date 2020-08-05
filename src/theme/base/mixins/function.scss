@@ -59,3 +59,12 @@
     $color-l: var(#{$color + '-l'});
     @return hsl($color-h, $color-s, calc(#{$color-l} + ((100% - #{$color-l}) * #{$lightness}) / 100));
 }
+
+@function darker($color, $darkness) {
+    $color: str-replace($color, 'var(');
+    $color: str-replace($color, ')');
+    $color-h: var(#{$color + '-h'});
+    $color-s: var(#{$color + '-s'});
+    $color-l: var(#{$color + '-l'});
+    @return hsl($color-h, $color-s, calc(#{$color-l} - ((#{$color-l} * #{$darkness}) / 100)));
+}
