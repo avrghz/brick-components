@@ -3,8 +3,9 @@ body {
         sans-serif;
     font-weight: 400;
     font-size: $--font-size-base;
-    color: $--color-black;
+    color: var(--color-text-primary);
     -webkit-font-smoothing: antialiased;
+    background-color: var(--color-html-bg, '#fff');
 }
 
 a {

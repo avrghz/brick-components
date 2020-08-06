@@ -57,9 +57,7 @@
             }
 
             @include when(disabled) {
-                cursor: default;
-                color: $--font-color-disabled-base;
-                pointer-events: none;
+                @include util-disabled();
             }
         }
 
