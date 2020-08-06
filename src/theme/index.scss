@@ -2,6 +2,7 @@
     --color-white: hsl(0, 0%, 100%);
     --color-black: hsl(0, 0%, 0%);
 
+    // The hue, saturation and lightness should be explicitly specified for deriving lighter or darker shades
     @include defineColorHSL(--color-primary, 210, 100%, 63%);
     @include defineColorHSL(--color-success, 100, 54%, 49%);
     @include defineColorHSL(--color-warning, 36, 77%, 57%);
