@@ -70,7 +70,7 @@ $--variant-map: (
     @include e(outer) {
         height: 6px;
         border-radius: 100px;
-        background-color: $--border-color-lighter;
+        background-color: $--border-color-light;
         overflow: hidden;
         position: relative;
         vertical-align: middle;
