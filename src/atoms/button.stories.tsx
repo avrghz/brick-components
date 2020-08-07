@@ -1,13 +1,14 @@
 import { html } from 'lit-html'
 
 export default {
-    title: 'Button',
+    title: 'Atoms',
     component: 'button',
 }
 
-export const BasicUsage = () => {
+export const Button = () => {
     return html` <div class="bk-row">
         <div class="bk-col">
+            <h2>Basic usage</h2>
             <button class="bk-button">Default</button>
             <button class="bk-button bk-button--primary">Primary</button>
             <button class="bk-button bk-button--success">Success</button>
@@ -35,6 +36,7 @@ export const BasicUsage = () => {
         </div>
         <br />
         <div class="bk-col">
+            <h2>Disabled</h2>
             <button class="bk-button is-disabled">Plain</button>
             <button class="bk-button bk-button--primary is-disabled">Primary</button>
             <button class="bk-button bk-button--success is-disabled">Success</button>
@@ -44,11 +46,13 @@ export const BasicUsage = () => {
         </div>
         <br />
         <div class="bk-col">
+            <h2>Text only</h2>
             <button class="bk-button bk-button--text">Text only</button>
             <button class="bk-button bk-button--text is-disabled">Text only</button>
         </div>
         <br />
         <div class="bk-col">
+            <h2>Size</h2>
             <button class="bk-button">Default</button>
             <button class="bk-button bk-button--medium">Medium</button>
             <button class="bk-button bk-button--small">Small</button>

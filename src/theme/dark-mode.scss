@@ -19,6 +19,11 @@
         --color-primary-light-9: --color-primary-dark;
     }
 
+    .bk-input-group__append,
+    .bk-input-group__prepend {
+        background-color: var(--border-color-light);
+    }
+
     bk-alert {
         --color-primary-light-9: var(--color-white);
         --color-success-lighter: var(--color-white);
