@@ -1,9 +1,7 @@
 @import '../../theme/variables/components/alert';
 @import '../../theme/base/common/close-button.scss';
 
-@include b(alert) {
-    $this: &;
-
+:host {
     display: block;
     width: 100%;
     padding: $--alert-padding;
@@ -19,113 +17,123 @@
     transition: opacity 0.2s;
     font-size: $--alert-font-size;
 
-    &#{$this}--dismissible {
-        padding-right: 32px;
-    }
-
-    @include e(close-btn) {
+    .bk-alert__close-btn {
         @include close-button();
         top: 8px;
         right: 0;
     }
+}
 
-    @include m(default) {
-        &#{$this}--light {
-            background-color: $--alert-default-color;
+:host(.is--dismissible) {
+    padding-right: 32px;
+}
+
+:host(.bk-alert--default) {
+    border-color: $--color-primary;
+
+    &.bk-alert--light {
+        background-color: $--alert-default-color;
+        color: $--color-primary;
+
+        .bk-alert__close-btn iron-icon {
             color: $--color-primary;
-
-            #{$this}__close-btn iron-icon {
-                color: $--color-primary;
-            }
-        }
-
-        &#{$this}--dark {
-            background-color: $--color-primary;
-            color: $--color-white;
-
-            #{$this}__close-btn iron-icon {
-                color: $--color-white;
-            }
         }
     }
 
-    @include m(success) {
-        &#{$this}--light {
-            background-color: $--alert-success-color;
+    &.bk-alert--dark {
+        background-color: $--color-primary;
+        color: $--color-white;
+
+        .bk-alert__close-btn iron-icon {
+            color: $--color-white;
+        }
+    }
+}
+
+:host(.bk-alert--success) {
+    border-color: $--color-success;
+
+    &.bk-alert--light {
+        background-color: $--alert-success-color;
+        color: $--color-success;
+
+        .bk-alert__close-btn iron-icon {
             color: $--color-success;
-
-            #{$this}__close-btn iron-icon {
-                color: $--color-success;
-            }
-        }
-
-        &#{$this}--dark {
-            background-color: $--color-success;
-            color: $--color-white;
-
-            #{$this}__close-btn iron-icon {
-                color: $--color-white;
-            }
         }
     }
 
-    @include m(info) {
-        &#{$this}--light {
-            background-color: $--alert-info-color;
+    &.bk-alert--dark {
+        background-color: $--color-success;
+        color: $--color-white;
+
+        .bk-alert__close-btn iron-icon {
+            color: $--color-white;
+        }
+    }
+}
+
+:host(.bk-alert--info) {
+    border-color: $--color-info;
+
+    &.bk-alert--light {
+        background-color: $--alert-info-color;
+        color: $--color-info;
+
+        .bk-alert__close-btn iron-icon {
             color: $--color-info;
-
-            #{$this}__close-btn iron-icon {
-                color: $--color-info;
-            }
-        }
-
-        &#{$this}--dark {
-            background-color: $--color-info;
-            color: $--color-white;
-
-            #{$this}__close-btn iron-icon {
-                color: $--color-white;
-            }
         }
     }
 
-    @include m(warning) {
-        &#{$this}--light {
-            background-color: $--alert-warning-color;
+    &.bk-alert--dark {
+        background-color: $--color-info;
+        color: $--color-white;
+
+        .bk-alert__close-btn iron-icon {
+            color: $--color-white;
+        }
+    }
+}
+
+:host(.bk-alert--warning) {
+    border-color: $--color-warning;
+
+    &.bk-alert--light {
+        background-color: $--alert-warning-color;
+        color: $--color-warning;
+
+        .bk-alert__close-btn iron-icon {
             color: $--color-warning;
-
-            #{$this}__close-btn iron-icon {
-                color: $--color-warning;
-            }
-        }
-
-        &#{$this}--dark {
-            background-color: $--color-warning;
-            color: $--color-white;
-
-            #{$this}__close-btn iron-icon {
-                color: $--color-white;
-            }
         }
     }
 
-    @include m(danger) {
-        &#{$this}--light {
-            background-color: $--alert-danger-color;
-            color: $--color-danger;
+    &.bk-alert--dark {
+        background-color: $--color-warning;
+        color: $--color-white;
 
-            #{$this}__close-btn iron-icon {
-                color: $--color-danger;
-            }
-        }
-
-        &#{$this}--dark {
-            background-color: $--color-danger;
+        .bk-alert__close-btn iron-icon {
             color: $--color-white;
+        }
+    }
+}
 
-            #{$this}__close-btn iron-icon {
-                color: $--color-white;
-            }
+:host(.bk-alert--danger) {
+    border-color: $--color-danger;
+
+    &.bk-alert--light {
+        background-color: $--alert-danger-color;
+        color: $--color-danger;
+
+        .bk-alert__close-btn iron-icon {
+            color: $--color-danger;
+        }
+    }
+
+    &.bk-alert--dark {
+        background-color: $--color-danger;
+        color: $--color-white;
+
+        .bk-alert__close-btn iron-icon {
+            color: $--color-white;
         }
     }
 }

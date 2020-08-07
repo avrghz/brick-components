@@ -32,19 +32,18 @@ export class Alert {
 
     render() {
         return (
-            <Host role="alert">
-                <div
-                    class={`bk-alert bk-alert--${this.variant} bk-alert--${this.shade} ${
-                        this.dismissible ? 'bk-alert--dismissible' : ''
-                    }`}
-                >
-                    {this.dismissible && (
-                        <button class="bk-button bk-button--text bk-alert__close-btn" onClick={this.onCloseHandler}>
-                            <iron-icon icon="close" class="bk-icon"></iron-icon>
-                        </button>
-                    )}
-                    <slot></slot>
-                </div>
+            <Host
+                role="alert"
+                class={`bk-alert bk-alert--${this.variant} bk-alert--${this.shade} ${
+                    this.dismissible ? 'is--dismissible' : ''
+                }`}
+            >
+                {this.dismissible && (
+                    <button class="bk-button bk-button--text bk-alert__close-btn" onClick={this.onCloseHandler}>
+                        <iron-icon icon="close" class="bk-icon"></iron-icon>
+                    </button>
+                )}
+                <slot></slot>
             </Host>
         )
     }

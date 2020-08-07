@@ -70,10 +70,3 @@
     $color-l: var(#{$color + '-l'});
     @return hsl($color-h, $color-s, calc(#{$color-l} - ((#{$color-l} * #{$darkness}) / 100)));
 }
-
-@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
-    #{$color}: unquote('hsl(#{$hue}, #{$saturation}, #{$lightness})');
-    #{$color}-h: #{$hue};
-    #{$color}-s: #{$saturation};
-    #{$color}-l: #{$lightness};
-}

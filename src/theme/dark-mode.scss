@@ -1,0 +1,18 @@
+:root[dark-mode='true'] {
+    --color-html-bg: #333;
+
+    --color-white: hsl(0, 0%, 0%);
+    --color-black: hsl(0, 0%, 100%);
+
+    --color-text-primary: hsl(220, 3%, 81%);
+    --color-text-regular: hsl(220, 3%, 61%);
+    --color-text-secondary: hsl(220, 4%, 42%);
+    --color-text-placeholder: hsl(220, 11%, 60%);
+
+    --border-color-base: hsl(222, 17%, 0%);
+    --border-color-light: hsl(220, 3%, 10%);
+    --border-color-lighter: hsl(220, 3%, 20%);
+    --border-color-extra-light: hsl(220, 3%, 30%);
+}
+
+@import '../components/Alert/dark-mode.scss';
