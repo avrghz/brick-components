@@ -29,7 +29,7 @@ channel.on('DARK_MODE', (isDark) => {
 })
 
 // force full reload to not reregister web components
-const req = require.context('../src/components', true, /\.stories\.(tsx|mdx)$/)
+const req = require.context('../src', true, /\.stories\.(tsx|mdx)$/)
 configure(req, module)
 if (module.hot) {
     module.hot.accept(req.id, () => {
