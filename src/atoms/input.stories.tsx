@@ -7,39 +7,52 @@ export default {
 
 export const Input = () => {
     return html`
-        <h2>Input</h2>
         <div class="bk-row mb-4">
-            <div class="bk-col-md-12 mb-2 mb-md-0">
-                <div class="bk-input">
-                    <input type="text" autocomplete="off" placeholder="Placeholder" class="bk-input__inner" />
+            <h2 class="bk-col-24">Input</h2>
+        </div>
+        <div class="bk-row mb-8">
+            <div class="bk-col-24">
+                <div class="bk-row mb-4">
+                    <div class="bk-col-md-12 mb-4 mb-md-0">
+                        <div class="bk-input">
+                            <input type="text" autocomplete="off" placeholder="Placeholder" class="bk-input__inner" />
+                        </div>
+                    </div>
+                    <div class="bk-col-md-12">
+                        <div class="bk-input is-disabled">
+                            <input
+                                type="text"
+                                autocomplete="off"
+                                placeholder="Disabled"
+                                class="bk-input__inner"
+                                disabled
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="bk-col-md-12">
-                <div class="bk-input is-disabled">
-                    <input type="text" autocomplete="off" placeholder="Disabled" class="bk-input__inner" disabled />
+                <div class="bk-row">
+                    <div class="bk-col-md-12 mb-4 mb-md-0">
+                        <div class="bk-input bk-input-group bk-input-group--prepend">
+                            <div class="bk-input-group__prepend">Http://</div>
+                            <input type="text" autocomplete="off" placeholder="Please input" class="bk-input__inner" />
+                        </div>
+                    </div>
+                    <div class="bk-col-md-12">
+                        <div class="bk-input bk-input-group bk-input-group--append">
+                            <input type="text" autocomplete="off" placeholder="Please input" class="bk-input__inner" />
+                            <div class="bk-input-group__append">Http://</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="bk-row">
-            <div class="bk-col-md-12 mb-2 mb-md-0">
-                <div class="bk-input bk-input-group bk-input-group--prepend">
-                    <div class="bk-input-group__prepend">Http://</div>
-                    <input type="text" autocomplete="off" placeholder="Please input" class="bk-input__inner" />
-                </div>
-            </div>
-            <div class="bk-col-md-12">
-                <div class="bk-input bk-input-group bk-input-group--append">
-                    <input type="text" autocomplete="off" placeholder="Please input" class="bk-input__inner" />
-                    <div class="bk-input-group__append">Http://</div>
-                </div>
-            </div>
+        <div class="bk-row mb-4">
+            <h2 class="bk-col-24">Text area</h2>
         </div>
 
-        <h2>Text area</h2>
-
         <div class="bk-row">
-            <div class="bk-col-md-12 mb-2 mb-md-0">
+            <div class="bk-col-md-12 mb-4 mb-md-0">
                 <div class="bk-input">
                     <textarea
                         autocomplete="off"

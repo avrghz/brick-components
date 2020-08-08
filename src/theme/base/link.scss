@@ -44,34 +44,29 @@ $typeMap: (
 
     &.bk-link--default {
         color: $--link-default-font-color;
-        &:hover {
-            color: $--link-default-active-color;
-        }
+
         &:after {
             border-color: $--link-default-active-color;
-        }
-        @include when(disabled) {
-            color: $--link-disabled-font-color;
         }
     }
 
     @each $type, $primaryColor in $typeMap {
         &.bk-link--#{$type} {
             color: $primaryColor;
-            &:hover {
-                color: $--color-primary-light-2;
-            }
+
             &:after {
                 border-color: $primaryColor;
             }
-            @include when(disabled) {
-                color: $--color-primary-light-5;
-            }
+
             @include when(underline) {
                 &:hover:after {
                     border-color: $primaryColor;
                 }
             }
         }
+    }
+
+    @include when(disabled) {
+        @include util-disabled();
     }
 }
