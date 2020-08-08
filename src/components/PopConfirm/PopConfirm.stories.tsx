@@ -5,7 +5,7 @@ import { BUTTON_VARIANTS } from '../../shared/types'
 import notes from './readme.md'
 
 export default {
-    title: 'PopConfirm',
+    title: 'Components',
     component: 'bk-pop-confirm',
     decorators: [withKnobs],
     parameters: {
@@ -13,7 +13,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const PopConfirm = () => {
     const message = text('message', 'Are you sure, you want to delete this?')
     const confirmButtonText = text('confirm-button-text', 'Confirm')
     const cancelButtonText = text('cancel-button-text', 'Cancel')

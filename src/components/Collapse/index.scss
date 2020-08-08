@@ -1,3 +1,5 @@
+@import '../../theme/variables/components/collapse';
+
 :host {
     display: block;
 }
@@ -8,7 +10,7 @@
         align-items: center;
         height: $--collapse-header-height;
         line-height: $--collapse-header-height;
-        background-color: $--collapse-header-background-color;
+        // background-color: $--collapse-header-background-color;
         color: $--collapse-header-font-color;
         cursor: pointer;
         border-bottom: 1px solid $--collapse-border-color;
@@ -30,7 +32,7 @@
 
     @include e(wrap) {
         will-change: height;
-        background-color: $--collapse-content-background-color;
+        // background-color: $--collapse-content-background-color;
         overflow: hidden;
         box-sizing: border-box;
         border-bottom: 1px solid $--collapse-border-color;

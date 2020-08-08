@@ -1,0 +1,39 @@
+:root[dark-mode='true'] {
+    --color-html-bg: #333;
+
+    --color-white: hsl(0, 0%, 0%);
+    --color-black: hsl(0, 0%, 100%);
+
+    --color-text-primary: hsl(220, 3%, 81%);
+    --color-text-regular: hsl(220, 3%, 61%);
+    --color-text-secondary: hsl(220, 4%, 42%);
+    --color-text-placeholder: hsl(220, 11%, 60%);
+
+    --border-color-base: hsl(222, 17%, 0%);
+    --border-color-light: hsl(220, 3%, 10%);
+    --border-color-lighter: hsl(220, 3%, 20%);
+    --border-color-extra-light: hsl(220, 3%, 30%);
+
+    .bk-button {
+        --color-primary-light-7: --color-primary-darker;
+        --color-primary-light-9: --color-primary-dark;
+    }
+
+    .bk-input-group__append,
+    .bk-input-group__prepend {
+        background-color: var(--border-color-light);
+    }
+
+    bk-alert {
+        --color-primary-light-9: var(--color-white);
+        --color-success-lighter: var(--color-white);
+        --color-warning-lighter: var(--color-white);
+        --color-danger-lighter: var(--color-white);
+        --color-info-lighter: var(--color-white);
+        border: 1px solid;
+    }
+
+    bk-dropdown-list {
+        --color-primary-light-9: hsl(220, 3%, 15%);
+    }
+}

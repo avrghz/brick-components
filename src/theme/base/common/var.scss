@@ -14,157 +14,6 @@ $--size-base: 14px !default;
 $--icon-color: #666 !default;
 $--icon-color-base: $--color-info !default;
 
-/* Select
--------------------------- */
-$--select-border-color-hover: $--border-color-hover !default;
-$--select-disabled-border: $--disabled-border-base !default;
-/// fontSize||Font|1
-$--select-font-size: $--font-size-base !default;
-$--select-close-hover-color: $--color-text-secondary !default;
-
-$--select-input-color: $--color-text-placeholder !default;
-$--select-multiple-input-color: #666 !default;
-/// color||Color|0
-$--select-input-focus-border-color: $--color-primary !default;
-/// fontSize||Font|1
-$--select-input-font-size: 14px !default;
-
-$--select-option-color: $--color-text-regular !default;
-$--select-option-disabled-color: $--color-text-placeholder !default;
-$--select-option-disabled-background: $--color-white !default;
-/// height||Other|4
-$--select-option-height: 34px !default;
-$--select-option-hover-background: $--background-color-base !default;
-/// color||Color|0
-$--select-option-selected-font-color: $--color-primary !default;
-$--select-option-selected-hover: $--background-color-base !default;
-
-$--select-group-color: $--color-info !default;
-$--select-group-height: 30px !default;
-$--select-group-font-size: 12px !default;
-
-$--select-dropdown-background: $--color-white !default;
-$--select-dropdown-shadow: $--box-shadow-light !default;
-$--select-dropdown-empty-color: #999 !default;
-/// height||Other|4
-$--select-dropdown-max-height: 274px !default;
-$--select-dropdown-padding: 6px 0 !default;
-$--select-dropdown-empty-padding: 10px 0 !default;
-$--select-dropdown-border: solid 1px $--border-color-light !default;
-
-/* MessageBox
--------------------------- */
-/// color||Color|0
-$--messagebox-title-color: $--color-text-primary !default;
-$--msgbox-width: 420px !default;
-$--msgbox-border-radius: 4px !default;
-/// fontSize||Font|1
-$--messagebox-font-size: $--font-size-large !default;
-/// fontSize||Font|1
-$--messagebox-content-font-size: $--font-size-base !default;
-/// color||Color|0
-$--messagebox-content-color: $--color-text-regular !default;
-/// fontSize||Font|1
-$--messagebox-error-font-size: 12px !default;
-$--msgbox-padding-primary: 15px !default;
-/// color||Color|0
-$--messagebox-success-color: $--color-success !default;
-/// color||Color|0
-$--messagebox-info-color: $--color-info !default;
-/// color||Color|0
-$--messagebox-warning-color: $--color-warning !default;
-/// color||Color|0
-$--messagebox-danger-color: $--color-danger !default;
-
-/* Message
--------------------------- */
-$--message-shadow: $--box-shadow-base !default;
-$--message-min-width: 380px !default;
-$--message-background-color: #edf2fc !default;
-$--message-padding: 15px 15px 15px 20px !default;
-/// color||Color|0
-$--message-close-icon-color: $--color-text-placeholder !default;
-/// height||Other|4
-$--message-close-size: 16px !default;
-/// color||Color|0
-$--message-close-hover-color: $--color-text-secondary !default;
-
-/// color||Color|0
-$--message-success-font-color: $--color-success !default;
-/// color||Color|0
-$--message-info-font-color: $--color-info !default;
-/// color||Color|0
-$--message-warning-font-color: $--color-warning !default;
-/// color||Color|0
-$--message-danger-font-color: $--color-danger !default;
-
-/* Toast
--------------------------- */
-$--toast-font-size: $--font-size-base;
-$--toast-width: 330px !default;
-$--toast-padding: 16px 20px !default;
-$--toast-radius: $--border-radius-base !default;
-$--toast-shadow: $--box-shadow-light !default;
-$--toast-icon-size: 28px !default;
-$--toast-group-padding: 0 20px 0 5px !default;
-$--toast-title-font-size: 1.1em !default;
-$--toast-position: 10px;
-$--toast-border-color: $--border-color-lighter !default;
-$--toast-content-color: $--color-text-regular !default;
-$--toast-title-color: $--color-text-primary !default;
-$--toast-success-icon-color: $--color-success !default;
-$--toast-info-icon-color: $--color-info !default;
-$--toast-warning-icon-color: $--color-warning !default;
-$--toast-danger-icon-color: $--color-danger !default;
-
-/* Input
--------------------------- */
-$--input-font-size: $--font-size-base !default;
-/// color||Color|0
-$--input-font-color: $--color-text-regular !default;
-/// height||Other|4
-$--input-width: 140px !default;
-/// height||Other|4
-$--input-height: 40px !default;
-$--input-border: $--border-base !default;
-$--input-border-color: $--border-color-base !default;
-/// borderRadius||Border|2
-$--input-border-radius: $--border-radius-base !default;
-$--input-border-color-hover: $--border-color-hover !default;
-/// color||Color|0
-$--input-background-color: $--color-white !default;
-$--input-fill-disabled: $--disabled-fill-base !default;
-$--input-color-disabled: $--font-color-disabled-base !default;
-/// color||Color|0
-$--input-icon-color: $--color-text-placeholder !default;
-/// color||Color|0
-$--input-placeholder-color: $--color-text-placeholder !default;
-$--input-max-width: 314px !default;
-
-$--input-hover-border: $--border-color-hover !default;
-$--input-clear-hover-color: $--color-text-secondary !default;
-
-$--input-focus-border: $--color-primary !default;
-$--input-focus-fill: $--color-white !default;
-
-$--input-disabled-fill: $--disabled-fill-base !default;
-$--input-disabled-border: $--disabled-border-base !default;
-$--input-disabled-color: $--disabled-color-base !default;
-$--input-disabled-placeholder-color: $--color-text-placeholder !default;
-
-/// fontSize||Font|1
-$--input-medium-font-size: 14px !default;
-/// height||Other|4
-$--input-medium-height: 36px !default;
-/// fontSize||Font|1
-$--input-small-font-size: 13px !default;
-/// height||Other|4
-$--input-small-height: 32px !default;
-/// fontSize||Font|1
-$--input-mini-font-size: 12px !default;
-/// height||Other|4
-$--input-mini-height: 28px !default;
-
 /* Cascader
 -------------------------- */
 /// color||Color|0
@@ -190,115 +39,9 @@ $--group-title-color: $--color-black !default;
 $--group-title-font-size: $--font-size-base !default;
 $--group-title-width: 66px !default;
 
-/* Tab
--------------------------- */
-$--tab-font-size: $--font-size-base !default;
-$--tab-border-line: 1px solid #e4e4e4 !default;
-$--tab-header-color-active: $--color-text-secondary !default;
-$--tab-header-color-hover: $--color-text-regular !default;
-$--tab-header-color: $--color-text-regular !default;
-$--tab-header-fill-active: rgba($--color-black, 0.06) !default;
-$--tab-header-fill-hover: rgba($--color-black, 0.06) !default;
-$--tab-vertical-header-width: 90px !default;
-$--tab-vertical-header-count-color: $--color-white !default;
-$--tab-vertical-header-count-fill: $--color-text-secondary !default;
-
-/* Button
--------------------------- */
-/// fontSize||Font|1
-$--button-font-size: $--font-size-base !default;
-/// fontWeight||Font|1
-$--button-font-weight: $--font-weight-primary !default;
-/// borderRadius||Border|2
-$--button-border-radius: $--border-radius-base !default;
-/// padding||Spacing|3
-$--button-padding-vertical: 12px !default;
-/// padding||Spacing|3
-$--button-padding-horizontal: 20px !default;
-
-/// fontSize||Font|1
-$--button-medium-font-size: $--font-size-base !default;
-/// borderRadius||Border|2
-$--button-medium-border-radius: $--border-radius-base !default;
-/// padding||Spacing|3
-$--button-medium-padding-vertical: 10px !default;
-/// padding||Spacing|3
-$--button-medium-padding-horizontal: 20px !default;
-
-/// fontSize||Font|1
-$--button-small-font-size: 12px !default;
-$--button-small-border-radius: #{$--border-radius-base - 1} !default;
-/// padding||Spacing|3
-$--button-small-padding-vertical: 9px !default;
-/// padding||Spacing|3
-$--button-small-padding-horizontal: 15px !default;
-/// fontSize||Font|1
-$--button-mini-font-size: 12px !default;
-$--button-mini-border-radius: #{$--border-radius-base - 1} !default;
-/// padding||Spacing|3
-$--button-mini-padding-vertical: 7px !default;
-/// padding||Spacing|3
-$--button-mini-padding-horizontal: 15px !default;
-
-/// color||Color|0
-$--button-default-font-color: $--color-text-regular !default;
-/// color||Color|0
-$--button-default-background-color: $--color-white !default;
-/// color||Color|0
-$--button-default-border-color: $--border-color-base !default;
-
-/// color||Color|0
-$--button-disabled-font-color: $--color-text-placeholder !default;
-/// color||Color|0
-$--button-disabled-background-color: $--color-white !default;
-/// color||Color|0
-$--button-disabled-border-color: $--border-color-lighter !default;
-
-/// color||Color|0
-$--button-primary-border-color: $--color-primary !default;
-/// color||Color|0
-$--button-primary-font-color: $--color-white !default;
-/// color||Color|0
-$--button-primary-background-color: $--color-primary !default;
-/// color||Color|0
-$--button-success-border-color: $--color-success !default;
-/// color||Color|0
-$--button-success-font-color: $--color-white !default;
-/// color||Color|0
-$--button-success-background-color: $--color-success !default;
-/// color||Color|0
-$--button-warning-border-color: $--color-warning !default;
-/// color||Color|0
-$--button-warning-font-color: $--color-white !default;
-/// color||Color|0
-$--button-warning-background-color: $--color-warning !default;
-/// color||Color|0
-$--button-danger-border-color: $--color-danger !default;
-/// color||Color|0
-$--button-danger-font-color: $--color-white !default;
-/// color||Color|0
-$--button-danger-background-color: $--color-danger !default;
-/// color||Color|0
-$--button-info-border-color: $--color-info !default;
-/// color||Color|0
-$--button-info-font-color: $--color-white !default;
-/// color||Color|0
-$--button-info-background-color: $--color-info !default;
-
-$--button-hover-tint-percent: 20% !default;
-$--button-active-shade-percent: 10% !default;
-
 /* cascader
 -------------------------- */
 $--cascader-height: 200px !default;
-
-/* Switch
--------------------------- */
-$--switch-font-size: $--font-size-base !default;
-$--switch-off-color: $--border-color-base !default;
-$--switch-width: 2em !default;
-$--switch-height: 1em !default;
-$--switch-button-size: 0.75em !default;
 
 /* Table
 -------------------------- */
@@ -338,27 +81,6 @@ $--pagination-button-disabled-background-color: $--color-white !default;
 /// color||Color|0
 $--pagination-hover-color: $--color-primary !default;
 
-/* Popup
--------------------------- */
-/// color||Color|0
-$--popup-modal-background-color: $--color-black !default;
-/// opacity||Other|1
-$--popup-modal-opacity: 0.5 !default;
-
-/* Tooltip
--------------------------- */
-/// color|1|Color|0
-$--tooltip-fill: $--color-text-primary !default;
-/// color|1|Color|0
-$--tooltip-color: $--color-white !default;
-/// fontSize||Font|1
-$--tooltip-font-size: 12px !default;
-/// color||Color|0
-$--tooltip-border-color: $--color-text-primary !default;
-$--tooltip-arrow-size: 6px !default;
-/// padding||Spacing|3
-$--tooltip-padding: 10px !default;
-
 /* Tag
 -------------------------- */
 /// color||Color|0
@@ -397,21 +119,6 @@ $--badge-padding: 6px !default;
 /// height||Other|4
 $--badge-size: 18px !default;
 
-/* Slider
---------------------------*/
-
-/// color||Color|0
-$--slider-font-size: $--font-size-base;
-$--slider-height: 0.25em !default;
-$--slider-runway-background-color: $--border-color-light !default;
-$--slider-button-size: 2em !default;
-
-/* Steps
---------------------------*/
-$--steps-border-color: $--disabled-border-base !default;
-$--steps-border-radius: 4px !default;
-$--steps-padding: 20px !default;
-
 /* Menu
 --------------------------*/
 /// fontSize||Font|1
@@ -421,12 +128,6 @@ $--menu-item-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--menu-background-color: $--color-white !default;
 $--menu-item-hover-fill: $--color-primary-light-9 !default;
-
-/* Rate
---------------------------*/
-$--rate-font-size: $--font-size-base !default;
-$--rate-icon-margin: 6px !default;
-$--rate-icon-color: $--color-text-placeholder !default;
 
 /* DatePicker
 --------------------------*/
@@ -447,13 +148,6 @@ $--datepicker-active-color: $--color-primary !default;
 /// color||Color|0
 $--datepicker-hover-font-color: $--color-primary !default;
 $--datepicker-cell-hover-color: #fff !default;
-
-/* Loading
---------------------------*/
-/// height||Other|4
-$--loading-spinner-size: 42px !default;
-/// height||Other|4
-$--loading-fullscreen-spinner-size: 50px !default;
 
 /* Scrollbar
 --------------------------*/
@@ -494,24 +188,6 @@ $--transfer-item-height: 30px !default;
 /// height||Other|4
 $--transfer-filter-height: 32px !default;
 
-/* Header
-  --------------------------*/
-$--header-padding: 0 20px !default;
-
-/* Footer
---------------------------*/
-$--footer-padding: 0 20px !default;
-
-/* Main
---------------------------*/
-$--main-padding: 20px !default;
-
-/* Timeline
---------------------------*/
-$--timeline-node-size-normal: 12px !default;
-$--timeline-node-size-large: 14px !default;
-$--timeline-node-color: $--border-color-light !default;
-
 /* Backtop
 --------------------------*/
 /// color||Color|0
@@ -521,28 +197,6 @@ $--backtop-font-color: $--color-primary !default;
 /// color||Color|0
 $--backtop-hover-background-color: $--border-color-extra-light !default;
 
-/* Link
---------------------------*/
-/// fontSize||Font|1
-$--link-font-size: $--font-size-base !default;
-/// fontWeight||Font|1
-$--link-font-weight: $--font-weight-primary !default;
-/// color||Color|0
-$--link-default-font-color: $--color-text-regular !default;
-/// color||Color|0
-$--link-default-active-color: $--color-primary !default;
-/// color||Color|0
-$--link-disabled-font-color: $--color-text-placeholder !default;
-/// color||Color|0
-$--link-primary-font-color: $--color-primary !default;
-/// color||Color|0
-$--link-success-font-color: $--color-success !default;
-/// color||Color|0
-$--link-warning-font-color: $--color-warning !default;
-/// color||Color|0
-$--link-danger-font-color: $--color-danger !default;
-/// color||Color|0
-$--link-info-font-color: $--color-info !default;
 /* Calendar
 --------------------------*/
 /// border||Other|4
@@ -574,58 +228,3 @@ $--avatar-large-size: 40px !default;
 $--avatar-medium-size: 36px !default;
 /// size|1|Avatar Size|3
 $--avatar-small-size: 28px !default;
-
-/* Break-point
---------------------------*/
-$--sm: 768px !default;
-$--md: 992px !default;
-$--lg: 1200px !default;
-$--xl: 1920px !default;
-
-$--breakpoints: (
-    'xs': (
-        max-width: $--sm - 1,
-    ),
-    'sm': (
-        min-width: $--sm,
-    ),
-    'md': (
-        min-width: $--md,
-    ),
-    'lg': (
-        min-width: $--lg,
-    ),
-    'xl': (
-        min-width: $--xl,
-    ),
-);
-
-$--breakpoints-spec: (
-    'xs-only': (
-        max-width: $--sm - 1,
-    ),
-    'sm-and-up': (
-        min-width: $--sm,
-    ),
-    'sm-only': '(min-width: #{$--sm}) and (max-width: #{$--md - 1})',
-    'sm-and-down': (
-        max-width: $--md - 1,
-    ),
-    'md-and-up': (
-        min-width: $--md,
-    ),
-    'md-only': '(min-width: #{$--md}) and (max-width: #{$--lg - 1})',
-    'md-and-down': (
-        max-width: $--lg - 1,
-    ),
-    'lg-and-up': (
-        min-width: $--lg,
-    ),
-    'lg-only': '(min-width: #{$--lg}) and (max-width: #{$--xl - 1})',
-    'lg-and-down': (
-        max-width: $--xl - 1,
-    ),
-    'xl-only': (
-        min-width: $--xl,
-    ),
-);

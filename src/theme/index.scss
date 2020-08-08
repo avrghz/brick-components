@@ -1,18 +1,68 @@
-@import './base/base.scss';
+:root {
+    --color-html-bg: #fff;
+
+    --color-white: hsl(0, 0%, 100%);
+    --color-black: hsl(0, 0%, 0%);
+
+    // The hue, saturation and lightness should be explicitly specified for deriving lighter or darker shades
+    @include defineColorHSL(--color-primary, 210, 100%, 63%);
+    @include defineColorHSL(--color-success, 100, 54%, 49%);
+    @include defineColorHSL(--color-warning, 36, 77%, 57%);
+    @include defineColorHSL(--color-danger, 0, 87%, 69%);
+    @include defineColorHSL(--color-info, 220, 4%, 58%);
+
+    --color-text-primary: hsl(220, 3%, 19%);
+    --color-text-regular: hsl(220, 3%, 39%);
+    --color-text-secondary: hsl(220, 4%, 58%);
+    --color-text-placeholder: hsl(220, 11%, 78%);
+
+    --border-color-base: hsl(222, 17%, 88%);
+    --border-color-light: hsl(220, 20%, 91%);
+    --border-color-lighter: hsl(222, 33%, 94%);
+    --border-color-extra-light: hsl(216, 63%, 97%);
+
+    --background-color-base: hsl(216, 33%, 97%);
+
+    --grid-gutter: #{map-get($--space-map, 2)};
+
+    @include res(lg) {
+        --grid-gutter: #{map-get($--space-map, 3)};
+    }
+}
+
+:root[dark-mode='true'] {
+    --color-html-bg: #333;
+
+    --color-white: hsl(0, 0%, 0%);
+    --color-black: hsl(0, 0%, 100%);
+
+    --color-text-primary: hsl(220, 3%, 81%);
+    --color-text-regular: hsl(220, 3%, 61%);
+    --color-text-secondary: hsl(220, 4%, 42%);
+    --color-text-placeholder: hsl(220, 11%, 60%);
+
+    --border-color-base: hsl(222, 17%, 0%);
+    --border-color-light: hsl(220, 3%, 10%);
+    --border-color-lighter: hsl(220, 3%, 20%);
+    --border-color-extra-light: hsl(220, 3%, 30%);
+}
+
 @import './base/reset.scss';
-@import './base/icon.scss';
-@import './base/button.scss';
-@import './base/input.scss';
-@import './base/input-number.scss';
-@import './base/select.scss';
+@import './base/util/margin.scss';
+@import './base/util/padding.scss';
 
 @import './base/container.scss';
-@import './base/row.scss';
-@import './base/col.scss';
+@import './base/grid.scss';
 @import './base/header.scss';
 @import './base/main.scss';
 @import './base/aside.scss';
 @import './base/footer.scss';
 @import './base/link.scss';
-@import './base/image.scss';
-// @import './base/display.scss';
+
+@import './base/icon.scss';
+@import './base/button.scss';
+@import './base/input.scss';
+
+@import './dark-mode.scss';
+
+// ! todo : add css for select

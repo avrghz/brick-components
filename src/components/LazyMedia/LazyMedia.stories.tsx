@@ -6,7 +6,7 @@ import bgImageUsage from './usage/bgImage.md'
 import videoUsage from './usage/video.md'
 
 export default {
-    title: 'LazyMedia',
+    title: 'Components/LazyMedia',
     component: 'bk-lazy-media',
 }
 
@@ -29,7 +29,7 @@ export const Image = () => {
     }
 
     return html` <bk-lazy-media>
-        <div class="bk-row">
+        <div class="bk-row is-no-gutter">
             ${images}
         </div>
         ${courtesy}
@@ -70,7 +70,7 @@ export const Picture = () => {
     }
 
     return html` <bk-lazy-media>
-        <div class="bk-row">
+        <div class="bk-row is-no-gutter">
             ${images}
         </div>
         ${courtesy}
@@ -100,7 +100,7 @@ export const BackgroundImage = () => {
 
     return html`
         <bk-lazy-media>
-            <div class="bk-row">
+            <div class="bk-row is-no-gutter">
                 ${images}
             </div>
             ${courtesy}

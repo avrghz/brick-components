@@ -6,7 +6,7 @@ import collapseReadme from './readme.md'
 import collapseGroupReadme from './Group/readme.md'
 
 export default {
-    title: 'Collapse',
+    title: 'Components/Collapse',
     component: 'bk-collapse',
 }
 

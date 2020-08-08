@@ -4,7 +4,7 @@ import basic from './readme.md'
 import group from './group.md'
 
 export default {
-    title: 'CheckboxWrapper',
+    title: 'Components/CheckboxWrapper',
     component: 'bk-checkbox-wrapper',
 }
 

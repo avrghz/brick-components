@@ -1,18 +1,9 @@
-// Base
-@import './colors';
-@import './border';
-@import './disable';
-@import './font';
-@import './shadow';
-@import './zIndex';
+@import './base/index';
+@import './style-only/index';
 
-// Components
-@import './components/alert';
-@import './components/card';
-@import './components/checkbox';
-@import './components/collapse';
-@import './components/dropdown';
-@import './components/lazyMedia';
-@import './components/modal';
-@import './components/popover';
-@import './components/radio';
+// Fixme move this to relevant file
+$--popover-arrow-size: 6px !default;
+$--popover-background-color: $--color-white !default;
+$--popover-font-size: $--font-size-base !default;
+$--popover-border-color: $--border-color-lighter !default;
+$--popover-padding: 16px 20px !default;

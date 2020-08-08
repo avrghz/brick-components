@@ -6,7 +6,7 @@ import { BAR_TYPE } from './types'
 import notes from './readme.md'
 
 export default {
-    title: 'ProgressBar',
+    title: 'Components',
     component: 'bk-progress-bar',
     decorators: [withKnobs],
     parameters: {
@@ -14,7 +14,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const ProgressBar = () => {
     const variant = select('variant', VARIANTS, 'default')
     const showPercentageText = boolean('show-percentage-text', true)
     const textInside = boolean('text-inside', false)

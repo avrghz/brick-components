@@ -1,10 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial,
-        sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
     font-weight: 400;
     font-size: $--font-size-base;
-    color: $--color-black;
+    color: var(--color-text-primary);
     -webkit-font-smoothing: antialiased;
+    background-color: var(--color-html-bg, '#fff');
 }
 
 a {
@@ -13,11 +17,11 @@ a {
 
     &:hover,
     &:focus {
-        color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+        color: $--color-primary-light-2;
     }
 
     &:active {
-        color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+        color: darker($--color-primary, $--button-active-shade-percent);
     }
 }
 
@@ -83,5 +87,5 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid $--border-color-base;
 }

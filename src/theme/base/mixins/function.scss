@@ -1,44 +1,72 @@
-@import "config";
+@import 'config';
 
 /* BEM support Func
  -------------------------- */
 @function selectorToString($selector) {
-  $selector: inspect($selector);
-  $selector: str-slice($selector, 2, -2);
-  @return $selector;
+    $selector: inspect($selector);
+    $selector: str-slice($selector, 2, -2);
+    @return $selector;
 }
 
 @function containsModifier($selector) {
-  $selector: selectorToString($selector);
+    $selector: selectorToString($selector);
 
-  @if str-index($selector, $modifier-separator) {
-    @return true;
-  } @else {
-    @return false;
-  }
+    @if str-index($selector, $modifier-separator) {
+        @return true;
+    } @else {
+        @return false;
+    }
 }
 
 @function containWhenFlag($selector) {
-  $selector: selectorToString($selector);
+    $selector: selectorToString($selector);
 
-  @if str-index($selector, '.' + $state-prefix) {
-    @return true
-  } @else {
-    @return false
-  }
+    @if str-index($selector, '.' + $state-prefix) {
+        @return true;
+    } @else {
+        @return false;
+    }
 }
 
 @function containPseudoClass($selector) {
-  $selector: selectorToString($selector);
+    $selector: selectorToString($selector);
 
-  @if str-index($selector, ':') {
-    @return true
-  } @else {
-    @return false
-  }
+    @if str-index($selector, ':') {
+        @return true;
+    } @else {
+        @return false;
+    }
 }
 
 @function hitAllSpecialNestRule($selector) {
+    @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
 
-  @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace +
+            str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+// Thanks to : https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
+
+@function lighter($color, $lightness) {
+    $color: str-replace($color, 'var(');
+    $color: str-replace($color, ')');
+    $color-h: var(#{$color + '-h'});
+    $color-s: var(#{$color + '-s'});
+    $color-l: var(#{$color + '-l'});
+    @return hsl($color-h, $color-s, calc(#{$color-l} + ((100% - #{$color-l}) * #{$lightness}) / 100));
+}
+
+@function darker($color, $darkness) {
+    $color: str-replace($color, 'var(');
+    $color: str-replace($color, ')');
+    $color-h: var(#{$color + '-h'});
+    $color-s: var(#{$color + '-s'});
+    $color-l: var(#{$color + '-l'});
+    @return hsl($color-h, $color-s, calc(#{$color-l} - ((#{$color-l} * #{$darkness}) / 100)));
 }

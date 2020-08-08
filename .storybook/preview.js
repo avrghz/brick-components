@@ -1,10 +1,8 @@
 /* global window */
 
-import {
-    configure,
-    addParameters,
-    // setCustomElements,
-} from '@storybook/web-components'
+import { configure, addParameters } from '@storybook/web-components'
+import { themes } from '@storybook/theming'
+import addons from '@storybook/addons'
 
 // import customElements from '../custom-elements.json';
 
@@ -14,10 +12,24 @@ addParameters({
     docs: {
         iframeHeight: '200px',
     },
+    darkMode: {
+        light: { ...themes.normal, appBg: 'white' },
+        dark: { ...themes.dark, appBg: 'black' },
+    },
+})
+
+const channel = addons.getChannel()
+
+channel.on('DARK_MODE', (isDark) => {
+    if (isDark) {
+        document.querySelector('html').setAttribute('dark-mode', 'true')
+    } else {
+        document.querySelector('html').removeAttribute('dark-mode')
+    }
 })
 
 // force full reload to not reregister web components
-const req = require.context('../src/components', true, /\.stories\.(tsx|mdx)$/)
+const req = require.context('../src', true, /\.stories\.(tsx|mdx)$/)
 configure(req, module)
 if (module.hot) {
     module.hot.accept(req.id, () => {

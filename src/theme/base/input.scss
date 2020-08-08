@@ -44,15 +44,10 @@
     }
 
     @include when(disabled) {
-        .bk-textarea__inner {
-            background-color: $--input-disabled-fill;
-            border-color: $--input-disabled-border;
-            color: $--input-disabled-color;
-            cursor: not-allowed;
+        @include util-disabled();
 
-            &::placeholder {
-                color: $--input-disabled-placeholder-color;
-            }
+        .bk-textarea__inner {
+            @include util-disabled();
         }
     }
 
@@ -190,19 +185,10 @@
     }
 
     @include when(disabled) {
+        @include util-disabled();
+
         .bk-input__inner {
-            background-color: $--input-disabled-fill;
-            border-color: $--input-disabled-border;
-            color: $--input-disabled-color;
-            cursor: not-allowed;
-
-            &::placeholder {
-                color: $--input-disabled-placeholder-color;
-            }
-        }
-
-        .bk-input__icon {
-            cursor: not-allowed;
+            @include util-disabled();
         }
     }
 

@@ -6,7 +6,7 @@ import { TRIGGER_ON } from './types'
 import notes from './readme.md'
 
 export default {
-    title: 'Popover',
+    title: 'Components',
     component: 'bk-popover',
     decorators: [withKnobs],
     parameters: {
@@ -32,7 +32,7 @@ const placements = [
     'left-end',
 ]
 
-export const Default = () => {
+export const Popover = () => {
     let show = false
     const triggerOn = select('trigger-on', TRIGGER_ON, 'click')
     const placement = select('placement', placements, 'auto')

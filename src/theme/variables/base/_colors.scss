@@ -1,0 +1,58 @@
+$--color-html-bg: var(--color-html-bg);
+
+$--color-white: var(--color-white);
+$--color-black: var(--color-black);
+
+$--color-primary: var(--color-primary);
+$--color-primary-light-2: var(--color-primary-light-2, lighter($--color-primary, 20));
+$--color-primary-light-3: var(--color-primary-light-3, lighter($--color-primary, 30));
+$--color-primary-light-4: var(--color-primary-light-4, lighter($--color-primary, 40));
+$--color-primary-light-5: var(--color-primary-light-5, lighter($--color-primary, 50));
+$--color-primary-light-6: var(--color-primary-light-6, lighter($--color-primary, 60));
+$--color-primary-light-7: var(--color-primary-light-7, lighter($--color-primary, 70));
+$--color-primary-light-8: var(--color-primary-light-8, lighter($--color-primary, 80));
+$--color-primary-light-9: var(--color-primary-light-9, lighter($--color-primary, 90));
+
+$--color-primary-dark: var(--color-primary-dark, darker($--color-primary, 10));
+$--color-primary-darker: var(--color-primary-darker, darker($--color-primary, 20));
+
+$--color-success: var(--color-success);
+$--color-success-light: var(--color-success-light, lighter($--color-success, 80));
+$--color-success-lighter: var(--color-success-lighter, lighter($--color-success, 90));
+$--color-success-dark: var(--color-success-dark, darker($--color-success, 10));
+$--color-success-darker: var(--color-success-darker, darker($--color-success, 20));
+
+$--color-warning: var(--color-warning);
+$--color-warning-light: var(--color-warning-light, lighter($--color-warning, 80));
+$--color-warning-lighter: var(--color-warning-lighter, lighter($--color-warning, 90));
+$--color-warning-dark: var(--color-warning-dark, darker($--color-warning, 10));
+$--color-warning-darker: var(--color-warning-darker, darker($--color-warning, 20));
+
+$--color-danger: var(--color-danger);
+$--color-danger-light: var(--color-danger-light, lighter($--color-danger, 80));
+$--color-danger-lighter: var(--color-danger-lighter, lighter($--color-danger, 90));
+$--color-danger-dark: var(--color-danger-dark, darker($--color-danger, 10));
+$--color-danger-darker: var(--color-danger-darker, darker($--color-danger, 20));
+
+$--color-info: var(--color-info);
+$--color-info-light: var(--color-info-light, lighter($--color-info, 80));
+$--color-info-lighter: var(--color-info-lighter, lighter($--color-info, 90));
+$--color-info-dark: var(--color-info-dark, darker($--color-info, 10));
+$--color-info-darker: var(--color-info-darker, darker($--color-info, 20));
+
+$--color-text-primary: var(--color-text-primary);
+$--color-text-regular: var(--color-text-regular);
+$--color-text-secondary: var(--color-text-secondary);
+$--color-text-placeholder: var(--color-text-placeholder);
+
+$--border-color-base: var(--border-color-base);
+$--border-color-light: var(--border-color-light);
+$--border-color-lighter: var(--border-color-lighter);
+$--border-color-extra-light: var(--border-color-extra-light);
+
+$--background-color-base: var(--background-color-base);
+
+$--fill-base: $--color-white !default;
+
+$--link-color: $--color-primary-light-2 !default;
+$--link-hover-color: $--color-primary !default;

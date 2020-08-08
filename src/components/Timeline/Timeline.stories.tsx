@@ -5,7 +5,7 @@ import groupNotes from './readme.md'
 import itemNotes from './TimelineItem/readme.md'
 
 export default {
-    title: 'Timeline',
+    title: 'Components/Timeline',
     component: 'bk-timeline',
 }
 

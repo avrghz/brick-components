@@ -1,0 +1,57 @@
+@each $key, $value in $--space-map {
+    .m-#{$key} {
+        margin: $value;
+    }
+
+    .mx-#{$key} {
+        margin: 0 $value;
+    }
+
+    .my-#{$key} {
+        margin: $value 0;
+    }
+
+    .mt-#{$key} {
+        margin-top: $value;
+    }
+    .mr-#{$key} {
+        margin-right: $value;
+    }
+    .mb-#{$key} {
+        margin-bottom: $value;
+    }
+    .ml-#{$key} {
+        margin-left: $value;
+    }
+}
+
+@each $bp, $bpValue in $--breakpoints {
+    @each $key, $value in $--space-map {
+        @include res($bp) {
+            .m-#{$bp}-#{$key} {
+                margin: $value;
+            }
+
+            .mx-#{$bp}-#{$key} {
+                margin: 0 $value;
+            }
+
+            .my-#{$bp}-#{$key} {
+                margin: $value 0;
+            }
+
+            .mt-#{$bp}-#{$key} {
+                margin-top: $value;
+            }
+            .mr-#{$bp}-#{$key} {
+                margin-right: $value;
+            }
+            .mb-#{$bp}-#{$key} {
+                margin-bottom: $value;
+            }
+            .ml-#{$bp}-#{$key} {
+                margin-left: $value;
+            }
+        }
+    }
+}

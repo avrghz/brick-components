@@ -1,10 +1,4 @@
-$--variant-map: (
-    info: $--color-info,
-    danger: $--color-danger,
-    warning: $--color-warning,
-    success: $--color-success,
-    default: $--color-primary,
-);
+@import '../../theme/variables/components/switch';
 
 :host {
     outline: none;
@@ -19,7 +13,7 @@ $--variant-map: (
 @include b(switch) {
     $this: &;
 
-    font-size: 1em;
+    font-size: $--switch-font-size;
     display: inline-flex;
     align-items: center;
     position: relative;
@@ -37,7 +31,7 @@ $--variant-map: (
         outline: none;
         border-radius: 0.5em;
         box-sizing: border-box;
-        background: $--switch-off-color;
+        // background: $--switch-off-color;
         cursor: pointer;
         transition: border-color 0.3s, background-color 0.3s;
         vertical-align: middle;
@@ -52,7 +46,7 @@ $--variant-map: (
             transition: all 0.3s;
             width: $--switch-button-size;
             height: $--switch-button-size;
-            background-color: $--color-white;
+            // background-color: $--color-white;
         }
     }
 
@@ -77,30 +71,35 @@ $--variant-map: (
     }
 
     @include m(default) {
+        #{$this}__core::after,
         #{$this}__input:checked + #{$this}__core {
             background: $--color-primary;
         }
     }
 
     @include m(success) {
+        #{$this}__core::after,
         #{$this}__input:checked + #{$this}__core {
             background: $--color-success;
         }
     }
 
     @include m(info) {
+        #{$this}__core::after,
         #{$this}__input:checked + #{$this}__core {
             background: $--color-info;
         }
     }
 
     @include m(warning) {
+        #{$this}__core::after,
         #{$this}__input:checked + #{$this}__core {
             background: $--color-warning;
         }
     }
 
     @include m(danger) {
+        #{$this}__core::after,
         #{$this}__input:checked + #{$this}__core {
             background: $--color-danger;
         }

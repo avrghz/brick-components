@@ -1,0 +1,57 @@
+@each $key, $value in $--space-map {
+    .p-#{$key} {
+        padding: $value;
+    }
+
+    .px-#{$key} {
+        padding: 0 $value;
+    }
+
+    .py-#{$key} {
+        padding: $value 0;
+    }
+
+    .pt-#{$key} {
+        padding-top: $value;
+    }
+    .pr-#{$key} {
+        padding-right: $value;
+    }
+    .pb-#{$key} {
+        padding-bottom: $value;
+    }
+    .pl-#{$key} {
+        padding-left: $value;
+    }
+}
+
+@each $bp, $bpValue in $--breakpoints {
+    @each $key, $value in $--space-map {
+        @include res($bp) {
+            .p-#{$bp}-#{$key} {
+                padding: $value;
+            }
+
+            .px-#{$bp}-#{$key} {
+                padding: 0 $value;
+            }
+
+            .py-#{$bp}-#{$key} {
+                padding: $value 0;
+            }
+
+            .pt-#{$bp}-#{$key} {
+                padding-top: $value;
+            }
+            .pr-#{$bp}-#{$key} {
+                padding-right: $value;
+            }
+            .pb-#{$bp}-#{$key} {
+                padding-bottom: $value;
+            }
+            .pl-#{$bp}-#{$key} {
+                padding-left: $value;
+            }
+        }
+    }
+}

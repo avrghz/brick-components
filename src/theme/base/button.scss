@@ -18,6 +18,7 @@
     transition: 0.1s;
     font-weight: $--button-font-weight;
     @include utils-user-select(none);
+
     & + & {
         margin-left: 10px;
     }
@@ -37,8 +38,8 @@
     }
 
     &:active {
-        color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-        border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+        color: darker($--color-primary, $--button-active-shade-percent);
+        border-color: darker($--color-primary, $--button-active-shade-percent);
         outline: none;
     }
 
@@ -62,41 +63,19 @@
 
         &:active {
             background: $--color-white;
-            border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-            color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+            color: $--color-primary-dark;
+            border-color: $--color-primary-dark;
             outline: none;
         }
     }
 
     @include when(active) {
-        color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-        border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+        color: $--color-primary-dark;
+        border-color: $--color-primary-dark;
     }
 
     @include when(disabled) {
-        &,
-        &:hover,
-        &:focus {
-            color: $--button-disabled-font-color;
-            cursor: not-allowed;
-            background-image: none;
-            background-color: $--button-disabled-background-color;
-            border-color: $--button-disabled-border-color;
-        }
-
-        &.bk-button--text {
-            background-color: transparent;
-        }
-
-        &.is-plain {
-            &,
-            &:hover,
-            &:focus {
-                background-color: $--color-white;
-                border-color: $--button-disabled-border-color;
-                color: $--button-disabled-font-color;
-            }
-        }
+        @include util-disabled();
     }
 
     @include when(loading) {
@@ -200,12 +179,12 @@
 
         &:hover,
         &:focus {
-            color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+            color: $--color-primary-light-2;
             border-color: transparent;
             background-color: transparent;
         }
         &:active {
-            color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+            color: $--color-primary-dark;
             border-color: transparent;
             background-color: transparent;
         }

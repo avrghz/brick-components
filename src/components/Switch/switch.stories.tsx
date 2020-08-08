@@ -5,7 +5,7 @@ import { VARIANTS } from '../../shared/types'
 import notes from './readme.md'
 
 export default {
-    title: 'Switch',
+    title: 'Components',
     component: 'bk-switch',
     decorators: [withKnobs],
     parameters: {
@@ -13,7 +13,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const Switch = () => {
     const isOn = boolean('is-on', false)
     const disabled = boolean('disabled', false)
     const variant = select('variant', VARIANTS, 'default')
