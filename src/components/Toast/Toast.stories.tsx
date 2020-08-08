@@ -3,7 +3,7 @@ import { number, object, select, withKnobs } from '@storybook/addon-knobs'
 import notes from './readme.md'
 
 export default {
-    title: 'Toast',
+    title: 'Components/Toast',
     component: 'bk-toast',
     decorators: [withKnobs],
     parameters: {
@@ -11,7 +11,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const Toast = () => {
     const transitionInDuration = number('transition-in-duration', 500)
     const transitionOutDuration = number('transition-out-duration', 300)
     const hideAfter = number('hide-after', 4000)

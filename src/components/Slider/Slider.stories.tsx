@@ -6,7 +6,7 @@ import { VARIANTS } from '../../shared/types'
 import notes from './readme.md'
 
 export default {
-    title: 'Slider',
+    title: 'Components',
     component: 'bk-slider',
     decorators: [withKnobs],
     parameters: {
@@ -14,7 +14,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const Slider = () => {
     const variant = select('variant', VARIANTS, 'default')
     const disabled = boolean('disabled', false)
     const value = number('value', 25)

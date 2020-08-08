@@ -111,7 +111,7 @@ export const Button = () => {
                 <button class="bk-button bk-button--text">Text only</button>
             </div>
             <div class="bk-col-6 bk-col-sm-4 bk-col-md-2 mb-4 mb-md-0">
-                <button class="bk-button bk-button--text is-disabled">Text only</button>
+                <button class="bk-button bk-button--text is-disabled">Disabled</button>
             </div>
         </div>
 
@@ -133,27 +133,4 @@ export const Button = () => {
             </div>
         </div>
     `
-
-    // return html` <div class="bk-row">
-    //     <br />
-    //     <br />
-    //     <div class="bk-col">
-
-    //     </div>
-    //     <br />
-    //     <div class="bk-col">
-    //         <h2>Disabled</h2>
-
-    //     </div>
-    //     <br />
-    //     <div class="bk-col">
-    //         <h2>Text only</h2>
-
-    //     </div>
-    //     <br />
-    //     <div class="bk-col">
-    //         <h2>Size</h2>
-
-    //     </div>
-    // </div>`
 }

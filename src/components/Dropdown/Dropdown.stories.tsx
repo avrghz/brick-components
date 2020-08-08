@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import notes from './readme.md'
 
 export default {
-    title: 'Dropdown',
+    title: 'Components',
     component: 'bk-dropdown',
     decorators: [withKnobs],
     parameters: {
@@ -13,7 +13,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const Dropdown = () => {
     const disabled = boolean('disabled', false)
     const open = boolean('open', false)
     const clickOutsideToClose = boolean('clickOutsideToClose', true)

@@ -7,14 +7,14 @@ import stepsWithIcon from './__fixtures__/stepsWithIcon.json'
 import notes from './readme.md'
 
 export default {
-    title: 'Steps',
+    title: 'Components/Steps',
     component: 'bk-steps',
     parameters: {
         notes,
     },
 }
 
-export const Default = () => {
+export const Basic = () => {
     const isCentered = boolean('is-centered', false)
     const direction = select('direction', DIRECTION, 'horizontal')
 

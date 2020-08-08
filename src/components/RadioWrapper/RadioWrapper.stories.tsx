@@ -3,7 +3,7 @@ import basic from './readme.md'
 import group from './group.md'
 
 export default {
-    title: 'RadioWrapper',
+    title: 'Components/RadioWrapper',
     component: 'bk-radio-wrapper',
 }
 

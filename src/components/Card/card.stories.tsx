@@ -5,7 +5,7 @@ import { SHADOW } from './types'
 import notes from './readme.md'
 
 export default {
-    title: 'Card',
+    title: 'Components',
     component: 'bk-card',
     decorators: [withKnobs],
     parameters: {
@@ -13,7 +13,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const Card = () => {
     const shadow = select('shadow', SHADOW, 'never')
 
     return html`

@@ -7,14 +7,14 @@ import { SIZE } from './types'
 import notes from './readme.md'
 
 export default {
-    title: 'Rating',
+    title: 'Components',
     component: 'bk-rating',
     parameters: {
         notes,
     },
 }
 
-export const Default = () => {
+export const Rating = () => {
     const rating = number('rating', 0)
     const size = select('size', SIZE, 'medium')
     const asSmiley = boolean('as-smiley', false)

@@ -6,7 +6,7 @@ import bgImageUsage from './usage/bgImage.md'
 import videoUsage from './usage/video.md'
 
 export default {
-    title: 'LazyMedia',
+    title: 'Components/LazyMedia',
     component: 'bk-lazy-media',
 }
 

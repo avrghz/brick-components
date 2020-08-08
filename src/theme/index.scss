@@ -47,7 +47,6 @@
     --border-color-extra-light: hsl(220, 3%, 30%);
 }
 
-@import './base/base.scss';
 @import './base/reset.scss';
 @import './base/util/margin.scss';
 @import './base/util/padding.scss';
@@ -58,14 +57,12 @@
 @import './base/main.scss';
 @import './base/aside.scss';
 @import './base/footer.scss';
-@import './base/link.scss'; // ! todo
+@import './base/link.scss';
 
 @import './base/icon.scss';
 @import './base/button.scss';
 @import './base/input.scss';
-@import './base/input-number.scss'; // ! todo
-// @import './base/select.scss';
-
-// @import './base/display.scss';
 
 @import './dark-mode.scss';
+
+// ! todo : add css for select

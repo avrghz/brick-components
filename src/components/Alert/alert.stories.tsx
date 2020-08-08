@@ -6,7 +6,7 @@ import { VARIANTS, SHADES } from '../../shared/types'
 import notes from './readme.md'
 
 export default {
-    title: 'Alert',
+    title: 'Components',
     component: 'bk-alert',
     decorators: [withKnobs],
     parameters: {
@@ -14,7 +14,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const Alert = () => {
     const variant = select('variant', VARIANTS, 'default')
     const shade = select('shade', SHADES, 'light')
     const dismissible = boolean('dismissible', true)

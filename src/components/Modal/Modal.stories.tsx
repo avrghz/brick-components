@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import notes from './readme.md'
 
 export default {
-    title: 'Modal',
+    title: 'Components',
     component: 'bk-modal',
     decorators: [withKnobs],
     parameters: {
@@ -13,7 +13,7 @@ export default {
     },
 }
 
-export const Default = () => {
+export const Modal = () => {
     const open = boolean('open', false)
     const header = text('header', 'Hello world')
     const dismissible = boolean('dismissible', true)
