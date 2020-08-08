@@ -32,4 +32,8 @@
         --color-info-lighter: var(--color-white);
         border: 1px solid;
     }
+
+    bk-dropdown-list {
+        --color-primary-light-9: hsl(220, 3%, 15%);
+    }
 }
