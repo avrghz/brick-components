@@ -16,4 +16,8 @@ A library of native web components
 
 https://avrghz.github.io/brick-components
 
+## Dark mode
+
+To enable dark mode add attribute `dark-mode=true` to the root element (HTML tag)
+
 #### Inspired from https://element.eleme.io/#/en-US
