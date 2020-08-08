@@ -5,7 +5,7 @@ import notes from './readme.md'
 import data from './__fixtures__/options.json'
 
 export default {
-    title: 'Components',
+    title: 'Components/DropdownList',
     component: 'bk-dropdown-list',
     decorators: [withKnobs],
     parameters: {
@@ -13,7 +13,7 @@ export default {
     },
 }
 
-export const DropdownList = () => {
+export const Basic = () => {
     const disabled = boolean('disabled', false)
     const searchable = boolean('searchable', false)
     const options = object('option', data)
