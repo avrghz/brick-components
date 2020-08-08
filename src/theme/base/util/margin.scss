@@ -1,0 +1,26 @@
+@each $key, $value in $--space-map {
+    .m-#{$key} {
+        margin: $value;
+    }
+
+    .mx-#{$key} {
+        margin: 0 $value;
+    }
+
+    .my-#{$key} {
+        margin: $value 0;
+    }
+
+    .mt-#{$key} {
+        margin-top: $value;
+    }
+    .mr-#{$key} {
+        margin-right: $value;
+    }
+    .mb-#{$key} {
+        margin-bottom: $value;
+    }
+    .ml-#{$key} {
+        margin-left: $value;
+    }
+}

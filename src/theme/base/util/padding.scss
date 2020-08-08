@@ -1,0 +1,26 @@
+@each $key, $value in $--space-map {
+    .p-#{$key} {
+        margin: $value;
+    }
+
+    .px-#{$key} {
+        margin: 0 $value;
+    }
+
+    .py-#{$key} {
+        margin: $value 0;
+    }
+
+    .pt-#{$key} {
+        margin-top: $value;
+    }
+    .pr-#{$key} {
+        margin-right: $value;
+    }
+    .pb-#{$key} {
+        margin-bottom: $value;
+    }
+    .pl-#{$key} {
+        margin-left: $value;
+    }
+}
