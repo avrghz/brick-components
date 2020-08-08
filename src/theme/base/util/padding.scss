@@ -1,26 +1,57 @@
 @each $key, $value in $--space-map {
     .p-#{$key} {
-        margin: $value;
+        padding: $value;
     }
 
     .px-#{$key} {
-        margin: 0 $value;
+        padding: 0 $value;
     }
 
     .py-#{$key} {
-        margin: $value 0;
+        padding: $value 0;
     }
 
     .pt-#{$key} {
-        margin-top: $value;
+        padding-top: $value;
     }
     .pr-#{$key} {
-        margin-right: $value;
+        padding-right: $value;
     }
     .pb-#{$key} {
-        margin-bottom: $value;
+        padding-bottom: $value;
     }
     .pl-#{$key} {
-        margin-left: $value;
+        padding-left: $value;
+    }
+}
+
+@each $bp, $bpValue in $--breakpoints {
+    @each $key, $value in $--space-map {
+        @include res($bp) {
+            .p-#{$bp}-#{$key} {
+                padding: $value;
+            }
+
+            .px-#{$bp}-#{$key} {
+                padding: 0 $value;
+            }
+
+            .py-#{$bp}-#{$key} {
+                padding: $value 0;
+            }
+
+            .pt-#{$bp}-#{$key} {
+                padding-top: $value;
+            }
+            .pr-#{$bp}-#{$key} {
+                padding-right: $value;
+            }
+            .pb-#{$bp}-#{$key} {
+                padding-bottom: $value;
+            }
+            .pl-#{$bp}-#{$key} {
+                padding-left: $value;
+            }
+        }
     }
 }

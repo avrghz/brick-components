@@ -8,13 +8,12 @@ export default {
 export const Input = () => {
     return html`
         <h2>Input</h2>
-        <div class="bk-row">
-            <div class="bk-col-md-12">
+        <div class="bk-row mb-4">
+            <div class="bk-col-md-12 mb-2 mb-md-0">
                 <div class="bk-input">
                     <input type="text" autocomplete="off" placeholder="Placeholder" class="bk-input__inner" />
                 </div>
             </div>
-            <br class="bk-col-md-0" />
             <div class="bk-col-md-12">
                 <div class="bk-input is-disabled">
                     <input type="text" autocomplete="off" placeholder="Disabled" class="bk-input__inner" disabled />
@@ -22,16 +21,13 @@ export const Input = () => {
             </div>
         </div>
 
-        <br />
-
         <div class="bk-row">
-            <div class="bk-col-md-12">
+            <div class="bk-col-md-12 mb-2 mb-md-0">
                 <div class="bk-input bk-input-group bk-input-group--prepend">
                     <div class="bk-input-group__prepend">Http://</div>
                     <input type="text" autocomplete="off" placeholder="Please input" class="bk-input__inner" />
                 </div>
             </div>
-            <br class="bk-col-md-0" />
             <div class="bk-col-md-12">
                 <div class="bk-input bk-input-group bk-input-group--append">
                     <input type="text" autocomplete="off" placeholder="Please input" class="bk-input__inner" />
@@ -40,12 +36,10 @@ export const Input = () => {
             </div>
         </div>
 
-        <br />
-
         <h2>Text area</h2>
 
         <div class="bk-row">
-            <div class="bk-col-md-12">
+            <div class="bk-col-md-12 mb-2 mb-md-0">
                 <div class="bk-input">
                     <textarea
                         autocomplete="off"
@@ -55,7 +49,6 @@ export const Input = () => {
                     ></textarea>
                 </div>
             </div>
-            <br class="bk-col-md-0" />
             <div class="bk-col-md-12">
                 <div class="bk-input is-disabled">
                     <textarea
