@@ -40,5 +40,27 @@
     .bk-table {
         --background-color-base: hsl(220, 3%, 10%);
         --border-color-extra-light: hsl(220, 3%, 15%);
+
+        tbody tr {
+            &.is-warning {
+                color: $--color-white;
+                background-color: $--color-warning-darker;
+            }
+
+            &.is-success {
+                color: $--color-white;
+                background-color: $--color-success-darker;
+            }
+
+            &.is-info {
+                color: $--color-white;
+                background-color: $--color-info-darker;
+            }
+
+            &.is-danger {
+                color: $--color-white;
+                background-color: $--color-danger-darker;
+            }
+        }
     }
 }

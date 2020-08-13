@@ -42,7 +42,7 @@ const data = [
 ]
 
 export default {
-    title: 'Atoms',
+    title: 'Atoms/Table',
     component: 'table',
 }
 
@@ -129,15 +129,14 @@ const tBody = html`
     </tbody>
 `
 
-// ! todo : add fixed column
-// ! todo: add highlighted row : warning/danger/info/success
-// ! fix dark mode
+export const Basic = () => wrapper(tableWrap([thead, tBody]))
 
-export const Table = () => html`
-    ${[title('Basic'), wrapper(tableWrap([thead, tBody]))]}
-    ${[title('Stripped'), wrapper(tableWrap([thead, tBody], ['bk-table--striped']))]}
-    ${[title('Bordered'), wrapper(tableWrap([thead, tBody], ['bk-table--border']))]}
-    ${[
+export const Stripped = () => wrapper(tableWrap([thead, tBody], ['bk-table--striped']))
+
+export const Bordered = () => wrapper(tableWrap([thead, tBody], ['bk-table--border']))
+
+export const FixedHeader = () =>
+    html`${[
         title('Fixed header'),
         wrapper(html`
             <div class="bk-table bk-table--fit bk-table--hover scroll-x">
@@ -153,5 +152,63 @@ export const Table = () => html`
                 </div>
             </div>
         `),
+    ]}`
+
+export const Size = () => html`
+    ${[
+        title('Medium'),
+        wrapper(tableWrap([thead, tBody], ['bk-table--medium'])),
+        title('Small'),
+        wrapper(tableWrap([thead, tBody], ['bk-table--small'])),
+        title('Mini'),
+        wrapper(tableWrap([thead, tBody], ['bk-table--mini'])),
     ]}
 `
+
+const getStatus = (index: number) => {
+    switch (index) {
+        case 0:
+            return 'is-danger'
+        case 1:
+            return 'is-warning'
+        case 2:
+            return 'is-info'
+        case 3:
+            return 'is-success'
+    }
+
+    return ''
+}
+
+export const Status = () =>
+    wrapper(
+        tableWrap([
+            thead,
+            html` <tbody>
+                ${data.map(
+                    (item, i) => html`<tr class="bk-table__row ${getStatus(i)}">
+                        <td colspan="1" rowspan="1">
+                            <div class="cell">${item.date}</div>
+                        </td>
+                        <td colspan="1" rowspan="1">
+                            <div class="cell">${item.name}</div>
+                        </td>
+                        <td colspan="1" rowspan="1">
+                            <div class="cell">${item.state}</div>
+                        </td>
+                        <td colspan="1" rowspan="1">
+                            <div class="cell">${item.city}</div>
+                        </td>
+                        <td colspan="1" rowspan="1">
+                            <div class="cell">${item.address}</div>
+                        </td>
+                        <td colspan="1" rowspan="1">
+                            <div class="cell">${item.zip}</div>
+                        </td>
+                    </tr>`
+                )}
+            </tbody>`,
+        ])
+    )
+
+// ! todo : add fixed column

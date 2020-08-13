@@ -345,6 +345,24 @@
     table {
         table-layout: fixed;
         border-collapse: separate;
+
+        tbody tr {
+            &.is-warning {
+                background-color: $--color-warning-light;
+            }
+
+            &.is-success {
+                background-color: $--color-success-light;
+            }
+
+            &.is-info {
+                background-color: $--color-info-light;
+            }
+
+            &.is-danger {
+                background-color: $--color-danger-light;
+            }
+        }
     }
 
     // @include e((header-wrapper, footer-wrapper)) {
