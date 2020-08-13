@@ -48,8 +48,6 @@
 }
 
 @import './base/reset.scss';
-@import './base/util/margin.scss';
-@import './base/util/padding.scss';
 
 @import './base/container.scss';
 @import './base/grid.scss';
@@ -63,6 +61,10 @@
 @import './base/button.scss';
 @import './base/input.scss';
 @import './base/table.scss';
+
+@import './base/util/margin.scss';
+@import './base/util/padding.scss';
+@import './base/util/scroll.scss';
 
 @import './dark-mode.scss';
 

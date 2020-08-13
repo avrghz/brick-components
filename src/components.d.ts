@@ -272,8 +272,6 @@ export namespace Components {
          */
         "tab": string;
     }
-    interface BkTableHeader {
-    }
     interface BkTabs {
         /**
           * Position of the tab
@@ -430,12 +428,6 @@ declare global {
         prototype: HTMLBkTabPanelElement;
         new (): HTMLBkTabPanelElement;
     };
-    interface HTMLBkTableHeaderElement extends Components.BkTableHeader, HTMLStencilElement {
-    }
-    var HTMLBkTableHeaderElement: {
-        prototype: HTMLBkTableHeaderElement;
-        new (): HTMLBkTableHeaderElement;
-    };
     interface HTMLBkTabsElement extends Components.BkTabs, HTMLStencilElement {
     }
     var HTMLBkTabsElement: {
@@ -480,7 +472,6 @@ declare global {
         "bk-switch": HTMLBkSwitchElement;
         "bk-tab-header": HTMLBkTabHeaderElement;
         "bk-tab-panel": HTMLBkTabPanelElement;
-        "bk-table-header": HTMLBkTableHeaderElement;
         "bk-tabs": HTMLBkTabsElement;
         "bk-timeline": HTMLBkTimelineElement;
         "bk-timeline-item": HTMLBkTimelineItemElement;
@@ -831,8 +822,6 @@ declare namespace LocalJSX {
          */
         "tab": string;
     }
-    interface BkTableHeader {
-    }
     interface BkTabs {
         /**
           * This event will fire on selection of a tab with tab id as detail
@@ -897,7 +886,6 @@ declare namespace LocalJSX {
         "bk-switch": BkSwitch;
         "bk-tab-header": BkTabHeader;
         "bk-tab-panel": BkTabPanel;
-        "bk-table-header": BkTableHeader;
         "bk-tabs": BkTabs;
         "bk-timeline": BkTimeline;
         "bk-timeline-item": BkTimelineItem;
@@ -927,7 +915,6 @@ declare module "@stencil/core" {
             "bk-switch": LocalJSX.BkSwitch & JSXBase.HTMLAttributes<HTMLBkSwitchElement>;
             "bk-tab-header": LocalJSX.BkTabHeader & JSXBase.HTMLAttributes<HTMLBkTabHeaderElement>;
             "bk-tab-panel": LocalJSX.BkTabPanel & JSXBase.HTMLAttributes<HTMLBkTabPanelElement>;
-            "bk-table-header": LocalJSX.BkTableHeader & JSXBase.HTMLAttributes<HTMLBkTableHeaderElement>;
             "bk-tabs": LocalJSX.BkTabs & JSXBase.HTMLAttributes<HTMLBkTabsElement>;
             "bk-timeline": LocalJSX.BkTimeline & JSXBase.HTMLAttributes<HTMLBkTimelineElement>;
             "bk-timeline-item": LocalJSX.BkTimelineItem & JSXBase.HTMLAttributes<HTMLBkTimelineItemElement>;

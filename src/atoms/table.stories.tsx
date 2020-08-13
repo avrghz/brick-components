@@ -1,5 +1,7 @@
 import { html } from 'lit-html'
 
+type Component = ReturnType<typeof html>
+
 const data = [
     {
         date: '2016-05-03',
@@ -44,10 +46,6 @@ export default {
     component: 'table',
 }
 
-const header = (heading: string) => html`<div class="bk-row mb-4">
-    <h2 class="bk-col-24">${heading}</h2>
-</div>`
-
 const colGroup = html`
     <colgroup>
         <col style="width:125px"></col>
@@ -59,131 +57,101 @@ const colGroup = html`
     </colgroup>
 `
 
-const tableHeader = html`
-    <div class="bk-table__header-wrapper">
-        <table cellspacing="0" cellpadding="0" class="bk-table__header">
-            ${colGroup}
-            <thead>
-                <tr>
-                    <th scope="col" colspan="1" rowspan="1" class="is-leaf">
-                        <div class="cell">Date</div>
-                    </th>
-                    <th scope="col" colspan="1" rowspan="1" class="is-leaf">
-                        <div class="cell">Name</div>
-                    </th>
-                    <th scope="col" colspan="1" rowspan="1" class="is-leaf">
-                        <div class="cell">City</div>
-                    </th>
-                    <th scope="col" colspan="1" rowspan="1" class="is-leaf">
-                        <div class="cell">State</div>
-                    </th>
-                    <th scope="col" colspan="1" rowspan="1" class="is-leaf">
-                        <div class="cell">Address</div>
-                    </th>
-                    <th scope="col" colspan="1" rowspan="1" class="is-leaf">
-                        <div class="cell">Zip</div>
-                    </th>
-                </tr>
-            </thead>
+const title = (heading: string) => html`<div class="bk-row mb-4">
+    <h2 class="bk-col-24">${heading}</h2>
+</div>`
+
+const wrapper = (content: Component) => html`
+    <div class="bk-row mb-8">
+        <div class="bk-col-24 bk-col-md-20 bk-col-lg-18">
+            ${content}
+        </div>
+    </div>
+`
+
+const tableWrap = (content: [Component, Component], css: string[] = []) => html`
+    <div class="bk-table bk-table--hover scroll-x ${css.join(' ')}">
+        <table cellspacing="0" cellpadding="0" style="min-width:800px">
+            ${content}
         </table>
     </div>
 `
 
-const tableBody = (content: ReturnType<typeof html>[], style = '') => html`<div
-    class="bk-table__body-wrapper is-scrolling-none"
-    style=${style}
->
-    <table cellspacing="0" cellpadding="0" class="bk-table__body">
-        ${colGroup}
-        <tbody>
-            ${content}
-        </tbody>
-    </table>
-</div>`
-
-const tableRecords = () => {
-    return data.map(
-        (item) => html`<tr class="bk-table__row">
-            <td colspan="1" rowspan="1">
-                <div class="cell">${item.date}</div>
-            </td>
-            <td colspan="1" rowspan="1">
-                <div class="cell">${item.name}</div>
-            </td>
-            <td colspan="1" rowspan="1">
-                <div class="cell">${item.state}</div>
-            </td>
-            <td colspan="1" rowspan="1">
-                <div class="cell">${item.city}</div>
-            </td>
-            <td colspan="1" rowspan="1">
-                <div class="cell">${item.address}</div>
-            </td>
-            <td colspan="1" rowspan="1">
-                <div class="cell">${item.zip}</div>
-            </td>
-        </tr>`
-    )
-}
-
-const xScroll = (content: ReturnType<typeof html>) => html`
-    <div style="overflow-x:auto;">
-        ${content}
-    </div>
+const thead = html`
+    <thead>
+        <tr>
+            <th scope="col" colspan="1" rowspan="1">
+                <div class="cell">Date</div>
+            </th>
+            <th scope="col" colspan="1" rowspan="1">
+                <div class="cell">Name</div>
+            </th>
+            <th scope="col" colspan="1" rowspan="1">
+                <div class="cell">City</div>
+            </th>
+            <th scope="col" colspan="1" rowspan="1">
+                <div class="cell">State</div>
+            </th>
+            <th scope="col" colspan="1" rowspan="1">
+                <div class="cell">Address</div>
+            </th>
+            <th scope="col" colspan="1" rowspan="1">
+                <div class="cell">Zip</div>
+            </th>
+        </tr>
+    </thead>
 `
 
-export const Table = () => {
-    return html`
-        ${header('Basic')}
-        <div class="bk-row mb-8">
-            <div class="bk-col-24">
-                ${xScroll(html` <div
-                    class="bk-table bk-table--fit bk-table--enable-row-hover bk-table--enable-row-transition"
-                    style="min-width:825px"
-                >
-                    ${tableHeader} ${tableBody(tableRecords())}
-                </div>`)}
-            </div>
-        </div>
-
-        ${header('Striped')}
-        <div class="bk-row mb-8">
-            <div class="bk-col-24">
-                ${xScroll(html` <div
-                    class="bk-table bk-table--fit bk-table--striped bk-table--enable-row-hover bk-table--enable-row-transition"
-                    style="min-width:825px"
-                >
-                    ${tableHeader} ${tableBody(tableRecords())}
-                </div>`)}
-            </div>
-        </div>
-
-        ${header('Bordered')}
-        <div class="bk-row mb-8">
-            <div class="bk-col-24">
-                ${xScroll(html` <div
-                    class="bk-table bk-table--fit bk-table--border bk-table--enable-row-hover bk-table--enable-row-transition"
-                    style="min-width:825px"
-                >
-                    ${tableHeader} ${tableBody(tableRecords())}
-                </div>`)}
-            </div>
-        </div>
-
-        ${header('Fixed header')}
-        <div class="bk-row mb-8">
-            <div class="bk-col-24">
-                ${xScroll(html`<div
-                    class="bk-table bk-table--fit bk-table--scrollable-y bk-table--enable-row-hover bk-table--enable-row-transition"
-                    style="min-width:825px"
-                >
-                    ${tableHeader} ${tableBody(tableRecords(), 'max-height: 139px')}
-                </div>`)}
-            </div>
-        </div>
-    `
-}
+const tBody = html`
+    <tbody>
+        ${data.map(
+            (item) => html`<tr class="bk-table__row">
+                <td colspan="1" rowspan="1">
+                    <div class="cell">${item.date}</div>
+                </td>
+                <td colspan="1" rowspan="1">
+                    <div class="cell">${item.name}</div>
+                </td>
+                <td colspan="1" rowspan="1">
+                    <div class="cell">${item.state}</div>
+                </td>
+                <td colspan="1" rowspan="1">
+                    <div class="cell">${item.city}</div>
+                </td>
+                <td colspan="1" rowspan="1">
+                    <div class="cell">${item.address}</div>
+                </td>
+                <td colspan="1" rowspan="1">
+                    <div class="cell">${item.zip}</div>
+                </td>
+            </tr>`
+        )}
+    </tbody>
+`
 
 // ! todo : add fixed column
 // ! todo: add highlighted row : warning/danger/info/success
 // ! fix dark mode
+
+export const Table = () => html`
+    ${[title('Basic'), wrapper(tableWrap([thead, tBody]))]}
+    ${[title('Stripped'), wrapper(tableWrap([thead, tBody], ['bk-table--striped']))]}
+    ${[title('Bordered'), wrapper(tableWrap([thead, tBody], ['bk-table--border']))]}
+    ${[
+        title('Fixed header'),
+        wrapper(html`
+            <div class="bk-table bk-table--fit bk-table--hover scroll-x">
+                <div style="min-width:800px">
+                    <table cellspacing="0" cellpadding="0">
+                        ${colGroup} ${thead}
+                    </table>
+                    <div style="max-height: 139px" class="scroll-y">
+                        <table cellspacing="0" cellpadding="0">
+                            ${colGroup} ${tBody}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        `),
+    ]}
+`
