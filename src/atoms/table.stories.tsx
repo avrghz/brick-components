@@ -70,7 +70,7 @@ const wrapper = (content: Component) => html`
 `
 
 const tableWrap = (content: [Component, Component], css: string[] = []) => html`
-    <div class="bk-table bk-table--hover scroll-x ${css.join(' ')}">
+    <div class="bk-table bk-table--hover bk-scroll-x ${css.join(' ')}">
         <table cellspacing="0" cellpadding="0" style="min-width:800px">
             ${content}
         </table>
@@ -139,12 +139,12 @@ export const FixedHeader = () =>
     html`${[
         title('Fixed header'),
         wrapper(html`
-            <div class="bk-table bk-table--fit bk-table--hover scroll-x">
+            <div class="bk-table bk-table--fit bk-table--hover bk-scroll-x">
                 <div style="min-width:800px">
                     <table cellspacing="0" cellpadding="0">
                         ${colGroup} ${thead}
                     </table>
-                    <div style="max-height: 139px" class="scroll-y">
+                    <div style="max-height: 139px" class="bk-scroll-y">
                         <table cellspacing="0" cellpadding="0">
                             ${colGroup} ${tBody}
                         </table>
