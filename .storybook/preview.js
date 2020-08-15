@@ -1,6 +1,6 @@
 /* global window */
 
-import { configure, addParameters } from '@storybook/web-components'
+import { addParameters } from '@storybook/web-components'
 import { themes } from '@storybook/theming'
 import addons from '@storybook/addons'
 
@@ -30,7 +30,7 @@ channel.on('DARK_MODE', (isDark) => {
 
 // force full reload to not reregister web components
 const req = require.context('../src', true, /\.stories\.(tsx|mdx)$/)
-configure(req, module)
+// configure(req, module)
 if (module.hot) {
     module.hot.accept(req.id, () => {
         const currentLocationHref = window.location.href

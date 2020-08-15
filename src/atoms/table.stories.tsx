@@ -48,12 +48,12 @@ export default {
 
 const colGroup = html`
     <colgroup>
-        <col style="width:125px"></col>
+        <col style="width:150px"></col>
         <col style="width:200px"></col>
         <col style="width:150px"></col>
         <col style="width:150px"></col>
         <col style="width:400px"></col>
-        <col style="width:100px"></col>
+        <col style="width:150px"></col>
     </colgroup>
 `
 
@@ -70,8 +70,8 @@ const wrapper = (content: Component) => html`
 `
 
 const tableWrap = (content: [Component, Component], css: string[] = []) => html`
-    <div class="bk-table bk-table--hover bk-scroll-x ${css.join(' ')}">
-        <table cellspacing="0" cellpadding="0" style="min-width:800px">
+    <div class="bk-table bk-table--hover bk-table--responsive ${css.join(' ')}">
+        <table cellspacing="0" cellpadding="0">
             ${content}
         </table>
     </div>
@@ -139,7 +139,7 @@ export const FixedHeader = () =>
     html`${[
         title('Fixed header'),
         wrapper(html`
-            <div class="bk-table bk-table--fit bk-table--hover bk-scroll-x">
+            <div class="bk-table bk-table--fit bk-table--hover bk-table--responsive bk-table--fixed-header">
                 <div style="min-width:800px">
                     <table cellspacing="0" cellpadding="0">
                         ${colGroup} ${thead}
@@ -210,5 +210,3 @@ export const Status = () =>
             </tbody>`,
         ])
     )
-
-// ! todo : add fixed column
