@@ -5,18 +5,14 @@ module.exports = async (config) => {
     config.output.path = path.resolve(__dirname, '..', 'stories')
 
     config.plugins.push(
-        // new CopyPlugin([
-        //     {
-        //         from: path.resolve(__dirname, '..', 'dist'),
-        //         to: path.resolve(__dirname, '..', 'stories', 'components'),
-        //     },
-        // ])
-        new CopyPlugin([
-            {
-                from: path.resolve(__dirname, '..', 'www', 'build'),
-                to: path.resolve(__dirname, '..', 'stories', 'components', 'brick-components'),
-            },
-        ])
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, '..', 'www', 'build'),
+                    to: path.resolve(__dirname, '..', 'stories', 'components', 'brick-components'),
+                },
+            ],
+        })
     )
 
     config.module.rules.push({
