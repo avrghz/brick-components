@@ -1,1 +1,1 @@
-const o=(o,c)=>console.warn(o,c);export{o as c}
+const o=(o,c)=>console.warn(o,c);export{o as c};

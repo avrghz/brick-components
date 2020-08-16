@@ -1,0 +1,1 @@
+import"./p-6bd26c3b.js";const t=t=>(n,o)=>{const{componentWillLoad:r,componentWillUpdate:i}=n,c=n=>{"string"==typeof n[o]&&(n[o]=((t,n)=>{try{return JSON.parse(t)}catch(o){return"array"===n?[]:{}}})(n[o],t))};n.componentWillLoad=function(){return c(this),null==r?void 0:r.call(this)},n.componentWillUpdate=function(){return c(this),null==i?void 0:i.call(this)}};export{t as C};
