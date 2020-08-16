@@ -7,7 +7,6 @@ import collapseGroupReadme from './Group/readme.md'
 
 export default {
     title: 'Components/Collapse',
-    component: 'bk-collapse',
 }
 
 export const Individual = () => {
@@ -38,10 +37,8 @@ export const Individual = () => {
     </bk-collapse>`
 }
 
-Individual.story = {
-    parameters: {
-        notes: collapseReadme,
-    },
+Individual.parameters = {
+    notes: collapseReadme,
 }
 
 export const Group = () => {
@@ -84,8 +81,6 @@ export const Group = () => {
     </bk-collapse-group>`
 }
 
-Group.story = {
-    parameters: {
-        notes: collapseGroupReadme,
-    },
+Group.parameters = {
+    notes: collapseGroupReadme,
 }

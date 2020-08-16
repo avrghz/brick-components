@@ -4,10 +4,6 @@ import { addParameters } from '@storybook/web-components'
 import { themes } from '@storybook/theming'
 import addons from '@storybook/addons'
 
-// import customElements from '../custom-elements.json';
-
-// setCustomElements(customElements);
-
 addParameters({
     docs: {
         iframeHeight: '200px',
@@ -30,7 +26,7 @@ channel.on('DARK_MODE', (isDark) => {
 
 // force full reload to not reregister web components
 const req = require.context('../src', true, /\.stories\.(tsx|mdx)$/)
-// configure(req, module)
+
 if (module.hot) {
     module.hot.accept(req.id, () => {
         const currentLocationHref = window.location.href

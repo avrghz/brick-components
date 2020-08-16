@@ -1,17 +1,8 @@
 import { html } from 'lit-html'
-import { boolean, withKnobs, select } from '@storybook/addon-knobs'
+import { boolean, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { VARIANTS } from '../../shared/types'
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-switch',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const Switch = () => {
     const isOn = boolean('is-on', false)
@@ -23,4 +14,8 @@ export const Switch = () => {
     >
         <bk-switch variant=${variant} is-on=${isOn} disabled=${disabled} @bkChange=${action('state changed')} />
     </div> `
+}
+
+Switch.parameters = {
+    notes,
 }

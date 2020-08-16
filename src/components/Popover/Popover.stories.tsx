@@ -1,18 +1,9 @@
 import { html } from 'lit-html'
-import { select, boolean, withKnobs } from '@storybook/addon-knobs'
+import { select, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { TRIGGER_ON } from './types'
 
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-popover',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 const placements = [
     'auto',
@@ -57,4 +48,8 @@ export const Popover = () => {
             </bk-popover>
         </div>
     `
+}
+
+Popover.parameters = {
+    notes,
 }

@@ -1,13 +1,11 @@
 import { html } from 'lit-html'
-import { boolean, withKnobs, object, text } from '@storybook/addon-knobs'
+import { boolean, object, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import notes from './readme.md'
 import data from './__fixtures__/options.json'
 
 export default {
     title: 'Components/DropdownList',
-    component: 'bk-dropdown-list',
-    decorators: [withKnobs],
     parameters: {
         notes,
     },

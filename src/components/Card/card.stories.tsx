@@ -1,17 +1,7 @@
 import { html } from 'lit-html'
-import { select, withKnobs } from '@storybook/addon-knobs'
+import { select } from '@storybook/addon-knobs'
 import { SHADOW } from './types'
-
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-card',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const Card = () => {
     const shadow = select('shadow', SHADOW, 'never')
@@ -32,4 +22,8 @@ export const Card = () => {
             </bk-card>
         </div>
     `
+}
+
+Card.parameters = {
+    notes,
 }

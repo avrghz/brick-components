@@ -8,7 +8,6 @@ import notes from './readme.md'
 
 export default {
     title: 'Components/Steps',
-    component: 'bk-steps',
     parameters: {
         notes,
     },

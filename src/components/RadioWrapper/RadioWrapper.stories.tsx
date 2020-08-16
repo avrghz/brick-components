@@ -4,7 +4,6 @@ import group from './group.md'
 
 export default {
     title: 'Components/RadioWrapper',
-    component: 'bk-radio-wrapper',
 }
 
 export const Basic = () => {
@@ -15,10 +14,8 @@ export const Basic = () => {
     `
 }
 
-Basic.story = {
-    parameters: {
-        notes: basic,
-    },
+Basic.parameters = {
+    notes: basic,
 }
 
 export const Group = () => {
@@ -40,8 +37,6 @@ export const Group = () => {
     `
 }
 
-Group.story = {
-    parameters: {
-        notes: group,
-    },
+Group.parameters = {
+    notes: group,
 }

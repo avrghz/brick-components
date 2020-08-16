@@ -42,8 +42,7 @@ const data = [
 ]
 
 export default {
-    title: 'Atoms/Table',
-    component: 'table',
+    title: 'Elements/Table',
 }
 
 const colGroup = html`

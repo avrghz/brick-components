@@ -1,17 +1,7 @@
 import { html } from 'lit-html'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-dropdown',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const Dropdown = () => {
     const disabled = boolean('disabled', false)
@@ -32,4 +22,8 @@ export const Dropdown = () => {
             </bk-dropdown>
         </div>
     `
+}
+
+Dropdown.parameters = {
+    notes,
 }

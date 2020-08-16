@@ -3,16 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { number, object, select, boolean } from '@storybook/addon-knobs'
 import COLORS from './__fixtures__/colors'
 import { SIZE } from './types'
-
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-rating',
-    parameters: {
-        notes,
-    },
-}
 
 export const Rating = () => {
     const rating = number('rating', 0)
@@ -29,4 +20,8 @@ export const Rating = () => {
         as-smiley=${asSmiley}
         @bkChange=${(e: CustomEvent) => bkChange(e.detail)}
     />`
+}
+
+Rating.parameters = {
+    notes,
 }
