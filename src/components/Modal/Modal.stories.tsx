@@ -1,17 +1,7 @@
 import { html } from 'lit-html'
-import { boolean, withKnobs, text } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-modal',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const Modal = () => {
     const open = boolean('open', false)
@@ -52,4 +42,8 @@ export const Modal = () => {
             </div>
         </bk-modal>
     `
+}
+
+Modal.parameters = {
+    notes,
 }

@@ -36,4 +36,36 @@
     bk-dropdown-list {
         --color-primary-light-9: hsl(220, 3%, 15%);
     }
+
+    .bk-table {
+        --background-color-base: hsl(220, 3%, 10%);
+        --border-color-extra-light: hsl(220, 3%, 15%);
+
+        tbody tr {
+            &:not(hover) {
+                &.is-warning,
+                &.is-danger,
+                &.is-info,
+                &.is-success {
+                    color: $--color-white;
+                }
+            }
+
+            &.is-warning {
+                background-color: $--color-warning-darker;
+            }
+
+            &.is-success {
+                background-color: $--color-success-darker;
+            }
+
+            &.is-info {
+                background-color: $--color-info-darker;
+            }
+
+            &.is-danger {
+                background-color: $--color-danger-darker;
+            }
+        }
+    }
 }

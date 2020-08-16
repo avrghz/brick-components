@@ -6,18 +6,6 @@ import tabsNotes from './readme.md'
 import tabHeaderNotes from './TabHeader/readme.md'
 import tabPanelNotes from './TabPanel/readme.md'
 
-export default {
-    title: 'Components',
-    component: 'bk-tabs',
-    parameters: {
-        notes: {
-            tabs: tabsNotes,
-            tabHeader: tabHeaderNotes,
-            tabPanel: tabPanelNotes,
-        },
-    },
-}
-
 export const Tabs = () => {
     const position = select('position', POSITION, 'top')
     const variant = select('variant', VARIANT, 'simple')
@@ -36,4 +24,10 @@ export const Tabs = () => {
         <bk-tab-panel tab="tab-3">I am very long tab 2 content</bk-tab-panel>
         <bk-tab-panel tab="tab-4">User content</bk-tab-panel>
     </bk-tabs> `
+}
+
+Tabs.notes = {
+    tabs: tabsNotes,
+    tabHeader: tabHeaderNotes,
+    tabPanel: tabPanelNotes,
 }

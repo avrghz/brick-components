@@ -1,18 +1,9 @@
 import { html } from 'lit-html'
-import { select, boolean, number, withKnobs } from '@storybook/addon-knobs'
+import { select, boolean, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { VARIANTS } from '../../shared/types'
 
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-slider',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const Slider = () => {
     const variant = select('variant', VARIANTS, 'default')
@@ -31,4 +22,8 @@ export const Slider = () => {
             @bkChange=${action('state changed')}
         />
     `
+}
+
+Slider.parameters = {
+    notes,
 }

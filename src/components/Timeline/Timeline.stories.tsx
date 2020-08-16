@@ -6,7 +6,6 @@ import itemNotes from './TimelineItem/readme.md'
 
 export default {
     title: 'Components/Timeline',
-    component: 'bk-timeline',
 }
 
 export const SingleItem = () => {
@@ -21,10 +20,8 @@ export const SingleItem = () => {
     `
 }
 
-SingleItem.story = {
-    parameters: {
-        notes: itemNotes,
-    },
+SingleItem.parameters = {
+    notes: itemNotes,
 }
 
 export const Group = () => {
@@ -46,8 +43,6 @@ export const Group = () => {
     `
 }
 
-Group.story = {
-    parameters: {
-        notes: groupNotes,
-    },
+Group.parameters = {
+    notes: groupNotes,
 }

@@ -1,18 +1,9 @@
 import { html } from 'lit-html'
-import { select, number, boolean, withKnobs } from '@storybook/addon-knobs'
+import { select, number, boolean } from '@storybook/addon-knobs'
 import { VARIANTS } from '../../shared/types'
 import { BAR_TYPE } from './types'
 
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-progress-bar',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const ProgressBar = () => {
     const variant = select('variant', VARIANTS, 'default')
@@ -30,4 +21,8 @@ export const ProgressBar = () => {
             text-inside=${textInside}
         />
     </div>`
+}
+
+ProgressBar.parameters = {
+    notes,
 }

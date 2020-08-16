@@ -1,17 +1,8 @@
 import { html } from 'lit-html'
-import { text, select, boolean, withKnobs } from '@storybook/addon-knobs'
+import { text, select, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { BUTTON_VARIANTS } from '../../shared/types'
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-pop-confirm',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const PopConfirm = () => {
     const message = text('message', 'Are you sure, you want to delete this?')
@@ -36,4 +27,8 @@ export const PopConfirm = () => {
             </bk-pop-confirm>
         </div>
     `
+}
+
+PopConfirm.parameters = {
+    notes,
 }

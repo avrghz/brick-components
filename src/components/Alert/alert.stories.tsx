@@ -1,18 +1,8 @@
 import { html } from 'lit-html'
-import { select, boolean, withKnobs } from '@storybook/addon-knobs'
+import { select, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { VARIANTS, SHADES } from '../../shared/types'
-
 import notes from './readme.md'
-
-export default {
-    title: 'Components',
-    component: 'bk-alert',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const Alert = () => {
     const variant = select('variant', VARIANTS, 'default')
@@ -24,4 +14,8 @@ export const Alert = () => {
             This is a message
         </bk-alert>
     `
+}
+
+Alert.parameters = {
+    notes,
 }

@@ -7,7 +7,6 @@ import videoUsage from './usage/video.md'
 
 export default {
     title: 'Components/LazyMedia',
-    component: 'bk-lazy-media',
 }
 
 const courtesy = html` <div class="bk-row" style="margin-top:20px; text-align:right">
@@ -36,10 +35,8 @@ export const Image = () => {
     </bk-lazy-media>`
 }
 
-Image.story = {
-    parameters: {
-        notes: imageUsage,
-    },
+Image.parameters = {
+    notes: imageUsage,
 }
 
 export const Picture = () => {
@@ -77,10 +74,8 @@ export const Picture = () => {
     </bk-lazy-media>`
 }
 
-Picture.story = {
-    parameters: {
-        notes: pictureUsage,
-    },
+Picture.parameters = {
+    notes: pictureUsage,
 }
 
 export const BackgroundImage = () => {
@@ -108,10 +103,8 @@ export const BackgroundImage = () => {
     `
 }
 
-BackgroundImage.story = {
-    parameters: {
-        notes: bgImageUsage,
-    },
+BackgroundImage.parameters = {
+    notes: bgImageUsage,
 }
 
 export const Video = () => {
@@ -126,8 +119,6 @@ export const Video = () => {
     </div>`
 }
 
-Video.story = {
-    parameters: {
-        notes: videoUsage,
-    },
+Video.parameters = {
+    notes: videoUsage,
 }

@@ -1,10 +1,5 @@
 import { html } from 'lit-html'
 
-export default {
-    title: 'Atoms',
-    component: 'button',
-}
-
 export const Button = () => {
     return html`
         <div class="bk-row mb-4">

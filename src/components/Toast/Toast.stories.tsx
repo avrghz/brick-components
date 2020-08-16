@@ -1,15 +1,6 @@
 import { html } from 'lit-html'
-import { number, object, select, withKnobs } from '@storybook/addon-knobs'
+import { number, object, select } from '@storybook/addon-knobs'
 import notes from './readme.md'
-
-export default {
-    title: 'Components/Toast',
-    component: 'bk-toast',
-    decorators: [withKnobs],
-    parameters: {
-        notes,
-    },
-}
 
 export const Toast = () => {
     const transitionInDuration = number('transition-in-duration', 500)
@@ -43,4 +34,7 @@ export const Toast = () => {
             position=${position}
         />
     `
+}
+Toast.parameters = {
+    notes,
 }
