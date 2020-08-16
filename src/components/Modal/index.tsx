@@ -92,6 +92,7 @@ export class Modal {
             this.modalRef?.classList.add('open')
             this.backdropRef?.classList.add('open')
             this.el.focus()
+            document.body.style.overflow = 'hidden'
         }
     }
 
@@ -102,6 +103,7 @@ export class Modal {
                 this.backdropRef.classList.remove('open')
                 this.modalRef.classList.add('close')
             }
+            document.body.style.overflow = 'auto'
         }
     }
 

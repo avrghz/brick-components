@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core'
+import { Component, h, Prop, Host } from '@stencil/core'
 import { Shadow } from './types'
 
 /**
@@ -16,10 +16,10 @@ export class Card {
 
     render() {
         return (
-            <div role="card" class={`bk-card is-${this.shadow}-shadow`}>
+            <Host class={`bk-card is-${this.shadow}-shadow`} role="card">
                 <slot name="header"></slot>
                 <slot name="body"></slot>
-            </div>
+            </Host>
         )
     }
 }

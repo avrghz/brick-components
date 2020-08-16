@@ -3,6 +3,12 @@
 @import '../../theme/base/button.scss';
 @import '../../theme/base/icon.scss';
 
+:host {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 @include b(modal) {
     position: fixed;
     top: 0;
