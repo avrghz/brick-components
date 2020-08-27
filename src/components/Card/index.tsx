@@ -16,7 +16,7 @@ export class Card {
 
     render() {
         return (
-            <Host class={`bk-card is-${this.shadow}-shadow`} role="card">
+            <Host class={`bk-card is-${this.shadow}-shadow`}>
                 <slot name="header"></slot>
                 <slot name="body"></slot>
             </Host>

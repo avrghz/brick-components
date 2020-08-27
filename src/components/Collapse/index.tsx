@@ -138,7 +138,7 @@ export class Collapse {
             >
                 <div
                     role="tab"
-                    aria-expanded={this.open}
+                    aria-expanded={`${this.open}`}
                     aria-controls={`bk-collapse-content-${this.id}`}
                     aria-describedby={`bk-collapse-content-${this.id}`}
                 >

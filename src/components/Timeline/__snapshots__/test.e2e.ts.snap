@@ -12,7 +12,7 @@ exports[`<bk-timeline/> should render 1`] = `
           01-01-2020 19:20
         </div>
         <div class="bk-timeline-item__content sc-bk-timeline-item">
-          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item" role="card">
+          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
             <!---->
             <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
               <h4>
@@ -37,7 +37,7 @@ exports[`<bk-timeline/> should render 1`] = `
           01-01-2020 19:35
         </div>
         <div class="bk-timeline-item__content sc-bk-timeline-item">
-          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item" role="card">
+          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
             <!---->
             <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
               <h4>
@@ -62,7 +62,7 @@ exports[`<bk-timeline/> should render 1`] = `
           01-01-2020 19:50
         </div>
         <div class="bk-timeline-item__content sc-bk-timeline-item">
-          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item" role="card">
+          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
             <!---->
             <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
               <h4>
