@@ -53,6 +53,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Duration of the animation
+         */
+        "duration": number;
+        /**
           * Open or close the collapse
          */
         "open": boolean;
@@ -539,6 +543,10 @@ declare namespace LocalJSX {
           * Enable or disable collapse
          */
         "disabled"?: boolean;
+        /**
+          * Duration of the animation
+         */
+        "duration"?: number;
         /**
           * This event is fired just before the panel closes
          */

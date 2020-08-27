@@ -9,8 +9,6 @@ import '@polymer/iron-icons/iron-icons'
  * @slot content - Use this to render the collapse body.
  */
 
-const DURATION = 200
-
 @Component({
     tag: 'bk-collapse',
     shadow: true,
@@ -21,6 +19,9 @@ export class Collapse {
     private tabPanelRef?: HTMLElement
     private subscription?: ColdSubscription
     private uiState: 'open' | 'close' = 'close'
+
+    /** Duration of the animation */
+    @Prop() duration = 200
 
     /** Open or close the collapse */
     @Prop({ mutable: true, reflect: true }) open = false
@@ -47,7 +48,7 @@ export class Collapse {
     componentWillRender() {
         return new Promise((resolve) => {
             if (this.uiState === 'open' && !this.open) {
-                setTimeout(resolve, DURATION)
+                setTimeout(resolve, this.duration)
             } else {
                 resolve()
             }
@@ -95,7 +96,7 @@ export class Collapse {
             const element = styler(this.tabPanelRef)
             this.subscription = tween({
                 ...(open ? { from: 0, to: 1 } : { from: 1, to: 0 }),
-                duration: DURATION,
+                duration: this.duration,
                 ease: easing.linear,
             }).start({
                 update: (x: number) => {
