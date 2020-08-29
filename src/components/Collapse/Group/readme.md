@@ -1,6 +1,6 @@
 # bk-collapse-group
 
-Grouping collapsible
+Grouping collapsible (Better accessibility)
 
 ```javascript
 import { html } from 'lit-html'

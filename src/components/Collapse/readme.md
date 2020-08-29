@@ -25,6 +25,7 @@ html`<bk-collapse open="false" disabled="false" @bkOpened=${() => {}} @bkClosed=
 | Property   | Attribute  | Description                | Type      | Default |
 | ---------- | ---------- | -------------------------- | --------- | ------- |
 | `disabled` | `disabled` | Enable or disable collapse | `boolean` | `false` |
+| `duration` | `duration` | Duration of the animation  | `number`  | `200`   |
 | `open`     | `open`     | Open or close the collapse | `boolean` | `false` |
 
 
@@ -36,6 +37,14 @@ html`<bk-collapse open="false" disabled="false" @bkOpened=${() => {}} @bkClosed=
 | `bkClosed` | This event is fired after the panel is closed    | `CustomEvent<any>` |
 | `bkOpen`   | This event is fired just before the panel opens  | `CustomEvent<any>` |
 | `bkOpened` | This event is fired after the panel is opened    | `CustomEvent<any>` |
+
+
+## Slots
+
+| Slot        | Description                             |
+| ----------- | --------------------------------------- |
+| `"content"` | Use this to render the collapse body.   |
+| `"header"`  | Use this to render the collapse header. |
 
 
 ----------------------------------------------

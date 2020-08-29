@@ -3,6 +3,7 @@
 
 :host {
     display: inline-block;
+    max-width: 100%;
 }
 
 :host(.bk-popover--disabled) {
@@ -20,4 +21,5 @@
     box-shadow: $--box-shadow-light;
     word-break: break-all;
     font-size: $--popover-font-size;
+    max-width: 300px;
 }

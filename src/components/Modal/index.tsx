@@ -92,6 +92,7 @@ export class Modal {
             this.modalRef?.classList.add('open')
             this.backdropRef?.classList.add('open')
             this.el.focus()
+            document.body.style.overflow = 'hidden'
         }
     }
 
@@ -102,6 +103,7 @@ export class Modal {
                 this.backdropRef.classList.remove('open')
                 this.modalRef.classList.add('close')
             }
+            document.body.style.overflow = 'auto'
         }
     }
 
@@ -118,7 +120,15 @@ export class Modal {
         }
 
         return (
-            <Host role="dialog" tabIndex={0} aria-modal="true" aria-hidden={this.open}>
+            <Host
+                role="dialog"
+                tabIndex={0}
+                aria-modal="true"
+                aria-hidden={this.open}
+                class={{
+                    open: this.open,
+                }}
+            >
                 <div class="bk-modal">
                     <div role="document" class="bk-modal__content" ref={(el) => (this.modalRef = el)}>
                         <focus-trap>

@@ -25,7 +25,7 @@ describe('<bk-card/>', () => {
             it(`should show shadow - ${s}`, async () => {
                 component.setProperty('shadow', s)
                 await page.waitForChanges()
-                expect(await page.find('bk-card .bk-card')).toHaveClass(`is-${s}-shadow`)
+                expect(await page.find('bk-card')).toHaveClass(`is-${s}-shadow`)
             })
         })
     })

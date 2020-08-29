@@ -1,3 +1,5 @@
+@import './base/mixins/skeleton.scss';
+
 :root[dark-mode='true'] {
     --color-html-bg: #333;
 
@@ -66,6 +68,14 @@
             &.is-danger {
                 background-color: $--color-danger-darker;
             }
+        }
+    }
+
+    bk-skeleton {
+        background-color: $--color-white;
+
+        &::after {
+            @include skeleton-animation(#333);
         }
     }
 }

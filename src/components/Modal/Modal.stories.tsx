@@ -15,8 +15,11 @@ export const Modal = () => {
 
     return html`
         <div class="bk-row">
-            <div class="bk-col-24" style="text-align:center">
+            <div class="bk-col-24" style="text-align:center; height: 1000px">
                 <button @click=${openModal} class="bk-button">Open Modal</button>
+            </div>
+            <div class="bk-col-24">
+                <button class="bk-button">XYZ</button>
             </div>
         </div>
         <bk-modal
@@ -28,7 +31,6 @@ export const Modal = () => {
             @bkClose=${action('closing')}
             @bkClosed=${action('closed')}
         >
-            <div slot="header">This is header</div>
             <div slot="body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip

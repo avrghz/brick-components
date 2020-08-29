@@ -1,22 +1,25 @@
 @import '../../theme/variables/components/card';
 
-@include b(card) {
+:host {
     border-radius: $--card-border-radius;
     border: 1px solid $--card-border-color;
     background-color: $--color-white;
     overflow: hidden;
     color: $--color-text-primary;
     transition: 0.3s;
+    display: block;
+}
 
-    @include when(always-shadow) {
+:host(.is-always-shadow) {
+    box-shadow: $--box-shadow-light;
+}
+
+:host(.is-hover-shadow) {
+    outline: none;
+
+    &:hover,
+    &:focus {
         box-shadow: $--box-shadow-light;
-    }
-
-    @include when(hover-shadow) {
-        &:hover,
-        &:focus {
-            box-shadow: $--box-shadow-light;
-        }
     }
 }
 

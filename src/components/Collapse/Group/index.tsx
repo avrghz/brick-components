@@ -1,4 +1,4 @@
-import { Component, h, Element, Prop, Watch } from '@stencil/core'
+import { Component, h, Element, Prop, Watch, Host } from '@stencil/core'
 
 @Component({
     tag: 'bk-collapse-group',
@@ -42,6 +42,10 @@ export class CollapseGroup {
     }
 
     render() {
-        return <slot></slot>
+        return (
+            <Host role="tablist">
+                <slot></slot>
+            </Host>
+        )
     }
 }

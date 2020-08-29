@@ -53,6 +53,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Duration of the animation
+         */
+        "duration": number;
+        /**
           * Open or close the collapse
          */
         "open": boolean;
@@ -201,6 +205,20 @@ export namespace Components {
           * Size of the rating
          */
         "size": Size;
+    }
+    interface BkSkeleton {
+        /**
+          * Height of the skeleton. Value is treated in pixels
+         */
+        "height": number;
+        /**
+          * Border radius of the skeleton. Value is treated in pixels
+         */
+        "radius": number;
+        /**
+          * Width of the skeleton. The value is treated in pixels except if it is <= 1 will be treated as percentage
+         */
+        "width": number;
     }
     interface BkSlider {
         /**
@@ -398,6 +416,12 @@ declare global {
         prototype: HTMLBkRatingElement;
         new (): HTMLBkRatingElement;
     };
+    interface HTMLBkSkeletonElement extends Components.BkSkeleton, HTMLStencilElement {
+    }
+    var HTMLBkSkeletonElement: {
+        prototype: HTMLBkSkeletonElement;
+        new (): HTMLBkSkeletonElement;
+    };
     interface HTMLBkSliderElement extends Components.BkSlider, HTMLStencilElement {
     }
     var HTMLBkSliderElement: {
@@ -467,6 +491,7 @@ declare global {
         "bk-progress-bar": HTMLBkProgressBarElement;
         "bk-radio-wrapper": HTMLBkRadioWrapperElement;
         "bk-rating": HTMLBkRatingElement;
+        "bk-skeleton": HTMLBkSkeletonElement;
         "bk-slider": HTMLBkSliderElement;
         "bk-steps": HTMLBkStepsElement;
         "bk-switch": HTMLBkSwitchElement;
@@ -518,6 +543,10 @@ declare namespace LocalJSX {
           * Enable or disable collapse
          */
         "disabled"?: boolean;
+        /**
+          * Duration of the animation
+         */
+        "duration"?: number;
         /**
           * This event is fired just before the panel closes
          */
@@ -732,6 +761,20 @@ declare namespace LocalJSX {
          */
         "size"?: Size;
     }
+    interface BkSkeleton {
+        /**
+          * Height of the skeleton. Value is treated in pixels
+         */
+        "height"?: number;
+        /**
+          * Border radius of the skeleton. Value is treated in pixels
+         */
+        "radius"?: number;
+        /**
+          * Width of the skeleton. The value is treated in pixels except if it is <= 1 will be treated as percentage
+         */
+        "width"?: number;
+    }
     interface BkSlider {
         /**
           * Enable or disable slider
@@ -881,6 +924,7 @@ declare namespace LocalJSX {
         "bk-progress-bar": BkProgressBar;
         "bk-radio-wrapper": BkRadioWrapper;
         "bk-rating": BkRating;
+        "bk-skeleton": BkSkeleton;
         "bk-slider": BkSlider;
         "bk-steps": BkSteps;
         "bk-switch": BkSwitch;
@@ -910,6 +954,7 @@ declare module "@stencil/core" {
             "bk-progress-bar": LocalJSX.BkProgressBar & JSXBase.HTMLAttributes<HTMLBkProgressBarElement>;
             "bk-radio-wrapper": LocalJSX.BkRadioWrapper & JSXBase.HTMLAttributes<HTMLBkRadioWrapperElement>;
             "bk-rating": LocalJSX.BkRating & JSXBase.HTMLAttributes<HTMLBkRatingElement>;
+            "bk-skeleton": LocalJSX.BkSkeleton & JSXBase.HTMLAttributes<HTMLBkSkeletonElement>;
             "bk-slider": LocalJSX.BkSlider & JSXBase.HTMLAttributes<HTMLBkSliderElement>;
             "bk-steps": LocalJSX.BkSteps & JSXBase.HTMLAttributes<HTMLBkStepsElement>;
             "bk-switch": LocalJSX.BkSwitch & JSXBase.HTMLAttributes<HTMLBkSwitchElement>;

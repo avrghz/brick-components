@@ -12,17 +12,15 @@ exports[`<bk-timeline/> should render 1`] = `
           01-01-2020 19:20
         </div>
         <div class="bk-timeline-item__content sc-bk-timeline-item">
-          <bk-card class="hydrated sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
+          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
             <!---->
-            <div class="bk-card is-always-shadow sc-bk-card sc-bk-card-s" role="card">
-              <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
-                <h4>
-                  Update Github template
-                </h4>
-                <p>
-                  Tom committed 01-01-2020 19:20
-                </p>
-              </div>
+            <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
+              <h4>
+                Update Github template
+              </h4>
+              <p>
+                Tom committed 01-01-2020 19:20
+              </p>
             </div>
           </bk-card>
         </div>
@@ -39,17 +37,15 @@ exports[`<bk-timeline/> should render 1`] = `
           01-01-2020 19:35
         </div>
         <div class="bk-timeline-item__content sc-bk-timeline-item">
-          <bk-card class="hydrated sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
+          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
             <!---->
-            <div class="bk-card is-always-shadow sc-bk-card sc-bk-card-s" role="card">
-              <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
-                <h4>
-                  Update Github template
-                </h4>
-                <p>
-                  Tom committed 01-01-2020 19:35
-                </p>
-              </div>
+            <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
+              <h4>
+                Update Github template
+              </h4>
+              <p>
+                Tom committed 01-01-2020 19:35
+              </p>
             </div>
           </bk-card>
         </div>
@@ -66,17 +62,15 @@ exports[`<bk-timeline/> should render 1`] = `
           01-01-2020 19:50
         </div>
         <div class="bk-timeline-item__content sc-bk-timeline-item">
-          <bk-card class="hydrated sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
+          <bk-card class="bk-card hydrated is-always-shadow sc-bk-card-h sc-bk-card-s sc-bk-timeline-item">
             <!---->
-            <div class="bk-card is-always-shadow sc-bk-card sc-bk-card-s" role="card">
-              <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
-                <h4>
-                  Update Github template
-                </h4>
-                <p>
-                  Tom committed 01-01-2020 19:50
-                </p>
-              </div>
+            <div class="sc-bk-timeline-item sc-bk-timeline-item-s" slot="body">
+              <h4>
+                Update Github template
+              </h4>
+              <p>
+                Tom committed 01-01-2020 19:50
+              </p>
             </div>
           </bk-card>
         </div>
