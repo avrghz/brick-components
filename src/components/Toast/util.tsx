@@ -1,6 +1,6 @@
 import { h } from '@stencil/core'
 import { styler, tween, delay, composite, ColdSubscription } from 'popmotion'
-import { uniqueId } from 'lodash'
+import uniqueId from 'lodash/uniqueId'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 import { ToastMessage, AnimationIn, AnimationOut } from './types'

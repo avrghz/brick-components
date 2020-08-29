@@ -1,5 +1,5 @@
 import { Component, h, Prop, Host, EventEmitter, Event } from '@stencil/core'
-import { uniqueId } from 'lodash'
+import uniqueId from 'lodash/uniqueId'
 import { tween, styler, ColdSubscription, easing } from 'popmotion'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'

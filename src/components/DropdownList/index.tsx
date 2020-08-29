@@ -1,5 +1,6 @@
 import { Component, h, Element, Prop, Watch, State, EventEmitter, Event } from '@stencil/core'
-import { debounce, isEqual } from 'lodash'
+import debounce from 'lodash/debounce'
+import isEqual from 'lodash/isEqual'
 import '@polymer/iron-icon/iron-icon'
 import '@polymer/iron-icons/iron-icons'
 import { consoleWarn } from '../../shared/util'
