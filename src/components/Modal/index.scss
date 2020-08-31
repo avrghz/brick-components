@@ -73,12 +73,6 @@
         @include close-button();
         top: $--modal-padding - 4;
         right: $--modal-padding - 4;
-        color: $--color-text-secondary;
-
-        svg {
-            width: 14px;
-            height: 14px;
-        }
     }
 
     @include e(backdrop) {

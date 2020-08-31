@@ -22,7 +22,8 @@
         @include e(arrow) {
             margin: 0 8px 0 auto;
             transition: transform 0.3s;
-            width: 20px;
+            display: inline-block;
+            width: 10px;
         }
 
         &:focus {
@@ -32,7 +33,6 @@
 
     @include e(wrap) {
         will-change: height;
-        // background-color: $--collapse-content-background-color;
         overflow: hidden;
         box-sizing: border-box;
         border-bottom: 1px solid $--collapse-border-color;
