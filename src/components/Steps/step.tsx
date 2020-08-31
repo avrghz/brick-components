@@ -1,6 +1,4 @@
 import { h, FunctionalComponent } from '@stencil/core'
-import '@polymer/iron-icon/iron-icon'
-import '@polymer/iron-icons/iron-icons'
 import { StepProps } from './types'
 
 const Step: FunctionalComponent<StepProps> = ({
@@ -32,7 +30,7 @@ const Step: FunctionalComponent<StepProps> = ({
                 </div>
                 <div class={`bk-step__icon ${!!icon ? 'is-icon' : 'is-text'}`}>
                     <div class="bk-step__icon-inner" {...(status !== 'wait' ? { onClick } : {})}>
-                        {!!icon ? <iron-icon icon={icon} class="bk-icon bk-icon--xxl"></iron-icon> : step}
+                        {!!icon ? <i /> : step}
                     </div>
                 </div>
             </div>

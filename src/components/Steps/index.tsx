@@ -3,6 +3,8 @@ import ComplexProp from '../../shared/decorators/complexProp'
 import Step from './step'
 import { StepComponent, StepProps, Direction } from './types'
 
+// !Fixme : add icon support
+
 @Component({
     tag: 'bk-steps',
     scoped: true,
@@ -38,7 +40,8 @@ export class Steps {
                         style={this.computeStepStyle()}
                         isCentered={this.isStyleCentered()}
                         isLast={this.steps.length - 1 === i}
-                        {...(!!icon ? { icon } : { step: i + 1 })}
+                        step={i + 1}
+                        // {...(!!icon ? { icon } : { step: i + 1 })}
                         {...rest}
                     />
                 ))}

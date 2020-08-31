@@ -69,9 +69,7 @@
     "license": "MIT",
     "dependencies": {
         "@a11y/focus-trap": "^1.0.5",
-        "@polymer/iron-icons": "^3.0.1",
         "@popperjs/core": "^2.4.4",
-        "ionicons": "^5.1.2",
         "lodash": "^4.17.20",
         "popmotion": "^8.7.3"
     },

@@ -2,8 +2,6 @@
 
 Guide the user to complete tasks in accordance with the process.
 
-Note: The icon is implemented using [Polymer iron-icon](https://www.webcomponents.org/element/@polymer/iron-icon). Icon name can be found [here](https://www.webcomponents.org/element/@polymer/iron-icons/demo/demo/index.html)
-
 ```javascript
 import { html } from 'lit-html'
 
@@ -43,7 +41,6 @@ html`<bk-steps
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property     | Attribute     | Description                  | Type                         | Default        |
@@ -52,14 +49,10 @@ html`<bk-steps
 | `isCentered` | `is-centered` | Center title and description | `boolean`                    | `false`        |
 | `steps`      | `steps`       | Steps to be displayed        | `StepComponent[] \| string`  | `[]`           |
 
-
 ## Events
 
 | Event     | Description                                | Type                  |
 | --------- | ------------------------------------------ | --------------------- |
 | `bkClick` | This event is fired when clicked on a step | `CustomEvent<number>` |
 
-
-----------------------------------------------
-
-
+---
