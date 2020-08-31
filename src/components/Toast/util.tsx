@@ -1,9 +1,20 @@
 import { h } from '@stencil/core'
 import { styler, tween, delay, composite, ColdSubscription } from 'popmotion'
 import uniqueId from 'lodash/uniqueId'
-import '@polymer/iron-icon/iron-icon'
-import '@polymer/iron-icons/iron-icons'
 import { ToastMessage, AnimationIn, AnimationOut } from './types'
+
+import success from '../../assets/icons/success.svg'
+import alert from '../../assets/icons/alert.svg'
+import info from '../../assets/icons/info.svg'
+import warning from '../../assets/icons/warning.svg'
+
+const ICONS: { [key: string]: string } = {
+    success,
+    danger: alert,
+    info,
+    warning,
+    default: '',
+}
 
 export const uID = () => uniqueId('toast_')
 
@@ -35,23 +46,7 @@ export const animateOut = ({ el, duration, onComplete, wait, flip = false }: Ani
     })
 }
 
-export const Icon = ({ variant }: { variant: ToastMessage['variant'] }) => {
-    let icon = ''
-
-    switch (variant) {
-        case 'danger':
-            icon = 'cancel'
-            break
-        case 'info':
-            icon = 'info'
-            break
-        case 'success':
-            icon = 'check-circle'
-            break
-        case 'warning':
-            icon = 'warning'
-            break
-    }
-
-    return icon && <iron-icon icon={icon} class={`bk-toast__icon bk-toast--${variant}`}></iron-icon>
-}
+export const Icon = ({ variant }: { variant: ToastMessage['variant'] }) =>
+    !!variant && !!ICONS[variant] ? (
+        <i innerHTML={ICONS[variant]} class={`bk-toast__icon bk-toast--${variant}`} />
+    ) : null
