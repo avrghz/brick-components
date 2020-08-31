@@ -31,12 +31,12 @@
 
         @include when(small) {
             @include icon-md();
-            margin-right: $--rate-icon-margin - 4;
+            margin-right: $--rate-icon-margin - 3;
         }
 
         @include when(medium) {
             @include icon-xl();
-            margin-right: $--rate-icon-margin - 3;
+            margin-right: $--rate-icon-margin - 1;
         }
 
         @include when(large) {

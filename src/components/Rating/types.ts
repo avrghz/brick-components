@@ -1,3 +1,9 @@
+import veryDissatisfied from '../../assets/icons/smiley-very-dissatisfied.svg'
+import dissatisfied from '../../assets/icons/smiley-dissatisfied.svg'
+import neutral from '../../assets/icons/smiley-neutral.svg'
+import satisfied from '../../assets/icons/smiley-satisfied.svg'
+import verySatisfied from '../../assets/icons/smiley-very-satisfied.svg'
+
 export interface Colors {
     [key: number]: string
 }
@@ -14,10 +20,4 @@ export interface StarProps {
     icon?: string
 }
 
-export enum SMILEY_ICONS {
-    'social:sentiment-very-dissatisfied',
-    'social:sentiment-dissatisfied',
-    'social:sentiment-neutral',
-    'social:sentiment-satisfied',
-    'social:sentiment-very-satisfied',
-}
+export const SMILEY_ICONS = [veryDissatisfied, dissatisfied, neutral, satisfied, verySatisfied]

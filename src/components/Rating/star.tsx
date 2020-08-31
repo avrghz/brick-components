@@ -4,23 +4,34 @@ import '@polymer/iron-icons/iron-icons'
 import '@polymer/iron-icons/social-icons'
 import { StarProps } from './types'
 
+import starEmpty from '../../assets/icons/starEmpty.svg'
+// import starFilled from '../../assets/icons/starFilled.svg.svg'
+
 const Star: FunctionalComponent<StarProps> = ({
     hover,
     activeColor,
     size,
     checked,
     fillPercentage,
-    icon = 'icons:star-border',
+    icon = starEmpty,
 }) => {
     const getIcon = (props?: any) => (
-        <iron-icon
-            icon={icon}
+        <i
+            innerHTML={icon}
             class={{
                 [`bk-rate__icon is-${size}`]: true,
                 'is-hover': !!hover,
             }}
             {...props}
-        ></iron-icon>
+        />
+        // <iron-icon
+        //     icon={icon}
+        //     class={{
+        //         [`bk-rate__icon is-${size}`]: true,
+        //         'is-hover': !!hover,
+        //     }}
+        //     {...props}
+        // ></iron-icon>
     )
 
     return (
