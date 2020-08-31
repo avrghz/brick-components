@@ -9,7 +9,7 @@ import neutral from '../../assets/icons/smiley-neutral.svg'
 import satisfied from '../../assets/icons/smiley-satisfied.svg'
 import verySatisfied from '../../assets/icons/smiley-very-satisfied.svg'
 
-export const SMILEY_ICONS = [veryDissatisfied, dissatisfied, neutral, satisfied, verySatisfied]
+const SMILEY_ICONS = [veryDissatisfied, dissatisfied, neutral, satisfied, verySatisfied]
 
 @Component({
     tag: 'bk-rating',
