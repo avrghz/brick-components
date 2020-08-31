@@ -1,8 +1,6 @@
 import { Component, h, Element, Prop, Watch, State, EventEmitter, Event } from '@stencil/core'
 import debounce from 'lodash/debounce'
 import isEqual from 'lodash/isEqual'
-import '@polymer/iron-icon/iron-icon'
-import '@polymer/iron-icons/iron-icons'
 import { consoleWarn } from '../../shared/util'
 import {
     selectNextOption,
@@ -13,6 +11,8 @@ import {
 } from './util'
 import { Option } from './types'
 import ComplexProp from '../../shared/decorators/complexProp'
+import closeIcon from '../../assets/icons/close.svg'
+import searchIcon from '../../assets/icons/search.svg'
 
 @Component({
     tag: 'bk-dropdown-list',
@@ -185,14 +185,14 @@ export class DropdownList {
                         onKeyDown={this.onSearchKeyDown}
                     />
                     <span class="bk-input__prefix">
-                        <iron-icon icon="search" class="bk-icon bk-icon--sm"></iron-icon>
+                        <i innerHTML={searchIcon} class="bk-dropdown-list__icon" />
                     </span>
                     {!!this.searchText && (
                         <button
-                            class="bk-button bk-button--mini bk-button--text bk-input__suffix bk-dropdown-list__icon bk-dropdown-list__close-btn"
+                            class="bk-button bk-button--mini bk-button--text bk-input__suffix bk-dropdown-list__close-btn"
                             onClick={this.onClearClick}
                         >
-                            <iron-icon icon="close" class="bk-icon bk-icon--sm"></iron-icon>
+                            <i innerHTML={closeIcon} class="bk-dropdown-list__icon" />
                         </button>
                     )}
                 </div>

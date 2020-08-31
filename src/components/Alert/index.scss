@@ -19,8 +19,14 @@
 
     .bk-alert__close-btn {
         @include close-button();
-        top: 8px;
+        top: 13px;
         right: 0;
+
+        i {
+            height: 1rem;
+            width: 1rem;
+            display: inline-block;
+        }
     }
 }
 
@@ -35,7 +41,7 @@
         background-color: $--alert-default-color;
         color: $--color-primary;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-primary;
         }
     }
@@ -44,7 +50,7 @@
         background-color: $--color-primary;
         color: $--color-white;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-white;
         }
     }
@@ -57,7 +63,7 @@
         background-color: $--alert-success-color;
         color: $--color-success;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-success;
         }
     }
@@ -66,7 +72,7 @@
         background-color: $--color-success;
         color: $--color-white;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-white;
         }
     }
@@ -79,7 +85,7 @@
         background-color: $--alert-info-color;
         color: $--color-info;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-info;
         }
     }
@@ -88,7 +94,7 @@
         background-color: $--color-info;
         color: $--color-white;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-white;
         }
     }
@@ -101,7 +107,7 @@
         background-color: $--alert-warning-color;
         color: $--color-warning;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-warning;
         }
     }
@@ -110,7 +116,7 @@
         background-color: $--color-warning;
         color: $--color-white;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-white;
         }
     }
@@ -123,7 +129,7 @@
         background-color: $--alert-danger-color;
         color: $--color-danger;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-danger;
         }
     }
@@ -132,7 +138,7 @@
         background-color: $--color-danger;
         color: $--color-white;
 
-        .bk-alert__close-btn iron-icon {
+        .bk-alert__close-btn {
             color: $--color-white;
         }
     }

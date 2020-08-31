@@ -1,6 +1,7 @@
 import { Config } from '@stencil/core'
 import { sass } from '@stencil/sass'
 import { reactOutputTarget } from '@stencil/react-output-target'
+import { inlineSvg } from 'stencil-inline-svg'
 
 export const config: Config = {
     namespace: 'brick-components',
@@ -24,6 +25,7 @@ export const config: Config = {
                 './src/theme/base/common/var.scss',
             ],
         }),
+        inlineSvg(),
     ],
     globalStyle: './src/theme/index.scss',
     outputTargets: [
