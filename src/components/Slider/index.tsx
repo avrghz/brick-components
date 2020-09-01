@@ -54,7 +54,7 @@ export class Slider {
         this.previousValue = this.value
     }
 
-    componentDidUnload() {
+    disconnectedCallback() {
         document.removeEventListener(this.isMouseEvent ? 'mousemove' : 'touchmove', this.onDragAction, eventOptions)
         document.removeEventListener(this.isMouseEvent ? 'mouseup' : 'touchend', this.onDragEnd, eventOptions)
     }

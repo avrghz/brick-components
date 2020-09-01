@@ -59,7 +59,7 @@ export class TabHeader {
         }
     }
 
-    @Listen('$tabHighlightReset', { target: 'parent' })
+    @Listen('$tabHighlightReset', { target: 'body' })
     onHighlightReset(e: CustomEvent) {
         if (e.target !== this.el) {
             this.active = false

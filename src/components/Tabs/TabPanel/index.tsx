@@ -9,7 +9,7 @@ export class TabPanel {
     /** Same value as tab header's tab value */
     @Prop() tab!: string
 
-    @Listen('$tabSetActive', { target: 'parent' })
+    @Listen('$tabSetActive', { target: 'body' })
     onSetActiveTab(e: CustomEvent) {
         this.active = e.detail === this.tab
     }

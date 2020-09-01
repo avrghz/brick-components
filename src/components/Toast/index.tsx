@@ -44,7 +44,7 @@ export class Toast {
         }
     }
 
-    componentDidUnload() {
+    disconnectedCallback() {
         if (this.subscriptions.length) {
             this.subscriptions.forEach((s) => s.subscription.stop())
         }

@@ -1,6 +1,6 @@
 import { newE2EPage, E2EPage, E2EElement, EventSpy } from '@stencil/core/testing'
 import stepsWithoutIcon from './__fixtures__/stepsWithoutIcon.json'
-import stepsWithIcon from './__fixtures__/stepsWithIcon.json'
+// import stepsWithIcon from './__fixtures__/stepsWithIcon.json'
 import { StepComponent } from './types'
 
 describe('<bk-steps/>', () => {
@@ -13,7 +13,7 @@ describe('<bk-steps/>', () => {
 
     const getStepIndexInner = async () => await page.findAll('bk-steps .bk-step .bk-step__icon-inner')
 
-    const getStepIcons = async () => await page.findAll('bk-steps .bk-step iron-icon')
+    // const getStepIcons = async () => await page.findAll('bk-steps .bk-step iron-icon')
 
     const getTitles = async () => await page.findAll('bk-steps .bk-step .bk-step__title')
 
@@ -63,14 +63,14 @@ describe('<bk-steps/>', () => {
             expect((await getSteps())[0]).toHaveClass(`is-${stepsWithoutIcon[0].status}`)
         })
 
-        it('should render with icons', async () => {
-            component.setProperty('steps', stepsWithIcon)
-            await page.waitForChanges()
-            expect((await getStepIcons()).length).toBe(stepsWithIcon.length)
-            ;(await getStepIndex()).forEach((el) => {
-                expect(el).toHaveClass('is-icon')
-            })
-        })
+        // it('should render with icons', async () => {
+        //     component.setProperty('steps', stepsWithIcon)
+        //     await page.waitForChanges()
+        //     expect((await getStepIcons()).length).toBe(stepsWithIcon.length)
+        //     ;(await getStepIndex()).forEach((el) => {
+        //         expect(el).toHaveClass('is-icon')
+        //     })
+        // })
     })
 
     describe('@Prop isCentered', () => {

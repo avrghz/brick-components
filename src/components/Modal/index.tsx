@@ -66,7 +66,7 @@ export class Modal {
         this.onAfterModalOpen()
     }
 
-    componentDidUnload() {
+    disconnectedCallback() {
         this.resetTimeout()
     }
 
