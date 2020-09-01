@@ -78,4 +78,8 @@
             @include skeleton-animation(#333);
         }
     }
+
+    bk-tabs {
+        --background-color-base: hsl(220, 3%, 10%);
+    }
 }
