@@ -3,32 +3,67 @@
 exports[`<bk-rating/> @Prop() Size should render as large 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-large sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-large sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-large sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-large sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-large sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-large sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -38,32 +73,67 @@ exports[`<bk-rating/> @Prop() Size should render as large 1`] = `
 exports[`<bk-rating/> @Prop() Size should render as medium 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -73,32 +143,67 @@ exports[`<bk-rating/> @Prop() Size should render as medium 1`] = `
 exports[`<bk-rating/> @Prop() Size should render as small 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-small sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-small sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-small sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-small sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-small sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-small sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -108,32 +213,67 @@ exports[`<bk-rating/> @Prop() Size should render as small 1`] = `
 exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 0 rating 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -143,34 +283,73 @@ exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 0 rating 1
 exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 1 rating 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="1" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="1" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-very-dissatisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-.499-6.296l-1.298 1.296-1.203-1.204 1.298-1.296-1.298-1.296 1.203-1.204 1.298 1.296 1.296-1.296 1.203 1.204-1.297 1.296 1.297 1.296-1.202 1.204-1.297-1.296zm-7 0l-1.298 1.296-1.203-1.204 1.298-1.296-1.298-1.296 1.203-1.204 1.298 1.296 1.296-1.296 1.203 1.204-1.297 1.296 1.297 1.296-1.202 1.204-1.297-1.296z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-.499-6.296l-1.298 1.296-1.203-1.204 1.298-1.296-1.298-1.296 1.203-1.204 1.298 1.296 1.296-1.296 1.203 1.204-1.297 1.296 1.297 1.296-1.202 1.204-1.297-1.296zm-7 0l-1.298 1.296-1.203-1.204 1.298-1.296-1.298-1.296 1.203-1.204 1.298 1.296 1.296-1.296 1.203 1.204-1.297 1.296 1.297 1.296-1.202 1.204-1.297-1.296z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-.499-6.296l-1.298 1.296-1.203-1.204 1.298-1.296-1.298-1.296 1.203-1.204 1.298 1.296 1.296-1.296 1.203 1.204-1.297 1.296 1.297 1.296-1.202 1.204-1.297-1.296zm-7 0l-1.298 1.296-1.203-1.204 1.298-1.296-1.298-1.296 1.203-1.204 1.298 1.296 1.296-1.296 1.203 1.204-1.297 1.296 1.297 1.296-1.202 1.204-1.297-1.296z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -180,36 +359,79 @@ exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 1 rating 1
 exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 2 rating 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="2" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="2" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-dissatisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.001 14c-2.332 0-4.145 1.636-5.093 2.797l.471.58c1.286-.819 2.732-1.308 4.622-1.308s3.336.489 4.622 1.308l.471-.58c-.948-1.161-2.761-2.797-5.093-2.797zm-3.501-6c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.001 14c-2.332 0-4.145 1.636-5.093 2.797l.471.58c1.286-.819 2.732-1.308 4.622-1.308s3.336.489 4.622 1.308l.471-.58c-.948-1.161-2.761-2.797-5.093-2.797zm-3.501-6c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.001 14c-2.332 0-4.145 1.636-5.093 2.797l.471.58c1.286-.819 2.732-1.308 4.622-1.308s3.336.489 4.622 1.308l.471-.58c-.948-1.161-2.761-2.797-5.093-2.797zm-3.501-6c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-dissatisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.001 14c-2.332 0-4.145 1.636-5.093 2.797l.471.58c1.286-.819 2.732-1.308 4.622-1.308s3.336.489 4.622 1.308l.471-.58c-.948-1.161-2.761-2.797-5.093-2.797zm-3.501-6c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.001 14c-2.332 0-4.145 1.636-5.093 2.797l.471.58c1.286-.819 2.732-1.308 4.622-1.308s3.336.489 4.622 1.308l.471-.58c-.948-1.161-2.761-2.797-5.093-2.797zm-3.501-6c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.001 14c-2.332 0-4.145 1.636-5.093 2.797l.471.58c1.286-.819 2.732-1.308 4.622-1.308s3.336.489 4.622 1.308l.471-.58c-.948-1.161-2.761-2.797-5.093-2.797zm-3.501-6c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -219,38 +441,85 @@ exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 2 rating 1
 exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 3 rating 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="3" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="3" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -260,40 +529,91 @@ exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 3 rating 1
 exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 4 rating 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="4" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="4" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.507 13.941c-1.512 1.195-3.174 1.931-5.506 1.931-2.334 0-3.996-.736-5.508-1.931l-.493.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.493-.493zm-9.007-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-neutral">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-2h8v2zm-7.5-9c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
@@ -303,42 +623,97 @@ exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 4 rating 1
 exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 5 rating 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="5" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="social:sentiment-very-satisfied">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-12c.331 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4zm0-3.998l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002zm-7 0l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
@@ -348,34 +723,73 @@ exports[`<bk-rating/> @Prop() asSmiley should render with smiley, for 5 rating 1
 exports[`<bk-rating/> @Prop() colors should render with given colors 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="1" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="1" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: red;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: red;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -385,36 +799,79 @@ exports[`<bk-rating/> @Prop() colors should render with given colors 1`] = `
 exports[`<bk-rating/> @Prop() colors should render with given colors 2`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="2" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="2" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: red;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: red;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: red;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: red;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -424,38 +881,85 @@ exports[`<bk-rating/> @Prop() colors should render with given colors 2`] = `
 exports[`<bk-rating/> @Prop() colors should render with given colors 3`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="3" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="3" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: yellow;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -465,42 +969,97 @@ exports[`<bk-rating/> @Prop() colors should render with given colors 3`] = `
 exports[`<bk-rating/> @Prop() colors should render with given colors 4`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="5" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: green;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: green;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: green;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: green;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: green;"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: green;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
@@ -510,40 +1069,91 @@ exports[`<bk-rating/> @Prop() colors should render with given colors 4`] = `
 exports[`<bk-rating/> @Prop() rating should render with given rating 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="3.5" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="3.5" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 100%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 50%;">
-        <iron-icon class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);"></iron-icon>
+        <i class="bk-rate__icon is-medium sc-bk-rating" style="color: rgb(247, 186, 42);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+          </svg>
+        </i>
       </span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
@@ -553,32 +1163,67 @@ exports[`<bk-rating/> @Prop() rating should render with given rating 1`] = `
 exports[`<bk-rating/> @Prop() rating should render with no selected stars, when rating = 0 1`] = `
 <bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>
   <span class="bk-rate__item sc-bk-rating">
-    <span class="sc-bk-rating" data-key="icons:star-border">
-      <iron-icon class="bk-rate__icon is-medium sc-bk-rating"></iron-icon>
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
       <span class="bk-rate__item is-fill sc-bk-rating"></span>
     </span>
   </span>

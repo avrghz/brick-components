@@ -1,8 +1,7 @@
 import { Component, h, State, Element, Watch, Prop, Listen, Host } from '@stencil/core'
-import '@polymer/iron-icon/iron-icon'
-import '@polymer/iron-icons/iron-icons'
 import { ToastMessage, Status, AnimationSubscription, Position, Constant } from './types'
 import { uID, animateIn, animateOut, Icon } from './util'
+import closeIcon from '../../assets/icons/close.svg'
 
 @Component({
     tag: 'bk-toast',
@@ -148,7 +147,7 @@ export class Toast {
                                     class="bk-button bk-button--text bk-toast__close-Btn"
                                     onClick={() => this.handleCloseButtonClick(id)}
                                 >
-                                    <iron-icon icon="close" class="bk-icon"></iron-icon>
+                                    <i innerHTML={closeIcon} />
                                 </button>
                             )}
                         </div>

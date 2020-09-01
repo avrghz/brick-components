@@ -1,7 +1,6 @@
 import { Component, h, Host, Prop, Event, EventEmitter, Element, State } from '@stencil/core'
-import '@polymer/iron-icon/iron-icon'
-import '@polymer/iron-icons/iron-icons'
 import '@a11y/focus-trap'
+import closeIcon from '../../assets/icons/close.svg'
 
 /**
  * @slot body - Body content of the modal popup.
@@ -142,7 +141,7 @@ export class Modal {
                                             class="bk-button bk-button--text bk-modal__close-btn"
                                             onClick={this.onCloseHandler}
                                         >
-                                            <iron-icon icon="close" class="bk-icon"></iron-icon>
+                                            <i innerHTML={closeIcon} />
                                         </button>
                                     )}
                                 </header>

@@ -1,6 +1,11 @@
 import { ComponentInterface, Build as BUILD } from '@stencil/core'
-import { createPopper, Instance, Modifier, Placement } from '@popperjs/core'
+import { createPopper } from '@popperjs/core/lib/popper-lite'
 import flip from '@popperjs/core/lib/modifiers/flip'
+import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow'
+import offset from '@popperjs/core/lib/modifiers/offset'
+import arrow from '@popperjs/core/lib/modifiers/arrow'
+import { Instance, Modifier } from '@popperjs/core/lib/types'
+import { Placement } from '@popperjs/core/lib/enums'
 
 export type SetPopperInstance = Instance
 
@@ -51,6 +56,9 @@ export default ({
             placement: initialPlacement,
             modifiers: [
                 flip,
+                preventOverflow,
+                offset,
+                arrow,
                 {
                     name: 'preventOverflow',
                     options: {

@@ -1,8 +1,7 @@
 import { Component, h, Prop, Host, EventEmitter, Event } from '@stencil/core'
-import { uniqueId } from 'lodash'
+import uniqueId from 'lodash/uniqueId'
 import { tween, styler, ColdSubscription, easing } from 'popmotion'
-import '@polymer/iron-icon/iron-icon'
-import '@polymer/iron-icons/iron-icons'
+import chevronRight from '../../assets/icons/chevronRight.svg'
 
 /**
  * @slot header - Use this to render the collapse header.
@@ -154,7 +153,7 @@ export class Collapse {
                         onKeyDown={this.onKeydownHandler}
                     >
                         <slot name="header"></slot>
-                        <iron-icon icon="chevron-right" class="bk-collapse-item__arrow" />
+                        <i class="bk-collapse-item__arrow" innerHTML={chevronRight}></i>
                     </div>
                 </div>
                 {this.open && (

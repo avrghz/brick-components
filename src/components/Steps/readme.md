@@ -2,8 +2,6 @@
 
 Guide the user to complete tasks in accordance with the process.
 
-Note: The icon is implemented using [Polymer iron-icon](https://www.webcomponents.org/element/@polymer/iron-icon). Icon name can be found [here](https://www.webcomponents.org/element/@polymer/iron-icons/demo/demo/index.html)
-
 ```javascript
 import { html } from 'lit-html'
 

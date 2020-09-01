@@ -1,8 +1,15 @@
 import { Component, h, Host, State, Prop, Event, EventEmitter, Watch, Element, Listen } from '@stencil/core'
 import ComplexProp from '../../shared/decorators/complexProp'
 import KeyboardFocus from '../../shared/decorators/keyboardFocus'
-import { Colors, Size, SMILEY_ICONS } from './types'
+import { Colors, Size } from './types'
 import Star from './star'
+import veryDissatisfied from '../../assets/icons/smiley-very-dissatisfied.svg'
+import dissatisfied from '../../assets/icons/smiley-dissatisfied.svg'
+import neutral from '../../assets/icons/smiley-neutral.svg'
+import satisfied from '../../assets/icons/smiley-satisfied.svg'
+import verySatisfied from '../../assets/icons/smiley-very-satisfied.svg'
+
+const SMILEY_ICONS = [veryDissatisfied, dissatisfied, neutral, satisfied, verySatisfied]
 
 @Component({
     tag: 'bk-rating',
