@@ -1,52 +1,65 @@
 import { Component, h, Element } from '@stencil/core'
 import { MediaType } from './types'
 
+const ELEMENTS = ['img', 'video', 'picture', '[data-bg-image]'].reduce(
+    (acc: string, item) =>
+        `${acc === '$$$' ? `` : `${acc},`} ${item}:not([data-loaded=true]):not([data-observed=true])`,
+    '$$$'
+)
+
 @Component({
     tag: 'bk-lazy-media',
     styleUrl: './index.scss',
 })
 export class LazyMedia {
-    private elements?: NodeListOf<HTMLElement>
     private observer?: IntersectionObserver
+    private watcher?: MutationObserver
 
     @Element() el!: HTMLElement
 
     componentWillLoad() {
-        this.elements = this.el.querySelectorAll('img, video, picture, [data-bg-image]')
-        if (typeof window !== 'undefined' && window.IntersectionObserver) {
+        if (typeof window !== 'undefined' && window.IntersectionObserver && window.MutationObserver) {
+            this.watcher = this.setWatcher()
+            this.watcher.observe(this.el, {
+                childList: true,
+                subtree: true,
+            })
             this.observer = this.createObserver()
         }
     }
 
-    async componentDidLoad() {
-        if (this.elements) {
-            this.elements.forEach(async (el) => {
-                if (!!this.observer) {
-                    this.observer.observe(el)
-                } else {
-                    await this.loadMedia(el, true)
-                }
-            })
-        }
-    }
-
     disconnectedCallback() {
-        if (this.elements) {
-            this.elements.forEach(async (el) => {
-                if (!!this.observer) {
-                    this.observer.unobserve(el)
-                }
+        this.observer?.disconnect()
+        this.watcher?.disconnect()
+    }
+
+    setWatcher = () =>
+        new MutationObserver((entries) => {
+            entries.forEach(async (entry) => {
+                entry.addedNodes.forEach(async (node) => {
+                    if (node instanceof HTMLElement) {
+                        const elements = node.querySelectorAll(ELEMENTS) as NodeListOf<HTMLElement>
+
+                        elements.forEach(async (el) => {
+                            if (!el.hasAttribute('data-observed') && !el.hasAttribute('data-loaded')) {
+                                el.setAttribute('data-observed', 'true')
+                                this.observer?.observe(el)
+                            }
+                        })
+                    }
+                })
+
+                entry.removedNodes.forEach(async (node) => {
+                    if (node instanceof HTMLElement) {
+                        const elements = node.querySelectorAll(ELEMENTS) as NodeListOf<HTMLElement>
+                        elements.forEach(async (el) => this.observer?.unobserve(el))
+                    }
+                })
             })
-        }
-    }
+        })
 
-    is = (type: MediaType, element: HTMLElement) => {
-        if (type === 'bgImage') {
-            return element.hasAttribute('data-bg-image')
-        }
-
-        return element.tagName.toLocaleLowerCase() === type
-    }
+    is = (type: MediaType, element: HTMLElement) =>
+        type === 'bgImage' ? element.hasAttribute('data-bg-image') : element.tagName.toLocaleLowerCase() === type
 
     resolveImageSource = (src: string) =>
         new Promise<string>((resolve, reject) => {
@@ -105,8 +118,8 @@ export class LazyMedia {
         element.setAttribute('data-loaded', 'true')
     }
 
-    createObserver = () => {
-        return new IntersectionObserver(
+    createObserver = () =>
+        new IntersectionObserver(
             async (entries, observer) => {
                 entries.forEach(async (entry) => {
                     if (entry.isIntersecting && !entry.target.hasAttribute('data-loaded')) {
@@ -119,7 +132,6 @@ export class LazyMedia {
                 threshold: 0,
             }
         )
-    }
 
     render() {
         return <slot></slot>

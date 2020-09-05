@@ -7,7 +7,7 @@ bk-lazy-media {
 
     img {
         transition: all 0.5s ease-in-out;
-        transform: scale(1.1);
+        transform: scale(1.01);
         width: 100%;
         filter: blur($--lazy-media-blur);
 
