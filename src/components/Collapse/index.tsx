@@ -18,6 +18,7 @@ export class Collapse {
     private tabPanelRef?: HTMLElement
     private subscription?: ColdSubscription
     private uiState: 'open' | 'close' = 'close'
+    private timeout?: ReturnType<typeof setTimeout>
 
     /** Duration of the animation */
     @Prop() duration = 200
@@ -47,7 +48,7 @@ export class Collapse {
     componentWillRender() {
         return new Promise((resolve) => {
             if (this.uiState === 'open' && !this.open) {
-                setTimeout(resolve, this.duration)
+                this.timeout = setTimeout(resolve, this.duration)
             } else {
                 resolve()
             }
@@ -63,8 +64,9 @@ export class Collapse {
     }
 
     disconnectedCallback() {
-        if (this.subscription) {
-            this.subscription.stop()
+        this.subscription?.stop()
+        if (!!this.timeout) {
+            clearTimeout(this.timeout)
         }
     }
 
@@ -88,33 +90,45 @@ export class Collapse {
         }
     }
 
+    tweenActions = (el: ReturnType<typeof styler>, cb: VoidFunction) => ({
+        update: ({ opacity, height, translate }: { opacity: number; height: number; translate: string }) => {
+            el.set('opacity', opacity).set('height', height).set('position', 'relative').set('transform', translate)
+        },
+        complete: cb,
+    })
+
     animate = (open: boolean, cb: VoidFunction) => {
-        let started = false
-        let height = 1
+        const height = this.tabPanelRef?.clientHeight || 1
+        debugger
+
+        this.subscription?.stop()
+
         if (this.tabPanelRef) {
             const element = styler(this.tabPanelRef)
-            this.subscription = tween({
-                ...(open ? { from: 0, to: 1 } : { from: 1, to: 0 }),
+
+            const tweened = tween({
+                from: {
+                    opacity: -1,
+                    height: 0,
+                    translate: 'translate3d(0,-10%,0)',
+                },
+                to: {
+                    opacity: 1,
+                    height,
+                    translate: 'translate3d(0,0%,0)',
+                },
                 duration: this.duration,
                 ease: easing.linear,
-            }).start({
-                update: (x: number) => {
-                    if (!started) {
-                        height = this.tabPanelRef?.clientHeight || 1
-                        started = true
-                    }
-                    element
-                        .set('opacity', x)
-                        .set('position', 'relative')
-                        .set('height', x * height)
-                },
-                complete: () => {
-                    if (open) {
-                        element.set('height', 'auto')
-                    }
-                    cb()
-                },
             })
+
+            this.subscription = open
+                ? tweened.start(
+                      this.tweenActions(element, () => {
+                          element.set('height', 'auto')
+                          cb()
+                      })
+                  )
+                : tweened.start(this.tweenActions(element, cb)).reverse()
         }
     }
 
@@ -164,9 +178,7 @@ export class Collapse {
                         class="bk-collapse-item__wrap"
                         ref={(el) => (this.tabPanelRef = el)}
                     >
-                        <div class="bk-collapse-item__content">
-                            <slot name="content"></slot>
-                        </div>
+                        <slot name="content"></slot>
                     </div>
                 )}
             </Host>

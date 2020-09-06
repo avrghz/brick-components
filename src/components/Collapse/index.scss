@@ -38,6 +38,11 @@
         border-bottom: 1px solid $--collapse-border-color;
         opacity: 0;
         position: absolute;
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        transform-origin: top;
     }
 
     @include e(content) {
@@ -45,6 +50,7 @@
         font-size: $--collapse-content-font-size;
         color: $--collapse-content-font-color;
         line-height: 1.769230769230769;
+        overflow: hidden;
     }
 
     &:last-child {
