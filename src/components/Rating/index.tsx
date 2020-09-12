@@ -33,8 +33,11 @@ export class Rating {
     /** The color for each rating */
     @ComplexProp('object') @Prop({ mutable: true }) colors?: Colors | string
 
-    /** show smiley instead of start */
+    /** Show smiley instead of start */
     @Prop() asSmiley = false
+
+    /** Enable or disable the rating */
+    @Prop() readOnly = false
 
     /** This event is fired when rating changed */
     @Event() bkChange!: EventEmitter<number>
@@ -96,10 +99,17 @@ export class Rating {
             >
                 {this.stars.map((key) => (
                     <span
-                        class="bk-rate__item"
-                        onClick={() => this.onClickHandler(key)}
-                        onMouseEnter={() => this.onMouseHandler(key)}
-                        onMouseLeave={() => this.onMouseHandler(key, true)}
+                        class={{
+                            'bk-rate__item': true,
+                            'is-readonly': this.readOnly,
+                        }}
+                        {...(!this.readOnly
+                            ? {
+                                  onClick: () => this.onClickHandler(key),
+                                  onMouseEnter: () => this.onMouseHandler(key),
+                                  onMouseLeave: () => this.onMouseHandler(key, true),
+                              }
+                            : {})}
                     >
                         <Star
                             hover={this.isLessThen(key, this.hover)}

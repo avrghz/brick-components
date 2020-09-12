@@ -51,6 +51,14 @@ describe('<bk-rating/>', () => {
         })
     })
 
+    describe('@Prop() read-only', () => {
+        it('should render as read only', async () => {
+            component.setProperty('readOnly', true)
+            await page.waitForChanges()
+            expect(component).toMatchSnapshot()
+        })
+    })
+
     describe('@Prop() asSmiley', () => {
         // tslint:disable-next-line
         ;[...Array(6).keys()].forEach((rating) => {

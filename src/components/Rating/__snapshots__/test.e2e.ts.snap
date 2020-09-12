@@ -1229,3 +1229,73 @@ exports[`<bk-rating/> @Prop() rating should render with no selected stars, when 
   </span>
 </bk-rating>
 `;
+
+exports[`<bk-rating/> @Prop() read-only should render as read only 1`] = `
+<bk-rating aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="" class="bk-rate hydrated sc-bk-rating-h sc-bk-rating-s" rating="0" role="slider" tabindex="0">
+  <span class="bk-rate__item is-readonly sc-bk-rating">
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
+      <span class="bk-rate__item is-fill sc-bk-rating" style="width: 0%;"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item is-readonly sc-bk-rating">
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item is-readonly sc-bk-rating">
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item is-readonly sc-bk-rating">
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+  <span class="bk-rate__item is-readonly sc-bk-rating">
+    <span class="sc-bk-rating" data-key="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;>
+    <path fill=&quot;currentcolor&quot;
+        d=&quot;M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z&quot; />
+</svg>">
+      <i class="bk-rate__icon is-medium sc-bk-rating">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" fill="currentcolor"></path>
+        </svg>
+      </i>
+      <span class="bk-rate__item is-fill sc-bk-rating"></span>
+    </span>
+  </span>
+</bk-rating>
+`;

@@ -5,7 +5,7 @@ describe('<bk-lazy-media/>', () => {
     let component: E2EElement
 
     const height = 3000
-    const wait = 5000
+    //const wait = 5000
 
     const images = {
         xl: {
@@ -26,10 +26,10 @@ describe('<bk-lazy-media/>', () => {
 
     const getAttribute = (image: E2EElement, attr: string) => image.getAttribute(attr)
 
-    const scrollToEnd = async () =>
-        await page.evaluate((_) => {
-            window.scrollBy(0, 3000)
-        })
+    // const scrollToEnd = async () =>
+    //     await page.evaluate((_) => {
+    //         window.scrollBy(0, 3000)
+    //     })
 
     describe('Lazy load image', () => {
         beforeEach(async () => {

@@ -52,6 +52,10 @@
         vertical-align: middle;
         cursor: pointer;
 
+        @include when('readonly') {
+            pointer-events: none;
+        }
+
         @include when('fill') {
             position: absolute;
             z-index: 1;

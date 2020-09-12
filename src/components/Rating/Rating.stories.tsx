@@ -9,6 +9,7 @@ export const Rating = () => {
     const rating = number('rating', 0)
     const size = select('size', SIZE, 'medium')
     const asSmiley = boolean('as-smiley', false)
+    const readOnly = boolean('read-only', false)
     const colors = object('colors', COLORS)
 
     const bkChange = action('bkChange')
@@ -18,6 +19,7 @@ export const Rating = () => {
         colors=${JSON.stringify(colors)}
         size=${size}
         as-smiley=${asSmiley}
+        read-only=${readOnly}
         @bkChange=${(e: CustomEvent) => bkChange(e.detail)}
     />`
 }

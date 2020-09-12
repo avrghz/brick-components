@@ -17,9 +17,10 @@ html` <bk-rating/> `
 
 | Property   | Attribute   | Description                  | Type                             | Default     |
 | ---------- | ----------- | ---------------------------- | -------------------------------- | ----------- |
-| `asSmiley` | `as-smiley` | show smiley instead of start | `boolean`                        | `false`     |
+| `asSmiley` | `as-smiley` | Show smiley instead of start | `boolean`                        | `false`     |
 | `colors`   | `colors`    | The color for each rating    | `Colors \| string \| undefined`  | `undefined` |
 | `rating`   | `rating`    | The rating out of 5          | `number`                         | `0`         |
+| `readOnly` | `read-only` | Enable or disable the rating | `boolean`                        | `false`     |
 | `size`     | `size`      | Size of the rating           | `"large" \| "medium" \| "small"` | `'medium'`  |
 
 

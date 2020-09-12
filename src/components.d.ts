@@ -190,7 +190,7 @@ export namespace Components {
     }
     interface BkRating {
         /**
-          * show smiley instead of start
+          * Show smiley instead of start
          */
         "asSmiley": boolean;
         /**
@@ -201,6 +201,10 @@ export namespace Components {
           * The rating out of 5
          */
         "rating": number;
+        /**
+          * Enable or disable the rating
+         */
+        "readOnly": boolean;
         /**
           * Size of the rating
          */
@@ -741,7 +745,7 @@ declare namespace LocalJSX {
     }
     interface BkRating {
         /**
-          * show smiley instead of start
+          * Show smiley instead of start
          */
         "asSmiley"?: boolean;
         /**
@@ -756,6 +760,10 @@ declare namespace LocalJSX {
           * The rating out of 5
          */
         "rating"?: number;
+        /**
+          * Enable or disable the rating
+         */
+        "readOnly"?: boolean;
         /**
           * Size of the rating
          */
