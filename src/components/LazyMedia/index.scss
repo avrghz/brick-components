@@ -7,13 +7,13 @@ bk-lazy-media {
 
     img {
         transition: all 0.5s ease-in-out;
-        transform: scale(1.01);
+        transform: scale3d(1.01, 1.01, 1);
         width: 100%;
         filter: blur($--lazy-media-blur);
 
         &[data-loaded] {
             max-width: 100%;
-            transform: scale(1);
+            transform: scale3d(1, 1, 1);
             filter: blur(0);
             min-height: auto;
         }

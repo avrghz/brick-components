@@ -33,30 +33,30 @@ export class LazyMedia {
         this.watcher?.disconnect()
     }
 
-    setWatcher = () =>
-        new MutationObserver((entries) => {
-            entries.forEach(async (entry) => {
-                entry.addedNodes.forEach(async (node) => {
-                    if (node instanceof HTMLElement) {
-                        const elements = node.querySelectorAll(ELEMENTS) as NodeListOf<HTMLElement>
+    getAllElements = (node: HTMLElement) => node.querySelectorAll(ELEMENTS) as NodeListOf<HTMLElement>
 
-                        elements.forEach(async (el) => {
-                            if (!el.hasAttribute('data-observed') && !el.hasAttribute('data-loaded')) {
-                                el.setAttribute('data-observed', 'true')
-                                this.observer?.observe(el)
-                            }
-                        })
+    manageObserver = (status: 'ADD' | 'REMOVE') => (node: Node) => {
+        if (node instanceof HTMLElement) {
+            this.getAllElements(node).forEach(async (el) => {
+                if (status === 'ADD') {
+                    if (!el.hasAttribute('data-observed') && !el.hasAttribute('data-loaded')) {
+                        el.setAttribute('data-observed', 'true')
+                        this.observer?.observe(el)
                     }
-                })
-
-                entry.removedNodes.forEach(async (node) => {
-                    if (node instanceof HTMLElement) {
-                        const elements = node.querySelectorAll(ELEMENTS) as NodeListOf<HTMLElement>
-                        elements.forEach(async (el) => this.observer?.unobserve(el))
-                    }
-                })
+                } else {
+                    this.observer?.unobserve(el)
+                }
             })
-        })
+        }
+    }
+
+    setWatcher = () =>
+        new MutationObserver((entries) =>
+            entries.forEach((entry) => {
+                entry.addedNodes.forEach(this.manageObserver('ADD'))
+                entry.removedNodes.forEach(this.manageObserver('REMOVE'))
+            })
+        )
 
     is = (type: MediaType, element: HTMLElement) =>
         type === 'bgImage' ? element.hasAttribute('data-bg-image') : element.tagName.toLocaleLowerCase() === type
