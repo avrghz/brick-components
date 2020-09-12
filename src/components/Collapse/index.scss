@@ -42,10 +42,6 @@
         font-size: $--collapse-content-font-size;
         color: $--collapse-content-font-color;
         line-height: 1.769230769230769;
-        transform: translate3d(0, 0, 0);
-        perspective: 1000px;
-        transform-origin: top;
-        backface-visibility: hidden;
     }
 
     &:last-child {

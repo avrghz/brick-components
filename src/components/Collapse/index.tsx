@@ -108,12 +108,10 @@ export class Collapse {
                 from: {
                     opacity: -1,
                     height: 0,
-                    translate: 'translate3d(0, -10%, 0)',
                 },
                 to: {
                     opacity: 1,
                     height,
-                    translate: 'translate3d(0, 0%, 0)',
                 },
                 duration: this.duration,
                 ease: easing.linear,
