@@ -3,7 +3,7 @@
     "author": "Aswin Varghese",
     "version": "2.1.0",
     "description": "React wrapper for brick-components",
-    "main": "index.js",
+    "main": "./dist/index.js",
     "scripts": {
         "build": "npm run tsc",
         "tsc": "tsc -p ."
