@@ -1,5 +1,9 @@
-src/
-dist/
+*
+!.gitignore
+!.npmrc
+!package-lock.json
+!package.json
+!tsconfig.json
 
 *~
 *.sw[mnpcod]
