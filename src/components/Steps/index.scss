@@ -72,6 +72,7 @@
         box-sizing: border-box;
         background: $--color-html-bg;
         transition: 0.15s ease-out;
+        color: inherit;
 
         @include when(text) {
             border-radius: 50%;

@@ -28,11 +28,13 @@ const Step: FunctionalComponent<StepProps> = ({
                 <div class="bk-step__line">
                     <i class="bk-step__line-inner"></i>
                 </div>
-                <div class={`bk-step__icon ${!!icon ? 'is-icon' : 'is-text'}`}>
-                    <div class="bk-step__icon-inner" {...(status !== 'wait' ? { onClick } : {})}>
-                        {!!icon ? <i /> : step}
-                    </div>
-                </div>
+                <button
+                    disabled={status === 'wait'}
+                    class={`bk-step__icon ${!!icon ? 'is-icon' : 'is-text'}`}
+                    {...(status !== 'wait' ? { onClick } : {})}
+                >
+                    <div class="bk-step__icon-inner">{!!icon ? <i /> : step}</div>
+                </button>
             </div>
             <div class="bk-step__main">
                 <div class="bk-step__title">{title}</div>
