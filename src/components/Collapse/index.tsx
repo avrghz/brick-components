@@ -106,7 +106,7 @@ export class Collapse {
 
             const tweened = tween({
                 from: {
-                    opacity: -1,
+                    opacity: 0,
                     height: 0,
                 },
                 to: {

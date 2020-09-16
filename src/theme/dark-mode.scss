@@ -1,9 +1,9 @@
 @import './base/mixins/skeleton.scss';
 
 :root[dark-mode='true'] {
-    --color-html-bg: #333;
+    --color-html-bg: #000;
 
-    --color-white: hsl(0, 0%, 0%);
+    --color-white: hsl(0, 0%, 20%);
     --color-black: hsl(0, 0%, 100%);
 
     --color-text-primary: hsl(220, 3%, 81%);
@@ -43,6 +43,11 @@
         --background-color-base: hsl(220, 3%, 10%);
         --border-color-extra-light: hsl(220, 3%, 15%);
 
+        tr,
+        th {
+            background-color: transparent;
+        }
+
         tbody tr {
             &:not(hover) {
                 &.is-warning,
@@ -81,5 +86,13 @@
 
     bk-tabs {
         --background-color-base: hsl(220, 3%, 10%);
+    }
+
+    .bk-card {
+        --border-color-lighter: #000;
+    }
+
+    .bk-switch {
+        --border-color-base: #333;
     }
 }
