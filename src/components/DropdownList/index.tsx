@@ -93,10 +93,12 @@ export class DropdownList {
     handleMenuKeydown = (e: KeyboardEvent) => {
         switch (true) {
             case e.key === 'Home':
+                e.preventDefault()
                 e.stopImmediatePropagation()
                 selectFirstEnabledOption(this._options, this.setFocus)
                 break
             case e.key === 'End':
+                e.preventDefault()
                 e.stopImmediatePropagation()
                 selectLastEnabledOption(this._options, this.setFocus)
                 break

@@ -111,6 +111,7 @@ export class Dropdown {
         switch (e.key) {
             case 'ArrowDown':
             case 'ArrowUp':
+                e.preventDefault()
                 this.open = true
                 break
             case 'Enter':
