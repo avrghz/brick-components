@@ -22,7 +22,7 @@ export const animateIn = ({ el, duration, onComplete, flip = false }: AnimationI
     const element = styler(el)
 
     return composite({
-        opacity: tween({ duration: duration * 2, from: 0, to: 1 }),
+        opacity: tween({ duration, from: 0, to: 1 }),
         x: tween({ duration, from: flip ? '-100%' : '100%', to: 0 }),
     }).start({
         update: ({ x, opacity }: { x: number; opacity: number }) => element.set('opacity', opacity).set('x', x),
