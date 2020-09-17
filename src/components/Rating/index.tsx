@@ -90,7 +90,6 @@ export class Rating {
         return (
             <Host
                 role="slider"
-                aria-valuetext=""
                 aria-valuemin="0"
                 aria-valuemax="5"
                 tabIndex={0}

@@ -46,7 +46,7 @@ export class Switch {
 
     render() {
         return (
-            <Host role="switch" aria-label="switch" aria-readonly={this.disabled} aria-checked={this.isOn} tabIndex="0">
+            <Host role="switch" aria-disabled={`${this.disabled}`} aria-checked={`${this.isOn}`} tabIndex="0">
                 <div class={`bk-switch bk-switch--${this.variant}`}>
                     <input
                         type="checkbox"
