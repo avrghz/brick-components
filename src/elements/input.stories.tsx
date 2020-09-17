@@ -14,7 +14,7 @@ export const Input = () => {
                         </div>
                     </div>
                     <div class="bk-col-md-12">
-                        <div class="bk-input is-disabled">
+                        <div class="bk-input">
                             <input
                                 type="text"
                                 autocomplete="off"
@@ -46,15 +46,42 @@ export const Input = () => {
             <h2 class="bk-col-24">Text area</h2>
         </div>
 
-        <div class="bk-row">
+        <div class="bk-row mb-4">
             <div class="bk-col-md-12 mb-4 mb-md-0">
-                <div class="bk-input">
+                <div class="bk-textarea">
                     <textarea
                         autocomplete="off"
                         rows="2"
                         placeholder="Placeholder"
                         class="bk-textarea__inner"
                     ></textarea>
+                </div>
+            </div>
+            <div class="bk-col-md-12">
+                <div class="bk-textarea">
+                    <textarea
+                        autocomplete="off"
+                        rows="2"
+                        placeholder="Placeholder"
+                        class="bk-textarea__inner"
+                        disabled
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="bk-row mb-4">
+            <h2 class="bk-col-24">Select</h2>
+        </div>
+
+        <div class="bk-row">
+            <div class="bk-col-md-12 mb-4 mb-md-0">
+                <div class="bk-input">
+                    <select class="bk-select">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
                 </div>
             </div>
             <div class="bk-col-md-12">
