@@ -33,6 +33,7 @@
 
     @include e(inner) {
         display: inline-block;
+        margin-left: 1px;
         position: relative;
         border: $--checkbox-input-border;
         border-radius: $--checkbox-border-radius;
